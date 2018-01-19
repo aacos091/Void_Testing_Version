@@ -1,0 +1,15 @@
+{
+	// Finding the location of the murder relies on who was chosen as the Victim. This is
+	// why Victim is the first Array that is declared.
+	// The entries are in alphabetical order by title of the crew member. 
+	// All entries must begin with a capital letter. This is crucial because the json parser is case sensitive.
+
+	"Victim": 
+	{
+		// Each entry can hold multiple strings. e.g [Galley, Common Room] etc
+		"Cook":["Galley"],
+
+		"Engineer":["Engine Room"]
+	}
+	
+}

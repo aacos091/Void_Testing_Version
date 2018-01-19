@@ -1,0 +1,49 @@
+{
+	// This JSON file holds the information for all of the Crew Members. They are listed
+	// in alphabetical order and the ID numbering begins at 0. All entries must begin with a 
+	// capital letter. This is crucial because the json parser is case sensitive.
+
+	"Crew":	[
+		{
+			"ID":0,
+			"Title":"Captain",
+			"Name":"Attlebrox",
+			"Description":"A decorated Officer from the Grand Federation's Navy, an order that resulted in massive civilian casualties pushed the Captain to resign and start hauling cargo."
+		},
+		
+		{
+			"ID":1,
+			"Title":"Cook",
+			"Name":"Jorji Wilcox",
+			"Description":"A Cyborg unfond of talking about his past, Jorji signed up to be the cook on the ship to support his wife and daughter. He's a jovial and charismatic family man"
+		},
+
+		{
+			"ID":2,
+			"Title":"Engineer",
+			"Name":"Suzume Omazu",
+			"Description":"Gifted from a young age, Suzume was on track to become a revolutionary mechanical engineer until a crippling addiction to drugs ruined to drugs ruined her chances of a stellar career."
+		},
+
+		{
+			"ID":3,
+			"Title":"First Mate",
+			"Name":"Default Name",
+			"Description":"Worst First Mate in the history of First Mates that were known for first mating."
+		},
+
+		{
+			"ID":4,
+			"Title":"Medic",
+			"Name":"Cerys Kaerlig",
+			"Description":"A Federation Marine specializing in Combat Medicine, she moved to private security and mercenary work for a time before joining the crew."
+		},
+
+		{
+			"ID":5,
+			"Title":"Pilot",
+			"Name":"Saira Loukas",
+			"Description":"Served alongside Captain AttleBrox for her mandatory tour under Federation and chose not to renew along with the Captain."
+		}
+	]
+}

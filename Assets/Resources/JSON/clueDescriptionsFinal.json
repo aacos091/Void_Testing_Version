@@ -1,0 +1,18 @@
+{
+	// Descriptions for each of the clues
+	"Clues":
+	{
+		"Radiation Suit": ["Radiation Suit used to repair the ship."],
+		"Polarizer": ["Does whatever a Polarizer does."],
+		"Tampered Alarm": ["An alarm that seems to have been disabled and discarded"],
+		"Degausser": ["I have no idea what this is. I'm not even in the mood to google it."],
+		"EVA Suit": ["A cool looking suit. Even a murderer can look good in this."],
+		"Engine Piece": ["A piece of the engine. Seems important."],
+		"Thruster Calibrator": ["Piece of equipment used to Calibrate the Thrusters."],
+		"Pill Bottle": ["A bottle full of happy pills."],
+		"Pill": ["A happy pill that helps us deal with the solitude of floating through space."],
+		"Suspicious Root": ["Mandrake root that just looks suspicious. You can sense its malintentions."],
+		"Half-filled Glass": ["A half-filled glass. Or half-full if you're feeling optimistic."],
+		"Vermin Poison": ["Poison used to kill small vermin. Extremely lethal to humans"]
+	}
+}

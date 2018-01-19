@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: b35bfc2d05d21df4d98d37fa07c9272c
+  - enabled: 1
+    path: Assets/_Scenes/Clue_Command_Merge_TEST_Scene.unity
+    guid: 438c7bc1332b4db44be66e5146f72e16
+  - enabled: 1
+    path: Assets/_Scenes/Clue_Scene_Will_T.unity
+    guid: 7cc55edb5b386cd4d8d995a1dce9aeb3
+  - enabled: 1
+    path: Assets/_Scenes/Jury_Scene.unity
+    guid: 637586c22e7a64f47a2cde93968ab0df
+  - enabled: 0
+    path: 
+    guid: 39d35fc5bfc617446881da231b35776e

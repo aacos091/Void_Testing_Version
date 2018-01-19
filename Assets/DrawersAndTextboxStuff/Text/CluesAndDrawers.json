@@ -1,0 +1,32 @@
+[
+  {
+    "title": "EmptyDrawer",
+    "tags": "",
+    "body": "<<Textbox>>\nNope. Nothing in here.\n<</Textbox>>",
+    "position": {
+      "x": 260,
+      "y": 110
+    },
+    "colorID": 0
+  },
+  {
+    "title": "MirrorInDrawer",
+    "tags": "",
+    "body": "<<if $mirrorFound is false>>\n    <<Textbox>>\n    Hey, is that a mirror in the drawer? Let's take it.\n    <</Textbox>>\n    <<AddClue GameController SmallMirror>>\n    <<Textbox>>\n    Added Small Mirror to Clue Log.\n    <</Textbox>>\n    <<set $mirrorFound to true>>\n<<else>>\n    <<Textbox>>\n    There's a mirror in the drawer. It is already in the Clue Log.\n    <</Textbox>>\n<<endif>>\n\n",
+    "position": {
+      "x": 524,
+      "y": 87
+    },
+    "colorID": 0
+  },
+  {
+    "title": "PenInDrawer",
+    "tags": "",
+    "body": "<<if $penFound is false>>\n    <<Textbox>>\n    Hey, there seems to be a pen in the drawer. Should we take a look at it?\n  <</Textbox>>\n  <<InspectChoice Drawer_With_Clue>>\n <<set $penFound to true>>\n<<else>>\n    <<Textbox>>\n    There's a pen in the drawer. Should we inspect it?\n  <</Textbox>>\n  <<InspectChoice Drawer_With_Clue>>\n <<endif>>\n\n",
+    "position": {
+      "x": 524,
+      "y": 300
+    },
+    "colorID": 0
+  }
+]

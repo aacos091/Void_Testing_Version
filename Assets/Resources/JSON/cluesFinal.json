@@ -1,0 +1,34 @@
+{
+	// Clues are based on the Location and on the Culprit. 
+	
+	"Clues":
+	{
+		"Engine Room":
+		{
+			"First Mate":
+			{
+				"Strong": ["Radiation Suit", "Polarizer"],
+				"Weak": ["Tampered Alarm", "Degausser"]
+			},
+			"Pilot":
+			{
+				"Strong": ["EVA Suit", "Engine Piece"],
+				"Weak": ["Thruster Calibrator", "Tampered Alarm"]
+			}
+		},
+		
+		"Galley":
+		{
+			"First Mate":
+			{
+				"Strong": ["Pill Bottle", "Pill"],
+				"Weak": ["Suspicious Root", "Half-filled Glass"]
+			},
+			"Pilot":
+			{
+				"Strong": ["Vermin Poison", "Polarizer"],
+				"Weak": ["Half-filled Glass", "Suspicious Root"]
+			}
+		}
+	}
+}

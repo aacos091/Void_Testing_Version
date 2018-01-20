@@ -21,7 +21,7 @@ public class UI_ButtonManager : MonoBehaviour
     public GameObject imgExpand;
 
     //public float maxSize;
-    public float sizeChangeTime;
+    public float sizeChangeTime; 
     public float waitTime;
 
     RectTransform buttonRect;

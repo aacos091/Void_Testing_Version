@@ -57,7 +57,7 @@ public class ClueItemInspector : MonoBehaviour
         S = this;
         // better to set up component refs in Awake, since it executes before Start
         mainCam = Camera.main;
-		DontDestroyOnLoad (mainCam);
+		//DontDestroyOnLoad (mainCam);
 
 		voidCamControl = mainCam.GetComponent<Void>();
 
@@ -78,17 +78,22 @@ public class ClueItemInspector : MonoBehaviour
 
     void Update()
     {
-
-		//Alex Code
-		if (clueUIWindow.activeSelf) {
-			Camera.main.GetComponent<Void> ().enabled = false;
-			Camera.main.GetComponent<Drag_And_Zoom> ().enabled = false;
-			Camera.main.GetComponent<Mouse_Drag> ().enabled = false;
-		} else {
-			Camera.main.GetComponent<Void> ().enabled = true;
-			Camera.main.GetComponent<Drag_And_Zoom> ().enabled = true;
-			Camera.main.GetComponent<Mouse_Drag> ().enabled = true;
-		}
+        if (mainCam != null)
+        {
+            //Alex Code
+            if (clueUIWindow.activeSelf)
+            {
+                Camera.main.GetComponent<Void>().enabled = false;
+                Camera.main.GetComponent<Drag_And_Zoom>().enabled = false;
+                Camera.main.GetComponent<Mouse_Drag>().enabled = false;
+            }
+            else
+            {
+                Camera.main.GetComponent<Void>().enabled = true;
+                Camera.main.GetComponent<Drag_And_Zoom>().enabled = true;
+                Camera.main.GetComponent<Mouse_Drag>().enabled = true;
+            }
+        }
 
         if (!GameController.S.gamePaused)
         {
@@ -105,8 +110,13 @@ public class ClueItemInspector : MonoBehaviour
 	*********************************************/
     void ClickItem()
     {
-        //TODO Look into making this mobile compatible
-		if (Input.GetMouseButtonUp(0) && voidCamControl.IsZoomed)
+        if (mainCam != null)
+            mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+            //TODO Look into making this mobile compatible
+            //WT: Changed GetMouseButtonUp to Down, as it was causing too many issues. 
+            //May need to improve the clicking system so that it "clicks" on Up, but recognizes what you clicked on in the first place.
+        if (Input.GetMouseButtonDown(0) && voidCamControl.IsZoomed)
         {
             print("Mouse Button Released");
             Ray pos = mainCam.ScreenPointToRay(Input.mousePosition);

@@ -51,7 +51,7 @@ public class CanvasManager : MonoBehaviour {
         //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
         //accusationCanvases = new List<GameObject>();
 
-        //Make sure that the GameObject this is attached to is not deleted on load
+        //Make sure that the GameObject the UI is attached to is not deleted on load
         DontDestroyOnLoad(uiParent);
     }
 

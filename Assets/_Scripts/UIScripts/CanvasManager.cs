@@ -11,9 +11,8 @@ public class CanvasManager : MonoBehaviour {
     //Object that contains UI Canvases
     public GameObject uiParent;
 
-    //public static List<GameObject> canvases;
-    public GameObject[] canvases;
-
+	public GameObject captainsLogCanvas;
+	public GameObject HUDCanvas;
     public GameObject dialogueCanvas;
     //TODO: TEMP until real dialogue system is finished/integrated
     public GameObject dialogueTextBox;
@@ -29,28 +28,27 @@ public class CanvasManager : MonoBehaviour {
     //public GameObject targetCanvas;
     //public GameObject currentCanvas;
 	private bool activated;
-	// Use this for initialization
-	void Start () {
 
-	}
+	//Need to access camera, disable its controls, and move it away from the game when UI is active
+
+	private GameObject mainCam;
+	private CameraController camController;
+
+	//To position camera away from the scene when inspecting clues
+	public Vector3 lastCamPos;
+	public Vector3 camUIPos = new Vector3(0, 25, -25);
+	public bool camSetAtUIPos = false;
 
     void Awake()
     {
         S = this;
         if (uiParent == null)
             uiParent = gameObject;
-        /*
-        GameObject[] canvasObjects = GameObject.FindGameObjectsWithTag("Canvas");
-        for (int i = 0; i < canvasObjects.Length; i++)
-            {
-                print (canvasObjects[i].name;
-                canvases.Add(canvasObjects[i]);
-            }
-        */
 
-        //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
-        //accusationCanvases = new List<GameObject>();
+		camController = CameraController.S;
 
+		//TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
+		//accusationCanvases = new List<GameObject>();
         //Make sure that the GameObject the UI is attached to is not deleted on load
         DontDestroyOnLoad(uiParent);
     }
@@ -68,22 +66,77 @@ public class CanvasManager : MonoBehaviour {
 		currentCanvas.SetActive (false);
 
     }
+	public void disableCanvas()
+	{
+		uiParent.SetActive (false);
+
+	}
 
     // This function does the same as the above function but is supposed to activate the
     // target canvas They are named differently so that setting up games UI is easier.
     public void loadCanvas(GameObject targetCanvas)
 	{
-        if (GameController.S.activeDrawer != null)
-            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
-        /*
+		//First, cancels out of any zoom coroutine
+		if (camController == null)
+			camController = CameraController.S;
+		if (camController.currentCoroutine != null)
+			StopCoroutine (camController.currentCoroutine);
+
+		if (targetCanvas == HUDCanvas)
+		{
+			//Alex Code
+			Camera.main.GetComponent<CameraController>().enabled = true;
+			Camera.main.GetComponent<Controls_Mobile>().enabled = true;
+			Camera.main.GetComponent<Controls_PC>().enabled = true;
+			MoveCamBack ();
+		}
+		else
+		{
+			Camera.main.GetComponent<CameraController>().enabled = false;
+			Camera.main.GetComponent<Controls_Mobile>().enabled = false;
+			Camera.main.GetComponent<Controls_PC>().enabled = false;
+			MoveCamAway ();
+		}
+
+		if (GameController.S.activeDrawer != null)
+			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+		/*
         activated = targetCanvas.activeInHierarchy;
 		targetCanvas.SetActive(!activated);
         */
+
 		if (SceneManager.GetActiveScene().name != "Jury_Scene")
 			targetCanvas.SetActive (true);
     }
 
-    public void EnableGatherButtons()
+	//Version that works with a canvas name
+	//Should set all Canvases in a single script later on
+	[YarnCommand("loadCanvasByName")]
+	public void loadCanvasByName(string canvasName)
+	{
+		//GameObject targetCanvas = GameObject.Find(canvasName);
+
+		if (GameController.S.activeDrawer != null)
+			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+	}
+
+	public void MoveCamAway()
+	{
+		if (mainCam == null)
+			mainCam = Camera.main.gameObject;
+		lastCamPos = mainCam.transform.position;
+		mainCam.transform.position = camUIPos;
+		camSetAtUIPos = true;
+	}
+	public void MoveCamBack()
+	{
+		if (mainCam == null)
+			mainCam = Camera.main.gameObject;
+		mainCam.transform.position = lastCamPos;
+		camSetAtUIPos = false;
+	}
+
+    public void enableGatherButtons()
     {
         for (int i = 0; i < gatherCrewButtons.Length; i++)
         {
@@ -104,34 +157,4 @@ public class CanvasManager : MonoBehaviour {
             canvas.SetActive(true);
             }
     }
-
-	public void disableCanvas()
-	{
-		uiParent.SetActive (false);
-
-	}
-
-//Version that works with a canvas name
-//Should set all Canvases in a single script later on
-[YarnCommand("loadCanvasByName")]
-    public void loadCanvasByName(string canvasName)
-    {
-        //GameObject targetCanvas = GameObject.Find(canvasName);
-
-        if (GameController.S.activeDrawer != null)
-            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
-        for (int i = 0; i < S.canvases.Length; i++)
-        {
-            print(S.canvases[i].name);
-
-            if (S.canvases[i].name == canvasName)
-            { 
-            //print("It Worked?");
-            //activated = targetCanvas.activeInHierarchy;
-            S.canvases[i].SetActive(true);
-            }
-        }
-    }
-
-
 }

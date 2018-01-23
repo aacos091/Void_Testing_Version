@@ -143,7 +143,7 @@ public class ClueManager : MonoBehaviour {
             //TODO: Make sure this works even if cluesLeftToChoose changes. Might want to make a default int for the clues to get
             if (_cluesCollected.Count == AccusationManager.S.cluesLeftToChoose)
             {
-                CanvasManager.S.EnableGatherButtons();
+                CanvasManager.S.enableGatherButtons();
             }
             //Creates a new button in the Clue Inventory UI
             if (UI_ButtonManager.S != null)

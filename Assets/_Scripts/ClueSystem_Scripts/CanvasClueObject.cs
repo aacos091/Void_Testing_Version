@@ -27,7 +27,7 @@ public class CanvasClueObject : MonoBehaviour {
 
     void OnEnable()
     {
-        DisableRoom();
+        //DisableRoom();
     }
 
     public void DisableRoom()
@@ -54,7 +54,7 @@ public class CanvasClueObject : MonoBehaviour {
         if (currentRoom == null)
             currentRoom = GameObject.FindGameObjectWithTag("Room");
         //screenBack.SetActive(false);
-        currentRoom.SetActive(true);
+        //currentRoom.SetActive(true);
         gameObject.SetActive(false);
     }
 }

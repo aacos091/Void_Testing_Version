@@ -5912,7 +5912,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 866299080}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9369081
+  m_Size: 0.93417394
   m_NumberOfSteps: 11
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11554,15 +11554,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082936605573212, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 397.92822
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082936605573212, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 195.47073
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082936605573212, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 39.083687
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082936605573212, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -22335,7 +22335,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4158933761142584, guid: 543d610e4a5d81f4f8735fd1ec19dd19, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.56
+      value: -5.986
       objectReference: {fileID: 0}
     - target: {fileID: 4158933761142584, guid: 543d610e4a5d81f4f8735fd1ec19dd19, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24845,7 +24845,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4158933761142584, guid: 543d610e4a5d81f4f8735fd1ec19dd19, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.8784396
+      value: 0.194
       objectReference: {fileID: 0}
     - target: {fileID: 4158933761142584, guid: 543d610e4a5d81f4f8735fd1ec19dd19, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24896,7 +24896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.3419479}
+  m_AnchoredPosition: {x: 0, y: 0.28577483}
   m_SizeDelta: {x: 0, y: 1025}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1954764097

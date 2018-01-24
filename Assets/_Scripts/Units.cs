@@ -198,13 +198,11 @@ public class Units : MonoBehaviour
 
 			//Find the closest elevator to that waypoint
 			closestElevatorToWaypoint = findClosestElevatorToWaypoint ();
-			Debug.Log (closestElevatorToWaypoint.name);
 
 			//Set agent to walk towards that nav point
 
 			if (floor == waypoint.floor) {
 				agent.SetDestination (waypoints [ran].position);
-				Debug.Log ("Going to " + waypoints [ran].name);
 			}
 
 			//If the waypoint is not on the same floor as the unit:

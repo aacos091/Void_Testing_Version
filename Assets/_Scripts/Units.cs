@@ -38,6 +38,17 @@ public class Units : MonoBehaviour
 
 	public bool isAtElevator;
 
+	public GameObject talk;
+
+	public static bool dialogue;
+
+	public bool cook;
+
+	public bool medic;
+
+	public bool captain;
+
+	public bool engineer;
 
 	public enum States{
 		movingToDestination,
@@ -49,6 +60,7 @@ public class Units : MonoBehaviour
 
 	void Start () 
 	{
+
 		isAtElevator = false;
 		checkFloor ();
 		unitNameText.GetComponent<Text> ().enabled = false;
@@ -57,6 +69,20 @@ public class Units : MonoBehaviour
 
 	void Update () 
 	{
+
+		if (dialogue == true) 
+		{
+
+			talk.SetActive (true);
+
+		}
+		else
+		{
+
+			talk.SetActive (false);
+
+		}
+
 		checkFloor ();
 
 		//Process object selection
@@ -85,19 +111,17 @@ public class Units : MonoBehaviour
 				}
 			}
 			break;
+		}
 	}
-}
 
 	//This checks the floor that the Unit is on. 
 	public void checkFloor(){
-		
 		if (gameObject.transform.position.y < -5)
 			floor = 1;
 		if (gameObject.transform.position.y > -5 && gameObject.transform.position.y < 10)
 			floor = 2;
 		if (gameObject.transform.position.y > 10 && gameObject.transform.position.y < 25)
 			floor = 3;
-		
 	}
 
 	private void SelectObjectByMousePos()
@@ -106,15 +130,25 @@ public class Units : MonoBehaviour
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
 		RaycastHit hit;
-		if (Physics.Raycast (ray, out hit, layerMask)) {
-			if (hit.collider.tag == "Unit") {
+		if (Physics.Raycast (ray, out hit, layerMask)) 
+		{
+			if (hit.collider.tag == "Unit") 
+			{
+
 				//Get game object
 				GameObject rayCastedGO = hit.collider.gameObject;
 
 				//Select object
 				this.SelectedObject = rayCastedGO;
+
 			}
-		} else {
+
+		} 
+		else 
+		{
+
+			//dialouge = false;
+
 			this.SelectedObject = null;
 			unitNameText.GetComponent<Text> ().enabled = false;
 		}
@@ -127,7 +161,6 @@ public class Units : MonoBehaviour
 		set {
 			//get old game object
 			GameObject goOld = mSelectedObject;
-
 
 			//assign new game object
 			mSelectedObject = value;
@@ -144,14 +177,58 @@ public class Units : MonoBehaviour
 
 			//Set material to selected object
 			if (mSelectedObject != null) {
+
+				dialogue = true;
+
 				//Set unitNameText to unit name
 				unitNameText.text = "Unit name: " + mSelectedObject.name;
 
 				//Set highlight material
-				mSelectedObject.GetComponent<Renderer>().material = HighlightedMat;
+				mSelectedObject.GetComponent<Renderer> ().material = HighlightedMat;
+
+				if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+				{
+
+					CameraController.cook = true;
+
+				}
+
+				if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+				{
+
+					CameraController.medic = true;
+
+				}
+
+				if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+				{
+
+					CameraController.captain = true;
+
+				}
+
+				if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+				{
+
+					CameraController.engineer = true;
+
+				}
 
 				//Set text to true
 				unitNameText.GetComponent<Text> ().enabled = true;
+
+			} else {
+
+				dialogue = false;
+
+				CameraController.cook = false;
+
+				CameraController.medic = false;
+
+				CameraController.captain = false;
+
+				CameraController.engineer = false;
+
 			}
 		}
 	}
@@ -198,11 +275,13 @@ public class Units : MonoBehaviour
 
 			//Find the closest elevator to that waypoint
 			closestElevatorToWaypoint = findClosestElevatorToWaypoint ();
+			Debug.Log (closestElevatorToWaypoint.name);
 
 			//Set agent to walk towards that nav point
 
 			if (floor == waypoint.floor) {
 				agent.SetDestination (waypoints [ran].position);
+				Debug.Log ("Going to " + waypoints [ran].name);
 			}
 
 			//If the waypoint is not on the same floor as the unit:
@@ -224,10 +303,10 @@ public class Units : MonoBehaviour
 
 	void teleportToClosestElevatorToWaypoint()
 	{
-		
+
 		if (isAtElevator) 
 		{
-			
+
 			gameObject.SetActive (false);
 
 			Invoke ("Elevator", 5);

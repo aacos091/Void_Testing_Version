@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialouge : MonoBehaviour 
+public class Chat : MonoBehaviour 
 {
 
 	public static bool cook;
@@ -12,17 +12,6 @@ public class Dialouge : MonoBehaviour
 	public static bool captain;
 
 	public static bool engineer;
-
-	// Use this for initialization
-	void Start () {
-
-	}
-
-	void Update () 
-	{
-
-
-	}
 
 	public void OnClick()
 	{
@@ -40,8 +29,6 @@ public class Dialouge : MonoBehaviour
 			Debug.Log ("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
 		}
-
-		//Units.dialogue = false;
 
 	}
 

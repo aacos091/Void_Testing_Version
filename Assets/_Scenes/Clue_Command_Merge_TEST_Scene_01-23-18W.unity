@@ -18564,10 +18564,10 @@ GameObject:
   - component: {fileID: 1131074806}
   - component: {fileID: 1131074805}
   - component: {fileID: 1131074811}
-  - component: {fileID: 1131074810}
-  - component: {fileID: 1131074812}
   - component: {fileID: 1131074813}
   - component: {fileID: 1131074814}
+  - component: {fileID: 1131074812}
+  - component: {fileID: 1131074810}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -18690,7 +18690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3140925d5a4114cabe49087409ec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 4
+  dragSpeed: 2
   maxDragSpeed: 3
   minDragSpeed: 0.5
 --- !u!82 &1131074813

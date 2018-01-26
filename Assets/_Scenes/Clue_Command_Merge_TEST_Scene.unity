@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1021,6 +1021,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 790163056}
         m_MethodName: PrintCluesInInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1714684275}
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5174,6 +5185,11 @@ MonoBehaviour:
   closestElevatorToWaypoint: {fileID: 0}
   waypoint: {fileID: 0}
   isAtElevator: 0
+  talk: {fileID: 0}
+  cook: 0
+  medic: 0
+  captain: 0
+  engineer: 0
   currentState: 0
 --- !u!54 &447149423
 Rigidbody:
@@ -13890,6 +13906,11 @@ MonoBehaviour:
   closestElevatorToWaypoint: {fileID: 0}
   waypoint: {fileID: 0}
   isAtElevator: 0
+  talk: {fileID: 0}
+  cook: 0
+  medic: 0
+  captain: 0
+  engineer: 0
   currentState: 0
 --- !u!54 &1095377390
 Rigidbody:
@@ -14756,7 +14777,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.025
   perspectiveZoomSpeed: 0.025
-  dragSpeed: 2
 --- !u!114 &1131074811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14859,7 +14879,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -23768,6 +23788,11 @@ MonoBehaviour:
   closestElevatorToWaypoint: {fileID: 0}
   waypoint: {fileID: 0}
   isAtElevator: 0
+  talk: {fileID: 0}
+  cook: 0
+  medic: 0
+  captain: 0
+  engineer: 0
   currentState: 0
 --- !u!54 &1845556899
 Rigidbody:
@@ -24973,6 +24998,11 @@ MonoBehaviour:
   closestElevatorToWaypoint: {fileID: 0}
   waypoint: {fileID: 0}
   isAtElevator: 0
+  talk: {fileID: 0}
+  cook: 0
+  medic: 0
+  captain: 0
+  engineer: 0
   currentState: 0
 --- !u!54 &1954764100
 Rigidbody:

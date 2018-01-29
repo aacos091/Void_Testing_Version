@@ -9,8 +9,8 @@ using LitJson;
 public class ProceduralEngine : MonoBehaviour {
 
 	// TODO Rethink the names of these. Will they be placed inside of a class that holds the data for this playthroughs mystery?
-	private CrewMember 		CULPRIT;
-	private CrewMember		VICTIM;
+	private CrewMember 		_culprit;
+	private CrewMember		_victim;
 	private string 			_murderLocation;
 	private string 			_murderMethod;
 	private const int 		STRONG_CLUE_RATING = 5;
@@ -48,7 +48,7 @@ public class ProceduralEngine : MonoBehaviour {
 	void Awake ()
 	{
 		SetInformation ();
-
+		// This function is just here to make sure that all the variables are being set.
 		LogInfoToConsole ();
 	}
 
@@ -59,8 +59,8 @@ public class ProceduralEngine : MonoBehaviour {
 	void LogInfoToConsole ()
 	{
 		string clues = "";
-		print ("Culprit: " + CULPRIT.Title);
-		print ("Victim: " + VICTIM.Title);
+		print ("Culprit: " + _culprit.Title);
+		print ("Victim: " + _victim.Title);
 		print ("Murder Location: " + _murderLocation);
 		print ("Murder Method: " + _murderMethod);
 
@@ -75,8 +75,8 @@ public class ProceduralEngine : MonoBehaviour {
 	public void SetInformation()
 	{
 		// Choose culprit and victim and display the info to the Text passed as a parameter
-		CULPRIT = ChooseCulprit ();
-		VICTIM = ChooseVictim ();
+		_culprit = ChooseCulprit ();
+		_victim = ChooseVictim ();
 		// Choose the murder location and display it in the appropriate Text object
 		_murderLocation = ChooseLocation ();
 		//locationInfo.text = "The " + CULPRIT.Title + " murdered the " + VICTIM.Title + " in the " + _murderLocation;
@@ -153,7 +153,7 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Return the location found according to the value stored in _victimTitle;
 		//string location = locationData ["Victim"] [0] ["Engineer"] [0].ToString();
-		string location = locationData ["Victim"][VICTIM.Title][randomRoomID].ToString();
+		string location = locationData ["Victim"][_victim.Title][randomRoomID].ToString();
 
 		// Clear the JsonData Object
 		locationData.Clear();
@@ -217,7 +217,7 @@ public class ProceduralEngine : MonoBehaviour {
 			// Add value in randomIndex to indexesChosen to ensure that we do not choose this value again
 			indexesChosen.Add (randomIndex);
 
-			string clueToAdd = clueData ["Clues"] [_murderLocation] [CULPRIT.Title] [clueValidity] [randomIndex].ToString ();
+			string clueToAdd = clueData ["Clues"] [_murderLocation] [_culprit.Title] [clueValidity] [randomIndex].ToString ();
 
 			// Add clueToAdd to _clueList
 			_cluesList.Add (clueToAdd);
@@ -265,6 +265,7 @@ public class ProceduralEngine : MonoBehaviour {
 		return ( Random.value > 0.5 ? i : j);
 	}
 
+	// Function used to make sure the clues are positioned properly according to the size of their Colliders
 	void PositionClue (GameObject go)
 	{
 		// Set the Offset in the up (y-direction) to be half the size of the collider
@@ -277,5 +278,30 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Set the final position of the GameObject to match the targetPosition;
 		go.transform.position = targetPosition;
+	}
+
+	/***********************************
+	 *  PROPERTIES to Grab information *
+	 * ********************************/
+
+	// The following are Properties for grabbing important information from this class
+	public string Culprit
+	{
+		get { return _culprit.Title; }
+	}
+
+	public string Victim
+	{
+		get { return _victim.Title; }
+	}
+
+	public string MurderLocation
+	{
+		get { return _murderLocation; }
+	}
+
+	public string MurderMethod
+	{
+		get { return _murderMethod; }
 	}
 }

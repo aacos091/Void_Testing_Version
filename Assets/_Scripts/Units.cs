@@ -50,6 +50,8 @@ public class Units : MonoBehaviour
 
 	public bool engineer;
 
+	public GameObject chatManager;
+
 	public enum States{
 		movingToDestination,
 		movingToElevator
@@ -181,7 +183,10 @@ public class Units : MonoBehaviour
 				dialogue = true;
 
 				//Set unitNameText to unit name
-				unitNameText.text = "Unit name: " + mSelectedObject.name;
+				unitNameText.text = mSelectedObject.name;
+
+				//Pass unit name to dialogue manager
+				chatManager.GetComponent<Chat>().unitName = unitNameText.text.ToString();
 
 				//Set highlight material
 				mSelectedObject.GetComponent<Renderer> ().material = HighlightedMat;

@@ -1,35 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chat : MonoBehaviour 
 {
+	public GameObject dialogueCanvas;
+	public Text dialogue;
+	public string unitName;
 
-	public static bool cook;
 
-	public static bool medic;
+	public void startChat(){
+		dialogueCanvas.SetActive (true);
+		//dialogue = dialogueCanvas.GetComponentInChildren<Text> ();
+		dialogue.text = "Hello! I'm " + unitName + "!";
+	}
 
-	public static bool captain;
-
-	public static bool engineer;
-
-	public void OnClick()
-	{
-
-		if (CameraController.cook == true) 
-		{
-
-			Debug.Log ("caaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-
-		}
-
-		if (CameraController.medic == true) 
-		{
-
-			Debug.Log ("reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-
-		}
-
+	public void closeChat(){
+		dialogueCanvas.SetActive (false);
 	}
 
 }

@@ -17,6 +17,9 @@ public class ProceduralEngine : MonoBehaviour {
 	private const int 		WEAK_CLUE_RATING = 1;
 	private const string	WEAK_CLUE_TAG = "Weak";
 	private const string	STRONG_CLUE_TAG = "Strong";
+	private List<string>	_crewMembers = new List<string>() {"Cook", "Engineer", "First Mate", "Medic", "Pilot"};		// This List holds the titles of all of the crewmembers. Will be used to determine TruthTeller1 and TruthTeller 2
+	private string			_truthTeller1;
+	private string			_truthTeller2;
 
 	// TODO These values will change depending on the amount of clues each Culprit can have depending on the Murder location
 	// TODO Change AMOUNT_OF_CLUES to represent Strong(1) and Weak(4
@@ -63,6 +66,8 @@ public class ProceduralEngine : MonoBehaviour {
 		print ("Victim: " + _victim.Title);
 		print ("Murder Location: " + _murderLocation);
 		print ("Murder Method: " + _murderMethod);
+		print ("Truth Teller 1: " + _truthTeller1);
+		print ("Truth Teller 2: " + _truthTeller2);
 
 		for (int i = 0; i < _cluesList.Count; i++)
 		{
@@ -85,6 +90,8 @@ public class ProceduralEngine : MonoBehaviour {
 		//methodInfo.text = "The method of murder was: " + _murderMethod;
 		// Choose the clues and display them in the appropriate Text object
 		ChooseClues();
+		// Choose the two crew members that will be telling the truth when interviewed
+		ChooseTruthTellers ();
 	}
 
 	// This method is run first in the Procedural Engine initial setup
@@ -111,6 +118,9 @@ public class ProceduralEngine : MonoBehaviour {
 		// Clear the JsonData object
 		culpritData.Clear();
 
+		// Remove the culprit from the _crewMembers List
+		_crewMembers.Remove (void_Culprit.Title);
+
 		// Return the CrewMember object that holds the culprit's data
 		return void_Culprit;
 
@@ -136,6 +146,9 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Clear the JsonData Object
 		victimData.Clear();
+
+		// Remove the Victim from the _crewMembers List
+		_crewMembers.Remove (void_Victim.Title);
 
 		// Return the CrewMember object that holds the victim's data
 		return void_Victim;
@@ -256,6 +269,7 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Clear the JSONData Object
 		descriptionData.Clear();
+
 	}
 
 
@@ -263,6 +277,27 @@ public class ProceduralEngine : MonoBehaviour {
 	{
 		// If random.value is greater than 0.5 return i if it's not then return j
 		return ( Random.value > 0.5 ? i : j);
+	}
+
+	void ChooseTruthTellers ()
+	{
+		int index = 0;
+		for (int i = 0; i < 2; i++) 
+		{
+			// Initialize index with a random number between 0 and Count of the _crewMembers List
+			index = Random.Range (0, _crewMembers.Count);
+
+			if (i == 0) 
+			{
+				_truthTeller1 = _crewMembers [index];
+			} else 
+			{
+				_truthTeller2 = _crewMembers [index];
+			}
+
+			// Remove the entry in the _crewMembers List at position [index]
+			_crewMembers.RemoveAt (index);
+		}
 	}
 
 	// Function used to make sure the clues are positioned properly according to the size of their Colliders
@@ -303,5 +338,15 @@ public class ProceduralEngine : MonoBehaviour {
 	public string MurderMethod
 	{
 		get { return _murderMethod; }
+	}
+
+	public string TruthTeller1
+	{
+		get { return _truthTeller1; }
+	}
+
+	public string TruthTeller2
+	{
+		get { return _truthTeller2; }
 	}
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using System.IO;
 using System.Text;
 using LitJson;
+using Yarn;
+using Yarn.Unity;
 
 public class ProceduralEngine : MonoBehaviour {
 
@@ -53,6 +55,7 @@ public class ProceduralEngine : MonoBehaviour {
 		SetInformation ();
 		// This function is just here to make sure that all the variables are being set.
 		LogInfoToConsole ();
+		InitializeVariableStorage ();
 	}
 
 	/****************************
@@ -313,6 +316,25 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Set the final position of the GameObject to match the targetPosition;
 		go.transform.position = targetPosition;
+	}
+
+
+	void InitializeVariableStorage ()
+	{
+		VariableStorageBehaviour varStorage = DialogueRunner.S.variableStorage;
+
+		Yarn.Value culprit = new Yarn.Value (Culprit);
+		culprit.variableName = "$Culprit";
+
+		// Add the vars to the var storage using SetValue, passing the variable name and whatever kind of value
+		// the var is supposed to point to. If the var is a string, pass varName.Yarn Value variable name as the second arg. 
+
+		varStorage.SetValue (culprit.variableName, culprit);
+
+		print ("Yarn Culprit Variable Name: " + culprit.variableName);
+		print ("Yarn Culprit Variable Value: " + culprit.stringValue);
+
+
 	}
 
 	/***********************************

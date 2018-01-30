@@ -126,6 +126,16 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: rfregre
+  StartedDisplayingText:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  DoneDisplayingText:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &11429900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,10 +169,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1836395d55ff8d9408210dc877a193e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartedShowingText:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  DoneDisplayingText:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  TSTSAnchor: {fileID: 0}
   controllerComponents:
     textboxBox: {fileID: 11417394}
     textboxText: {fileID: 11423374}
     textboxPortrait: {fileID: 0}
+    nameTag: {fileID: 0}
     textSettings:
       audioSample: {fileID: 0}
       textSpeed: 50
@@ -172,18 +194,6 @@ MonoBehaviour:
       font: {fileID: 0}
       fontSize: 12
       autoFontSize: 1
-  textboxBox: {fileID: 11417394}
-  textboxText: {fileID: 11423374}
-  textboxPortrait: {fileID: 0}
-  textSettings:
-    audioSample: {fileID: 8300000, guid: c4139b030e1014140922754e3105346d, type: 3}
-    textSpeed: 20
-    higherTextSpeed: 0
-    effectiveTextSpeed: 30
-    linesPerTextbox: 4
-    font: {fileID: 12800000, guid: b3904c04d9d007546bc660d001743a8b, type: 3}
-    fontSize: 12
-    autoFontSize: 1
   textToDisplay: 'Estuans interius ira vehementi Estuans interius ira vehementi Sors
     immanis Et inanis Sors immanis Et inanis Veni, veni, venias, Ne me mori facias
     Veni, veni, venias, Ne me mori facias Veni, veni, venias, Ne me mori facias Veni,
@@ -210,7 +220,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 196, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22478228}
@@ -229,7 +239,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -341, y: -150, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22478228}
@@ -247,7 +257,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22463414}

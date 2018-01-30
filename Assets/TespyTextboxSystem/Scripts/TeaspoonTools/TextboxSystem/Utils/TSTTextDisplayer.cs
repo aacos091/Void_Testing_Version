@@ -21,17 +21,17 @@ namespace TeaspoonTools.TextboxSystem.Utils
 		Text textField;
 		AudioSource sfxPlayer;
 		AudioClip textSound;
-		TextSpeedSettings textSpeedSettings;
+		public TextSettings textSettings { get; set; }
 
 		bool showingText = false;
 
 		public TextDisplayer(Text textField, ICollection textToDisplay,
-							 TextSpeedSettings textSpeedSettings, AudioSource sfxPlayer, 
+							 TextSettings textSettings, AudioSource sfxPlayer, 
 						     AudioClip textSound = null)
 		{
 			this.textField = textField;
 			this.textToDisplay = textToDisplay as List<string>;
-			this.textSpeedSettings = textSpeedSettings;
+			this.textSettings = textSettings;
 			this.sfxPlayer = sfxPlayer;
 			this.textSound = textSound;
 		}
@@ -87,11 +87,9 @@ namespace TeaspoonTools.TextboxSystem.Utils
 			NormalizeScrollingSpeed(ref pauseDuration);
 
 			float timeWaited = 0f;
-			float timeDelay = 0.0f;
+			float timeDelay = 0.1f;
 			// ^makes it so the scrolling speed doesn't get raised too quickly in the boxful-
 			// printing
-
-			// Update: Apparently the time delay is no longer necessary, at least in Unity 5.6.2f1.
 
 			IEnumerator playSoundByte = PlaySoundByte(pauseDuration);
 
@@ -99,15 +97,14 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 			for (int j = 0; j < boxful.Length; j++)
 			{
+				
 				SetScrollingSpeed(ref pauseDuration, timeWaited < timeDelay);
 
 				if (pauseDuration == 1f / (float)TextSpeed.instant )
 				{
 					textField.text = boxful;
 					SetScrollingSpeed(ref pauseDuration);
-					timeWaited += pauseDuration;
 					yield return new WaitForSeconds(pauseDuration);
-					//j = charsToGoThrough;
 					break;
 				}
 				else 
@@ -142,7 +139,6 @@ namespace TeaspoonTools.TextboxSystem.Utils
 					&& textSound != null)
 					sfxPlayer.PlayOneShot(textSound, volume);
 				yield return new WaitForSeconds(actualPause);
-			
 			}
 
 
@@ -184,7 +180,7 @@ namespace TeaspoonTools.TextboxSystem.Utils
 		{
 
 			if (!waitedLongEnough)
-				pauseDuration = 1f / (float)textSpeedSettings.higherSpeed;
+				pauseDuration = 1f / (float)textSettings.higherTextSpeed;
 			else
 				NormalizeScrollingSpeed(ref pauseDuration);
 
@@ -192,7 +188,7 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 		void NormalizeScrollingSpeed(ref float pauseDuration)
 		{
-			pauseDuration = 1f / (float)textSpeedSettings.normalSpeed;
+			pauseDuration = 1f / (float)textSettings.textSpeed;
 		}
 
 	}

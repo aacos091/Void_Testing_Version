@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Medic.Redirect",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nCaptain.\n<</Textbox>>\n\n[[That's all.|Medic.EndConvD]]\n\n[[Know anything about $CLUE?|Medic.ClueD]]",
+		"position": {
+			"x": 1239,
+			"y": 12
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.EndConvD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nCaptain.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 775,
+			"y": 532
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Medic.ClueD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI've found this $CLUE. Know anything about it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nI'm busy right now, you should check in with $CREWMATE.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks, Cerys.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nYou are very welcome.\n<</Textbox>>",
+		"position": {
+			"x": 1759,
+			"y": 482
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Medic.Bye",
+		"tags": "",
+		"body": "<<Textbox>>\n<<name|Medic>>\nYou are very welcome.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 1800,
+			"y": 1101
+		},
+		"colorID": 0
+	}
+]

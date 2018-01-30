@@ -6,7 +6,8 @@ namespace Yarn
     public delegate Object ReturningFunction (params Value[] parameters);
     public delegate void Function (params Value[] parameters);
 
-    public class FunctionInfo {
+    public class FunctionInfo 
+    {
 
         // The name of the function, as it exists in the script.
         public string name { get; private set;}
@@ -88,6 +89,14 @@ namespace Yarn
     {
 
         private Dictionary<string, FunctionInfo> functions = new Dictionary<string, FunctionInfo>();
+
+        public Library()
+        {
+            // Register the custom yarn functions
+            RegisterFunction(CustomYarnFunctions.either());
+            RegisterFunction(CustomYarnFunctions.random());
+            RegisterFunction(CustomYarnFunctions.array());
+        }
 
         // Returns a function; throws an exception if it doesn't exist.
         // Use FunctionExists to check for a function's existence.

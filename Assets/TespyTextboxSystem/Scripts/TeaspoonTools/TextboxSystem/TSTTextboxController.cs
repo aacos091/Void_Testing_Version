@@ -38,7 +38,7 @@ namespace TeaspoonTools.TextboxSystem
 		[HideInInspector]
 		public UnityEvent DoneDisplayingText = new UnityEvent();
 
-        // basic attributes
+        #region Basic Attributes
 		[HideInInspector]
 		public RectTransform rectTransform { get; set; }
 		[HideInInspector]
@@ -63,6 +63,7 @@ namespace TeaspoonTools.TextboxSystem
 			
 		[SerializeField]
 		ControllerComponents controllerComponents;
+		#endregion 
 
 		#region Properties to Interface with those Components
 		public TextSettings textSettings 
@@ -75,7 +76,7 @@ namespace TeaspoonTools.TextboxSystem
 
 				try
 				{
-					hasTextSpeed = (int)value.textSpeed >=- 900;
+					hasTextSpeed = (int)value.textSpeed >= -900;
 				}
 				catch (InvalidCastException e) 
 				{
@@ -196,7 +197,6 @@ namespace TeaspoonTools.TextboxSystem
                 if (nameTag != null)
                     nameTag.font = value;
 
-                ApplyTextSettings();
             }
 		}
 
@@ -208,7 +208,6 @@ namespace TeaspoonTools.TextboxSystem
 				textSettings.fontSize = value;
 				text.fontSize = value;
 
-                ApplyTextSettings();
             }
 		}
 		#endregion

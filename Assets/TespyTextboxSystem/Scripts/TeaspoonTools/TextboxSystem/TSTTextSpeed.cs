@@ -9,10 +9,11 @@ namespace TeaspoonTools.TextboxSystem
     public enum TextSpeed
     {
         // these values amount to characters printed per second
-        verySlow = 8,
-        slow = (int)(verySlow * 2.5),
-        medium = (int)(slow * 2.5),
-        fast = (int)(medium * 2.8),
+        verySlow = 10,
+        slow = (int)(verySlow * 2.5f),
+        medium = (int)(slow * 2.5f),
+        fast = (int)(medium * 3),
+
         instant = 999
     }
 }

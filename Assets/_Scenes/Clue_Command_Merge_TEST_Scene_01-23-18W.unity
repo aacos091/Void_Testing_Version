@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -823,6 +823,10 @@ Prefab:
     - target: {fileID: 4833855484514322, guid: e77d20ba6ed9d5f4bbb1c640226135f9, type: 2}
       propertyPath: m_LocalScale.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062795038068562, guid: e77d20ba6ed9d5f4bbb1c640226135f9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e77d20ba6ed9d5f4bbb1c640226135f9, type: 2}
@@ -6845,7 +6849,8 @@ Prefab:
       propertyPath: uiController.clueLogCanvas
       value: 
       objectReference: {fileID: 1834269925}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114798714238827642, guid: d86bfdbbc2bf4794bb933eee0948a99f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d86bfdbbc2bf4794bb933eee0948a99f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &466863669
@@ -10259,6 +10264,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1158754678514140, guid: 0bc9f3e0b20fe984697b880329a181fd,
     type: 2}
   m_PrefabInternal: {fileID: 637600379}
+--- !u!1 &641046768 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1361553914222162, guid: d86bfdbbc2bf4794bb933eee0948a99f,
+    type: 2}
+  m_PrefabInternal: {fileID: 456335687}
+--- !u!114 &641046770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641046768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bb16a31db42b14b945bf3a951b50b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
 --- !u!1 &642919728
 GameObject:
   m_ObjectHideFlags: 0
@@ -28182,7 +28204,8 @@ Prefab:
       propertyPath: sourceText.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: 648c233678b800941b632791b90084b2, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114289421780973622, guid: dc4766950c5a23949a1643c7eac091bd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dc4766950c5a23949a1643c7eac091bd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1736061953 stripped

@@ -39,21 +39,21 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 			// Using a small font size and seeing how tall the label gets with one line of
 			// text, use that to figure out a good font size for the main text field to use
-			int baseFontSize = 5;
+			int baseFontSize = 10;
 			labelText.fontSize = 		baseFontSize;
 			labelText.text = "A";
 
 			Canvas.ForceUpdateCanvases();
 			float baseHeight = 			labelRect.rect.height;
 
-			//  further preparations to calculate the aforementioned good size
+			// further preparations to calculate the aforementioned good size
 			RectTransform textRect = 	textField.rectTransform;
 			float heightLimit = 		textRect.rect.height;
 			float targetHeightPerLine = heightLimit / linesPerTextbox;
 
-			float linesFittable = 		Mathf.Ceil(targetHeightPerLine / baseHeight); // with the current font size
+			float linesFittable = 		Mathf.Ceil(heightLimit / baseHeight); // with the current font size
 			int resultSize = 			Mathf.FloorToInt (baseFontSize * (targetHeightPerLine / baseHeight));
-
+			
 			// now test that good size...
 			labelText.text = 			"";
 			labelText.fontSize = 		resultSize;
@@ -72,15 +72,6 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 			while (diffInLines >= differenceLimit) // ... and change it as necessary.
 			{
-				alterationAmount = Mathf.CeilToInt(diffInLines);
-
-				// Raise the size? Lower it?
-				if (diffInHeight > 0)
-					resultSize -= alterationAmount;
-
-				else if (diffInHeight < 0)
-					resultSize += alterationAmount;
-
 				// compare the text heights again for a more accurate result
 				labelText.fontSize = resultSize;
 				Canvas.ForceUpdateCanvases();
@@ -88,10 +79,19 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 				diffInLines = Mathf.Abs(diffInHeight / baseHeight);
 
+				alterationAmount = Mathf.FloorToInt(diffInLines);
+				//Debug.Log("Pass " + passes + ":\nDiff in lines: " + diffInLines + "\nAlteration amount: " + alterationAmount);
+				// Raise the size? Lower it?
+				if (diffInHeight > 0)
+					resultSize -= alterationAmount;
+
+				else if (diffInHeight < 0)
+					resultSize += alterationAmount;
+
 				passes++;
 
 				// avoid an infinite loop, cutting our losses
-				if (passes >= linesPerTextbox * 2)
+				if (passes >= 8)
 					break;
 
 			}

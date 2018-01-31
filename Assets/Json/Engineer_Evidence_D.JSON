@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Engineer.Redirect",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_happy>>\nWhat's up?\n<</Textbox>>\n\n[[Nevermind|Engineer.ByeD]]\n\n[[Anything about $CLUE?|Engineer.InvestigateD]]\n\n",
+		"position": {
+			"x": 436,
+			"y": -54
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.ByeD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation",
+		"position": {
+			"x": 212,
+			"y": 243
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Engineer.InvestigateD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $CLUE. Can you tell me anything about it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nI'm busy right now, go bother $CREWMATE with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation",
+		"position": {
+			"x": 680,
+			"y": 242
+		},
+		"colorID": 1
+	}
+]

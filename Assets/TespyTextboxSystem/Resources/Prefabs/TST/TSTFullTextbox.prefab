@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 224927020958761862}
   - component: {fileID: 222706095308913592}
   - component: {fileID: 114783903634137010}
-  - component: {fileID: 114643053792369906}
   m_Layer: 0
   m_Name: TSTSText
   m_TagString: Untagged
@@ -141,13 +140,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 15
-    m_Right: 15
-    m_Top: 11
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
     m_Bottom: 15
   m_ChildAlignment: 3
   m_Spacing: 10
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -192,13 +191,11 @@ MonoBehaviour:
   StartedShowingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   DoneDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   TSTSAnchor: {fileID: 0}
   controllerComponents:
     textboxBox: {fileID: 114142189426022744}
@@ -207,18 +204,14 @@ MonoBehaviour:
     nameTag: {fileID: 114036716214820058}
     textSettings:
       audioSample: {fileID: 0}
-      textSpeed: 50
+      textSpeed: 62
       higherTextSpeed: 0
       effectiveTextSpeed: 50
       linesPerTextbox: 3
       font: {fileID: 12800000, guid: 217a7476a7291224da27f7c5c1d3d4b1, type: 3}
       fontSize: 12
       autoFontSize: 1
-  textToDisplay: 'Estuans interius ira vehementi Estuans interius ira vehementi Sors
-    immanis Et inanis Sors immanis Et inanis Veni, veni, venias, Ne me mori facias
-    Veni, veni, venias, Ne me mori facias Veni, veni, venias, Ne me mori facias Veni,
-    veni, venias, Ne me mori facias Veni, veni, venias, Gloriosa Ne me mori facias
-    Generosa Veni, veni, venias, Gloriosa Ne me mori facias Generosa '
+  textToDisplay: 45737475616e7320696e7465726975732069726120766568656d656e74692045737475616e7320696e7465726975732069726120766568656d656e746920536f727320696d6d616e697320457420696e616e697320536f727320696d6d616e697320457420696e616e69732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c20476c6f72696f7361204e65206d65206d6f7269206661636961732047656e65726f73612056656e692c2076656e692c2076656e6961732c20476c6f72696f7361204e65206d65206d6f7269206661636961732047656e65726f736120
   boxfuls: []
   testing: 0
 --- !u!114 &114142189426022744
@@ -233,13 +226,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -295,24 +291,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
---- !u!114 &114643053792369906
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1510053302583338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: -1
 --- !u!114 &114739926985300602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: -2, y: 2}
+  m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
 --- !u!114 &114748849075821004
 MonoBehaviour:
@@ -339,13 +317,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   m_Sprite: {fileID: 21300000, guid: e5e4e1c0698181d49a948532f40238f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -366,13 +347,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   m_FontData:
     m_Font: {fileID: 12800000, guid: a45eebe4a87ed814497cb8de7c9ee2fb, type: 3}
     m_FontSize: 22
@@ -386,21 +370,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'A
-
-    A
-
-'
+  m_Text: 
   StartedDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
   DoneDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
 --- !u!222 &222152156299367780
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -465,8 +443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 150}
+  m_AnchoredPosition: {x: 0, y: 12.5}
+  m_SizeDelta: {x: 715, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224289018042446752
 RectTransform:
@@ -486,7 +464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -169}
+  m_AnchoredPosition: {x: 0, y: -149}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224501259220906416
@@ -505,7 +483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273.7, y: 102.2}
+  m_AnchoredPosition: {x: -258, y: 101}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224670929554881982
@@ -523,7 +501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -266, y: 182}
+  m_AnchoredPosition: {x: -252, y: 199}
   m_SizeDelta: {x: 214.3, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224927020958761862
@@ -542,5 +520,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 720, y: 124}
+  m_SizeDelta: {x: 675, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}

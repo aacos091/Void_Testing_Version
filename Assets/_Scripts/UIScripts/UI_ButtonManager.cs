@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum buttonState
+public enum ButtonState
 {
-    normal,
-    shrunk,
-    expanded
+	normal, 
+	shrunk, 
+	expanded
 }
 
 public class UI_ButtonManager : MonoBehaviour
@@ -26,7 +26,7 @@ public class UI_ButtonManager : MonoBehaviour
 
     RectTransform buttonRect;
 
-    public Dictionary<GameObject, buttonState> buttonsManaged = new Dictionary<GameObject, buttonState>();
+    public Dictionary<GameObject, ButtonState> buttonsManaged = new Dictionary<GameObject, ButtonState>();
 
     public float expansionMultiplier = 2f;
 
@@ -166,9 +166,9 @@ public class UI_ButtonManager : MonoBehaviour
 
         if (!buttonsManaged.ContainsKey(btn))
             // register this new button, and assume it's at a normal state
-            buttonsManaged.Add(btn, buttonState.normal);
+            buttonsManaged.Add(btn, ButtonState.normal);
 
-        if (buttonsManaged[btn] != buttonState.expanded)
+        if (buttonsManaged[btn] != ButtonState.expanded)
             StartCoroutine(Expand(btn));
     }
 
@@ -176,9 +176,9 @@ public class UI_ButtonManager : MonoBehaviour
     {
         if (!buttonsManaged.ContainsKey(btn))
             // register this new button, and assume it's at a normal state
-            buttonsManaged.Add(btn, buttonState.normal);
+            buttonsManaged.Add(btn, ButtonState.normal);
 
-        if (buttonsManaged[btn] != buttonState.shrunk)
+        if (buttonsManaged[btn] != ButtonState.shrunk)
             StartCoroutine(Shrink(btn));
     }
 
@@ -206,7 +206,7 @@ public class UI_ButtonManager : MonoBehaviour
             yield return null;
         }
 
-        buttonsManaged[button] = buttonState.expanded;
+        buttonsManaged[button] = ButtonState.expanded;
 
     }
 
@@ -234,7 +234,7 @@ public class UI_ButtonManager : MonoBehaviour
             yield return null;
         }
 
-        buttonsManaged[button] = buttonState.shrunk;
+        buttonsManaged[button] = ButtonState.shrunk;
     }
     /*
 	IEnumerator Scale(GameObject O) {

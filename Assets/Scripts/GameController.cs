@@ -118,9 +118,7 @@ public class GameController : MonoBehaviour
 
 	DialogueRunner dialogueRunner;
 
-    //TODO: TEMP, just to let floating UI elements work with drawers 
-    public GameObject activeDrawer;
-    List<DrawerController> drawers = new List<DrawerController>();
+	//List<DrawerController> drawers = new List<DrawerController>();
 
 	public bool gamePaused { get; private set; }
 	public float timeScale = 1f;

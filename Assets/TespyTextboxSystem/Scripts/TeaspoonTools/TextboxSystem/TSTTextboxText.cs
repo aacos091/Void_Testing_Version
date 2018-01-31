@@ -95,7 +95,10 @@ namespace TeaspoonTools.TextboxSystem
 		{
 			this.fontSize = 			textSettings.fontSize;
 			this.font = 				textSettings.font;
-
+            //this.textSpeedSettings = new TextSpeedSettings(textSettings.textSpeed, 
+            //textSettings.higherTextSpeed);
+            //textDisplayer.textSettings = textSettings;
+            //textWrapper.linesPerTextbox = textSettings.linesPerTextbox;
 			// the word-wrapping will be handled by the text parser
 			this.horizontalOverflow = 	HorizontalWrapMode.Overflow;
 			this.verticalOverflow = 	VerticalWrapMode.Overflow;
@@ -105,8 +108,9 @@ namespace TeaspoonTools.TextboxSystem
 		{
 			textSpeedSettings = 	new TextSpeedSettings (textSettings.textSpeed, textSettings.higherTextSpeed);
 			textWrapper = 			new TSTTextWrapper(this, textSettings.linesPerTextbox);
-			textDisplayer =	 		new TextDisplayer (this, textWrapper.wrappedText, textSpeedSettings, sfxPlayer, 
-														textSettings.audioSample);
+			textDisplayer =	 		new TextDisplayer (this, textWrapper.wrappedText, textSettings, sfxPlayer, 
+															textSettings.audioSample);
+														
 		}
 
 		#region Interface with submodules
@@ -138,8 +142,9 @@ namespace TeaspoonTools.TextboxSystem
 
 		public void DisplayText(string textToDisplay)
 		{
+            textWrapper.linesPerTextbox = textSettings.linesPerTextbox;
 			IList<string> readyToDisplay = WrapText(textToDisplay) as List<string>;
-
+			textDisplayer.textSettings = textSettings;
 			textDisplayer.DisplayText (readyToDisplay);
 
 		}
@@ -153,6 +158,7 @@ namespace TeaspoonTools.TextboxSystem
 				boxfuls.AddRange (WrapText (text));
 
 			textDisplayer.textToDisplay = boxfuls;
+			textDisplayer.textSettings = textSettings;
 			textDisplayer.DisplayText ();
 			
 		}

@@ -61,6 +61,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     void Awake ()
     {
         ResetToDefaults ();
+        AddDefaultsToStorage();
     }
 
     /// Erase all variables and reset to default values
@@ -111,6 +112,19 @@ public class ExampleVariableStorage : VariableStorageBehaviour
             var v = new Yarn.Value(value);
 
             SetValue ("$" + variable.name, v);
+        }
+    }
+
+    void AddDefaultsToStorage()
+    {
+        Yarn.Value valToAdd;
+
+        foreach (DefaultVariable var in defaultVariables)
+        {
+            valToAdd = new Yarn.Value();
+            valToAdd.type = var.type;
+            valToAdd.variableName = "$" + var.name;
+            SetValue("$" + var.name, valToAdd);
         }
     }
 

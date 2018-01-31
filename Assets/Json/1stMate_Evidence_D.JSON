@@ -1,0 +1,32 @@
+[
+	{
+		"title": "1stMate.Redirect",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_neutral>>\nHello Captain.\n<</Textbox>>\n\n[[That's all.|1stMate.EndConvD]]\n\n[[I found this $Clue.|1stMate.Talk]]",
+		"position": {
+			"x": 441,
+			"y": 143
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.EndConvD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_neutral>>\nFarewell, Captain.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 228,
+			"y": 389
+		},
+		"colorID": 1
+	},
+	{
+		"title": "1stMate.Talk",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI've found this $CLUE. What can you tell me about it?\n<</Textbox>>\n\n<<Textbox>>\n<<name|1stMate>>\n<<Portrait|1stMate_neutral>>\nNot much other than $Crew possessing greater knowledge over that than I.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThank you.\n<</Textbox>>\n\n<<Textbox>>\n<<name|1stMate>>\nAnytime.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 653,
+			"y": 395
+		},
+		"colorID": 1
+	}
+]

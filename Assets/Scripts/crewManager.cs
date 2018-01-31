@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ButtonState
-{
-	normal, 
-	shrunk, 
-	expanded
-}
 
-public class crewManager : MonoBehaviour {
+
+public class CrewManager : MonoBehaviour {
 
 	public Text crewName;
 	public Text crewDesc;
@@ -29,10 +24,15 @@ public class crewManager : MonoBehaviour {
 
 	public GameObject shrinkButton;
 
+	public static CrewManager S;
+
 
 	// Use this for initialization
 	void Start () {
-		
+		if (S == null)
+			S = this;
+		else
+			Destroy (this);
 	}
 
 	public void loadImage(Sprite Crew) {
@@ -127,6 +127,22 @@ public class crewManager : MonoBehaviour {
 		buttonsManaged [button] = ButtonState.shrunk;
 		shrinkButton.SetActive(false);
 
+	}
+
+	public bool EntryExpanded(GameObject entry)
+	{
+		if (buttonsManaged.ContainsKey(entry))
+			return buttonsManaged[entry] == ButtonState.expanded;
+
+		return false;
+	}
+
+	public bool EntryNormal(GameObject entry)
+	{
+		if (buttonsManaged.ContainsKey(entry))
+			return buttonsManaged[entry] == ButtonState.normal;
+
+		return false;
 	}
 	/*
 	IEnumerator Scale(GameObject O) {

@@ -24,10 +24,11 @@ public class DialogueUITest : DialogueUIBehaviour {
 	TextboxController textboxController = null;
 	GameObject optionWindow;
 
-	public GameObject textboxPrefab;
-	public GameObject optionWindowPrefab;
+	[SerializeField] GameObject textboxPrefab;
+	[SerializeField] GameObject optionWindowPrefab;
+	[SerializeField] Canvas dialogueCanvas;
     public TextSettings textSettings;
-
+	
 	bool readingDialogue = false;
 
 	DialogueRunner dialogueRunner;
@@ -66,7 +67,7 @@ public class DialogueUITest : DialogueUIBehaviour {
 
 	public override IEnumerator RunLine (Yarn.Line line)
 	{
-        ////Debug.Log(this.name + ": Running a line!");
+        //Debug.Log(this.name + ": Running a line!");
 		
 		// Add the lines to the text to show. Note that grouping up the 
 		// lines like this is why I added a paused flag to DialogueRunner
@@ -87,14 +88,15 @@ public class DialogueUITest : DialogueUIBehaviour {
 		{
 		case "Textbox":
 			// clear the text to show so it can be read
-			////Debug.Log("At start of a textbox!");
+			//Debug.Log("At start of a textbox!");
 			readingDialogue = true;
 			textToShow = new StringBuilder ();
+			CreateTextbox();
 			break;
 
 		case "/Textbox":
 			// its time to display the text read up to this point
-			////Debug.Log(this.name + ": At end of a textbox!");
+			//Debug.Log(this.name + ": At end of a textbox!");
 			dialogueRunner.paused = true;
 			readingDialogue = false;
 			GetTextDisplayed ();
@@ -133,7 +135,7 @@ public class DialogueUITest : DialogueUIBehaviour {
         bool someUnaccountedCommand = !textboxCommand && !nameCommand && !portraitCommand;
 
         if (someUnaccountedCommand)
-            Debug.Log("Some unaccounted command!");
+            Debug.Log("Unaccounted command: " + command.text);
 			
 		yield return null;
 	}
@@ -141,7 +143,7 @@ public class DialogueUITest : DialogueUIBehaviour {
 	public override IEnumerator RunOptions (Yarn.Options optionsCollection, Yarn.OptionChooser optionChooser)
 	{
 		// create the option dialog window, giving it one button for each option
-		////Debug.Log("Running options!");
+		//Debug.Log("Running options!");
 		optionWindow = CreateOptionWindow(optionsCollection);
 
 		SetSelectedOption = optionChooser;
@@ -174,22 +176,11 @@ public class DialogueUITest : DialogueUIBehaviour {
 
 	void GetTextDisplayed()
 	{
-		if (textbox == null) 
-		{
-			textbox 			= Textbox.Create (textboxPrefab);
-			textboxController 	= textbox.GetComponent<TextboxController> ();
-			textboxController.DoneDisplayingText.AddListener (ResumeDialogueRunning);
-			EndedDialogue.AddListener (textboxController.Close);
-			textbox.transform.SetParent (GameObject.Find ("Canvas").transform, false);
-			textboxController.PlaceOnScreen (new Vector2 (0.5f, 0.15f));
-			if (textSettings.font != null)
-				textboxController.font = textSettings.font;
-
-            textSettings.Initialize(textboxController);
-            textboxController.ApplyTextSettings(textSettings);
-
-		}
-
+		// make the textbox visible
+		CanvasGroup cGroup = textbox.GetComponent<CanvasGroup>();
+		cGroup.alpha = 1;
+		cGroup.blocksRaycasts = true;
+		
 		//Debug.Log ("Text to display, gathered between the textbox tags: " + textToShow.ToString ());
 
 		if (textboxController.nameTag != null)
@@ -212,15 +203,17 @@ public class DialogueUITest : DialogueUIBehaviour {
 		GameObject optionWindow = 			Instantiate<GameObject> (optionWindowPrefab);
 		OptionSetController setController = optionWindow.GetComponent<OptionSetController> ();
 		setController.Init (this);
-		setController.transform.SetParent (GameObject.Find ("Canvas").transform, false);
+		setController.transform.SetParent (dialogueCanvas.transform, false);
 		//setController.rectTransform.sizeDelta = new Vector2 ();
 		GameObject newButton;
 
 		// populate it with buttons
+		string parsedOptString;
 		foreach (var optionString in optionsCollection.options) 
 		{
+			parsedOptString = YarnUtils.ParseYarnText(dialogueRunner.variableStorage, optionString);
 			newButton = Instantiate<GameObject>(setController.buttonPrefab);
-			setController.AddOption (newButton, optionString);
+			setController.AddOption (newButton, parsedOptString);
 		}
 
 		// let's put it in the middle-right of the screen
@@ -228,6 +221,29 @@ public class DialogueUITest : DialogueUIBehaviour {
 		setController.rectTransform.PositionRelativeToParent(TextAnchor.MiddleRight);
 
 		return optionWindow;
+	}
+
+	void CreateTextbox()
+	{
+		if (textbox == null)
+		{
+			textbox 			= Textbox.Create (textboxPrefab);
+			textboxController 	= textbox.GetComponent<TextboxController> ();
+			textboxController.DoneDisplayingText.AddListener (ResumeDialogueRunning);
+			EndedDialogue.AddListener (textboxController.Close);
+			textbox.transform.SetParent (dialogueCanvas.transform, false);
+			textboxController.PlaceOnScreen (new Vector2 (0.5f, 0.0f));
+			if (textSettings.font != null)
+				textboxController.font = textSettings.font;
+
+			textSettings.Initialize(textboxController);
+			textboxController.ApplyTextSettings(textSettings);
+
+			// Have the textbox be invisible until it is time to show it
+			CanvasGroup cGroup = textbox.AddComponent<CanvasGroup>();
+			cGroup.alpha = 0;
+			cGroup.blocksRaycasts = false;
+		}
 	}
 
 }

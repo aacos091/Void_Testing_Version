@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TeaspoonTools.Utils;
 
 namespace TeaspoonTools.TextboxSystem.Utils
 {
@@ -19,7 +20,7 @@ namespace TeaspoonTools.TextboxSystem.Utils
 		List<string> lines;
 		List<string> words;
 		public Text textField { get; set; }
-		int linesPerTextbox;
+		public int linesPerTextbox { get; set; }
 
         public TSTTextWrapper()
         {

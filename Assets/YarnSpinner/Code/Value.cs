@@ -12,6 +12,7 @@ namespace Yarn
             String,  // a string
             Bool,    // a boolean value
             Variable, // the name of a variable; will be expanded at runtime
+            Array,
             Null,    // the null value
         }
 

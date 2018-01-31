@@ -98,8 +98,8 @@ public class CanvasManager : MonoBehaviour {
 			MoveCamAway ();
 		}
 
-		if (GameController.S.activeDrawer != null)
-			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+//		if (GameController.S.activeDrawer != null)
+//			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
 		/*
         activated = targetCanvas.activeInHierarchy;
 		targetCanvas.SetActive(!activated);
@@ -111,14 +111,14 @@ public class CanvasManager : MonoBehaviour {
 
 	//Version that works with a canvas name
 	//Should set all Canvases in a single script later on
-	[YarnCommand("loadCanvasByName")]
-	public void loadCanvasByName(string canvasName)
-	{
-		//GameObject targetCanvas = GameObject.Find(canvasName);
-
-		if (GameController.S.activeDrawer != null)
-			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
-	}
+//	[YarnCommand("loadCanvasByName")]
+//	public void loadCanvasByName(string canvasName)
+//	{
+//		//GameObject targetCanvas = GameObject.Find(canvasName);
+//
+//		if (GameController.S.activeDrawer != null)
+//			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+//	}
 
 	public void MoveCamAway()
 	{
@@ -148,8 +148,8 @@ public class CanvasManager : MonoBehaviour {
     //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
     public void loadAccusationCanvases()
     {
-        if (GameController.S.activeDrawer != null)
-            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+//        if (GameController.S.activeDrawer != null)
+//            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
         foreach (GameObject canvas in accusationCanvases)
             {
             print(canvas.name);

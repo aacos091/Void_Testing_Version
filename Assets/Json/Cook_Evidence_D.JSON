@@ -1,0 +1,42 @@
+[
+	{
+		"title": "Cook.Redirect",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_happy>>\nHow you doin',Cap?\n<</Textbox>>\n\n[[That's all.|Cook.ByeD]]\n\n[[Can you tell me about $CLUE?|Cook.QuestioningD]]\n\n",
+		"position": {
+			"x": 403,
+			"y": -93
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.ByeD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nCiao\n<</Textbox>>\n\n//End of Conversation",
+		"position": {
+			"x": 63,
+			"y": 276
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.QuestioningD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nJorji, I found this $CLUE. Can you tell me anything about it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nYou know who's good with that stuff?\n<</Textbox>>\n\n\n[[Forget it.|Cook.ByeD]]\n\n[[Who is?|Cook.AnswerD]]",
+		"position": {
+			"x": 685,
+			"y": 272
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.AnswerD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nNo, who is?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\n$CREWMATE. $CREWMATE would know.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks Jorji.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nAnytime, Cap.\n<</Textbox>>\n\n//End",
+		"position": {
+			"x": 696,
+			"y": 589
+		},
+		"colorID": 0
+	}
+]

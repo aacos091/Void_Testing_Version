@@ -322,17 +322,50 @@ public class ProceduralEngine : MonoBehaviour {
 	void InitializeVariableStorage ()
 	{
 		VariableStorageBehaviour varStorage = DialogueRunner.S.variableStorage;
+		// TODO The names of the variables in the Procedural Manager should be changed to reflect how they will be named and accessed in Yarn. Ex: change culprit to suspect etc
+		// The correct names are all documented in a Google Sheet titled "Standard Yarn Variable Names"
 
+		// Initialize all of the Yarn variables that we will be needing
 		Yarn.Value culprit = new Yarn.Value (Culprit);
-		culprit.variableName = "$Culprit";
+		Yarn.Value victim = new Yarn.Value (Victim);
+		Yarn.Value murderLocation = new Yarn.Value (MurderLocation);
+		Yarn.Value truthTeller1 = new Yarn.Value (TruthTeller1);
+		Yarn.Value truthTeller2 = new Yarn.Value (TruthTeller2);
+		// TODO We currently only choose and spawn 4 clues. Therefore I am only adding 4 clue variables. We can adjust this if/when we add more
+		Yarn.Value clue1 = new Yarn.Value (_cluesList[0]);
+		Yarn.Value clue2 = new Yarn.Value (_cluesList[1]);
+		Yarn.Value clue3 = new Yarn.Value (_cluesList[2]);
+		Yarn.Value clue4 = new Yarn.Value (_cluesList[3]);
+
+		// Now we set the variable names that these Yarn Values will be referred to as in the Yarn Editor Nodes
+		culprit.variableName = "$SUSPECT";
+		victim.variableName = "$VICTIM";
+		murderLocation.variableName = "$CRIMESCENE";
+		truthTeller1.variableName = "$TRUTHTHELLER1";
+		truthTeller2.variableName = "$TRUTHTELLER2";
+		clue1.variableName = "$CLUE1";
+		clue2.variableName = "$CLUE2";
+		clue3.variableName = "$CLUE3";
+		clue4.variableName = "$CLUE4";
 
 		// Add the vars to the var storage using SetValue, passing the variable name and whatever kind of value
 		// the var is supposed to point to. If the var is a string, pass varName.Yarn Value variable name as the second arg. 
 
+		// Now we add the variables to the Dialogue Variable Storage using SetValue
 		varStorage.SetValue (culprit.variableName, culprit);
+		varStorage.SetValue (victim.variableName, victim);
+		varStorage.SetValue (murderLocation.variableName, murderLocation);
+		varStorage.SetValue (truthTeller1.variableName, truthTeller1);
+		varStorage.SetValue (truthTeller2.variableName, truthTeller2);
+		varStorage.SetValue (clue1.variableName, clue1);
+		varStorage.SetValue (clue2.variableName, clue2);
+		varStorage.SetValue (clue3.variableName, clue3);
+		varStorage.SetValue (clue4.variableName, clue4);
 
+		// Logging to console just to make sure everything is initialized correctly.
 		print ("Yarn Culprit Variable Name: " + culprit.variableName);
 		print ("Yarn Culprit Variable Value: " + culprit.stringValue);
+		print ("The 4 clues generated are: " + clue1.stringValue + ", " + clue2.stringValue + ", " + clue3.stringValue + ", " + clue4.stringValue);
 
 
 	}

@@ -11,13 +11,14 @@ public class Waypoint : MonoBehaviour {
 	}
 
 	void Update(){
-		if (gameObject.transform.position.y <= -4.5)
+		//If waypoints never move during the game, this scripts should probably go in Awake or Start
+		if (gameObject.transform.localPosition.y < -4.5)
 			floor = 1;
-		if (gameObject.transform.position.y >= -4.5 && gameObject.transform.position.y < -3)
+		if (gameObject.transform.localPosition.y >= -4.5 && gameObject.transform.localPosition.y < -3)
 			floor = 2;
-		if (gameObject.transform.position.y > -3 && gameObject.transform.position.y < -0.635)
+		if (gameObject.transform.localPosition.y >= -3 && gameObject.transform.localPosition.y <= 0)
 			floor = 3;
-		if (gameObject.transform.position.y > -0.635)
+		if (gameObject.transform.localPosition.y > 0)
 			floor = 4;
 		
 	}

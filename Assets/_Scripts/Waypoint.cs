@@ -11,11 +11,14 @@ public class Waypoint : MonoBehaviour {
 	}
 
 	void Update(){
-		if (gameObject.transform.position.y < -2)
+		if (gameObject.transform.position.y <= -4.5)
 			floor = 1;
-		if (gameObject.transform.position.y > -2 && gameObject.transform.position.y < 1)
+		if (gameObject.transform.position.y >= -4.5 && gameObject.transform.position.y < -3)
 			floor = 2;
-		if (gameObject.transform.position.y > 1 && gameObject.transform.position.y < 25)
+		if (gameObject.transform.position.y > -3 && gameObject.transform.position.y < -0.635)
 			floor = 3;
+		if (gameObject.transform.position.y > -0.635)
+			floor = 4;
+		
 	}
 }

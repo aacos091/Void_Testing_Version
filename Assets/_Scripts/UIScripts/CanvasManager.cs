@@ -68,6 +68,7 @@ public class CanvasManager : MonoBehaviour {
     }
 	public void disableCanvas()
 	{
+
 		uiParent.SetActive (false);
 
 	}
@@ -76,6 +77,7 @@ public class CanvasManager : MonoBehaviour {
     // target canvas They are named differently so that setting up games UI is easier.
     public void loadCanvas(GameObject targetCanvas)
 	{
+
 		//First, cancels out of any zoom coroutine
 		if (camController == null)
 			camController = CameraController.S;

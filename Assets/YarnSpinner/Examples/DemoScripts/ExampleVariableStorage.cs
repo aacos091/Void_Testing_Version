@@ -60,14 +60,14 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     /// Reset to our default values when the game starts
     void Awake ()
     {
-        ResetToDefaults ();
-        AddDefaultsToStorage();
+        //ResetToDefaults ();
+        //AddDefaultsToStorage();
     }
 
     /// Erase all variables and reset to default values
     public override void ResetToDefaults ()
     {
-        Clear ();
+        //Clear ();
 
         // For each default variable that's been defined, parse the string
         // that the user typed in in Unity and store the variable

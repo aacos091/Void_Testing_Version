@@ -1307,14 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3f74401fc501c4781025bd999871a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crewName: {fileID: 589909680}
-  crewDesc: {fileID: 956835225}
-  imgExpand: {fileID: 833525039}
-  sizeChangeTime: 0
-  waitTime: 0
-  buttonRect: {fileID: 0}
-  expansionMultiplier: 2
-  shrinkButton: {fileID: 0}
 --- !u!114 &77551186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,14 +3828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3f74401fc501c4781025bd999871a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crewName: {fileID: 0}
-  crewDesc: {fileID: 0}
-  imgExpand: {fileID: 0}
-  sizeChangeTime: 0.1
-  waitTime: 2
-  buttonRect: {fileID: 0}
-  expansionMultiplier: 2.5
-  shrinkButton: {fileID: 105300543}
 --- !u!1 &232399986
 GameObject:
   m_ObjectHideFlags: 0
@@ -37449,7 +37433,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1124462224}
+      - m_Target: {fileID: 1587851681}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

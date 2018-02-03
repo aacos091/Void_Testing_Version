@@ -2925,6 +2925,11 @@ Prefab:
       propertyPath: m_Name
       value: _ProceduralManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114640438012054602, guid: e0ef99392cbb34746bd8bb2e91fc082b,
+        type: 2}
+      propertyPath: shipTransform
+      value: 
+      objectReference: {fileID: 554726330}
     m_RemovedComponents:
     - {fileID: 114312041156550416, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
@@ -6093,6 +6098,11 @@ CanvasRenderer:
 --- !u!1 &554726329 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1612987144991930, guid: 127bb5c143c17c5439a2ceb5244172a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1374231072}
+--- !u!4 &554726330 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4548496979557242, guid: 127bb5c143c17c5439a2ceb5244172a6,
     type: 2}
   m_PrefabInternal: {fileID: 1374231072}
 --- !u!1 &555717315

@@ -48,6 +48,8 @@ public class ProceduralEngine : MonoBehaviour {
 	[Header("Drop all the SpawnPoints in here")]
 	public List<Transform>		spawnPoints;
 
+	public Transform			shipTransform;
+
 	//private StringBuilder	output = new StringBuilder ();
 
 	void Awake ()
@@ -60,7 +62,8 @@ public class ProceduralEngine : MonoBehaviour {
 
 	void Start()
 	{
-		InitializeVariableStorage ();
+		//InitializeVariableStorage ();
+		InitializeYarnVariables();
 	}
 	
 	/****************************
@@ -270,7 +273,7 @@ public class ProceduralEngine : MonoBehaviour {
 		PositionClue (tGO);
 
 		// Make the clue a child of the Ship Object
-		tGO.transform.SetParent (GameObject.Find ("Ship Final").transform);
+		tGO.transform.SetParent (shipTransform);
 
 		// Remove the spawnPoint used from the List of usable spawnPoints
 		spawnPoints.RemoveAt (spawnIndex);
@@ -341,6 +344,55 @@ public class ProceduralEngine : MonoBehaviour {
 	
 
 	}
+
+	void InitializeYarnVariables ()
+    {
+        Yarn.Value.Type boolType = Yarn.Value.Type.Bool;
+        Yarn.Value.Type stringType = Yarn.Value.Type.String;
+
+		ExampleVariableStorage varStorage = GameObject.Find ("DialogueSystem").GetComponent<ExampleVariableStorage>();
+        
+        // Go through as many cycles as we need to, in order to ensure that we create the proper yarn variables for each clue in the playthrough ("amountOfVoidClues")
+        for (int i = 0; i < AMOUNT_OF_CLUES_PER_PLAYTHROUGH; i++)
+        {
+            // This integer will be converted to a string and appended to the end of each variable name.
+            // E.G Clue1, Clue2, Clue3 etc
+            int index = i + 1;
+    
+
+			// Make 4 temporary variables and set it to null everytime we begin the loop. 3 strings and one bool
+			ExampleVariableStorage.DefaultVariable clueNameTDV = new ExampleVariableStorage.DefaultVariable();
+			ExampleVariableStorage.DefaultVariable clueRelatedCrew1TDV = new ExampleVariableStorage.DefaultVariable();
+			ExampleVariableStorage.DefaultVariable clueRelatedCrew2TDV = new ExampleVariableStorage.DefaultVariable();
+			ExampleVariableStorage.DefaultVariable clueFoundTDV = new ExampleVariableStorage.DefaultVariable();
+
+			// Assign the type of values that will be stored in each DefaultVariable type
+			clueNameTDV.type = stringType;
+			clueRelatedCrew1TDV.type = stringType;
+			clueRelatedCrew2TDV.type = stringType;
+			clueFoundTDV.type = boolType;
+
+            //Assign the name for all of the created temporary variables, this is the name that will pop up in Yarn
+            clueNameTDV.name = "Clue" + index.ToString();    // Clue1, Clue2 etc the number changes based on the value of i in the for loop
+            clueRelatedCrew1TDV.name = "Clue" + index.ToString() + "RelatedCrew1";
+            clueRelatedCrew2TDV.name = "Clue" + index.ToString() + "RelatedCrew2";
+            clueFoundTDV.name = "Clue" + index.ToString() + "Found";
+
+            // Assign the default values for each variable. This will be changed in ClueManager once each clue is found
+            clueNameTDV.value = " ";
+            clueRelatedCrew1TDV.value = " ";
+            clueRelatedCrew2TDV.value = " ";
+            clueFoundTDV.value = "false";
+
+            // Add each of these created Yarn Variables to our List that will hold them all
+           	varStorage.defaultVariables.Add (clueNameTDV);
+            varStorage.defaultVariables.Add (clueRelatedCrew1TDV);
+            varStorage.defaultVariables.Add (clueRelatedCrew2TDV);
+            varStorage.defaultVariables.Add (clueFoundTDV);
+        }
+    }
+
+	
 
 	/***********************************
 	 *  PROPERTIES to Grab information *

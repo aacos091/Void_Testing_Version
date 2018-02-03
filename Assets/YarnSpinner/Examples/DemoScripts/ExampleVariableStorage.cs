@@ -51,7 +51,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     }
 
     /// Our list of default variables, for debugging.
-    public DefaultVariable[] defaultVariables;
+    public List<DefaultVariable> defaultVariables;
 
     [Header("Optional debugging tools")]
     /// A UI.Text that can show the current list of all variables. Optional.
@@ -60,8 +60,8 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     /// Reset to our default values when the game starts
     void Awake ()
     {
-        //ResetToDefaults ();
-        //AddDefaultsToStorage();
+        ResetToDefaults ();
+        AddDefaultsToStorage();
     }
 
     /// Erase all variables and reset to default values

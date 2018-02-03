@@ -246,11 +246,27 @@ public class AccusationManager : MonoBehaviour {
 
     public void EndScreen() {
 		//Checks votes to see if player wins, voting maximum is 3
-		if (juryVote >= 1) {
+		if (juryVote >= 1) 
+		{
+
+			AudioSource success = GameObject.Find ("Success").GetComponent<AudioSource> ();
+
+			success.Play ();
+
 			endText.gameObject.SetActive (true);
-		} else {
+
+		} 
+		else 
+		{
+
+			AudioSource fail = GameObject.Find ("Failed").GetComponent<AudioSource> ();
+
+			fail.Play ();
+
 			endText.text = "ACCUSATION FAILED!";
+
 			endText.gameObject.SetActive (true);
+
 		}
 		//Replay button still in progress
 		//replay.gameObject.SetActive (true);
@@ -272,7 +288,13 @@ public class AccusationManager : MonoBehaviour {
 			Debug.DrawRay (transform.position, mousePosition, Color.green);
 
 			if (Physics.Raycast (ray, out hit, 100.0f)) {
-				if (hit.collider.tag == "Crew" && selectedCrew == "") {
+				if (hit.collider.tag == "Crew" && selectedCrew == "") 
+				{
+
+					AudioSource select = GameObject.Find ("Select").GetComponent<AudioSource> ();
+
+					select.Play ();
+
 					// Activate the sprite and corresponding TextBox to be visible when the crew member is clicked on.
 					Debug.Log (hit.collider.gameObject.name + " was selected by Raycast");
                     CanvasManager.S.dialogueCanvas.SetActive(true);

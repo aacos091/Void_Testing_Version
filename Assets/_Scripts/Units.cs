@@ -52,6 +52,8 @@ public class Units : MonoBehaviour
 
 	public GameObject chatManager;
 
+	int play;
+
 	public enum States{
 		movingToDestination,
 		movingToElevator
@@ -63,10 +65,16 @@ public class Units : MonoBehaviour
 	void Start () 
 	{
 
+		play = 0;
+
 		isAtElevator = false;
+
 		checkFloor ();
+
 		unitNameText.GetComponent<Text> ().enabled = false;
+
 		agent = GetComponent<NavMeshAgent> ();
+
 	}
 
 	void Update () 
@@ -75,6 +83,8 @@ public class Units : MonoBehaviour
 		if (dialogue == true) 
 		{
 
+			if (play == 0) PlaySound ();
+
 			talk.SetActive (true);
 
 		}
@@ -82,6 +92,8 @@ public class Units : MonoBehaviour
 		{
 
 			talk.SetActive (false);
+
+			play = 0;
 
 		}
 
@@ -381,6 +393,18 @@ public class Units : MonoBehaviour
 		transform.position = closestElevatorToWaypoint.transform.position;
 
 		gameObject.SetActive (true);
+
+	}
+
+	void PlaySound()
+	{
+		
+		AudioSource selected = GameObject.Find ("Select").GetComponent<AudioSource> ();
+
+
+		selected.Play ();
+
+		play++;
 
 	}
 

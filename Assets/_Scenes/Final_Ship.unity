@@ -9656,7 +9656,13 @@ Prefab:
       propertyPath: cloneCluePos.y
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114262362327101124, guid: 1da69bb2b7efbcc40aa9b75a3612307f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114262362327101124, guid: 1da69bb2b7efbcc40aa9b75a3612307f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1da69bb2b7efbcc40aa9b75a3612307f, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &844079053 stripped
@@ -9665,12 +9671,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 844079052}
   m_Script: {fileID: 11500000, guid: 9f12f39c5941c514f99da0f2c1cb7613, type: 3}
---- !u!114 &844079054 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114262362327101124, guid: 1da69bb2b7efbcc40aa9b75a3612307f,
-    type: 2}
-  m_PrefabInternal: {fileID: 844079052}
-  m_Script: {fileID: 11500000, guid: e20b2f286a8d3b84681edc1561c8accc, type: 3}
 --- !u!1 &847956964
 GameObject:
   m_ObjectHideFlags: 0
@@ -9805,6 +9805,24 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 851259923}
+--- !u!1 &854133435 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1772874899599332, guid: 1da69bb2b7efbcc40aa9b75a3612307f,
+    type: 2}
+  m_PrefabInternal: {fileID: 844079052}
+--- !u!114 &854133437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 854133435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20b2f286a8d3b84681edc1561c8accc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueEntry: {fileID: 0}
+  yarnVarRefObj: {fileID: 1350394363}
 --- !u!1 &884931858 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1237684614503070, guid: 127bb5c143c17c5439a2ceb5244172a6,
@@ -13709,7 +13727,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844079054}
+      - m_Target: {fileID: 0}
         m_MethodName: PrintCluesInInventory
         m_Mode: 1
         m_Arguments:

@@ -191,11 +191,13 @@ MonoBehaviour:
   StartedShowingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   DoneDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   TSTSAnchor: {fileID: 0}
   controllerComponents:
     textboxBox: {fileID: 114142189426022744}
@@ -211,7 +213,7 @@ MonoBehaviour:
       font: {fileID: 12800000, guid: 217a7476a7291224da27f7c5c1d3d4b1, type: 3}
       fontSize: 12
       autoFontSize: 1
-  textToDisplay: 45737475616e7320696e7465726975732069726120766568656d656e74692045737475616e7320696e7465726975732069726120766568656d656e746920536f727320696d6d616e697320457420696e616e697320536f727320696d6d616e697320457420696e616e69732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c204e65206d65206d6f7269206661636961732056656e692c2076656e692c2076656e6961732c20476c6f72696f7361204e65206d65206d6f7269206661636961732047656e65726f73612056656e692c2076656e692c2076656e6961732c20476c6f72696f7361204e65206d65206d6f7269206661636961732047656e65726f736120
+  textToDisplay: 
   boxfuls: []
   testing: 0
 --- !u!114 &114142189426022744
@@ -226,16 +228,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -317,16 +316,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e5e4e1c0698181d49a948532f40238f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
@@ -347,16 +343,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color:
-    r: 0
-    g: 0
-    b: 0
-    a: 1
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e55492e4d61736b61626c65477261706869632b43756c6c53746174654368616e6765644576656e742c20556e697479456e67696e652e55492c2056657273696f6e3d312e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a45eebe4a87ed814497cb8de7c9ee2fb, type: 3}
     m_FontSize: 22
@@ -374,11 +367,13 @@ MonoBehaviour:
   StartedDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   DoneDisplayingText:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: 556e697479456e67696e652e4576656e74732e556e6974794576656e742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!222 &222152156299367780
 CanvasRenderer:
   m_ObjectHideFlags: 1

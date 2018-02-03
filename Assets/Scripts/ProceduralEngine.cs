@@ -55,9 +55,14 @@ public class ProceduralEngine : MonoBehaviour {
 		SetInformation ();
 		// This function is just here to make sure that all the variables are being set.
 		LogInfoToConsole ();
-		InitializeVariableStorage ();
+		
 	}
 
+	void Start()
+	{
+		InitializeVariableStorage ();
+	}
+	
 	/****************************
 	 * 	Self Defined Functions	*
 	 * *************************/
@@ -265,7 +270,7 @@ public class ProceduralEngine : MonoBehaviour {
 		PositionClue (tGO);
 
 		// Make the clue a child of the Ship Object
-		tGO.transform.SetParent (GameObject.Find ("Ship").transform);
+		tGO.transform.SetParent (GameObject.Find ("Ship Final").transform);
 
 		// Remove the spawnPoint used from the List of usable spawnPoints
 		spawnPoints.RemoveAt (spawnIndex);
@@ -332,8 +337,8 @@ public class ProceduralEngine : MonoBehaviour {
 		varStorage.SetValue (culprit.variableName, culprit);
 
 		print ("Yarn Culprit Variable Name: " + culprit.variableName);
-		print ("Yarn Culprit Variable Value: " + culprit.stringValue);
-
+		print ("Yarn Culprit Variable Value: " + varStorage.GetValue(culprit.variableName).AsString);
+	
 
 	}
 

@@ -12,6 +12,11 @@ public struct ClueInfo
     public int rating;
     public string clueName;
     public string description;
+    public bool isClue;
+    public bool addedToYarn;
+    //public string associatedCrew1;
+    //public string associatedCrew2;
+    //public string associatedCrew3;
 
     // Constructor that passes a ClueItem object by reference
     public ClueInfo(ref ClueItem item)
@@ -20,7 +25,11 @@ public struct ClueInfo
         clueName = item.ItemName;
         rating = item.Rating;
         description = item.Description;
-
+        if (item.CompareTag("Clue"))
+            isClue = true;
+        else
+            isClue = false;
+        addedToYarn = false;
     }
 
     // Copy Constructor for ClueInfo
@@ -30,6 +39,18 @@ public struct ClueInfo
         rating = clue.rating;
         clueName = clue.clueName;
         description = clue.description;
+        isClue = clue.isClue;
+        addedToYarn = clue.addedToYarn;
+    }
+
+    public ClueInfo(ClueInfo clue, bool b_Yarn)
+    {
+        id = clue.id;
+        rating = clue.rating;
+        clueName = clue.clueName;
+        description = clue.description;
+        isClue = clue.isClue;
+        addedToYarn = b_Yarn;
     }
 }
 
@@ -54,7 +75,7 @@ public class ClueItem : MonoBehaviour {
 	[SerializeField]
 	public bool 						isInspectable = false;
     [SerializeField]
-    public float                        cloneScale = 1.5f;
+    public float                        cloneScale = .75f;
     [SerializeField]
     public Vector3                      cloneRot = new Vector3(0,0,0);
     [SerializeField]

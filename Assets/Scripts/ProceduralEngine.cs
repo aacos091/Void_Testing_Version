@@ -11,7 +11,7 @@ using Yarn.Unity;
 public class ProceduralEngine : MonoBehaviour {
 
 	// TODO Rethink the names of these. Will they be placed inside of a class that holds the data for this playthroughs mystery?
-	private CrewMember 		_culprit;
+	private CrewMember		_culprit; // Change to crewmember type
 	private CrewMember		_victim;
 	private string 			_murderLocation;
 	private string 			_murderMethod;
@@ -57,11 +57,12 @@ public class ProceduralEngine : MonoBehaviour {
 		SetInformation ();
 		// This function is just here to make sure that all the variables are being set.
 		LogInfoToConsole ();
-		
+
 	}
 
 	void Start()
 	{
+		
 		//InitializeVariableStorage ();
 		InitializeYarnVariables();
 	}
@@ -73,12 +74,12 @@ public class ProceduralEngine : MonoBehaviour {
 	void LogInfoToConsole ()
 	{
 		string clues = "";
-		print ("Culprit: " + _culprit.Title);
-		print ("Victim: " + _victim.Title);
-		print ("Murder Location: " + _murderLocation);
-		print ("Murder Method: " + _murderMethod);
-		print ("Truth Teller 1: " + _truthTeller1);
-		print ("Truth Teller 2: " + _truthTeller2);
+		print ("Culprit: " + Culprit);
+		print ("Victim: " + Victim);
+		print ("Murder Location: " + MurderLocation);
+		print ("Murder Method: " + MurderMethod);
+		print ("Truth Teller 1: " + TruthTeller1);
+		print ("Truth Teller 2: " + TruthTeller2);
 
 		for (int i = 0; i < _cluesList.Count; i++)
 		{
@@ -105,7 +106,7 @@ public class ProceduralEngine : MonoBehaviour {
 		ChooseTruthTellers ();
 	}
 
-	// This method is run first in the Procedural Engine initial setup
+	//This method is run first in the Procedural Engine initial setup
 	public CrewMember ChooseCulprit ()
 	{
 		// For the vertical slice of our game there can only be two possible Culprits (First Mate or Pilot). So we limit the choices to those
@@ -186,7 +187,7 @@ public class ProceduralEngine : MonoBehaviour {
 	}
 
 
-	// ChooseMethod chooses the Murder method based on what the location is.
+	//ChooseMethod chooses the Murder method based on what the location is.
 	public string ChooseMethod (string location)
 	{
 		JsonData methodData = JsonMapper.ToObject (methodsFinal.text);
@@ -241,7 +242,12 @@ public class ProceduralEngine : MonoBehaviour {
 			// Add value in randomIndex to indexesChosen to ensure that we do not choose this value again
 			indexesChosen.Add (randomIndex);
 
-			string clueToAdd = clueData ["Clues"] [_murderLocation] [_culprit.Title] [clueValidity] [randomIndex].ToString ();
+			//string clueToAdd = clueData ["Clues"] [_murderLocation] [_culprit.Title] [clueValidity] [randomIndex].ToString ();
+			string clueToAdd = null;
+			if (MurderMethod == "Violence")
+				clueToAdd = clueData ["Clues"] [MurderMethod] [Culprit] [clueValidity] [randomIndex].ToString();
+			else
+				clueToAdd = clueData ["Clues"] [MurderMethod] [MurderLocation] [Culprit] [clueValidity] [randomIndex].ToString();
 
 			// Add clueToAdd to _clueList
 			_cluesList.Add (clueToAdd);

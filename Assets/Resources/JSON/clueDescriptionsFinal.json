@@ -13,6 +13,13 @@
 		"Pill": ["A happy pill that helps us deal with the solitude of floating through space."],
 		"Suspicious Root": ["Mandrake root that just looks suspicious. You can sense its malintentions."],
 		"Half-filled Glass": ["A half-filled glass. Or half-full if you're feeling optimistic."],
-		"Vermin Poison": ["Poison used to kill small vermin. Extremely lethal to humans"]
+		"Vermin Poison": ["Poison used to kill small vermin. Extremely lethal to humans"],
+		"Bullet Casting": ["A Bullet Casting"],
+		"Scissors": ["The dullest scissors ever created."],
+		"Scalpel": ["A state of the art scalpel used by the Medic."],
+		"Mallet": ["Rubber Mallet used by the Engineer."],
+		"Garrote": ["A garrote, used to choke people. Why is this onboard?"],
+		"Squarebar": ["Exactly what the name says. A bar that is square."],
+		"Wrench": ["Adjustable monkey wrench used for all sorts of repairs."]
 	}
 }

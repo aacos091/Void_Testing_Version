@@ -18,6 +18,7 @@ public static class YarnUtils
 	/// <returns></returns>
 	public static string ParseYarnText(VariableStorageBehaviour variableStorage, string text)
 	{
+		Debug.Log("Calling YarnUtils' ParseYarnText!");
 		StringBuilder result = new StringBuilder();
 		string textToParse = string.Copy(text);
 
@@ -32,6 +33,7 @@ public static class YarnUtils
 
 		while (varMarkerIndex > -1)
 		{
+			/*Stuff checking whether or not to ignore a var name. WIP
 			// Check if this marker is supposed to actually mark a var; if it isn't, there will be 
 			// just one forward slash in front of it.
 			bool slashBeforeVar = 	varMarkerIndex > 0 && 
@@ -47,7 +49,8 @@ public static class YarnUtils
 				varMarkerIndex = textToParse.Substring(varMarkerIndex + 2).IndexOf(varMarker);
 				continue;
 			}
-			
+			*/
+
 			// Add all the text before the var marker to the result, trimming it out of the text
 			// to parse
 			temp = textToParse.Substring(0, varMarkerIndex);

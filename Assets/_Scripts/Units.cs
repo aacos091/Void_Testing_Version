@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Units : MonoBehaviour 
 {
+	public Units S; // singleton
+
+	public UnityEvent UnitStartedSpeaking { get; protected set; }
+
 	//Array of waypoints
 	public Transform[] waypoints;
 	public Transform elevatorInsideOne;
@@ -52,9 +57,8 @@ public class Units : MonoBehaviour
 
 	public GameObject chatManager;
 
-	int play;
-
-	public enum States{
+	public enum States
+	{
 		movingToDestination,
 		movingToElevator
 	}
@@ -62,17 +66,18 @@ public class Units : MonoBehaviour
 	[SerializeField]
 	States currentState = States.movingToDestination;
 
+	void Awake()
+	{
+		S = this;
+		UnitStartedSpeaking = new UnityEvent();
+		
+	}
 	void Start () 
 	{
-
-		play = 0;
-
+		
 		isAtElevator = false;
-
 		checkFloor ();
-
 		unitNameText.GetComponent<Text> ().enabled = false;
-
 		agent = GetComponent<NavMeshAgent> ();
 
 	}
@@ -82,35 +87,29 @@ public class Units : MonoBehaviour
 
 		if (dialogue == true) 
 		{
-
-			if (play == 0) PlaySound ();
-
 			talk.SetActive (true);
-
 		}
 		else
 		{
-
 			talk.SetActive (false);
-
-			play = 0;
-
 		}
 
 		checkFloor ();
 
 		//Process object selection
-		if (Input.GetMouseButtonUp (0)) {
+		if (Input.GetMouseButtonUp (0)) 
 			SelectObjectByMousePos ();
-		}
+		
 
-		switch (currentState) {
+		switch (currentState) 
+		{
 		case States.movingToElevator:
 			{
-				if (!isAtElevator) {
+				if (!isAtElevator) 
 					walkToNearestElevator ();
-				}
-				if (isAtElevator) {
+				
+				if (isAtElevator) 
+				{
 					teleportToClosestElevatorToWaypoint ();
 					agent.SetDestination (waypoints [ran].transform.position);
 					currentState = States.movingToDestination;
@@ -120,16 +119,17 @@ public class Units : MonoBehaviour
 
 		case States.movingToDestination:
 			{
-				if(!agent.hasPath && agent.remainingDistance <=0){
+				if(!agent.hasPath && agent.remainingDistance <=0)
 					GotoNextPoint ();
-				}
+				
 			}
 			break;
 		}
 	}
 
 	//This checks the floor that the Unit is on. 
-	public void checkFloor(){
+	public void checkFloor()
+	{
 		if (gameObject.transform.position.y < -5)
 			floor = 1;
 		if (gameObject.transform.position.y > -5 && gameObject.transform.position.y < 10)
@@ -190,7 +190,8 @@ public class Units : MonoBehaviour
 			}
 
 			//Set material to selected object
-			if (mSelectedObject != null) {
+			if (mSelectedObject != null) 
+			{
 
 				dialogue = true;
 
@@ -234,6 +235,14 @@ public class Units : MonoBehaviour
 				//Set text to true
 				unitNameText.GetComponent<Text> ().enabled = true;
 
+				NPC npc = mSelectedObject.GetComponent<NPC>();
+				if (npc != null)
+				{
+					Debug.Log("Clicked on an NPC!");
+					TalkButton.S.dialogueNode = npc.dialogueNode;
+				}
+				
+
 			} else {
 
 				dialogue = false;
@@ -247,6 +256,7 @@ public class Units : MonoBehaviour
 				CameraController.engineer = false;
 
 			}
+
 		}
 	}
 
@@ -396,16 +406,5 @@ public class Units : MonoBehaviour
 
 	}
 
-	void PlaySound()
-	{
-		
-		AudioSource selected = GameObject.Find ("Select").GetComponent<AudioSource> ();
-
-
-		selected.Play ();
-
-		play++;
-
-	}
 
 }

@@ -51,7 +51,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     }
 
     /// Our list of default variables, for debugging.
-    public DefaultVariable[] defaultVariables;
+    public List<DefaultVariable> defaultVariables;
 
     [Header("Optional debugging tools")]
     /// A UI.Text that can show the current list of all variables. Optional.
@@ -67,7 +67,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     /// Erase all variables and reset to default values
     public override void ResetToDefaults ()
     {
-        Clear ();
+        //Clear ();
 
         // For each default variable that's been defined, parse the string
         // that the user typed in in Unity and store the variable

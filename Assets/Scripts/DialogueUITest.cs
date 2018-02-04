@@ -135,7 +135,7 @@ public class DialogueUITest : DialogueUIBehaviour {
         bool someUnaccountedCommand = !textboxCommand && !nameCommand && !portraitCommand;
 
         if (someUnaccountedCommand)
-            Debug.Log("Unaccounted command: " + command.text);
+            Debug.LogWarning("Unaccounted command: " + command.text);
 			
 		yield return null;
 	}
@@ -188,7 +188,10 @@ public class DialogueUITest : DialogueUIBehaviour {
 		if (textboxController.portrait != null)
 			textboxController.portraitSprite = portrait;
 		
-		textboxController.DisplayText (textToShow.ToString());
+		print("Right before displaying text, culprit is: " + dialogueRunner.variableStorage.GetValue("$Culprit").AsString);
+		string varParsedText = YarnUtils.ParseYarnText(dialogueRunner.variableStorage, textToShow.ToString());
+		textboxController.DisplayText ( varParsedText);
+		
 	}
 
 	void ResumeDialogueRunning()

@@ -244,8 +244,9 @@ public class AccusationManager : MonoBehaviour {
         EndScreen();
     }
 
-    public void EndScreen() {
-		//Checks votes to see if player wins, voting maximum is 3
+    public void EndScreen() 
+	{
+		
 		if (juryVote >= 1) 
 		{
 
@@ -268,8 +269,7 @@ public class AccusationManager : MonoBehaviour {
 			endText.gameObject.SetActive (true);
 
 		}
-		//Replay button still in progress
-		//replay.gameObject.SetActive (true);
+
 	}
 
 	void RaycastForCrew() {

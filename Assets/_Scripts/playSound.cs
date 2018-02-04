@@ -13,6 +13,12 @@ public class playSound : MonoBehaviour
 
 	public AudioSource click2;
 
+	public AudioSource inspect;
+
+	public AudioSource clue;
+
+	public AudioSource select;
+
 	public void Open()
 	{
 
@@ -38,6 +44,28 @@ public class playSound : MonoBehaviour
 	{
 
 		click2.Play ();
+
+	}
+
+	public void Inspect()
+	{
+
+
+		inspect.Play ();
+
+	}
+
+	public void Clue()
+	{
+
+		clue.Play ();
+
+	}
+
+	public void Select()
+	{
+
+		select.Play ();
 
 	}
 

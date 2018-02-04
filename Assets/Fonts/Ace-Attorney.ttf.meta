@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 39e21e91fa0a68243b3768767c30abd9
+timeCreated: 1510331503
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ace Attorney
+  fontNames:
+  - Ace Attorney
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136122869656533208}
   - component: {fileID: 23197649583580556}
   m_Layer: 8
-  m_Name: Bullet Casing
+  m_Name: Bullet Casting
   m_TagString: Clue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

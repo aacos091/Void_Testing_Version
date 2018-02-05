@@ -86,7 +86,7 @@ public class ClueItem : MonoBehaviour {
 	[SerializeField]
 	public bool 						isInspectable = false;
     [SerializeField]
-    public float                        cloneScale = .75f;
+    public float                        cloneScale = .075f;
     [SerializeField]
     public Vector3                      cloneRot = new Vector3(0,0,0);
     [SerializeField]

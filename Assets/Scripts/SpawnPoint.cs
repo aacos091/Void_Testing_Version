@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour {
 
+	[SerializeField]
+	private string			_location;
+
 	// Use this for initialization
 	void Awake () {
 		// Disable MeshRenderer
@@ -14,5 +17,11 @@ public class SpawnPoint : MonoBehaviour {
 	void Start () {
 		// Destroy this object
 		DestroyImmediate (gameObject);
+	}
+
+	/* Properties */
+	public string Location
+	{
+		get { return _location;}
 	}
 }

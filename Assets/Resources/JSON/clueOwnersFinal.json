@@ -1,31 +1,18 @@
 {
+// IDK
+
     "Clues":
     {
-        // First Locate based on Murder Location
+        // First array will hold locations
         "Engine Room":
         {
+            // Second Array will hold Methods
             "Environmental Hazard":
             {
+                // Third array will hold the Clues and their related Members
                 "Radiation Suit": ["First Mate", "Engineer"],
-                "EVA Suit": ["Pilot", "Engineer", "Medic"],
-                "Degausser": ["First Mate", "Captain", "Pilot"],
-                "Engine Piece": ["Pilot", "Engineer", "Medic"],
-                "Thruster Calibrator": ["Pilot", "First Mate", "Captain"],
-                "Diagnostics Tool": ["Medic", "Engineer", "Captain"],
-                "Polarizer": ["First Mate", "Medic", "Captain"],
-                "Tampered Alarm": ["First Mate", "Pilot", "Engineer"],
-                "Plasma Cutter": ["Medic", "Culprit"]
-            },
-
-            "Violence"
-            {
-                "Squarebar": ["Pilot", "Engineer", "Captain"],
-                "Garrote": ["Medic", "Captain", "Pilot"],
-                "Bullet Casing": ["Pilot", "First Mate", "Captain"],
-                "Wrench": ["Engineer", "Pilot"],
-                "Scalpel": ["Medic", "First Mate", "Engineer"],
-                "Scissors": []
+                "EVA Suit": []
             }
-        }
+        }    
     }
 }

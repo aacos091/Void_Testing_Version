@@ -278,6 +278,7 @@ public class ProceduralEngine : MonoBehaviour {
 		tGO.GetComponent<ClueItem> ().Description = descriptionData ["Clues"] [cName] [0].ToString ();
 		tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData ["Clues"] [MurderLocation] [MurderMethod] [cName] [0].ToString();
 		tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData ["Clues"] [MurderLocation] [MurderMethod] [cName] [1].ToString();
+		tGO.GetComponent<ClueItem>().Location = spawnPoints[spawnIndex].GetComponent<SpawnPoint>().Location;
 		// Position this clue to it's correct Position
 		PositionClue (tGO);
 
@@ -337,23 +338,23 @@ public class ProceduralEngine : MonoBehaviour {
 	}
 
 
-	void InitializeVariableStorage ()
-	{
-		VariableStorageBehaviour varStorage = DialogueRunner.S.variableStorage;
+	// void InitializeVariableStorage ()
+	// {
+	// 	VariableStorageBehaviour varStorage = DialogueRunner.S.variableStorage;
 
-		Yarn.Value culprit = new Yarn.Value (Culprit);
-		culprit.variableName = "$Culprit";
+	// 	Yarn.Value culprit = new Yarn.Value (Culprit);
+	// 	culprit.variableName = "$Culprit";
 
-		// Add the vars to the var storage using SetValue, passing the variable name and whatever kind of value
-		// the var is supposed to point to. If the var is a string, pass varName.Yarn Value variable name as the second arg. 
+	// 	// Add the vars to the var storage using SetValue, passing the variable name and whatever kind of value
+	// 	// the var is supposed to point to. If the var is a string, pass varName.Yarn Value variable name as the second arg. 
 
-		varStorage.SetValue (culprit.variableName, culprit);
+	// 	varStorage.SetValue (culprit.variableName, culprit);
 
-		print ("Yarn Culprit Variable Name: " + culprit.variableName);
-		print ("Yarn Culprit Variable Value: " + varStorage.GetValue(culprit.variableName).AsString);
+	// 	print ("Yarn Culprit Variable Name: " + culprit.variableName);
+	// 	print ("Yarn Culprit Variable Value: " + varStorage.GetValue(culprit.variableName).AsString);
 	
 
-	}
+	// }
 
 	void InitializeYarnVariables ()
     {
@@ -375,30 +376,35 @@ public class ProceduralEngine : MonoBehaviour {
 			ExampleVariableStorage.DefaultVariable clueRelatedCrew1TDV = new ExampleVariableStorage.DefaultVariable();
 			ExampleVariableStorage.DefaultVariable clueRelatedCrew2TDV = new ExampleVariableStorage.DefaultVariable();
 			ExampleVariableStorage.DefaultVariable clueFoundTDV = new ExampleVariableStorage.DefaultVariable();
+			ExampleVariableStorage.DefaultVariable clueLocationTDV = new ExampleVariableStorage.DefaultVariable();
 
 			// Assign the type of values that will be stored in each DefaultVariable type
 			clueNameTDV.type = stringType;
 			clueRelatedCrew1TDV.type = stringType;
 			clueRelatedCrew2TDV.type = stringType;
 			clueFoundTDV.type = boolType;
+			clueLocationTDV.type = stringType;
 
             //Assign the name for all of the created temporary variables, this is the name that will pop up in Yarn
             clueNameTDV.name = "Clue" + index.ToString();    // Clue1, Clue2 etc the number changes based on the value of i in the for loop
             clueRelatedCrew1TDV.name = "Clue" + index.ToString() + "RelatedCrew1";
             clueRelatedCrew2TDV.name = "Clue" + index.ToString() + "RelatedCrew2";
             clueFoundTDV.name = "Clue" + index.ToString() + "Found";
+			clueLocationTDV.name = "Clue" + index.ToString() + "Location";
 
             // Assign the default values for each variable. This will be changed in ClueManager once each clue is found
             clueNameTDV.value = " ";
             clueRelatedCrew1TDV.value = " ";
             clueRelatedCrew2TDV.value = " ";
             clueFoundTDV.value = "false";
+			clueLocationTDV.value = " ";
 
             // Add each of these created Yarn Variables to our List that will hold them all
            	varStorage.defaultVariables.Add (clueNameTDV);
             varStorage.defaultVariables.Add (clueRelatedCrew1TDV);
             varStorage.defaultVariables.Add (clueRelatedCrew2TDV);
             varStorage.defaultVariables.Add (clueFoundTDV);
+			varStorage.defaultVariables.Add (clueLocationTDV);
         }
     }
 

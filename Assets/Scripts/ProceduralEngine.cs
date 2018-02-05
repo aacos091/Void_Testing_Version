@@ -44,6 +44,7 @@ public class ProceduralEngine : MonoBehaviour {
 	public TextAsset		methodsFinal;
 	public TextAsset		cluesFinal;
 	public TextAsset 		clueDescriptionsFinal;
+	public TextAsset		cluePossibleOwnersFinal;
 
 	[Header("Drop all the SpawnPoints in here")]
 	public List<Transform>		spawnPoints;
@@ -266,6 +267,7 @@ public class ProceduralEngine : MonoBehaviour {
 	{
 		// Create the JSON object to hold the clues Descriptions
 		JsonData descriptionData = JsonMapper.ToObject (clueDescriptionsFinal.text);
+		JsonData clueOwnerData = JsonMapper.ToObject (cluePossibleOwnersFinal.text);
 
 		int spawnIndex = Random.Range (0, spawnPoints.Count);
 		GameObject tGO = Instantiate (Resources.Load (cName, typeof(GameObject)) as GameObject, spawnPoints[spawnIndex].position, Quaternion.identity);
@@ -274,7 +276,8 @@ public class ProceduralEngine : MonoBehaviour {
 		tGO.GetComponent<ClueItem> ().Rating = rating;
 		tGO.GetComponent<ClueItem> ().ItemName = cName;
 		tGO.GetComponent<ClueItem> ().Description = descriptionData ["Clues"] [cName] [0].ToString ();
-
+		tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData ["Clues"] [MurderLocation] [MurderMethod] [cName] [0].ToString();
+		tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData ["Clues"] [MurderLocation] [MurderMethod] [cName] [1].ToString();
 		// Position this clue to it's correct Position
 		PositionClue (tGO);
 
@@ -286,6 +289,7 @@ public class ProceduralEngine : MonoBehaviour {
 
 		// Clear the JSONData Object
 		descriptionData.Clear();
+		clueOwnerData.Clear();
 
 	}
 

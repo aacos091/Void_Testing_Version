@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136000250575510776}
   - component: {fileID: 23933993452602008}
   m_Layer: 8
-  m_Name: Thruster Calibrator
+  m_Name: Wrench
   m_TagString: Clue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

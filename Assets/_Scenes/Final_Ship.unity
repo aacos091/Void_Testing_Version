@@ -3050,6 +3050,11 @@ Prefab:
       propertyPath: shipTransform
       value: 
       objectReference: {fileID: 554726330}
+    - target: {fileID: 114640438012054602, guid: e0ef99392cbb34746bd8bb2e91fc082b,
+        type: 2}
+      propertyPath: cluePossibleOwnersFinal
+      value: 
+      objectReference: {fileID: 4900000, guid: b60876514270c874fae24b2db6e5fd7e, type: 3}
     m_RemovedComponents:
     - {fileID: 114312041156550416, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e0ef99392cbb34746bd8bb2e91fc082b, type: 2}

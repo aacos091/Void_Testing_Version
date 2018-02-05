@@ -12,6 +12,8 @@ public struct ClueInfo
     public int rating;
     public string clueName;
     public string description;
+    public string clueOwner1;
+    public string clueOwner2;
     public bool isClue;
     public bool addedToYarn;
     //public string associatedCrew1;
@@ -25,11 +27,15 @@ public struct ClueInfo
         clueName = item.ItemName;
         rating = item.Rating;
         description = item.Description;
+        clueOwner1 = item.ClueOwner1;
+        clueOwner2 = item.ClueOwner2;
+        addedToYarn = false;
+        // Set if the Item is considered a clue if the ClueItem GameObject is tagged as "Clue" in Unity
         if (item.CompareTag("Clue"))
             isClue = true;
         else
             isClue = false;
-        addedToYarn = false;
+        
     }
 
     // Copy Constructor for ClueInfo
@@ -39,6 +45,8 @@ public struct ClueInfo
         rating = clue.rating;
         clueName = clue.clueName;
         description = clue.description;
+        clueOwner1 = clue.clueOwner1;
+        clueOwner2 = clue.clueOwner2;
         isClue = clue.isClue;
         addedToYarn = clue.addedToYarn;
     }
@@ -49,6 +57,8 @@ public struct ClueInfo
         rating = clue.rating;
         clueName = clue.clueName;
         description = clue.description;
+        clueOwner1 = clue.clueOwner1;
+        clueOwner2 = clue.clueOwner2;
         isClue = clue.isClue;
         addedToYarn = b_Yarn;
     }
@@ -82,6 +92,10 @@ public class ClueItem : MonoBehaviour {
 	public float 						rotateSpeed = 25f;
     [SerializeField]
     public bool                         isCollected;
+    [SerializeField]
+    private string                      clueOwner1;
+    [SerializeField]
+    private string                      clueOwner2;
 
 
     /*
@@ -138,6 +152,18 @@ public class ClueItem : MonoBehaviour {
 		get { return rotateSpeed; }
 		set { rotateSpeed = value; }
 	}
+
+    public string ClueOwner1
+    {
+        get { return clueOwner1; }
+        set { clueOwner1 = value; }
+    }
+
+    public string ClueOwner2
+    {
+        get { return clueOwner2; }
+        set { clueOwner2 = value; }
+    }
 
   
 	public override string ToString ()

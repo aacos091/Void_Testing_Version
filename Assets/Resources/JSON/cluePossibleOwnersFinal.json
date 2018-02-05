@@ -52,7 +52,7 @@
             "Poison/Venom":
             {
                 "Pill Bottle": ["First Mate", "Engineer", "Captain"],
-                "Pills": ["First Mate", "Engineer", "Captain"],
+                "Pill": ["First Mate", "Engineer", "Captain"],
                 "Syringe": ["Medic", "Pilot"],
                 "Suspicious Root": ["First Mate", "Medic", "Engineer"],
                 "Vermin Poison": ["Captain", "Pilot", "First Mate"],

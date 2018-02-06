@@ -12511,10 +12511,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1188449595}
-        m_MethodName: disableCanvas
+        m_MethodName: loadCanvas
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 705037505}
+          m_ObjectArgument: {fileID: 1367990729}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14925,7 +14925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1270843245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15746,7 +15746,7 @@ MonoBehaviour:
     type: 2}
   optionWindowPrefab: {fileID: 1152107703595920, guid: 446b0eb05ea752b46ab82e6cee5bb9a2,
     type: 2}
-  dialogueCanvas: {fileID: 0}
+  dialogueCanvas: {fileID: 1367990733}
   textSettings:
     audioSample: {fileID: 0}
     textSpeed: 62
@@ -16172,10 +16172,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 800}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -20773,7 +20773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1715113606
 RectTransform:
   m_ObjectHideFlags: 0

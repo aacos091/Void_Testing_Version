@@ -2,9 +2,9 @@
 	{
 		"title": "Cook",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_happy>>\nHow's it goin'?\n<</Textbox>>\n\n\n    <<if $Clue1Found is true and ($Clue1RelatedCrew1 is \"Cook\" or $Clue1RelatedCrew2 is \"Cook\")>>\n        [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2RelatedCrew is \"Cook\" or $Clue2RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3RelatedCrew1 is \"Cook\" or $Clue3RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4RelatedCrew1 is \"Cook\" or $Clue4RelatedCrew is \"Cook\")>>\n    [[What do you know about this clue?|Cook.Question4]]\n<<endif>>\n\n\n",
+		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_happy>>\nHow's it goin'?\n<</Textbox>>\n\n\n    <<if $Clue1Found is true and ($Clue1RelatedCrew1 is \"Cook\" or $Clue1RelatedCrew2 is \"Cook\")>>\n        [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2RelatedCrew is \"Cook\" or $Clue2RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3RelatedCrew1 is \"Cook\" or $Clue3RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4RelatedCrew1 is \"Cook\" or $Clue4RelatedCrew is \"Cook\")>>\n    [[What do you know about this clue?|Cook.Question4]]\n<<endif>>\n\n   \n    [[You murdered $VICTIM.|VictimNode]]\n    [[You killed $VICTIM by $MURDERMETHOD in the $CRIMESCENE.|AllNode]]\n\n\n",
 		"position": {
-			"x": 912,
+			"x": 906,
 			"y": -401
 		},
 		"colorID": 0
@@ -126,6 +126,26 @@
 		"position": {
 			"x": 1429,
 			"y": 1296
+		},
+		"colorID": 0
+	},
+	{
+		"title": "AllNode",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Cook>>\nFUck off\n<</Textbox>>",
+		"position": {
+			"x": 1321,
+			"y": -663
+		},
+		"colorID": 0
+	},
+	{
+		"title": "VictimNode",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Cook>>\nProve it!!\n<</Textbox>>\n",
+		"position": {
+			"x": 1275,
+			"y": -392
 		},
 		"colorID": 0
 	}

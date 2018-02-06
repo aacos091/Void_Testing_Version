@@ -22,6 +22,8 @@ public class ProceduralEngine : MonoBehaviour {
 	private List<string>	_crewMembers = new List<string>() {"Cook", "Engineer", "First Mate", "Medic", "Pilot"};		// This List holds the titles of all of the crewmembers. Will be used to determine TruthTeller1 and TruthTeller 2
 	private string			_truthTeller1;
 	private string			_truthTeller2;
+    [SerializeField]
+    private GameObject      _dialogueSystem;
 
 	// TODO These values will change depending on the amount of clues each Culprit can have depending on the Murder location
 	// TODO Change AMOUNT_OF_CLUES to represent Strong(1) and Weak(4
@@ -361,8 +363,45 @@ public class ProceduralEngine : MonoBehaviour {
         Yarn.Value.Type boolType = Yarn.Value.Type.Bool;
         Yarn.Value.Type stringType = Yarn.Value.Type.String;
 
-		ExampleVariableStorage varStorage = GameObject.Find ("DialogueSystem").GetComponent<ExampleVariableStorage>();
-        
+        ExampleVariableStorage varStorage = _dialogueSystem.GetComponent<ExampleVariableStorage>(); //GameObject.Find ("DialogueSystem").GetComponent<ExampleVariableStorage>();
+
+        // Create the base Yarn variables such as $CRIMESCENE, $VICTIM, $SUSPECT, $METHOD, $CRIMELOCATION
+        ExampleVariableStorage.DefaultVariable crimeSceneTDV = new ExampleVariableStorage.DefaultVariable();
+        ExampleVariableStorage.DefaultVariable victimTDV = new ExampleVariableStorage.DefaultVariable();
+        ExampleVariableStorage.DefaultVariable suspectTDV = new ExampleVariableStorage.DefaultVariable();
+        ExampleVariableStorage.DefaultVariable murderMethodTDV = new ExampleVariableStorage.DefaultVariable();
+        ExampleVariableStorage.DefaultVariable crimeLocationTDV = new ExampleVariableStorage.DefaultVariable();
+
+        // Assign the types for the variables
+        crimeSceneTDV.type = stringType;
+        victimTDV.type = stringType;
+        suspectTDV.type = stringType;
+        murderMethodTDV.type = stringType;
+
+        // Assign the names for these variables, this is the names that will be used to access them in Yarn
+        crimeSceneTDV.name = "$CRIMESCENE";
+        victimTDV.name = "$VICTIM";
+        suspectTDV.name = "$SUSPECT";
+        murderMethodTDV.name = "$MURDERMETHOD";
+
+        // Assign the values that will be held in these yarn Variables
+        crimeSceneTDV.value = MurderLocation;
+        victimTDV.value = Victim;
+        suspectTDV.value = Culprit;
+        murderMethodTDV.value = MurderMethod;
+
+        // Add each of these created Yarn Variables to our List that will hold them all
+        varStorage.defaultVariables.Add(crimeSceneTDV);
+        varStorage.defaultVariables.Add(victimTDV);
+        varStorage.defaultVariables.Add(suspectTDV);
+        varStorage.defaultVariables.Add(murderMethodTDV);
+
+        // Now Actually Set the values
+        varStorage.SetValue (crimeSceneTDV.name, new Yarn.Value(MurderLocation));
+        varStorage.SetValue (victimTDV.name, new Yarn.Value(Victim));
+        varStorage.SetValue(suspectTDV.name, new Yarn.Value(Culprit));
+        varStorage.SetValue(murderMethodTDV.name, new Yarn.Value(MurderMethod));
+
         // Go through as many cycles as we need to, in order to ensure that we create the proper yarn variables for each clue in the playthrough ("amountOfVoidClues")
         for (int i = 0; i < AMOUNT_OF_CLUES_PER_PLAYTHROUGH; i++)
         {
@@ -387,10 +426,11 @@ public class ProceduralEngine : MonoBehaviour {
 
             //Assign the name for all of the created temporary variables, this is the name that will pop up in Yarn
             clueNameTDV.name = "$Clue" + index.ToString();    // Clue1, Clue2 etc the number changes based on the value of i in the for loop
-            clueRelatedCrew1TDV.name = "$Clue" + index.ToString() + "RelatedCrew1";
-            clueRelatedCrew2TDV.name = "$Clue" + index.ToString() + "RelatedCrew2";
+            clueRelatedCrew1TDV.name = "$Clue" + index.ToString() + "Owner1";
+            clueRelatedCrew2TDV.name = "$Clue" + index.ToString() + "Owner2";
             clueFoundTDV.name = "$Clue" + index.ToString() + "Found";
 			clueLocationTDV.name = "$Clue" + index.ToString() + "Location";
+
 
             // Assign the default values for each variable. This will be changed in ClueManager once each clue is found
             clueNameTDV.value = " ";
@@ -400,14 +440,6 @@ public class ProceduralEngine : MonoBehaviour {
 			clueLocationTDV.value = " ";
 
             // Add each of these created Yarn Variables to our List that will hold them all
-			/*
-			foreach (ExampleVariableStorage.DefaultVariable var in varStorage.defaultVariables)
-			{
-				Yarn.Value val = new Yarn.Value(var.value);
-				val.variableName = "$" + var.name;
-			}
-			*/
-
            	varStorage.defaultVariables.Add (clueNameTDV);
             varStorage.defaultVariables.Add (clueRelatedCrew1TDV);
             varStorage.defaultVariables.Add (clueRelatedCrew2TDV);

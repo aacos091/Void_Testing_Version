@@ -76,8 +76,8 @@ public class ClueManager : MonoBehaviour
                 string yarnClueVariableName = "$Clue" + yarnIndex.ToString();
                 string yarnClueFoundVariableName = yarnClueVariableName + "Found";
                 // Add the Clue#Owner1 and Clue#Owner2 variables
-                string yarnClueOwner1VariableName = yarnClueVariableName + "RelatedCrew1";
-                string yarnClueOwner2VariableName = yarnClueVariableName + "RelatedCrew2";
+                string yarnClueOwner1VariableName = yarnClueVariableName + "Owner1";
+                string yarnClueOwner2VariableName = yarnClueVariableName + "Owner2";
                 string yarnClueLocationVariableName = yarnClueVariableName + "Location";
                 foreach (ExampleVariableStorage.DefaultVariable c in yarnVarRef.defaultVariables)
                 {

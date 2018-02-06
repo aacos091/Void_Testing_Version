@@ -96,10 +96,12 @@ public class Units : MonoBehaviour
 
 		checkFloor ();
 
-		//Process object selection
-		if (Input.GetMouseButtonUp (0)) 
-			SelectObjectByMousePos ();
-		
+        if (!GameController.S.gamePaused)
+        {
+            //Process object selection
+            if (Input.GetMouseButtonUp(0))
+                SelectObjectByMousePos();
+        }
 
 		switch (currentState) 
 		{

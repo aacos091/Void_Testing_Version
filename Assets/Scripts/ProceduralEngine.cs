@@ -386,11 +386,11 @@ public class ProceduralEngine : MonoBehaviour {
 			clueLocationTDV.type = stringType;
 
             //Assign the name for all of the created temporary variables, this is the name that will pop up in Yarn
-            clueNameTDV.name = "Clue" + index.ToString();    // Clue1, Clue2 etc the number changes based on the value of i in the for loop
-            clueRelatedCrew1TDV.name = "Clue" + index.ToString() + "RelatedCrew1";
-            clueRelatedCrew2TDV.name = "Clue" + index.ToString() + "RelatedCrew2";
-            clueFoundTDV.name = "Clue" + index.ToString() + "Found";
-			clueLocationTDV.name = "Clue" + index.ToString() + "Location";
+            clueNameTDV.name = "$Clue" + index.ToString();    // Clue1, Clue2 etc the number changes based on the value of i in the for loop
+            clueRelatedCrew1TDV.name = "$Clue" + index.ToString() + "RelatedCrew1";
+            clueRelatedCrew2TDV.name = "$Clue" + index.ToString() + "RelatedCrew2";
+            clueFoundTDV.name = "$Clue" + index.ToString() + "Found";
+			clueLocationTDV.name = "$Clue" + index.ToString() + "Location";
 
             // Assign the default values for each variable. This will be changed in ClueManager once each clue is found
             clueNameTDV.value = " ";
@@ -400,6 +400,14 @@ public class ProceduralEngine : MonoBehaviour {
 			clueLocationTDV.value = " ";
 
             // Add each of these created Yarn Variables to our List that will hold them all
+			/*
+			foreach (ExampleVariableStorage.DefaultVariable var in varStorage.defaultVariables)
+			{
+				Yarn.Value val = new Yarn.Value(var.value);
+				val.variableName = "$" + var.name;
+			}
+			*/
+
            	varStorage.defaultVariables.Add (clueNameTDV);
             varStorage.defaultVariables.Add (clueRelatedCrew1TDV);
             varStorage.defaultVariables.Add (clueRelatedCrew2TDV);

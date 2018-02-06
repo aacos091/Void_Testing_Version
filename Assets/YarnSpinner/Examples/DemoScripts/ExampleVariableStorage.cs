@@ -133,6 +133,7 @@ public class ExampleVariableStorage : VariableStorageBehaviour
     {
         // Copy this value into our list
         variables[variableName] = new Yarn.Value(value);
+        variables[variableName].variableName = variableName;
     }
 
     /// Get a variable's value

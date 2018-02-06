@@ -2,7 +2,7 @@
 	{
 		"title": "Engineer",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_happy>>\nWhat's up?\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n[[Do you know anything about $CLUE?|Engineer.Question]]\n\n",
+		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_happy>>\nWhat's up?\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n[[Do you know anything about $CLUE?|Engineer.Question]]\n\n",
 		"position": {
 			"x": 289,
 			"y": -239

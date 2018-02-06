@@ -9,10 +9,10 @@ using Yarn.Unity;
 public enum CaptainsLogMenus
 {
     all,
-    main, 
+    main,
     clueView,
-    clueLog, 
-    news, 
+    clueLog,
+    news,
     crew
 }
 
@@ -50,7 +50,7 @@ public class UIController
         S = this;
         clueLog = new List<ClueInfo>();
         loggedCluePrefabs = new List<GameObject>();
-        
+
     }
     public void Initialize(GameController controller)
     {
@@ -66,9 +66,9 @@ public class UIController
     void SetupCaptainsLog()
     {
         captainsLogCanvases = new Dictionary<CaptainsLogMenus, GameObject>();
-        captainsLogCanvases[CaptainsLogMenus.clueLog]  = clueLogCanvas;
+        captainsLogCanvases[CaptainsLogMenus.clueLog] = clueLogCanvas;
         captainsLogCanvases[CaptainsLogMenus.clueView] = clueViewCanvas;
-        
+
         Debug.Log("Set up the captain's log!");
     }
 
@@ -105,71 +105,76 @@ public class UIController
 
         Debug.Log("Added new clue to log! Clue name: " + clueName);
     }
-	
+
 
 }
 
-public class GameController : MonoBehaviour 
+public class GameController : MonoBehaviour
 {
-	public static GameController S; // singleton
+    public static GameController S; // singleton
 
     //[SerializeField]
     //UIController uiController;
 
-	DialogueRunner dialogueRunner;
+    DialogueRunner dialogueRunner;
 
-	//List<DrawerController> drawers = new List<DrawerController>();
+    //List<DrawerController> drawers = new List<DrawerController>();
 
-	public bool gamePaused { get; private set; }
-	public float timeScale = 1f;
+    public bool gamePaused { get; private set; }
+    public float timeScale = 1f;
 
-	void Awake()
-	{
-		S = this;
-		gamePaused = false;
+    void Awake()
+    {
+        S = this;
+        gamePaused = false;
         //uiController = new UIController();
         //uiController.Initialize(this);
-	}
+    }
 
-	// Use this for initialization
-	void Start () 
-	{
-		dialogueRunner = DialogueRunner.S;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
+    // Use this for initialization
+    void Start()
+    {
+        dialogueRunner = DialogueRunner.S;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //HandleControls();
-	}
+    }
 
-	void SetupDrawers()
-	{
-		/*
+    void SetupDrawers()
+    {
+        /*
 		 * Make it so when a drawer is opened, a textbox shows up describing what
 		 * is inside the drawer before closing the drawer and allowing further 
 		 * action from the player.
 		 */
 
-	}
+    }
 
-	public bool RequestGamePause()
-	{
-		gamePaused = true;
-		return gamePaused;
-	}
+    public bool RequestGamePause()
+    {
+        gamePaused = true;
+        //Pauses based on timescale should pause all NPC movement without touching their scripts, ut it also breaks dialogue...
+        //Time.timeScale = 0;
+        //Time.fixedDeltaTime = 0;
+        return gamePaused;
+    }
 
-	public bool RequestGameResume()
-	{
-		gamePaused = false;
-		return !gamePaused;
-	}
+    public bool RequestGameResume()
+    {
+        gamePaused = false;
+        //Time.timeScale = 1;
+        //Time.fixedDeltaTime = 1;
+        return !gamePaused;
+    }
 
     /// <summary>
     /// Hides the part of the captain's log passed.
     /// </summary>
     /// <param name="menusToHide"></param>
-	/* 
+    /* 
     public void HideCaptainsLog(CaptainsLogMenus menusToHide = CaptainsLogMenus.all)
     {
         uiController.HideCaptainsLog(menusToHide);
@@ -180,14 +185,14 @@ public class GameController : MonoBehaviour
     /// Shows the part of the captain's log passed.
     /// </summary>
     /// <param name="menusToShow"></param>
-	/*
+    /*
     public void ShowCaptainsLog(CaptainsLogMenus menusToShow = CaptainsLogMenus.all)
     {
         uiController.ShowCaptainsLog(menusToShow);
     }
 	*/
 
-	/*
+    /*
     void HandleControls()
     {
         // open the captain's log
@@ -196,5 +201,5 @@ public class GameController : MonoBehaviour
         
     }
     */
-  
+
 }

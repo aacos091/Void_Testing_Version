@@ -5,17 +5,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
-public class CanvasManager : MonoBehaviour {
+public class CanvasManager : MonoBehaviour
+{
 
     public static CanvasManager S;
     //Object that contains UI Canvases
     public GameObject uiParent;
 
-	public GameObject captainsLogCanvas;
-	public GameObject HUDCanvas;
+    public GameObject captainsLogCanvas;
+    public GameObject HUDCanvas;
     public GameObject dialogueCanvas;
+    public GameObject juryDialogueCanvas;
     //TODO: TEMP until real dialogue system is finished/integrated
-    public GameObject dialogueTextBox;
+    public GameObject juryDialogueTextBox;
     public GameObject[] crewSprites;
 
     public GameObject[] gatherCrewButtons;
@@ -27,17 +29,17 @@ public class CanvasManager : MonoBehaviour {
 
     //public GameObject targetCanvas;
     //public GameObject currentCanvas;
-	private bool activated;
+    private bool activated;
 
-	//Need to access camera, disable its controls, and move it away from the game when UI is active
+    //Need to access camera, disable its controls, and move it away from the game when UI is active
 
-	private GameObject mainCam;
-	private CameraController camController;
+    private GameObject mainCam;
+    private CameraController camController;
 
-	//To position camera away from the scene when inspecting clues
-	public Vector3 lastCamPos;
-	public Vector3 camUIPos = new Vector3(0, 25, -25);
-	public bool camSetAtUIPos = false;
+    //To position camera away from the scene when inspecting clues
+    public Vector3 lastCamPos;
+    public Vector3 camUIPos = new Vector3(0, 25, -25);
+    public bool camSetAtUIPos = false;
 
     void Awake()
     {
@@ -45,10 +47,10 @@ public class CanvasManager : MonoBehaviour {
         if (uiParent == null)
             uiParent = gameObject;
 
-		camController = CameraController.S;
+        camController = CameraController.S;
 
-		//TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
-		//accusationCanvases = new List<GameObject>();
+        //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
+        //accusationCanvases = new List<GameObject>();
         //Make sure that the GameObject the UI is attached to is not deleted on load
         DontDestroyOnLoad(uiParent);
     }
@@ -57,84 +59,94 @@ public class CanvasManager : MonoBehaviour {
     // the canvas is currently active in the scene and sets it to false
     // if the canvas is currently inactive
     public void disableCanvas(GameObject currentCanvas)
-	{
+    {
         /*
 		activated = currentCanvas.activeInHierarchy;
 		currentCanvas.SetActive(!activated);
         */
 
-		currentCanvas.SetActive (false);
+        currentCanvas.SetActive(false);
 
     }
-	public void disableCanvas()
-	{
-		uiParent.SetActive (false);
+    public void disableCanvas()
+    {
+        uiParent.SetActive(false);
 
-	}
+    }
 
     // This function does the same as the above function but is supposed to activate the
     // target canvas They are named differently so that setting up games UI is easier.
     public void loadCanvas(GameObject targetCanvas)
-	{
-		//First, cancels out of any zoom coroutine
-		if (camController == null)
-			camController = CameraController.S;
-		if (camController.currentCoroutine != null)
-			StopCoroutine (camController.currentCoroutine);
+    {
+        //First, cancels out of any zoom coroutine
+        if (camController == null)
+            camController = CameraController.S;
+        if (camController.currentCoroutine != null)
+            StopCoroutine(camController.currentCoroutine);
 
-		if (targetCanvas == HUDCanvas)
-		{
-			//Alex Code
-			Camera.main.GetComponent<CameraController>().enabled = true;
-			Camera.main.GetComponent<Controls_Mobile>().enabled = true;
-			Camera.main.GetComponent<Controls_PC>().enabled = true;
-			MoveCamBack ();
-		}
-		else
-		{
-			Camera.main.GetComponent<CameraController>().enabled = false;
-			Camera.main.GetComponent<Controls_Mobile>().enabled = false;
-			Camera.main.GetComponent<Controls_PC>().enabled = false;
-			MoveCamAway ();
-		}
+        //Return to normal game view
+        if (targetCanvas == HUDCanvas)
+        {
+            if (GameController.S.gamePaused)
+                GameController.S.RequestGameResume();
+            //Alex Code
+            Camera.main.GetComponent<CameraController>().enabled = true;
+            Camera.main.GetComponent<Controls_Mobile>().enabled = true;
+            Camera.main.GetComponent<Controls_PC>().enabled = true;
+            MoveCamBack();
+        }
+        else
+        {
+            if (!GameController.S.gamePaused)
+                GameController.S.RequestGamePause();
+            Camera.main.GetComponent<CameraController>().enabled = false;
+            Camera.main.GetComponent<Controls_Mobile>().enabled = false;
+            Camera.main.GetComponent<Controls_PC>().enabled = false;
+            if (targetCanvas != dialogueCanvas)
+            {
+                print("bruh");
 
-//		if (GameController.S.activeDrawer != null)
-//			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
-		/*
+                MoveCamAway();
+            }
+        }
+
+        //		if (GameController.S.activeDrawer != null)
+        //			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+        /*
         activated = targetCanvas.activeInHierarchy;
 		targetCanvas.SetActive(!activated);
         */
 
-		if (SceneManager.GetActiveScene().name != "Jury_Scene")
-			targetCanvas.SetActive (true);
+        if (SceneManager.GetActiveScene().name != "Jury_Scene")
+            targetCanvas.SetActive(true);
     }
 
-	//Version that works with a canvas name
-	//Should set all Canvases in a single script later on
-//	[YarnCommand("loadCanvasByName")]
-//	public void loadCanvasByName(string canvasName)
-//	{
-//		//GameObject targetCanvas = GameObject.Find(canvasName);
-//
-//		if (GameController.S.activeDrawer != null)
-//			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
-//	}
+    //Version that works with a canvas name
+    //Should set all Canvases in a single script later on
+    //	[YarnCommand("loadCanvasByName")]
+    //	public void loadCanvasByName(string canvasName)
+    //	{
+    //		//GameObject targetCanvas = GameObject.Find(canvasName);
+    //
+    //		if (GameController.S.activeDrawer != null)
+    //			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+    //	}
 
-	public void MoveCamAway()
-	{
-		if (mainCam == null)
-			mainCam = Camera.main.gameObject;
-		lastCamPos = mainCam.transform.position;
-		mainCam.transform.position = camUIPos;
-		camSetAtUIPos = true;
-	}
-	public void MoveCamBack()
-	{
-		if (mainCam == null)
-			mainCam = Camera.main.gameObject;
-		mainCam.transform.position = lastCamPos;
-		camSetAtUIPos = false;
-	}
+    public void MoveCamAway()
+    {
+        if (mainCam == null)
+            mainCam = Camera.main.gameObject;
+        lastCamPos = mainCam.transform.position;
+        mainCam.transform.position = camUIPos;
+        camSetAtUIPos = true;
+    }
+    public void MoveCamBack()
+    {
+        if (mainCam == null)
+            mainCam = Camera.main.gameObject;
+        mainCam.transform.position = lastCamPos;
+        camSetAtUIPos = false;
+    }
 
     public void enableGatherButtons()
     {
@@ -148,13 +160,13 @@ public class CanvasManager : MonoBehaviour {
     //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
     public void loadAccusationCanvases()
     {
-//        if (GameController.S.activeDrawer != null)
-//            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+        //        if (GameController.S.activeDrawer != null)
+        //            GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
         foreach (GameObject canvas in accusationCanvases)
-            {
+        {
             print(canvas.name);
             //activated = canvas.activeInHierarchy;
             canvas.SetActive(true);
-            }
+        }
     }
 }

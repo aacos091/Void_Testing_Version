@@ -40,6 +40,10 @@ public class CanvasManager : MonoBehaviour
     public Vector3 lastCamPos;
     public Vector3 camUIPos = new Vector3(0, 25, -25);
     public bool camSetAtUIPos = false;
+    
+    [SerializeField]
+    private GameObject dialogueRunnerObj;
+    DialogueRunner dialogueRunner;
 
     void Awake()
     {
@@ -48,11 +52,36 @@ public class CanvasManager : MonoBehaviour
             uiParent = gameObject;
 
         camController = CameraController.S;
+        //dialogueRunner = DialogueRunner.S;
+        dialogueRunner = dialogueRunnerObj.GetComponent<DialogueRunner>();
+
+        print("br");
+
 
         //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
         //accusationCanvases = new List<GameObject>();
         //Make sure that the GameObject the UI is attached to is not deleted on load
         DontDestroyOnLoad(uiParent);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //TODO: Sorta TEMP: reopens HUD when dialogue is done
+        if (dialogueCanvas != null)
+        {
+            if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning)
+            {
+                if (mainCam == null)
+                    mainCam = Camera.main.gameObject;
+                lastCamPos = mainCam.transform.position;
+
+
+                disableCanvas(dialogueCanvas);
+                loadCanvas(HUDCanvas);
+
+            }
+        }
     }
 
     // This function sets the activated bool variable to true if
@@ -71,7 +100,6 @@ public class CanvasManager : MonoBehaviour
     public void disableCanvas()
     {
         uiParent.SetActive(false);
-
     }
 
     // This function does the same as the above function but is supposed to activate the
@@ -104,8 +132,6 @@ public class CanvasManager : MonoBehaviour
             Camera.main.GetComponent<Controls_PC>().enabled = false;
             if (targetCanvas != dialogueCanvas)
             {
-                print("bruh");
-
                 MoveCamAway();
             }
         }

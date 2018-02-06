@@ -13870,6 +13870,7 @@ MonoBehaviour:
   lastCamPos: {x: 0, y: 0, z: 0}
   camUIPos: {x: 0, y: 25, z: -25}
   camSetAtUIPos: 0
+  dialogueRunnerObj: {fileID: 1350394363}
 --- !u!114 &1188449596
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,12 +137,6 @@ public class GameController : MonoBehaviour
         dialogueRunner = DialogueRunner.S;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //HandleControls();
-    }
-
     void SetupDrawers()
     {
         /*

@@ -9456,7 +9456,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795996201}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -17.8, y: 41.5, z: 297.1}
+  m_LocalPosition: {x: -17.8, y: 52.6, z: 297.1}
   m_LocalScale: {x: 20, y: 20.00002, z: 20.000011}
   m_Children: []
   m_Father: {fileID: 479540283}
@@ -11021,7 +11021,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 952738394}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 15, y: 137.2, z: -105}
+  m_LocalPosition: {x: -10.8, y: 137.2, z: -105}
   m_LocalScale: {x: 20.000002, y: 20.00001, z: 20.000008}
   m_Children: []
   m_Father: {fileID: 770889943}
@@ -11040,7 +11040,7 @@ Light:
   m_Color: {r: 0.63235295, g: 0.65010136, b: 1, a: 1}
   m_Intensity: 13.89
   m_Range: 5.160407
-  m_SpotAngle: 103.87991
+  m_SpotAngle: 61.822426
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -11568,8 +11568,8 @@ Light:
   m_Type: 0
   m_Color: {r: 0.63235295, g: 0.65010136, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 5
-  m_SpotAngle: 87.25071
+  m_Range: 3.985878
+  m_SpotAngle: 125.945755
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -12897,6 +12897,17 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1246387592}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1188449595}
+        m_MethodName: disableCanvas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 705037505}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -17027,7 +17038,7 @@ Prefab:
     - target: {fileID: 108745962049792822, guid: 127bb5c143c17c5439a2ceb5244172a6,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 84.65413
+      value: 51.63712
       objectReference: {fileID: 0}
     - target: {fileID: 4963121637036774, guid: 127bb5c143c17c5439a2ceb5244172a6, type: 2}
       propertyPath: m_LocalPosition.x
@@ -17076,6 +17087,15 @@ Prefab:
     - target: {fileID: 4963121637036774, guid: 127bb5c143c17c5439a2ceb5244172a6, type: 2}
       propertyPath: m_LocalPosition.z
       value: 18.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963121637036774, guid: 127bb5c143c17c5439a2ceb5244172a6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 132.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 108745962049792822, guid: 127bb5c143c17c5439a2ceb5244172a6,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 127bb5c143c17c5439a2ceb5244172a6, type: 2}
@@ -24845,7 +24865,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2038110162}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 15, y: 137.2, z: -170.2}
+  m_LocalPosition: {x: -21.7, y: 137.2, z: -170.2}
   m_LocalScale: {x: 20, y: 20.000029, z: 20.000017}
   m_Children: []
   m_Father: {fileID: 770889943}
@@ -24864,7 +24884,7 @@ Light:
   m_Color: {r: 0.63235295, g: 0.65010136, b: 1, a: 1}
   m_Intensity: 13.89
   m_Range: 5.160407
-  m_SpotAngle: 103.87991
+  m_SpotAngle: 95.730156
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -26111,7 +26131,7 @@ Light:
   m_Color: {r: 0.63235295, g: 0.65010136, b: 1, a: 1}
   m_Intensity: 20
   m_Range: 3.7327423
-  m_SpotAngle: 116.91585
+  m_SpotAngle: 110.918205
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2

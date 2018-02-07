@@ -2,150 +2,210 @@
 	{
 		"title": "Cook",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_happy>>\nHow's it goin'?\n<</Textbox>>\n\n\n    <<if $Clue1Found is true and ($Clue1RelatedCrew1 is \"Cook\" or $Clue1RelatedCrew2 is \"Cook\")>>\n        [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2RelatedCrew is \"Cook\" or $Clue2RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3RelatedCrew1 is \"Cook\" or $Clue3RelatedCrew2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4RelatedCrew1 is \"Cook\" or $Clue4RelatedCrew is \"Cook\")>>\n    [[What do you know about this clue?|Cook.Question4]]\n<<endif>>\n\n   \n    [[You murdered $VICTIM.|VictimNode]]\n    [[You killed $VICTIM by $MURDERMETHOD in the $CRIMESCENE.|AllNode]]\n\n\n",
+		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_happy>>\nWhat's up?\n<</Textbox>>\n\n<<if $Clue1Found is true and ($Clue1Owner1 is \"Cook\" or $Clue1Owner2 is \"Cook\")>>\n        [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Cook\" or $Clue2Owner2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Cook\" or $Clue3Owner2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Cook\" or $Clue4Owner2 is \"Cook\")>>\n    [[What do you know about this $Clue4?|Cook.Question4]]\n<<endif>>\n\n\n//    <<if $Clue1Found is true and ($Clue1Owner1 != \"Cook\" or $Clue1Owner2 != \"Cook\")>> \n//[[Cook.Redirect]]\n//<<endif>>\n    //<<if $Clue2Found is true and ($Clue2Owner1 != \"Cook\" or $Clue2Owner2 != \"Cook\")>> \n//[[Cook.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"Cook\" or $Clue3Owner2 != \"Cook\")>> \n//[[Cook.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Cook\" or $Clue4Owner2 != \"Cook\")>> \n//[[Cook.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Cook.Bye]]",
 		"position": {
-			"x": 906,
-			"y": -401
+			"x": 814,
+			"y": -1142
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Bye",
 		"tags": "",
-		"body": "\n<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nCiao\n<</Textbox>>\n\n//End of conversation\n",
+		"body": "Cook\n<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation\n",
 		"position": {
-			"x": 596,
-			"y": 755
+			"x": 815,
+			"y": 752
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Cook.Question",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhat do you know about $Clue1?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nHey, where'd you find this? I was looking all over for it.\n<</Textbox>>\n\n\n[[That's all.|Cook.Bye]]\n\n[[When did you last see it?|Cook.Clue]]\n\n[[Why was it at this place?|Cook.Upset]]\n\n",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue1Location.|Cook.Clue]]\n\n[[Are you sure?|Cook.Upset]]\n\n",
 		"position": {
-			"x": 735,
-			"y": 234
+			"x": 341,
+			"y": 74
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Clue",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhen did you last see it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nI saw that before the, uh, 'incident'.\n<</Textbox>>\n\n[[Any idea who could have taken it?|Cook.Key]]\n\n[[That's convenient|Cook.Upset]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
 		"position": {
-			"x": -6,
-			"y": 113
+			"x": -255,
+			"y": -116
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Upset",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nLooking all over? Sure you don't know why I found it at $Clue1Location?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_mad>>\nWith all due respect, Capitano, I don't appreciate being called a liar.\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]\n//End of conversation\n",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]\n//End of conversation\n",
 		"position": {
-			"x": 1039,
-			"y": 739
+			"x": 1567,
+			"y": 681
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Cook.Key",
 		"tags": "",
-		"body": "\n<<Textbox>>\n<<Name|Captain>>\nAny idea who could have taken it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_neutral>>\nNo clue, it disappeared while I was out of the kitchen.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[That's all|Cook.Bye]]\n",
+		"body": "Cook\n<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Cook.Bye]]\n",
 		"position": {
-			"x": 1,
-			"y": 719
+			"x": -214,
+			"y": 712
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Question2",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhat do you know about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nHey, where'd you find this? I was looking all over for it.\n<</Textbox>>\n\n\n[[That's all.|Cook.Bye]]\n\n[[When did you last see it?|Cook.Clue]]\n\n[[Why was it at this place?|Cook.Upset2]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue2Location.|Cook.Clue2]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 1201,
-			"y": 254
+			"x": 768,
+			"y": 101
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Question3",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhat do you know about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nHey, where'd you find this? I was looking all over for it.\n<</Textbox>>\n\n\n[[That's all.|Cook.Bye]]\n\n[[When did you last see it?|Cook.Clue]]\n\n[[Why was it at this place?|Cook.Upset3]]",
+		"body": "Cook<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue3Location.|Cook.Clue3]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 1623,
-			"y": 194
+			"x": 1146,
+			"y": 116
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Cook.Question4",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhat do you know about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nHey, where'd you find this? I was looking all over for it.\n<</Textbox>>\n\n\n[[That's all.|Cook.Bye]]\n\n[[When did you last see it?|Cook.Clue]]\n\n[[Why was it at this place?|Cook.Upset4]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue4Location.|Cook.Clue4]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 1973,
-			"y": 197
+			"x": 1649,
+			"y": 131
 		},
 		"colorID": 0
-	},
-	{
-		"title": "Cook.Upset2",
-		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nLooking all over? Sure you don't know why I found it at $Clue2Location?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_mad>>\nWith all due respect, Capitano, I don't appreciate being called a liar.\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]",
-		"position": {
-			"x": 1424,
-			"y": 723
-		},
-		"colorID": 1
-	},
-	{
-		"title": "Cook.Upset3",
-		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nLooking all over? Sure you don't know why I found it at $Clue3Location?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_mad>>\nWith all due respect, Capitano, I don't appreciate being called a liar.\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]",
-		"position": {
-			"x": 1749,
-			"y": 723
-		},
-		"colorID": 1
-	},
-	{
-		"title": "Cook.Upset4",
-		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nLooking all over? Sure you don't know why I found it at $Clue4Location?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|cook_mad>>\nWith all due respect, Capitano, I don't appreciate being called a liar.\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]",
-		"position": {
-			"x": 2055,
-			"y": 725
-		},
-		"colorID": 1
 	},
 	{
 		"title": "Cook.Loyalty",
 		"tags": "",
 		"body": "<<set $CookLoyalty to $CookLoyalty - 1>>",
 		"position": {
-			"x": 1429,
-			"y": 1296
+			"x": 1266,
+			"y": 1303
 		},
 		"colorID": 0
 	},
 	{
-		"title": "AllNode",
+		"title": "Cook.Redirect",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Cook>>\nFUck off\n<</Textbox>>",
+		"body": "[[I found this.|Cook.RedirectClue]]\n\n[[Nevermind.|Cook.Bye]]",
 		"position": {
-			"x": 1321,
-			"y": -663
+			"x": 2233,
+			"y": -677
 		},
 		"colorID": 0
 	},
 	{
-		"title": "VictimNode",
+		"title": "Cook.RedirectClue",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Cook>>\nProve it!!\n<</Textbox>>\n",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue1owner1 and $Clue1Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 1275,
+			"x": 2590,
+			"y": -696
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Redirect2",
+		"tags": "",
+		"body": "[[I found this.|Cook.RedirectClue2]]\n\n[[Nevermind.|Cook.Bye]]",
+		"position": {
+			"x": 2229,
+			"y": -402
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Redirect3",
+		"tags": "",
+		"body": "[[I found this.|Cook.RedirectClue3]]\n\n[[Nevermind.|Cook.Bye]]",
+		"position": {
+			"x": 2219,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Redirect4",
+		"tags": "",
+		"body": "[[I found this.|Cook.RedirectClue4]]\n\n[[Nevermind.|Cook.Bye]]",
+		"position": {
+			"x": 2214,
+			"y": 182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.RedirectClue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue2owner1 and $Clue2Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2629,
+			"y": -399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.RedirectClue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue3owner1 and $Clue3Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.RedirectClue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue4owner1 and $Clue4Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Clue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
+		"position": {
+			"x": -232,
 			"y": -392
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Clue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
+		"position": {
+			"x": -219,
+			"y": -681
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Cook.Clue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
+		"position": {
+			"x": -218,
+			"y": -1011
 		},
 		"colorID": 0
 	}

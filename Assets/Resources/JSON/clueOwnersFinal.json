@@ -10,7 +10,7 @@
             "Environmental Hazard":
             {
                 // Third array will hold the Clues and their related Members
-                "Radiation Suit": ["First Mate", "Engineer"],
+                "Radiation Suit": ["1stMate", "Engineer"],
                 "EVA Suit": []
             }
         }    

@@ -189,7 +189,8 @@ public class Units : MonoBehaviour
 
 			//Set material to non-selected object
 			if (goOld != null) {
-				goOld.GetComponent<Renderer>().material = SimpleMat;
+                //goOld.GetComponent<Renderer>().material = SimpleMat;
+                goOld.GetComponentInChildren<Renderer>().material = SimpleMat;
 			}
 
 			//Set material to selected object
@@ -205,30 +206,37 @@ public class Units : MonoBehaviour
 				chatManager.GetComponent<Chat>().unitName = unitNameText.text.ToString();
 
 				//Set highlight material
-				mSelectedObject.GetComponent<Renderer> ().material = HighlightedMat;
+				mSelectedObject.GetComponentInChildren<Renderer> ().material = HighlightedMat;
 
-				if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
+				//if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)
+                if (this.gameObject.name == "Cook" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
+                    {
 
 					CameraController.cook = true;
 
 				}
 
-				if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
+                //if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+                if (gameObject.name == "Medic" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
 
-					CameraController.medic = true;
+                {
 
-				}
-
-				if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
-
-					CameraController.captain = true;
+                    CameraController.medic = true;
 
 				}
 
-				if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+                //TODO: RETAG "Captain" to "First Mate"!!!!!!!!!!
+
+                //if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)                 
+                if (gameObject.name == "Captain" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
+                {
+
+                    CameraController.captain = true;
+
+				}
+                //if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer>().sharedMaterial == HighlightedMat)
+
+                if (gameObject.name == "Engineer" && gameObject.GetComponentInChildren<Renderer> ().sharedMaterial == HighlightedMat) 
 				{
 
 					CameraController.engineer = true;

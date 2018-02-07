@@ -2,71 +2,211 @@
 	{
 		"title": "Engineer",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_happy>>\nWhat's up?\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n[[Do you know anything about $CLUE?|Engineer.Question]]\n\n",
+		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_happy>>\nHello, Captain.\n<</Textbox>>\n\n\n    <<if $Clue1Found is true and ($Clue1Owner1 is \"Engineer\" or $Clue1Owner2 is \"Engineer\")>>\n        [[What do you know about $Clue1?|Engineer.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Engineer\" or $Clue2Owner2 is \"Engineer\")>>\n    [[What do you know about $Clue2?|Engineer.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Engineer\" or $Clue3Owner2 is \"Engineer\")>>\n    [[What do you know about $Clue3?|Engineer.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Engineer\" or $Clue4Owner2 is \"Engineer\")>>\n    [[What do you know about this clue?|Engineer.Question4]]\n<<endif>>\n\n\n    //<<if $Clue1Found is true and ($Clue1Owner1 != \"Engineer\" or $Clue1Owner2 != \"Engineer\")>> \n//[[Engineer.Redirect]]\n//<<endif>>\n  //  <<if $Clue2Found is true and ($Clue2Owner1 != \"Engineer\" or $Clue2Owner2 != \"Engineer\")>> \n//[[Engineer.Redirect2]]\n//<<endif>>\n    //<<if $Clue3Found is true and ($Clue3Owner1 != \"Engineer\" or $Clue3Owner2 != \"Engineer\")>> \n//[[Engineer.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Engineer\" or $Clue4Owner2 != \"Engineer\")>> \n//[[Engineer.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Engineer.Bye]]",
 		"position": {
-			"x": 289,
-			"y": -239
+			"x": 814,
+			"y": -1142
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Engineer.Bye",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation",
+		"body": "\n<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation\n",
 		"position": {
-			"x": -60,
-			"y": 100
+			"x": 815,
+			"y": 752
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Engineer.Question",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $CLUE?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nOh that? That's supposed to be in $LOCATION.\n<</Textbox>>\n\n\n[[I'll see you around.|Engineer.Bye]]\n\n[[It was in $CRIMESCENE.|Engineer.Questioning]]\n\n[[Are you sure?|Engineer.Upset]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI do believe that $Clue1 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|Engineer.Bye]]\n\n[[I found it in $Clue1Location.|Engineer.Clue]]\n\n[[That's none of your business.|Engineer.Upset]]\n\n",
 		"position": {
-			"x": 696,
-			"y": 105
+			"x": 361,
+			"y": 106
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Engineer.Questioning",
+		"title": "Engineer.Clue",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $LOCATION. Any idea why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhy would it be in $CRIMESCENE? Was $CREWMATE moving my stuff again?\n<</Textbox>>\n\n[[Nevermind. I'll see you around.|Engineer.Bye]]\n\n[[Any thoughts why they would take it?|Engineer.Key]]\n\n[[How is that supposed to help?|Engineer.Upset1]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Engineer.Key]]\n\n[[Just gonna ask questions?|Engineer.Upset]]",
 		"position": {
-			"x": 261,
-			"y": 669
+			"x": -255,
+			"y": -116
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Engineer.Upset",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n<<set $EngineerLoyalty to $EngineerLoyalty - 1>>\n\n//End of conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n\n<< if visited (\"Engineer.Loyalty\")>>\n[[Engineer.Bye]]\n<<endif>>\n\n[[Engineer.Loyalty]]\n//End of conversation\n",
 		"position": {
-			"x": 938,
-			"y": 695
+			"x": 1567,
+			"y": 682
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Engineer.Key",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why they would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nNo clue,dude.\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n//Clue Key Dialogue unlocked\n",
+		"body": "\n<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Engineer.Bye]]\n",
 		"position": {
-			"x": -644,
-			"y": 656
+			"x": -246,
+			"y": 537
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Engineer.Upset1",
+		"title": "Engineer.Question2",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nHow is that supposed to help?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n<<set $EngineerLoyalty to $EngineerLoyalty - 1>>\n\n//End of conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI do believe that $Clue2 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|Engineer.Bye]]\n\n[[I found it in $Clue1Location.|Engineer.Clue2]]\n\n[[That's none of your business.|Engineer.Upset]]",
 		"position": {
-			"x": 257,
-			"y": 1092
+			"x": 791,
+			"y": 78
 		},
-		"colorID": 1
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Question3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI do believe that $Clue2 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|Engineer.Bye]]\n\n[[I found it in $Clue1Location.|Engineer.Clue3]]\n\n[[That's none of your business.|Engineer.Upset]]",
+		"position": {
+			"x": 1142,
+			"y": 67
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Question4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI do believe that $Clue4 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|Engineer.Bye]]\n\n[[I found it in $Clue1Location.|Engineer.Clue4]]\n\n[[That's none of your business.|Engineer.Upset]]",
+		"position": {
+			"x": 1649,
+			"y": 131
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Loyalty",
+		"tags": "",
+		"body": "<<set $EngineerLoyalty to $EngineerLoyalty - 1>>",
+		"position": {
+			"x": 1266,
+			"y": 1303
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Redirect",
+		"tags": "",
+		"body": "[[I found this.|Engineer.RedirectClue]]\n\n[[Nevermind.|Engineer.Bye]]",
+		"position": {
+			"x": 2233,
+			"y": -677
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.RedirectClue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI'm busy right now, go bother $Clue1owner1 and $Clue1Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2590,
+			"y": -696
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Redirect2",
+		"tags": "",
+		"body": "[[I found this.|Engineer.RedirectClue2]]\n\n[[Nevermind.|Engineer.Bye]]",
+		"position": {
+			"x": 2229,
+			"y": -402
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Redirect3",
+		"tags": "",
+		"body": "[[I found this.|Engineer.RedirectClue3]]\n\n[[Nevermind.|Engineer.Bye]]",
+		"position": {
+			"x": 2219,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Redirect4",
+		"tags": "",
+		"body": "[[I found this.|Engineer.RedirectClue4]]\n\n[[Nevermind.|Engineer.Bye]]",
+		"position": {
+			"x": 2214,
+			"y": 182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.RedirectClue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI'm busy right now, go bother $Clue2owner1 and $Clue2Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2629,
+			"y": -399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.RedirectClue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI'm busy right now, go bother $Clue3owner1 and $Clue3Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.RedirectClue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nI'm busy right now, go bother $Clue4owner1 and $Clue4Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Clue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Engineer.Key]]\n\n[[Just gonna ask questions?|Engineer.Upset]]",
+		"position": {
+			"x": -232,
+			"y": -392
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Clue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Engineer.Key]]\n\n[[Just gonna ask questions?|Engineer.Upset]]",
+		"position": {
+			"x": -219,
+			"y": -681
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Clue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_Neutral>>\nIs that so? I ususally keep that around just in case I'd need it. As for why it was where you found it, I do not know.\n<</Textbox>>\n\n[[What does $Clue4 do?|Engineer.Key]]\n\n[[You're telling me half?|Engineer.Upset]]",
+		"position": {
+			"x": -218,
+			"y": -1011
+		},
+		"colorID": 0
 	}
 ]

@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Pilot",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nHello, Captain.\n<</Textbox>>\n\n[[Keep up the good work.|Pilot.Alright]]\n\n[[Have you seen this $CLUE before?|Pilot.Clue]]",
+		"position": {
+			"x": 299,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Alright",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nKeep up the good work.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nAlright.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 21,
+			"y": 166
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.Clue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nHave you seen this $CLUE before?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nThat's mine! Where did you get that?\n<</Textbox>>\n\n[[I found it at $CRIMESCENE.|Pilot.Reply]]\n\n[[Why are you so loud?|Pilot.Retort]]",
+		"position": {
+			"x": 512,
+			"y": 173
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Reply",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $CRIMESCENE. Any idea why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\n$CRIMESCENE? Why was it there? I usually keep it in $LOCATION. Were you moving my stuff?\n<</Textbox>>\n\n[[Someone else did.|Pilot.KeyDialogue]]\n\n[[Why would I?|Pilot.Retort1]]",
+		"position": {
+			"x": 354,
+			"y": 426
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Retort",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nWhy are you so loud?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_mad>>\nBecause I'm the only one doing anything on this ship!\n<</Textbox>>\n\n<<set $Pilotloyalty to $Pilotloyalty - 1>>\n\n//End conversation",
+		"position": {
+			"x": 694,
+			"y": 424
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.KeyDialogue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nNo, but someone was. I need to find them before anything else happens.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nBe sure to put that back when you're done with it.\n<</Textbox>>\n\n//Unlock Clue Key Dialogue\n\n<<Textbox>>\n<<Name|Captain>>\nThanks. Keep up the good work.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nAlright.\n<</Textbox>>",
+		"position": {
+			"x": 97,
+			"y": 726
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.Retort1",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nWhy would I move your stuff?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_mad>>\nBecause I'm the only one doing anything on this ship!\n<</Textbox>>\n\n<<set $Pilotloyalty to $Pilotloyalty - 1>>\n\n//End conversation",
+		"position": {
+			"x": 497,
+			"y": 747
+		},
+		"colorID": 1
+	}
+]

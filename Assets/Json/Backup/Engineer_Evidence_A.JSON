@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Engineer",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_happy>>\nWhat's up?\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n[[Do you know anything about $CLUE?|Engineer.Question]]\n\n",
+		"position": {
+			"x": 289,
+			"y": -239
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Bye",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation",
+		"position": {
+			"x": -60,
+			"y": 100
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Engineer.Question",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $CLUE?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nOh that? That's supposed to be in $LOCATION.\n<</Textbox>>\n\n\n[[I'll see you around.|Engineer.Bye]]\n\n[[It was in $CRIMESCENE.|Engineer.Questioning]]\n\n[[Are you sure?|Engineer.Upset]]",
+		"position": {
+			"x": 696,
+			"y": 105
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Questioning",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $LOCATION. Any idea why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nWhy would it be in $CRIMESCENE? Was $CREWMATE moving my stuff again?\n<</Textbox>>\n\n[[Nevermind. I'll see you around.|Engineer.Bye]]\n\n[[Any thoughts why they would take it?|Engineer.Key]]\n\n[[How is that supposed to help?|Engineer.Upset1]]",
+		"position": {
+			"x": 261,
+			"y": 669
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Upset",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n<<set $EngineerLoyalty to $EngineerLoyalty - 1>>\n\n//End of conversation",
+		"position": {
+			"x": 938,
+			"y": 695
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Engineer.Key",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why they would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_neutral>>\nNo clue,dude.\n<</Textbox>>\n\n[[I'll see you around|Engineer.Bye]]\n\n//Clue Key Dialogue unlocked\n",
+		"position": {
+			"x": -644,
+			"y": 656
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Engineer.Upset1",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nHow is that supposed to help?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|engineer_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n<<set $EngineerLoyalty to $EngineerLoyalty - 1>>\n\n//End of conversation",
+		"position": {
+			"x": 257,
+			"y": 1092
+		},
+		"colorID": 1
+	}
+]

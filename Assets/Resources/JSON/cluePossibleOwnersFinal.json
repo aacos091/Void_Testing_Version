@@ -10,27 +10,27 @@
 
             "Violence":
             {
-                "Squarebar": ["Pilot", "Engineer", "Captain"],
-                "Garrote": ["Medic", "Captain", "Pilot"],
-                "Bullet Casting": ["Pilot", "First Mate", "Captain"],
+                "Squarebar": ["Pilot", "Engineer"],
+                "Garrote": ["Medic", "Pilot"],
+                "Bullet Casting": ["Pilot", "1stMate"],
                 "Wrench": ["Engineer", "Pilot"],
-                "Scalpel": ["Medic", "First Mate", "Engineer"],
-                "Scissors": ["Pilot", "Engineer", "First Mate"],
-                "Hardlight Knife": ["Captain", "Medic", "Engineer"],
-                "Broken Glass": ["First Mate", "Medic", "Captain"],
-                "Mallet": ["Engineer", "First Mate"]
+                "Scalpel": ["Medic", "1stMate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Hardlight Knife": ["Medic", "Engineer"],
+                "Broken Glass": ["1stMate", "Medic"],
+                "Mallet": ["Engineer", "1stMate"]
             },
             "Environmental Hazard":
             {
-                "Radiation Suit": ["First Mate", "Medic"], // This clue only has 1 potential owner in this situation?
+                "Radiation Suit": ["1stMate", "Medic"], // This clue only has 1 potential owner in this situation?
                 "EVA Suit": ["Pilot", "Engineer", "Medic"],
-                "Degausser": ["First Mate", "Captain", "Pilot"],
+                "Degausser": ["1stMate", "Pilot"],
                 "Engine Piece": ["Pilot", "Engineer", "Medic"],
-                "Thruster Calibrator": ["Pilot", "First Mate", "Captain"],
-                "Diagnostics Tool": ["Medic", "Engineer", "Captain"],
-                "Polarizer": ["First Mate", "Medic", "Captain"],
-                "Tampered Alarm": ["First Mate", "Pilot", "Engineer"],
-                "Plasma Cutter": ["Medic", "Captain"]
+                "Thruster Calibrator": ["Pilot", "1stMate"],
+                "Diagnostics Tool": ["Medic", "Engineer"],
+                "Polarizer": ["1stMate", "Medic"],
+                "Tampered Alarm": ["1stMate", "Pilot", "Engineer"],
+                "Plasma Cutter": ["Medic", "Pilot"]
             }
 		},
 		// This gets chosen if the murder location is the Galley
@@ -38,26 +38,26 @@
 		{
             "Violence":
             {
-                "Squarebar": ["Pilot", "Engineer", "Captain"],
-                "Garrote": ["Medic", "Captain", "Pilot"],
-                "Bullet Casting": ["Pilot", "First Mate", "Captain"],
+                "Squarebar": ["Pilot", "Engineer"],
+                "Garrote": ["Medic", "Pilot"],
+                "Bullet Casting": ["Pilot", "1stMate"],
                 "Wrench": ["Engineer", "Pilot"],
-                "Scalpel": ["Medic", "First Mate", "Engineer"],
-                "Scissors": ["Pilot", "Engineer", "First Mate"],
-                "Hardlight Knife": ["Captain", "Medic", "Engineer"],
-                "Broken Glass": ["First Mate", "Medic", "Captain"],
-                "Mallet": ["Engineer", "First Mate"]
+                "Scalpel": ["Medic", "1stMate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Hardlight Knife": [ "Medic", "Engineer"],
+                "Broken Glass": ["1stMate", "Medic"],
+                "Mallet": ["Engineer", "1stMate"]
             },
 
             "Poison/Venom":
             {
-                "Pill Bottle": ["First Mate", "Engineer", "Captain"],
-                "Pill": ["First Mate", "Engineer", "Captain"],
+                "Pill Bottle": ["1stMate", "Engineer"],
+                "Pill": ["1stMate", "Engineer"],
                 "Syringe": ["Medic", "Pilot"],
-                "Suspicious Root": ["First Mate", "Medic", "Engineer"],
-                "Vermin Poison": ["Captain", "Pilot", "First Mate"],
+                "Suspicious Root": ["1stMate", "Medic", "Engineer"],
+                "Vermin Poison": ["Pilot", "1stMate"],
                 "Paraphenelia": ["Engineer", "Medic", "Pilot"],
-                "Half-filled Glass": ["Captain", "Pilot", "Engineer"]
+                "Half-filled Glass": ["Pilot", "Engineer"]
             }
 		}
 	}

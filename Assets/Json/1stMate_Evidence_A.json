@@ -1,0 +1,242 @@
+[
+	{
+		"title": "1stMate",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_happy>>\nHello, Captain.\n<</Textbox>>\n\n\n    <<if $Clue1Found is true and ($Clue1Owner1 is \"1stMate\" or $Clue1Owner2 is \"1stMate\")>>\n        [[What do you know about $Clue1?|1stMate.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"1stMate\" or $Clue2Owner2 is \"1stMate\")>>\n    [[What do you know about $Clue2?|1stMate.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"1stMate\" or $Clue3Owner2 is \"1stMate\")>>\n    [[What do you know about $Clue3?|1stMate.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"1stMate\" or $Clue4Owner2 is \"1stMate\")>>\n    [[What do you know about this clue?|1stMate.Question4]]\n<<endif>>\n\n\n   // <<if $Clue1Found is true and ($Clue1Owner1 != \"1stMate\" or $Clue1Owner2 != \"1stMate\")>> \n//[[1stMate.Redirect]]\n//<<endif>>\n  //  <<if $Clue2Found is true and ($Clue2Owner1 != \"1stMate\" or $Clue2Owner2 != \"1stMate\")>> \n//[[1stMate.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"1stMate\" or $Clue3Owner2 != \"1stMate\")>> \n//[[1stMate.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"1stMate\" or $Clue4Owner2 != \"1stMate\")>> \n//[[1stMate.Redirect4]]\n//<<endif>>\n\n//[[That's all.|1stMate.Bye]]",
+		"position": {
+			"x": 807,
+			"y": -1136
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Bye",
+		"tags": "",
+		"body": "\n<<Textbox>>\n<<Name|Captain>>\nThaat's all\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|1stMate_neutral>>\nFarewell, Captain.\n<</Textbox>>\n\n//End of conversation\n",
+		"position": {
+			"x": 819,
+			"y": 743
+		},
+		"colorID": 1
+	},
+	{
+		"title": "1stMate.Question",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nI do believe that $Clue1 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|1stMate.Bye]]\n\n[[I found it in $Clue1Location.|1stMate.Clue]]\n\n[[That's none of your business.|1stMate.Upset]]\n\n",
+		"position": {
+			"x": 341,
+			"y": 74
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Clue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nIs that so? I ususally keep that around just in case I'd need it. As for why it was where you found it, I do not know.\n<</Textbox>>\n\n[[What does $Clue1 do?|1stMate.Key]]\n\n[[You're telling me half?|1stMate.Upset]]",
+		"position": {
+			"x": -255,
+			"y": -116
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Upset",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's none of your business.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_mad>>\nI'm disappointed in what's become of you, Captain. You've got some growing up to do.\n<</Textbox>>\n\n<< if visited (\"1stMate.Loyalty\")>>\n[[1stMate.Bye]]\n<<endif>>\n\n[[1stMate.Loyalty]]\n//End of conversation\n",
+		"position": {
+			"x": 1567,
+			"y": 681
+		},
+		"colorID": 1
+	},
+	{
+		"title": "1stMate.Key",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Engineer.Bye]]\n",
+		"position": {
+			"x": -768,
+			"y": -103
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Question2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nI do believe that $Clue2 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|1stMate.Bye]]\n\n[[I found it in $Clue2Location.|1stMate.Clue2]]\n\n[[That's none of your business.|1stMate.Upset]]",
+		"position": {
+			"x": 765,
+			"y": 99
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Question3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nI do believe that $Clue3 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|1stMate.Bye]]\n\n[[I found it in $Clue3Location.|1stMate.Clue3]]\n\n[[That's none of your business.|1stMate.Upset]]",
+		"position": {
+			"x": 1146,
+			"y": 116
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Question4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nI do believe that $Clue4 is mine, sir. If I may ask, why is it in your possession?\n<</Textbox>>\n\n\n[[That's all.|1stMate.Bye]]\n\n[[I found it in $Clue4Location.|1stMate.Clue4]]\n\n[[That's none of your business.|1stMate.Upset]]",
+		"position": {
+			"x": 1655,
+			"y": 128
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Loyalty",
+		"tags": "",
+		"body": "<<set $1stMateLoyalty to $1stMateLoyalty - 1>>",
+		"position": {
+			"x": 1266,
+			"y": 1300
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Redirect",
+		"tags": "",
+		"body": "[[I found this.|1stMate.RedirectClue]]\n\n[[Nevermind.|1stMate.Bye]]",
+		"position": {
+			"x": 2167,
+			"y": -761
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.RedirectClue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. What can you tell me about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nNot much other than $Clue1owner1 and $Clue1Owner2 possessing greater knowledge over that than I\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks.\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nAnytime,\n<</Textbox>>",
+		"position": {
+			"x": 2628,
+			"y": -735
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Redirect2",
+		"tags": "",
+		"body": "[[I found this.|1stMate.RedirectClue2]]\n\n[[Nevermind.|1stMate.Bye]]",
+		"position": {
+			"x": 2229,
+			"y": -402
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Redirect3",
+		"tags": "",
+		"body": "[[I found this.|1stMate.RedirectClue3]]\n\n[[Nevermind.|1stMate.Bye]]",
+		"position": {
+			"x": 2219,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Redirect4",
+		"tags": "",
+		"body": "[[I found this.|1stMate.RedirectClue4]]\n\n[[Nevermind.|1stMate.Bye]]",
+		"position": {
+			"x": 2190,
+			"y": 184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.RedirectClue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nNot much other than $Clue1owner1 and $Clue1Owner2 possessing greater knowledge over that than I\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks.\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nAnytime,\n<</Textbox>>",
+		"position": {
+			"x": 2629,
+			"y": -399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.RedirectClue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nNot much other than $Clue1owner1 and $Clue1Owner2 possessing greater knowledge over that than I\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks.\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nAnytime,\n<</Textbox>>",
+		"position": {
+			"x": 2637,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.RedirectClue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nNot much other than $Clue1owner1 and $Clue1Owner2 possessing greater knowledge over that than I\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks.\n<</Text>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nAnytime,\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Clue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nIs that so? I ususally keep that around just in case I'd need it. As for why it was where you found it, I do not know.\n<</Textbox>>\n\n[[What does $Clue2 do?|1stMate.Key2]]\n\n[[You're telling me half?|1stMate.Upset]]",
+		"position": {
+			"x": -228,
+			"y": -395
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Clue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nIs that so? I ususally keep that around just in case I'd need it. As for why it was where you found it, I do not know.\n<</Textbox>>\n\n[[What does $Clue3 do?|1stMate.Key3]]\n\n[[You're telling me half?|1stMate.Upset]]",
+		"position": {
+			"x": -217,
+			"y": -681
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Clue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|1stMate>>\n<<Portrait|1stMate_Neutral>>\nIs that so? I ususally keep that around just in case I'd need it. As for why it was where you found it, I do not know.\n<</Textbox>>\n\n[[What does $Clue4 do?|1stMate.Key4]]\n\n[[You're telling me half?|1stMate.Upset]]",
+		"position": {
+			"x": -218,
+			"y": -1011
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Key2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Engineer.Bye]]",
+		"position": {
+			"x": -776,
+			"y": -396
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Key3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Engineer.Bye]]",
+		"position": {
+			"x": -745,
+			"y": -699
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1stMate.Key4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Engineer>>\n<<Portrait|Engineer_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Engineer.Bye]]",
+		"position": {
+			"x": -730,
+			"y": -994
+		},
+		"colorID": 0
+	}
+]

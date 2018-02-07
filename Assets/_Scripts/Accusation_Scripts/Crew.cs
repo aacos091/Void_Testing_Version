@@ -16,7 +16,7 @@ public class Crew : MonoBehaviour {
 
     void Awake()
     {
-        TextBox = CanvasManager.S.dialogueTextBox;
+        TextBox = CanvasManager.S.juryDialogueTextBox;
         //TODO: Finds by name! Temp only?
         DialogueText = GameObject.Find(gameObject.name + "_Dialogue");
         foreach (GameObject spriteObj in CanvasManager.S.crewSprites)

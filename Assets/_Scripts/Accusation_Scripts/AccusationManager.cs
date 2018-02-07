@@ -297,7 +297,7 @@ public class AccusationManager : MonoBehaviour {
 
 					// Activate the sprite and corresponding TextBox to be visible when the crew member is clicked on.
 					Debug.Log (hit.collider.gameObject.name + " was selected by Raycast");
-                    CanvasManager.S.dialogueCanvas.SetActive(true);
+                    CanvasManager.S.juryDialogueCanvas.SetActive(true);
 
 					crewObject = hit.collider.gameObject;
 					//Activate Sprites

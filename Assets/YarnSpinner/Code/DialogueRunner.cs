@@ -145,7 +145,6 @@ namespace Yarn.Unity
                     }
                 }
             }
-
         }
 
         /// Add a string of text to a script

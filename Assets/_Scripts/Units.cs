@@ -103,30 +103,31 @@ public class Units : MonoBehaviour
                 SelectObjectByMousePos();
         }
 
-		switch (currentState) 
-		{
-		case States.movingToElevator:
-			{
-				if (!isAtElevator) 
-					walkToNearestElevator ();
-				
-				if (isAtElevator) 
-				{
-					teleportToClosestElevatorToWaypoint ();
-					agent.SetDestination (waypoints [ran].transform.position);
-					currentState = States.movingToDestination;
-				}
-			}
-			break;
+        switch (currentState)
+        {
+            case States.movingToElevator:
+                {
+                    if (!isAtElevator)
+                        walkToNearestElevator();
 
-		case States.movingToDestination:
-			{
-				if(!agent.hasPath && agent.remainingDistance <=0)
-					GotoNextPoint ();
-				
-			}
-			break;
-		}
+                    if (isAtElevator)
+                    {
+                        teleportToClosestElevatorToWaypoint();
+                        agent.SetDestination(waypoints[ran].transform.position);
+                        currentState = States.movingToDestination;
+                    }
+                }
+                break;
+
+            case States.movingToDestination:
+                {
+                    if (!agent.hasPath && agent.remainingDistance <= 0)
+                        GotoNextPoint();
+
+                }
+                break;
+        }
+
 	}
 
 	//This checks the floor that the Unit is on. 

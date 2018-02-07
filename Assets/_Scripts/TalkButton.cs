@@ -26,6 +26,7 @@ public class TalkButton : MonoBehaviour
 		button = GetComponent<Button>();
 		S = this;
 		OnClick.AddListener(MakeUnitTalk);
+
 	}
 
 	void Start()

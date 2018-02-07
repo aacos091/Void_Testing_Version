@@ -190,6 +190,7 @@ public class DialogueUITest : DialogueUIBehaviour {
 		
 		print("Right before displaying text, culprit is: " + dialogueRunner.variableStorage.GetValue("$Culprit").AsString);
 		string varParsedText = YarnUtils.ParseYarnText(dialogueRunner.variableStorage, textToShow.ToString());
+		
 		textboxController.DisplayText ( varParsedText);
 		
 	}
@@ -205,8 +206,9 @@ public class DialogueUITest : DialogueUIBehaviour {
 	{
 		GameObject optionWindow = 			Instantiate<GameObject> (optionWindowPrefab);
 		OptionSetController setController = optionWindow.GetComponent<OptionSetController> ();
-		setController.Init (this);
 		setController.transform.SetParent (dialogueCanvas.transform, false);
+		setController.Init (this);
+		
 		//setController.rectTransform.sizeDelta = new Vector2 ();
 		GameObject newButton;
 
@@ -235,6 +237,9 @@ public class DialogueUITest : DialogueUIBehaviour {
 			textboxController.DoneDisplayingText.AddListener (ResumeDialogueRunning);
 			EndedDialogue.AddListener (textboxController.Close);
 			textbox.transform.SetParent (dialogueCanvas.transform, false);
+
+			
+
 			textboxController.PlaceOnScreen (new Vector2 (0.5f, 0.0f));
 			if (textSettings.font != null)
 				textboxController.font = textSettings.font;
@@ -242,10 +247,13 @@ public class DialogueUITest : DialogueUIBehaviour {
 			textSettings.Initialize(textboxController);
 			textboxController.ApplyTextSettings(textSettings);
 
+			
+
 			// Have the textbox be invisible until it is time to show it
 			CanvasGroup cGroup = textbox.AddComponent<CanvasGroup>();
 			cGroup.alpha = 0;
 			cGroup.blocksRaycasts = false;
+
 		}
 	}
 

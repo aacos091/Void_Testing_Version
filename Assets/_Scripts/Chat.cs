@@ -32,7 +32,7 @@ public class Chat : MonoBehaviour
 	}
 	public void startChat()
 	{
-		
+		Debug.Log(this.name + " startChat()");
 		dialogueCanvas.SetActive (true);
 		//dialogue = dialogueCanvas.GetComponentInChildren<Text> ();
 		dialogue.text = "Hello! I'm " + unitName + "!";
@@ -42,6 +42,7 @@ public class Chat : MonoBehaviour
 	{
 		// Note from Gabriel: This function won't be necessary, since the textboxes close 
 		// themselves once they're done displaying text
+		Debug.Log("Closed chat!");
 		dialogueCanvas.SetActive (false);
 	}
 

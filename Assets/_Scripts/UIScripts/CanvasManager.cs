@@ -76,9 +76,11 @@ public class CanvasManager : MonoBehaviour
                     mainCam = Camera.main.gameObject;
                 lastCamPos = mainCam.transform.position;
 
-
-                disableCanvas(dialogueCanvas);
-                loadCanvas(HUDCanvas);
+                // old canvas-disabling and enabling
+                //disableCanvas(dialogueCanvas);
+                //loadCanvas(HUDCanvas);
+                DisableCanvas(dialogueCanvas.GetComponent<Canvas>());
+                LoadCanvas(HUDCanvas.GetComponent<Canvas>() );
 
             }
         }
@@ -97,9 +99,86 @@ public class CanvasManager : MonoBehaviour
         currentCanvas.SetActive(false);
 
     }
+
+    
     public void disableCanvas()
     {
         uiParent.SetActive(false);
+    }
+
+    public void DisableCanvas(Canvas canvas)
+    {
+        // Thought it'd be better to have a disable method that just changes the canvas' 
+        // CanvasGroup component (I added one to the Dialogue and HUD canvases).
+
+        CanvasGroup cGroup = canvas.GetComponent<CanvasGroup>();
+
+        if (cGroup == null)
+            throw new System.NullReferenceException(canvas.name + " does not have a Canvas Group component attached to it.");
+
+        cGroup.alpha = 0;
+        cGroup.blocksRaycasts = false;
+        cGroup.interactable = false;
+    }
+
+    public void LoadCanvas(Canvas canvas)
+    {
+        // Like the other LoadCanvas, but changes the canvas' CanvasGroup component instead of just 
+        // enabling it 
+
+        CanvasGroup cGroup = canvas.GetComponent<CanvasGroup>();
+
+        if (cGroup == null)
+            throw new System.NullReferenceException(canvas.name + " does not have a Canvas Group component attached to it.");
+
+        cGroup.alpha = 1;
+        cGroup.blocksRaycasts = true;
+        cGroup.interactable = true;
+
+        //First, cancels out of any zoom coroutine
+        if (camController == null)
+            camController = CameraController.S;
+        if (camController.currentCoroutine != null)
+        {
+            //StopCoroutine(camController.currentCoroutine);
+        }
+
+        //Return to normal game view
+        if (canvas.gameObject == HUDCanvas)
+        {
+            if (GameController.S.gamePaused)
+                GameController.S.RequestGameResume();
+            //Alex Code
+            Camera.main.GetComponent<CameraController>().enabled = true;
+            Camera.main.GetComponent<Controls_Mobile>().enabled = true;
+            Camera.main.GetComponent<Controls_PC>().enabled = true;
+            MoveCamBack();
+        }
+        else
+        {
+            if (!GameController.S.gamePaused)
+                GameController.S.RequestGamePause();
+            Camera.main.GetComponent<CameraController>().enabled = false;
+            Camera.main.GetComponent<Controls_Mobile>().enabled = false;
+            Camera.main.GetComponent<Controls_PC>().enabled = false;
+            if (canvas.gameObject != dialogueCanvas)
+            {
+                MoveCamAway();
+            }
+        }
+
+        //		if (GameController.S.activeDrawer != null)
+        //			GameController.S.activeDrawer.GetComponent<DrawerController>().ResetDrawer();
+        /*
+        activated = targetCanvas.activeInHierarchy;
+		targetCanvas.SetActive(!activated);
+        */
+
+        if (SceneManager.GetActiveScene().name != "Jury_Scene")
+        {
+            cGroup.gameObject.SetActive(true);
+        }
+
     }
 
     // This function does the same as the above function but is supposed to activate the
@@ -110,7 +189,9 @@ public class CanvasManager : MonoBehaviour
         if (camController == null)
             camController = CameraController.S;
         if (camController.currentCoroutine != null)
+        {
             StopCoroutine(camController.currentCoroutine);
+        }
 
         //Return to normal game view
         if (targetCanvas == HUDCanvas)
@@ -144,8 +225,14 @@ public class CanvasManager : MonoBehaviour
         */
 
         if (SceneManager.GetActiveScene().name != "Jury_Scene")
+        {
             targetCanvas.SetActive(true);
+            
+        }
+            
     }
+
+    
 
     //Version that works with a canvas name
     //Should set all Canvases in a single script later on

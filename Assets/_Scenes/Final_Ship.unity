@@ -18229,21 +18229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   S: {fileID: 0}
-  waypoints:
-  - {fileID: 1829663983}
-  - {fileID: 1463630135}
-  - {fileID: 1466336521}
-  - {fileID: 1993440997}
-  - {fileID: 1757042274}
-  - {fileID: 343049520}
-  - {fileID: 1665682390}
-  - {fileID: 611799123}
-  - {fileID: 844750262}
-  - {fileID: 1488322317}
-  - {fileID: 2068289519}
-  - {fileID: 878992272}
-  elevatorInsideOne: {fileID: 1203375049}
-  elevatorInsideTwo: {fileID: 693305884}
+  waypoints: []
+  elevatorInsideOne: {fileID: 0}
+  elevatorInsideTwo: {fileID: 0}
   ran: 0
   SimpleMat: {fileID: 2100000, guid: de58091cc1f33d34aa6e26101b553857, type: 2}
   HighlightedMat: {fileID: 2100000, guid: 30df3c2f3c75a4a4194f25e6df5a1e2f, type: 2}
@@ -18269,7 +18257,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -18294,7 +18282,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 1
 --- !u!136 &1130896857
 CapsuleCollider:
@@ -24922,7 +24910,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ed8c8edd0b9dd24ca896c63f7564c82, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 796a8661f6e5fdc4b8941bdb8c6aafa0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

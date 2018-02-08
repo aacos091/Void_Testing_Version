@@ -62,8 +62,11 @@ public class DialogueUITest : DialogueUIBehaviour {
 	{
         //Debug.Log("Ended dialogue!");
 		EndedDialogue.Invoke ();
-		return base.DialogueComplete ();
-	}
+        if (textbox != null)
+            Destroy(textbox);
+        return base.DialogueComplete ();
+
+    }
 
 	public override IEnumerator RunLine (Yarn.Line line)
 	{

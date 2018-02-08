@@ -111,7 +111,9 @@ public class DialogueUITest : DialogueUIBehaviour {
         bool nameCommand = command.text.ToLower().Contains("name|");
         bool portraitCommand = command.text.ToLower().Contains("portrait|");
 
-        if (command.text.ToLower ().Contains ("name|")) 
+		string commandText = command.text.ToLower();
+
+        if (commandText.Contains ("name|")) 
 		{
 			// for reading in nametags
 			if (textboxController.nameTag != null)
@@ -120,7 +122,7 @@ public class DialogueUITest : DialogueUIBehaviour {
 				throw new System.InvalidOperationException (this.name + ": Tried to set nametag text for a textbox with no name tag!");
 		}
 
-		else if (command.text.ToLower ().Contains ("portrait|")) 
+		else if (commandText.Contains ("portrait|")) 
 		{
 			// for choosing which portrait to show
 			imageName = command.text.Remove(0, "portrait|".Length);
@@ -129,6 +131,50 @@ public class DialogueUITest : DialogueUIBehaviour {
 				portrait = Resources.Load<Sprite> ("Graphics/Portraits/" + imageName);
 			else
 				throw new System.InvalidOperationException (this.name + ": Tried to set a portrait for a textbox with no portrait!");
+
+		}
+
+		else if (commandText.Contains("nametagmove|"))
+		{
+			// move the nametag to the left or right edge
+			TextboxNametag nameTag;
+			if (textboxController.nameTag != null)
+				nameTag = textboxController.nameTag;
+			else 
+				throw new System.NullReferenceException("Yarn command sets nametag when there is no nametag on the textbox prefab.");
+
+			string placeToMove = commandText.Substring("nametagmove|".Length);
+			RectTransform rectTrans = textboxController.rectTransform;
+			RectTransform tagRect = nameTag.rectTransform;
+			float edgeX = 0;
+			Vector2 prevPivot = tagRect.pivot;
+			Vector2 newPivot = prevPivot;
+			Vector2 newPos = tagRect.anchoredPosition;
+
+			if (placeToMove == "rightedge")
+			{
+				
+				edgeX = rectTrans.RightEdgeX();
+				newPivot.x = 1;
+				
+			}
+			else if (placeToMove == "leftedge")
+			{
+				edgeX = rectTrans.LeftEdgeX();
+				newPivot.x = 0;
+			}
+			else
+			{
+				string errorMessage = "Invalid argument for changing nametag position: " + placeToMove;
+				errorMessage += "\nPlease change it to LeftEdge or RightEdge.";
+				throw new System.ArgumentException(errorMessage);
+			}
+				
+
+			tagRect.pivot = newPivot;
+			newPos.x = edgeX;
+			tagRect.anchoredPosition = newPos;
+			//tagRect.pivot = prevPivot;
 
 		}
 

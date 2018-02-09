@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using cakeslice;
 
 public class Units : MonoBehaviour 
 {
@@ -21,10 +22,6 @@ public class Units : MonoBehaviour
 
 	//Random variables
 	public int ran;
-
-	//Materials for highlighting
-	public Material SimpleMat;
-	public Material HighlightedMat;
 
 	//Selected GameObject (Unit only)
 	private GameObject mSelectedObject;
@@ -57,6 +54,8 @@ public class Units : MonoBehaviour
 
 	public GameObject chatManager;
 
+	public cakeslice.Outline[] outlineRef;
+
 	public enum States
 	{
 		movingToDestination,
@@ -70,16 +69,20 @@ public class Units : MonoBehaviour
 	{
 		S = this;
 		UnitStartedSpeaking = new UnityEvent();
-		
+
 	}
 	void Start () 
 	{
-		
+		outlineRef = this.GetComponentsInChildren<cakeslice.Outline> ();
+
+		foreach (cakeslice.Outline outl in outlineRef){
+			outl.GetComponent<cakeslice.Outline> ().enabled = false;
+		}
+
 		isAtElevator = false;
 		checkFloor ();
 		unitNameText.GetComponent<Text> ().enabled = false;
 		agent = GetComponent<NavMeshAgent> ();
-
 	}
 
 	void Update () 
@@ -166,6 +169,7 @@ public class Units : MonoBehaviour
 
 			//dialouge = false;
 
+			mSelectedObject.GetComponentInChildren<cakeslice.Outline> ().enabled = false;
 			this.SelectedObject = null;
 			unitNameText.GetComponent<Text> ().enabled = false;
 		}
@@ -190,7 +194,7 @@ public class Units : MonoBehaviour
 			//Set material to non-selected object
 			if (goOld != null) {
                 //goOld.GetComponent<Renderer>().material = SimpleMat;
-                goOld.GetComponentInChildren<Renderer>().material = SimpleMat;
+				goOld.GetComponentInChildren<cakeslice.Outline>().enabled = false;
 			}
 
 			//Set material to selected object
@@ -206,10 +210,10 @@ public class Units : MonoBehaviour
 				chatManager.GetComponent<Chat>().unitName = unitNameText.text.ToString();
 
 				//Set highlight material
-				mSelectedObject.GetComponentInChildren<Renderer> ().material = HighlightedMat;
+				mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled = true;
 
 				//if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)
-                if (this.gameObject.name == "Cook" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
+				if (this.gameObject.name == "Cook" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
                     {
 
 					CameraController.cook = true;
@@ -217,8 +221,7 @@ public class Units : MonoBehaviour
 				}
 
                 //if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-                if (gameObject.name == "Medic" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
-
+				if (gameObject.name == "Medic" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
                 {
 
                     CameraController.medic = true;
@@ -228,7 +231,7 @@ public class Units : MonoBehaviour
                 //TODO: RETAG "Captain" to "First Mate"!!!!!!!!!!
 
                 //if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)                 
-                if (gameObject.name == "Captain" && gameObject.GetComponentInChildren<Renderer>().sharedMaterial == HighlightedMat)
+				if (gameObject.name == "Captain" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
                 {
 
                     CameraController.captain = true;
@@ -236,7 +239,7 @@ public class Units : MonoBehaviour
 				}
                 //if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer>().sharedMaterial == HighlightedMat)
 
-                if (gameObject.name == "Engineer" && gameObject.GetComponentInChildren<Renderer> ().sharedMaterial == HighlightedMat) 
+				if (gameObject.name == "Engineer" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true) 
 				{
 
 					CameraController.engineer = true;

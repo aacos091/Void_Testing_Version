@@ -62,6 +62,8 @@ public class DialogueUITest : DialogueUIBehaviour {
 	{
         //Debug.Log("Ended dialogue!");
 		EndedDialogue.Invoke ();
+		if (textbox != null)
+			Destroy(textbox);
 		return base.DialogueComplete ();
 	}
 

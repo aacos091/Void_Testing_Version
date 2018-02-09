@@ -47,6 +47,7 @@ public class CanvasManager : MonoBehaviour
 
     void Awake()
     {
+
         S = this;
         if (uiParent == null)
             uiParent = gameObject;
@@ -67,6 +68,7 @@ public class CanvasManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
         if (dialogueCanvas != null)
         {
@@ -127,13 +129,25 @@ public class CanvasManager : MonoBehaviour
         {
             if (!GameController.S.gamePaused)
                 GameController.S.RequestGamePause();
-            Camera.main.GetComponent<CameraController>().enabled = false;
-            Camera.main.GetComponent<Controls_Mobile>().enabled = false;
-            Camera.main.GetComponent<Controls_PC>().enabled = false;
-            if (targetCanvas != dialogueCanvas)
-            {
-                MoveCamAway();
-            }
+
+			if (GameObject.Find("First_Mate")) 
+			{
+
+				return;
+
+			} else 
+			{
+
+				Camera.main.GetComponent<CameraController> ().enabled = false;
+				Camera.main.GetComponent<Controls_Mobile> ().enabled = false;
+				Camera.main.GetComponent<Controls_PC> ().enabled = false;
+				if (targetCanvas != dialogueCanvas) {
+					MoveCamAway ();
+				}
+
+			}
+
+
         }
 
         //		if (GameController.S.activeDrawer != null)

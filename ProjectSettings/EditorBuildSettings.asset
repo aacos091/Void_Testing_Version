@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: 
     guid: b35bfc2d05d21df4d98d37fa07c9272c
   - enabled: 0
-    path: 
+    path: Assets/_Scenes/Clue_Command_Merge_TEST_Scene.unity
     guid: 438c7bc1332b4db44be66e5146f72e16
   - enabled: 0
     path: 
     guid: 7cc55edb5b386cd4d8d995a1dce9aeb3
-  - enabled: 0
-    path: 
+  - enabled: 1
+    path: Assets/_Scenes/Clue_Command_Merge_TEST_Scene_01-23-18W.unity
     guid: e84ca7c39ef045842afa6b4374d41fb4
   - enabled: 0
     path: 
@@ -26,3 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Jury_Scene.unity
     guid: 637586c22e7a64f47a2cde93968ab0df
+

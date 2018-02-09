@@ -1025,9 +1025,11 @@ GameObject:
   - component: {fileID: 55637568}
   - component: {fileID: 55637570}
   - component: {fileID: 55637569}
-  m_Layer: 0
+  - component: {fileID: 55637571}
+  - component: {fileID: 55637572}
+  m_Layer: 10
   m_Name: pPlane34
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -1086,6 +1088,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55637567}
+  m_Mesh: {fileID: 4300000, guid: c6865b92cd7866c4fa1204ebd449f517, type: 3}
+--- !u!114 &55637571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 55637567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &55637572
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 55637567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c6865b92cd7866c4fa1204ebd449f517, type: 3}
 --- !u!1 &59149527
 GameObject:
@@ -6108,30 +6137,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   eraseRenderer: 0
---- !u!84 &418481432
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 874
-  m_Height: 492
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &432641201
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,9 +6499,11 @@ GameObject:
   - component: {fileID: 437775985}
   - component: {fileID: 437775987}
   - component: {fileID: 437775986}
-  m_Layer: 0
+  - component: {fileID: 437775988}
+  - component: {fileID: 437775989}
+  m_Layer: 10
   m_Name: pPlane25
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -6555,6 +6562,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437775984}
+  m_Mesh: {fileID: 4300000, guid: ac620a61171cfb24dbc7105c773af4da, type: 3}
+--- !u!114 &437775988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437775984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &437775989
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437775984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ac620a61171cfb24dbc7105c773af4da, type: 3}
 --- !u!1 &439971052
 GameObject:
@@ -11892,9 +11926,11 @@ GameObject:
   - component: {fileID: 732415688}
   - component: {fileID: 732415690}
   - component: {fileID: 732415689}
-  m_Layer: 0
+  - component: {fileID: 732415691}
+  - component: {fileID: 732415692}
+  m_Layer: 10
   m_Name: pPlane31
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -11953,6 +11989,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732415687}
+  m_Mesh: {fileID: 4300000, guid: de5b8fd1fd8de2c4bb8967857ffdb216, type: 3}
+--- !u!114 &732415691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732415687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &732415692
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 732415687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: de5b8fd1fd8de2c4bb8967857ffdb216, type: 3}
 --- !u!1 &740583934
 GameObject:
@@ -12363,30 +12426,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753155840}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &753356185
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 874
-  m_Height: 492
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &753484677
 GameObject:
   m_ObjectHideFlags: 0
@@ -13295,7 +13334,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795996201}
-  m_LocalRotation: {x: 0.6228176, y: -0.6228176, z: 0.33481073, w: 0.3348108}
+  m_LocalRotation: {x: 0.62281764, y: -0.62281764, z: 0.33481076, w: 0.33481082}
   m_LocalPosition: {x: -17.8, y: 49.7, z: 351.3}
   m_LocalScale: {x: 20, y: 20.00002, z: 20.000011}
   m_Children: []
@@ -17300,7 +17339,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 418481432}
+  m_TargetTexture: {fileID: 1440312895}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -22653,6 +22692,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!84 &1377287540
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 463
+  m_Height: 260
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1381967864
 GameObject:
   m_ObjectHideFlags: 0
@@ -23475,9 +23538,11 @@ GameObject:
   - component: {fileID: 1411122428}
   - component: {fileID: 1411122430}
   - component: {fileID: 1411122429}
-  m_Layer: 0
+  - component: {fileID: 1411122431}
+  - component: {fileID: 1411122432}
+  m_Layer: 10
   m_Name: pCube73
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -23536,6 +23601,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411122427}
+  m_Mesh: {fileID: 4300000, guid: 15339c757b4c220449a371fc87a4c397, type: 3}
+--- !u!114 &1411122431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411122427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &1411122432
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411122427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 15339c757b4c220449a371fc87a4c397, type: 3}
 --- !u!1 &1415715306
 GameObject:
@@ -23941,6 +24033,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!84 &1440312895
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 463
+  m_Height: 260
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1441052071
 GameObject:
   m_ObjectHideFlags: 0
@@ -25258,6 +25374,7 @@ GameObject:
   - component: {fileID: 1534458380}
   - component: {fileID: 1534458379}
   - component: {fileID: 1534458388}
+  - component: {fileID: 1534458389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -25486,7 +25603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineThickness: 1
   lineIntensity: 1
-  fillAmount: 0.2
+  fillAmount: 0.05
   lineColor0: {r: 0.2352941, g: 0.7638408, b: 1, a: 1}
   lineColor1: {r: 0, g: 1, b: 0, a: 1}
   lineColor2: {r: 0, g: 0, b: 1, a: 1}
@@ -25500,8 +25617,21 @@ MonoBehaviour:
   sourceCamera: {fileID: 1534458386}
   outlineCamera: {fileID: 1048117444}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 418481432}
-  extraRenderTexture: {fileID: 753356185}
+  renderTexture: {fileID: 1440312895}
+  extraRenderTexture: {fileID: 1377287540}
+--- !u!114 &1534458389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534458377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf5c924b97742b49ab99cdc4074c28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingRooms: []
+  mSelectedObject: {fileID: 0}
 --- !u!1 &1552305230
 GameObject:
   m_ObjectHideFlags: 0
@@ -28875,9 +29005,11 @@ GameObject:
   - component: {fileID: 1767067493}
   - component: {fileID: 1767067495}
   - component: {fileID: 1767067494}
-  m_Layer: 0
+  - component: {fileID: 1767067496}
+  - component: {fileID: 1767067497}
+  m_Layer: 10
   m_Name: pCube95
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -28936,6 +29068,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1767067492}
+  m_Mesh: {fileID: 4300000, guid: 8bea2b2cce035bd4dbbdb915731645e0, type: 3}
+--- !u!114 &1767067496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767067492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &1767067497
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767067492}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8bea2b2cce035bd4dbbdb915731645e0, type: 3}
 --- !u!1 &1810344297
 GameObject:
@@ -30832,6 +30991,7 @@ GameObject:
   - component: {fileID: 1970964663}
   - component: {fileID: 1970964662}
   - component: {fileID: 1970964661}
+  - component: {fileID: 1970964664}
   m_Layer: 0
   m_Name: Pane_Bridge
   m_TagString: Room
@@ -30909,6 +31069,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970964659}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1970964664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970964659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
 --- !u!1 &1975002203
 GameObject:
   m_ObjectHideFlags: 0
@@ -31601,9 +31774,11 @@ GameObject:
   - component: {fileID: 1982764559}
   - component: {fileID: 1982764561}
   - component: {fileID: 1982764560}
-  m_Layer: 0
+  - component: {fileID: 1982764562}
+  - component: {fileID: 1982764563}
+  m_Layer: 10
   m_Name: pCube69
-  m_TagString: Untagged
+  m_TagString: roomGeometry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -31662,6 +31837,33 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1982764558}
+  m_Mesh: {fileID: 4300000, guid: b31b6eaedaee8cd4391a6cbb56a5382e, type: 3}
+--- !u!114 &1982764562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982764558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &1982764563
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1982764558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b31b6eaedaee8cd4391a6cbb56a5382e, type: 3}
 --- !u!1 &1988015910
 GameObject:

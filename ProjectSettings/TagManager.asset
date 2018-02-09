@@ -17,6 +17,7 @@ TagManager:
   - Waypoint
   - SpawnPoint
   - Talk
+  - roomGeometry
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - 
   - Clue
   - Room
-  - 
+  - RoomGeometry
   - 
   - 
   - 

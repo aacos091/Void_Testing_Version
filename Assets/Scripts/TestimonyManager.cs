@@ -48,9 +48,9 @@ public class TestimonyManager : MonoBehaviour
 		entryButton.onClick.AddListener( () => 
 		{
 			if (crewManager.EntryNormal(newEntryGo))
-				crewManager.expandNews(newEntryGo);
+				crewManager.ExpandNews(newEntryGo);
 			else 
-				crewManager.shrinkNews(newEntryGo);
+				crewManager.ShrinkNews(newEntryGo);
 
 		});
 

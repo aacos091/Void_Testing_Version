@@ -26,13 +26,20 @@ public class CrewManager : MonoBehaviour {
 
 	public static CrewManager S;
 
+	IEnumerator sizeChangeCoroutine = null;
+
 
 	// Use this for initialization
-	void Start () {
+	void Awake()
+	{
+		// Needed this in Awake instead of start
 		if (S == null)
 			S = this;
 		else
 			Destroy (this);
+	}
+	void Start () {
+		
 	}
 
 	public void loadImage(Sprite Crew) {
@@ -50,24 +57,34 @@ public class CrewManager : MonoBehaviour {
 		crewDesc.text = info.text;
 	}
 
-	public void expandNews (GameObject btn) {
+	// Changed capitalization on expandNews and shrinkNews to better match the naming 
+	// conventions we agreed on
+	public void ExpandNews (GameObject btn) {
 
 		if (!buttonsManaged.ContainsKey (btn)) 
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 
-		if (buttonsManaged[btn] != ButtonState.expanded)
-			StartCoroutine (Expand (btn));
+		// Makes it so you can click the button multuple times, without messing up its job. 
+		// did the same for shrinkNews, too.
+		if (buttonsManaged[btn] != ButtonState.expanded && sizeChangeCoroutine == null)
+		{
+			sizeChangeCoroutine = Expand(btn);
+			StartCoroutine (sizeChangeCoroutine);
+		}
 	}
 
-	public void shrinkNews(GameObject btn)
+	public void ShrinkNews(GameObject btn)
 	{
 		if (!buttonsManaged.ContainsKey (btn)) 
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 		
-		if (buttonsManaged[btn] != ButtonState.shrunk)
+		if (buttonsManaged[btn] == ButtonState.expanded && sizeChangeCoroutine == null)
+		{
+			sizeChangeCoroutine = Shrink(btn);
 			StartCoroutine (Shrink (btn));
+		}
 	}
 
 	IEnumerator Expand(GameObject button)
@@ -96,7 +113,8 @@ public class CrewManager : MonoBehaviour {
 
 		buttonsManaged [button] = ButtonState.expanded;
 
-		shrinkButton.SetActive (true);
+		sizeChangeCoroutine = null;
+		//shrinkButton.SetActive (true);
 
 	}
 
@@ -124,8 +142,11 @@ public class CrewManager : MonoBehaviour {
 			yield return null;
 		}
 
-		buttonsManaged [button] = ButtonState.shrunk;
-		shrinkButton.SetActive(false);
+		// The Shrunk state isn't ever actually used, so I changed this to make the 
+		// state be normal.
+		buttonsManaged [button] = ButtonState.normal;
+		//shrinkButton.SetActive(false);
+		sizeChangeCoroutine = null;
 
 	}
 

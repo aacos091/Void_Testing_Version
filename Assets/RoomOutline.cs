@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomOutline : MonoBehaviour {
-
+public class RoomOutline : MonoBehaviour 
+{
 	public GameObject[] startingRooms;
-
 	public GameObject mSelectedObject;
 
 	// Use this for initialization

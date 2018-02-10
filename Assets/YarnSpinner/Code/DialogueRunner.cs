@@ -247,7 +247,7 @@ namespace Yarn.Unity
                     ));
 
                 } else if (step is Yarn.Dialogue.CommandResult) {
-					GameController thing;
+					
                     // Wait for command to finish running
 
                     var commandResult = step as Yarn.Dialogue.CommandResult;

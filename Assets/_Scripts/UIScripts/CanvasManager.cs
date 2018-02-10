@@ -104,6 +104,52 @@ public class CanvasManager : MonoBehaviour
         uiParent.SetActive(false);
     }
 
+    public void HideCanvas(Canvas canvas)
+    {
+        CanvasGroup cGroup =    canvas.GetComponent<CanvasGroup>();
+        cGroup.alpha =          0;
+        cGroup.interactable =   false;
+        cGroup.blocksRaycasts = false;
+    }
+
+    public void ShowCanvas(Canvas canvas)
+    {
+        CanvasGroup cGroup =    canvas.GetComponent<CanvasGroup>();
+        cGroup.alpha =          1;
+        cGroup.interactable =   true;
+        cGroup.blocksRaycasts = true;
+
+        if (canvas.gameObject == HUDCanvas)
+        {
+            if (GameController.S.gamePaused)
+                GameController.S.RequestGameResume();
+            //Alex Code
+            Camera.main.GetComponent<CameraController>().enabled =  true;
+            Camera.main.GetComponent<Controls_Mobile>().enabled =   true;
+            Camera.main.GetComponent<Controls_PC>().enabled =       true;
+            
+        }
+        else 
+        {
+            if (!GameController.S.gamePaused)
+                GameController.S.RequestGamePause();
+
+			if (GameObject.Find("First_Mate")) 
+				return;
+			
+             else 
+			{
+
+				Camera.main.GetComponent<CameraController> ().enabled =     false;
+				Camera.main.GetComponent<Controls_Mobile> ().enabled =      false;
+				Camera.main.GetComponent<Controls_PC> ().enabled =          false;
+				if (canvas.gameObject != dialogueCanvas) 
+					MoveCamAway ();
+				
+			}
+        }
+    }
+
     // This function does the same as the above function but is supposed to activate the
     // target canvas They are named differently so that setting up games UI is easier.
     public void loadCanvas(GameObject targetCanvas)

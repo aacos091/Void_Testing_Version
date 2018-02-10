@@ -10,7 +10,8 @@ using TeaspoonTools.TextboxSystem;
 using TeaspoonTools.TextboxSystem.Utils;
 using TeaspoonTools.Utils;
 
-public class DialogueUITest : DialogueUIBehaviour {
+public class DialogueUITest : DialogueUIBehaviour 
+{
 
 	[HideInInspector]
 	public UnityEvent StartedDialogue 		= 		new UnityEvent();
@@ -60,7 +61,7 @@ public class DialogueUITest : DialogueUIBehaviour {
 
 	public override IEnumerator DialogueComplete ()
 	{
-        //Debug.Log("Ended dialogue!");
+        Debug.Log("Ended dialogue!");
 		EndedDialogue.Invoke ();
 		if (textbox != null)
 			Destroy(textbox);

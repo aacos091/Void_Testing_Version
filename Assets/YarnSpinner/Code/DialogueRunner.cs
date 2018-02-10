@@ -224,7 +224,8 @@ namespace Yarn.Unity
 
             // Get lines, options and commands from the Dialogue object,
             // one at a time.
-            foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) {
+            foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) 
+            {
 
 				while (paused)
 					yield return null;
@@ -236,7 +237,9 @@ namespace Yarn.Unity
                     var lineResult = step as Yarn.Dialogue.LineResult;
                     yield return StartCoroutine (this.dialogueUI.RunLine (lineResult.line));
 
-                } else if (step is Yarn.Dialogue.OptionSetResult) {
+                } 
+                else if (step is Yarn.Dialogue.OptionSetResult) 
+                {
 
                     // Wait for user to finish picking an option
                     var optionSetResult = step as Yarn.Dialogue.OptionSetResult;
@@ -246,10 +249,11 @@ namespace Yarn.Unity
                         optionSetResult.setSelectedOptionDelegate
                     ));
 
-                } else if (step is Yarn.Dialogue.CommandResult) {
+                } 
+                else if (step is Yarn.Dialogue.CommandResult) 
+                {
 					
                     // Wait for command to finish running
-
                     var commandResult = step as Yarn.Dialogue.CommandResult;
 
                     if (DispatchCommand(commandResult.command.text) == true) {
@@ -259,7 +263,9 @@ namespace Yarn.Unity
                     }
 
 
-                } else if(step is Yarn.Dialogue.NodeCompleteResult) {
+                } 
+                else if(step is Yarn.Dialogue.NodeCompleteResult) 
+                {
 
                     // Wait for post-node action
                     var nodeResult = step as Yarn.Dialogue.NodeCompleteResult;
@@ -277,17 +283,17 @@ namespace Yarn.Unity
         }
 
         /// Clear the dialogue system
-        public void Clear() {
-
-            if (isDialogueRunning) {
+        public void Clear() 
+        {
+            if (isDialogueRunning) 
                 throw new System.InvalidOperationException("You cannot clear the dialogue system while a dialogue is running.");
-            }
-
+            
             dialogue.UnloadAll();
         }
 
         /// Stop the dialogue
-        public void Stop() {
+        public void Stop() 
+        {
             isDialogueRunning = false;
             dialogue.Stop();
         }
@@ -312,7 +318,8 @@ namespace Yarn.Unity
          * 2. the second word is the name of an object
          * 3. that object has components that have methods with the YarnCommand attribute that have the correct commandString set
          */
-        public bool DispatchCommand(string command) {
+        public bool DispatchCommand(string command) 
+        {
 
             var words = command.Split(' ');
 

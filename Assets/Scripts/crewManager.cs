@@ -24,15 +24,25 @@ public class CrewManager : MonoBehaviour {
 
 	public GameObject shrinkButton;
 
-	public static CrewManager S;
+	public static CrewManager S = null;
+
+	IEnumerator sizeChangeCoroutine = null;
 
 
-	// Use this for initialization
-	void Start () {
+	void Awake()
+	{
+		// Moved this code to Awake, since this sort of initialization thing actually 
+		// belongs in Awake. Unity (kinda) lied, saying to use Start for initialization.
 		if (S == null)
 			S = this;
+
 		else
 			Destroy (this);
+	}
+	
+	// Use this for initialization
+	void Start () {
+		
 	}
 
 	public void loadImage(Sprite Crew) {
@@ -56,8 +66,11 @@ public class CrewManager : MonoBehaviour {
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 
-		if (buttonsManaged[btn] != ButtonState.expanded)
-			StartCoroutine (Expand (btn));
+		if (buttonsManaged[btn] != ButtonState.expanded && sizeChangeCoroutine == null)
+		{		
+			sizeChangeCoroutine = Expand(btn);
+			StartCoroutine (sizeChangeCoroutine);
+		}
 	}
 
 	public void shrinkNews(GameObject btn)
@@ -66,8 +79,11 @@ public class CrewManager : MonoBehaviour {
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 		
-		if (buttonsManaged[btn] != ButtonState.shrunk)
-			StartCoroutine (Shrink (btn));
+		if (buttonsManaged[btn] == ButtonState.expanded && sizeChangeCoroutine == null) 
+		{				
+			sizeChangeCoroutine = Shrink(btn);
+			StartCoroutine (sizeChangeCoroutine);
+		}
 	}
 
 	IEnumerator Expand(GameObject button)
@@ -95,8 +111,8 @@ public class CrewManager : MonoBehaviour {
 		}
 
 		buttonsManaged [button] = ButtonState.expanded;
-
-		shrinkButton.SetActive (true);
+		sizeChangeCoroutine = null;
+		//shrinkButton.SetActive (true);
 
 	}
 
@@ -124,8 +140,12 @@ public class CrewManager : MonoBehaviour {
 			yield return null;
 		}
 
-		buttonsManaged [button] = ButtonState.shrunk;
-		shrinkButton.SetActive(false);
+		//buttonsManaged [button] = ButtonState.shrunk;
+
+		// The Shrunk state isn't really used; let's just set the button to the normal state
+		buttonsManaged[button] = ButtonState.normal;
+		sizeChangeCoroutine = null;
+		//shrinkButton.SetActive(false);
 
 	}
 

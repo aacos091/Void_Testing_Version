@@ -26,13 +26,22 @@ public class CrewManager : MonoBehaviour {
 
 	public static CrewManager S;
 
+	IEnumerator sizeChangeCoroutine = null;
 
-	// Use this for initialization
-	void Start () {
+
+	void Awake()
+	{
+		// Need to set the singleton in awake, to make sure that other scripts can access them 
+		// after their Awake functions are done
 		if (S == null)
 			S = this;
 		else
 			Destroy (this);
+	}
+
+	// Use this for initialization
+	void Start () {
+		
 	}
 
 	public void loadImage(Sprite Crew) {
@@ -56,8 +65,11 @@ public class CrewManager : MonoBehaviour {
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 
-		if (buttonsManaged[btn] != ButtonState.expanded)
-			StartCoroutine (Expand (btn));
+		if (buttonsManaged[btn] != ButtonState.expanded && sizeChangeCoroutine == null)
+		{
+			sizeChangeCoroutine = Expand(btn);
+			StartCoroutine (sizeChangeCoroutine);
+		}
 	}
 
 	public void shrinkNews(GameObject btn)
@@ -66,8 +78,11 @@ public class CrewManager : MonoBehaviour {
 			// register this new button, and assume it's at a normal state
 			buttonsManaged.Add(btn, ButtonState.normal);
 		
-		if (buttonsManaged[btn] != ButtonState.shrunk)
-			StartCoroutine (Shrink (btn));
+		if (buttonsManaged[btn] != ButtonState.normal && sizeChangeCoroutine == null)
+		{
+			sizeChangeCoroutine = Shrink(btn);
+			StartCoroutine (sizeChangeCoroutine);
+		}
 	}
 
 	IEnumerator Expand(GameObject button)
@@ -95,8 +110,8 @@ public class CrewManager : MonoBehaviour {
 		}
 
 		buttonsManaged [button] = ButtonState.expanded;
-
-		shrinkButton.SetActive (true);
+		sizeChangeCoroutine = null;
+		//shrinkButton.SetActive (true);
 
 	}
 
@@ -124,8 +139,10 @@ public class CrewManager : MonoBehaviour {
 			yield return null;
 		}
 
-		buttonsManaged [button] = ButtonState.shrunk;
-		shrinkButton.SetActive(false);
+		buttonsManaged [button] = ButtonState.normal;
+		sizeChangeCoroutine = null;
+		
+		//shrinkButton.SetActive(false);
 
 	}
 

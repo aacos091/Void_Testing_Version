@@ -209,4 +209,36 @@ public class CanvasManager : MonoBehaviour
             canvas.SetActive(true);
         }
     }
+
+    public void HideCanvas(Canvas canvas)
+    {
+        CanvasGroup cGroup = canvas.GetComponent<CanvasGroup>();
+
+        if (cGroup == null)
+        {
+            string errorMessageFormat = "{0}: {1} needs to have a CanvasGroup component for it to be ";
+            errorMessageFormat += "hidden properly.";
+            throw new System.NullReferenceException(string.Format(errorMessageFormat, this.name, canvas.name));
+        }
+
+        cGroup.alpha =              0;
+        cGroup.interactable =       false;
+        cGroup.blocksRaycasts =     false;
+    }
+
+    public void ShowCanvas(Canvas canvas)
+    {
+        CanvasGroup cGroup = canvas.GetComponent<CanvasGroup>();
+
+        if (cGroup == null)
+        {
+            string errorMessageFormat = "{0}: {1} needs to have a CanvasGroup component for it to be ";
+            errorMessageFormat += "shown properly.";
+            throw new System.NullReferenceException(string.Format(errorMessageFormat, this.name, canvas.name));
+        }
+
+        cGroup.alpha =              1;
+        cGroup.interactable =       true;
+        cGroup.blocksRaycasts =     true;
+    }
 }

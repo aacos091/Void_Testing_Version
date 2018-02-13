@@ -105,8 +105,9 @@ public class ClueItemInspector : MonoBehaviour
             print("Position: " + pos);
             RaycastHit objectHit;
             Debug.DrawRay(pos.origin, pos.direction * rayCastDistance, Color.red, 5f);
+
             //TODO Put clue's on a specific layer and have the Raycast search only that layer. That way our raycasting is more efficient.
-            if (Physics.Raycast(pos.origin, pos.direction, out objectHit, rayCastDistance))
+            if (Physics.Raycast(pos.origin, pos.direction, out objectHit, rayCastDistance, _clueLayer))
             {
                 if (objectHit.collider.CompareTag("Clue") || objectHit.collider.CompareTag("Prop"))
                 {
@@ -114,7 +115,8 @@ public class ClueItemInspector : MonoBehaviour
 
                     // Open Clue UI Window before spawning the clone 
                     //clueUIWindow.SetActive(true);
-					CanvasManager.S.loadCanvas(clueUIWindow);
+                    CanvasManager.S.disableCanvas(CanvasManager.S.HUDCanvas);
+                    CanvasManager.S.loadCanvas(clueUIWindow);
 
 					// 01-23-18 Disable HUD
 

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00b31e26-80fc-4c09-acaf-175c73a5cd89" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="playSound.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/_Scripts/playSound.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="557">
+              <caret line="515" column="22" lean-forward="false" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
+              <folding>
+                <marker date="1518551442761" expanded="true" signature="6:96" ph="..." />
+                <marker date="1518551442761" expanded="true" signature="137:5781" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2061:2085" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2107:2132" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2154:2179" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2205:2231" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2255:2283" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2304:2328" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2351:2377" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2434:5778" ph="{...}" />
+                <marker date="1518551442761" expanded="true" signature="2454:5772" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TSTTextboxController.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/TespyTextboxSystem/Scripts/TeaspoonTools/TextboxSystem/TSTTextboxController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1518545399614" expanded="false" signature="6:240" ph="..." />
+                <marker date="1518545399614" expanded="true" signature="279:8993" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="339:352" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="404:592" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="663:8990" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="855:1433" ph="Basic Attributes" />
+                <marker date="1518545399614" expanded="true" signature="1038:1352" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1050:1348" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1131:1276" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1277:1342" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1438:4349" ph="Properties to Interface with those Components" />
+                <marker date="1518545399614" expanded="true" signature="1527:2002" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1593:1998" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1706:1768" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="1804:1944" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2029:2148" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2173:2290" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2325:2454" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2488:2603" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2636:2705" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2738:3116" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2750:2929" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2782:2896" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2937:3112" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="2969:3078" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3145:3513" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3157:3331" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3189:3300" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3339:3509" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3371:3477" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3550:3942" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3562:3748" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3595:3714" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3756:3938" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3789:3903" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="3966:4174" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4015:4170" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4197:4336" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4250:4332" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4523:4582" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4612:4682" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="4711:4959" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="5033:5192" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="5267:5731" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="5561:5668" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="5762:5843" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="5853:6034" ph="///  Places a textbox on screen based on the anchor passed. Works off viewport coords. ... " />
+                <marker date="1518545399614" expanded="true" signature="6118:6223" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="6302:6384" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="6413:6474" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="6479:7584" ph="To interface with the submodules" />
+                <marker date="1518545399614" expanded="true" signature="6568:6818" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="6874:7085" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="7151:7564" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="7159:7299" ph="/* Applies the text settings passed to this function. If nothing is passed, ... */" />
+                <marker date="1518545399614" expanded="true" signature="7375:7465" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="7617:8155" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="7640:7715" ph="/* squishes this textbox into nonexistence ... */" />
+                <marker date="1518545399614" expanded="true" signature="7900:8093" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="8175:8266" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="8298:8718" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="8438:8648" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="8747:8836" ph="{...}" />
+                <marker date="1518545399614" expanded="true" signature="8867:8987" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/TespyTextboxSystem/Scripts/TeaspoonTools/TextboxSystem/TSTTextboxController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/playSound.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/_Scripts/playSound.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2814" />
+    <option name="y" value="-15" />
+    <option name="width" value="1920" />
+    <option name="height" value="1058" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TespyTextboxSystem" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TespyTextboxSystem" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TespyTextboxSystem" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TeaspoonTools" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Void_Testing_Version-master (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TespyTextboxSystem" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TeaspoonTools" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="TextboxSystem" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00b31e26-80fc-4c09-acaf-175c73a5cd89" name="Default" comment="" />
+      <created>1518545974638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1518545974638</updated>
+      <workItem from="1518545977228" duration="5008000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5008000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/TespyTextboxSystem/Scripts/TeaspoonTools/TextboxSystem/TSTTextboxController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1518545399614" expanded="false" signature="6:240" ph="..." />
+            <marker date="1518545399614" expanded="true" signature="279:8993" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="339:352" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="404:592" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="663:8990" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="855:1433" ph="Basic Attributes" />
+            <marker date="1518545399614" expanded="true" signature="1038:1352" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1050:1348" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1131:1276" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1277:1342" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1438:4349" ph="Properties to Interface with those Components" />
+            <marker date="1518545399614" expanded="true" signature="1527:2002" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1593:1998" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1706:1768" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="1804:1944" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2029:2148" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2173:2290" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2325:2454" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2488:2603" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2636:2705" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2738:3116" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2750:2929" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2782:2896" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2937:3112" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="2969:3078" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3145:3513" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3157:3331" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3189:3300" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3339:3509" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3371:3477" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3550:3942" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3562:3748" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3595:3714" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3756:3938" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3789:3903" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="3966:4174" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4015:4170" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4197:4336" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4250:4332" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4523:4582" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4612:4682" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="4711:4959" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="5033:5192" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="5267:5731" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="5561:5668" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="5762:5843" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="5853:6034" ph="///  Places a textbox on screen based on the anchor passed. Works off viewport coords. ... " />
+            <marker date="1518545399614" expanded="true" signature="6118:6223" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="6302:6384" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="6413:6474" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="6479:7584" ph="To interface with the submodules" />
+            <marker date="1518545399614" expanded="true" signature="6568:6818" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="6874:7085" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="7151:7564" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="7159:7299" ph="/* Applies the text settings passed to this function. If nothing is passed, ... */" />
+            <marker date="1518545399614" expanded="true" signature="7375:7465" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="7617:8155" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="7640:7715" ph="/* squishes this textbox into nonexistence ... */" />
+            <marker date="1518545399614" expanded="true" signature="7900:8093" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="8175:8266" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="8298:8718" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="8438:8648" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="8747:8836" ph="{...}" />
+            <marker date="1518545399614" expanded="true" signature="8867:8987" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_Scripts/playSound.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="515" column="22" lean-forward="false" selection-start-line="515" selection-start-column="22" selection-end-line="515" selection-end-column="22" />
+          <folding>
+            <marker date="1518551442761" expanded="true" signature="6:96" ph="..." />
+            <marker date="1518551442761" expanded="true" signature="137:5781" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2061:2085" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2107:2132" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2154:2179" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2205:2231" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2255:2283" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2304:2328" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2351:2377" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2434:5778" ph="{...}" />
+            <marker date="1518551442761" expanded="true" signature="2454:5772" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -5,13 +5,21 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class VerbalClueEntry : MonoBehaviour 
+public class TestimonyEntry : MonoBehaviour 
 {
 	[SerializeField] string _text;
 	[SerializeField] Sprite _giverMugshot;
 
-	[SerializeField] Text textField;
+	[SerializeField] Text _textField;
 	[SerializeField] Image giverImage;
+
+	public Text textField 
+	{ 
+		get { return _textField; }
+		protected set { _textField = value; }
+	}
+
+	public RectTransform rectTransform;
 
 	public string text 
 	{ 
@@ -33,6 +41,10 @@ public class VerbalClueEntry : MonoBehaviour
 		}
 	}
 
+	void Awake()
+	{
+		rectTransform = GetComponent<RectTransform>();
+	}
 	public void Init(string text, Sprite giverMug)
 	{
 		

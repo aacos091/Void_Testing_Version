@@ -13,25 +13,61 @@ public enum ScrollbarType
 }
 
 
+/// <summary>
+/// Manages the size of the scrollbar's handle, as well as its visibility.
+/// </summary>
 [RequireComponent(typeof(CanvasGroup))]
-public class ScrollbarEnabler : MonoBehaviour 
+[RequireComponent(typeof(Scrollbar))]
+public class ScrollbarSizer : MonoBehaviour 
 {
 	CanvasGroup cGroup;
 	[SerializeField] ScrollbarType type = ScrollbarType.vertical;
 	[SerializeField] RectTransform viewport;
 	[SerializeField] RectTransform content;
 	public bool isVisible { get; protected set; }
+
+	[Header("For debugging")]
+	[SerializeField] float _contentHeight;
+	float contentWidth
+	{
+		get 
+		{
+			float width = 0;
+			foreach (RectTransform child in content)
+				if (child.gameObject.activeSelf)
+					width += child.rect.width;
+			
+			return width;
+		}
+	}
+
+	float contentHeight
+	{
+		get 
+		{
+			float height = 0;
+			foreach (RectTransform child in content)
+				if (child.gameObject.activeSelf)
+					height += child.rect.height;
+
+			_contentHeight = height;
+			return height;
+		}
+	}
 	bool shouldHideScrollbar 
 	{ 
 		get 
 		{ 
 			if (type == ScrollbarType.vertical)
-				return content.rect.height > viewport.rect.height; 
+				return contentHeight <= viewport.rect.height; 
 			else 
-				return content.rect.width > viewport.rect.width;
+				return contentWidth <= viewport.rect.width;
 		} 
 	}
 
+	
+
+	// Methods
 	void Awake()
 	{
 		isVisible = true;
@@ -62,6 +98,11 @@ public class ScrollbarEnabler : MonoBehaviour
 		cGroup.interactable = 	true;
 		cGroup.blocksRaycasts = true;
 		isVisible = true;
+	}
+
+	void UpdateSize()
+	{
+		
 	}
 	
 }

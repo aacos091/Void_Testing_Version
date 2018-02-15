@@ -33,3 +33,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/_Scripts/Controls_PC.cs
+*.meta

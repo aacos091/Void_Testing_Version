@@ -22,7 +22,7 @@ public class VerbalClueManager : MonoBehaviour
 	{
 		Debug.Log("Adding verbal clue!");
 		GameObject newEntryGo = Instantiate<GameObject>(entryPrefab);
-		VerbalClueEntry entryDetails = newEntryGo.GetComponent<VerbalClueEntry>();
+		TestimonyEntry entryDetails = newEntryGo.GetComponent<TestimonyEntry>();
 
 		// The text may contain a variable, so make sure that the right value is shown instead 
 		// of the variable name

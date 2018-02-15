@@ -50,8 +50,12 @@ public class RoomOutline : MonoBehaviour {
 		} 
 		else 
 		{
-			mSelectedObject.GetComponent<cakeslice.Outline> ().enabled = false;
+			if (mSelectedObject != null) {
+				mSelectedObject.GetComponent<cakeslice.Outline> ().enabled = false;
+			}
 			this.SelectedObject = null;
+
+			mSelectedObject.GetComponent<cakeslice.Outline> ().enabled = false;
 		}
 	}
 

@@ -22,6 +22,7 @@ public class ProceduralEngine : MonoBehaviour {
 	private List<string>	_crewMembers = new List<string>() {"Cook", "Engineer", "First Mate", "Medic", "Pilot"};		// This List holds the titles of all of the crewmembers. Will be used to determine TruthTeller1 and TruthTeller 2
 	private string			_truthTeller1;
 	private string			_truthTeller2;
+	private string			_misleadingCrewMember;
     [SerializeField]
     private GameObject      _dialogueSystem;
 
@@ -38,6 +39,7 @@ public class ProceduralEngine : MonoBehaviour {
 	// May have to change this list from string to ClueInfo
 	private List<string>	_cluesList;
 	private int 			AMOUNT_OF_CLUES;
+	[SerializeField]private ExampleVariableStorage	yarnVarRef;
 
 
 	[Header("JSON Data files go in their corresponding slots below.")]
@@ -52,6 +54,7 @@ public class ProceduralEngine : MonoBehaviour {
 	public List<Transform>		spawnPoints;
 
 	public Transform			shipTransform;
+	public GameObject			dialogueSystem;
 
 	//private StringBuilder	output = new StringBuilder ();
 
@@ -60,12 +63,11 @@ public class ProceduralEngine : MonoBehaviour {
 		SetInformation ();
 		// This function is just here to make sure that all the variables are being set.
 		LogInfoToConsole ();
-
 	}
 
 	void Start()
 	{
-		
+		yarnVarRef = dialogueSystem.GetComponent <ExampleVariableStorage>();
 		//InitializeVariableStorage ();
 		InitializeYarnVariables();
 	}
@@ -107,6 +109,8 @@ public class ProceduralEngine : MonoBehaviour {
 		ChooseClues();
 		// Choose the two crew members that will be telling the truth when interviewed
 		ChooseTruthTellers ();
+		// Choose the crew member that will unintentionally point you in the wrong direction
+		ChooseMisleadingCrewMember();
 	}
 
 	//This method is run first in the Procedural Engine initial setup
@@ -324,6 +328,17 @@ public class ProceduralEngine : MonoBehaviour {
 		}
 	}
 
+	void ChooseMisleadingCrewMember ()
+	{
+		foreach (string c in _crewMembers)
+		{
+			if (c == Culprit || c == Victim || c == TruthTeller1 || c == TruthTeller2)
+			break;
+			else
+			_misleadingCrewMember = c;
+		}
+	}
+
 	// Function used to make sure the clues are positioned properly according to the size of their Colliders
 	void PositionClue (GameObject go)
 	{
@@ -358,6 +373,19 @@ public class ProceduralEngine : MonoBehaviour {
 
 	// }
 
+	 [YarnCommand ("ChangeMention")]
+	 public void ChangeMention (string title, string newValue)
+	 {
+		 //Debug.LogError ("Change Mention called");
+		 foreach (ExampleVariableStorage.DefaultVariable c in yarnVarRef.defaultVariables)
+		 {
+			 string mentionString = "$" + title + "Mention";
+			 if (c.name == mentionString)
+			 {
+				 c.value = newValue;
+			 } 	
+		 }
+	 }
 	void InitializeYarnVariables ()
     {
         Yarn.Value.Type boolType = Yarn.Value.Type.Bool;
@@ -365,42 +393,98 @@ public class ProceduralEngine : MonoBehaviour {
 
         ExampleVariableStorage varStorage = _dialogueSystem.GetComponent<ExampleVariableStorage>(); //GameObject.Find ("DialogueSystem").GetComponent<ExampleVariableStorage>();
 
-        // Create the base Yarn variables such as $CRIMESCENE, $VICTIM, $SUSPECT, $METHOD, $CRIMELOCATION
+        // Create the base Yarn variables such as $CRIMESCENE, $VICTIM, $SUSPECT, $METHOD, $CRIMELOCATION, $TruthTeller1, 2, $PilotMention, $CookMention etc
         ExampleVariableStorage.DefaultVariable crimeSceneTDV = new ExampleVariableStorage.DefaultVariable();
         ExampleVariableStorage.DefaultVariable victimTDV = new ExampleVariableStorage.DefaultVariable();
         ExampleVariableStorage.DefaultVariable suspectTDV = new ExampleVariableStorage.DefaultVariable();
         ExampleVariableStorage.DefaultVariable murderMethodTDV = new ExampleVariableStorage.DefaultVariable();
         ExampleVariableStorage.DefaultVariable crimeLocationTDV = new ExampleVariableStorage.DefaultVariable();
+		// Start of TT and Mention Variables
+		ExampleVariableStorage.DefaultVariable truthTeller1TDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable truthTeller2TDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable misleadingCrewTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable cookMentionTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable engineerMentionTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable firstMateMentionTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable medicMentionTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable pilotMentionTDV = new ExampleVariableStorage.DefaultVariable();
 
         // Assign the types for the variables
         crimeSceneTDV.type = stringType;
         victimTDV.type = stringType;
         suspectTDV.type = stringType;
         murderMethodTDV.type = stringType;
+		// Assign the TT and Mention variable types
+		truthTeller1TDV.type = stringType;
+		truthTeller2TDV.type = stringType;
+		misleadingCrewTDV.type = stringType;
+		cookMentionTDV.type = stringType;
+		engineerMentionTDV.type = stringType;
+		firstMateMentionTDV.type = stringType;
+		medicMentionTDV.type = stringType;
+		pilotMentionTDV.type = stringType;
 
         // Assign the names for these variables, this is the names that will be used to access them in Yarn
         crimeSceneTDV.name = "$CRIMESCENE";
         victimTDV.name = "$VICTIM";
         suspectTDV.name = "$SUSPECT";
         murderMethodTDV.name = "$MURDERMETHOD";
+		// Assign the names for the TT and Mention Variables
+		truthTeller1TDV.name = "$TruthTeller1";
+		truthTeller2TDV.name = "$TruthTeller2";
+		misleadingCrewTDV.name = "$MisleadingCrew";
+		cookMentionTDV.name = "$CookMention";
+		engineerMentionTDV.name = "$EngineerMention";
+		firstMateMentionTDV.name = "$FirstMateMention";
+		medicMentionTDV.name = "$MedicMention";
+		pilotMentionTDV.name = "$PilotMention";
 
         // Assign the values that will be held in these yarn Variables
         crimeSceneTDV.value = MurderLocation;
         victimTDV.value = Victim;
         suspectTDV.value = Culprit;
         murderMethodTDV.value = MurderMethod;
+		// Assign the values that will be held in the TT1, TT2 and mention yarn Variables
+		truthTeller1TDV.value = TruthTeller1;
+		truthTeller2TDV.value = TruthTeller2;
+		misleadingCrewTDV.value = MisleadingCrewMember;
+		cookMentionTDV.value = "no";
+		engineerMentionTDV.value = "no";
+		firstMateMentionTDV.value = "no";
+		medicMentionTDV.value = "no";
+		pilotMentionTDV.value = "no";
+
 
         // Add each of these created Yarn Variables to our List that will hold them all
         varStorage.defaultVariables.Add(crimeSceneTDV);
         varStorage.defaultVariables.Add(victimTDV);
         varStorage.defaultVariables.Add(suspectTDV);
         varStorage.defaultVariables.Add(murderMethodTDV);
+		// Adding the TT1, TT2 and mention variables to Yarn
+		varStorage.defaultVariables.Add(truthTeller1TDV);
+		varStorage.defaultVariables.Add(truthTeller2TDV);
+		varStorage.defaultVariables.Add(misleadingCrewTDV);
+		varStorage.defaultVariables.Add(cookMentionTDV);
+		varStorage.defaultVariables.Add(engineerMentionTDV);
+		varStorage.defaultVariables.Add(firstMateMentionTDV);
+		varStorage.defaultVariables.Add(medicMentionTDV);
+		varStorage.defaultVariables.Add(pilotMentionTDV);
+
 
         // Now Actually Set the values
         varStorage.SetValue (crimeSceneTDV.name, new Yarn.Value(MurderLocation));
         varStorage.SetValue (victimTDV.name, new Yarn.Value(Victim));
         varStorage.SetValue(suspectTDV.name, new Yarn.Value(Culprit));
         varStorage.SetValue(murderMethodTDV.name, new Yarn.Value(MurderMethod));
+		// Setting the TT1, TT2, and Mention variables
+		varStorage.SetValue (truthTeller1TDV.name, new Yarn.Value (TruthTeller1));
+		varStorage.SetValue (truthTeller2TDV.name, new Yarn.Value (TruthTeller2));
+		varStorage.SetValue(misleadingCrewTDV.name, new Yarn.Value (MisleadingCrewMember));
+		varStorage.SetValue (cookMentionTDV.name, new Yarn.Value("no"));
+		varStorage.SetValue (engineerMentionTDV.name, new Yarn.Value("no"));
+		varStorage.SetValue (firstMateMentionTDV.name, new Yarn.Value("no"));
+		varStorage.SetValue (medicMentionTDV.name, new Yarn.Value("no"));
+		varStorage.SetValue (pilotMentionTDV.name, new Yarn.Value("no"));
 
         // Go through as many cycles as we need to, in order to ensure that we create the proper yarn variables for each clue in the playthrough ("amountOfVoidClues")
         for (int i = 0; i < AMOUNT_OF_CLUES_PER_PLAYTHROUGH; i++)
@@ -483,5 +567,10 @@ public class ProceduralEngine : MonoBehaviour {
 	public string TruthTeller2
 	{
 		get { return _truthTeller2; }
+	}
+
+	public string MisleadingCrewMember
+	{
+		get { return _misleadingCrewMember; }
 	}
 }

@@ -136,12 +136,14 @@ public class Units : MonoBehaviour
 	//This checks the floor that the Unit is on. 
 	public void checkFloor()
 	{
-		if (gameObject.transform.position.y < -5)
+		if (gameObject.transform.position.y <= -4.5)
 			floor = 1;
-		if (gameObject.transform.position.y > -5 && gameObject.transform.position.y < 10)
+		if (gameObject.transform.position.y >= -4.5 && gameObject.transform.position.y < -3)
 			floor = 2;
-		if (gameObject.transform.position.y > 10 && gameObject.transform.position.y < 25)
+		if (gameObject.transform.position.y > -3 && gameObject.transform.position.y < -0.635)
 			floor = 3;
+		if (gameObject.transform.position.y > -0.635)
+			floor = 4;
 	}
 
 	private void SelectObjectByMousePos()
@@ -169,7 +171,9 @@ public class Units : MonoBehaviour
 
 			//dialouge = false;
 
-			mSelectedObject.GetComponentInChildren<cakeslice.Outline> ().enabled = false;
+			if (mSelectedObject != null) {
+				mSelectedObject.GetComponentInChildren<cakeslice.Outline> ().enabled = false;
+			}
 			this.SelectedObject = null;
 			unitNameText.GetComponent<Text> ().enabled = false;
 		}
@@ -290,7 +294,7 @@ public class Units : MonoBehaviour
 	void GotoNextPoint ()
 	{
 
-		int chance = Random.Range (0, 1000);
+		int chance = Random.Range (0, 10000);
 
 		int near = Random.Range (0, 100);
 
@@ -299,10 +303,11 @@ public class Units : MonoBehaviour
 
 			Vector3 nearest = (findClosestWaypointToUnit().transform.position);
 
-			agent.SetDestination (nearest);
-
+			if (findClosestWaypointToUnit().GetComponent<Waypoint> ().isCollidingWithUnit != true) {
+				agent.SetDestination (nearest);
+			}
+	
 			currentState = States.movingToDestination;
-
 		}
 
 		if (chance == 1) 
@@ -321,8 +326,10 @@ public class Units : MonoBehaviour
 			//Set agent to walk towards that nav point
 
 			if (floor == waypoint.floor) {
-				agent.SetDestination (waypoints [ran].position);
-				Debug.Log ("Going to " + waypoints [ran].name);
+
+				if (waypoints [ran].GetComponent<Waypoint> ().isCollidingWithUnit != true) {
+					agent.SetDestination (waypoints [ran].position);
+				}
 			}
 
 			//If the waypoint is not on the same floor as the unit:

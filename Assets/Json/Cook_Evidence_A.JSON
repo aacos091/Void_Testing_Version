@@ -2,10 +2,10 @@
 	{
 		"title": "Cook",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_happy>>\nWhat's up?\n\n<<Speak Audio CCaio>>\n\n<</Textbox>>\n<<set $exampleTestimony to \"CHOOOCOLAAAAATE\">>\n<<AddEntry TestimonyCanvas $exampleTestimony cook_happy>>\n\n<<if $TruthTeller1 == \"Cook\" or $TruthTeller2 == \"Cook\">>\n    <<ChangeMention _ProceduralManager Cook yes>>\n<<endif>>\n\n<<if $Clue1Found is true and ($Clue1Owner1 is \"Cook\" or $Clue1Owner2 is \"Cook\")>>\n    [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Cook\" or $Clue2Owner2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Cook\" or $Clue3Owner2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Cook\" or $Clue4Owner2 is \"Cook\")>>\n    [[What do you know about this $Clue4?|Cook.Question4]]\n<<endif>>\n\n\n//    <<if $Clue1Found is true and ($Clue1Owner1 != \"Cook\" or $Clue1Owner2 != \"Cook\")>> \n//[[Cook.Redirect]]\n//<<endif>>\n    //<<if $Clue2Found is true and ($Clue2Owner1 != \"Cook\" or $Clue2Owner2 != \"Cook\")>> \n//[[Cook.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"Cook\" or $Clue3Owner2 != \"Cook\")>> \n//[[Cook.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Cook\" or $Clue4Owner2 != \"Cook\")>> \n//[[Cook.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Cook.Bye]]",
+		"body": "<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_happy>>\nWhat's up?\n\n<<Speak Audio CCaio>>\n\n<</Textbox>>\n<<set $exampleTestimony to \"CHOOOCOLAAAAATE\">>\n<<AddEntry TestimonyCanvas $exampleTestimony cook_happy>>\n\n//<<if $TruthTeller1 == \"Cook\" or $TruthTeller2 == \"Cook\">>\n   // <<ChangeMention _ProceduralManager Cook true>>\n//<<endif>>\n\n<<if $TruthTeller1 == \"Cook\">>\n    <<UnlockInterviewB _ProceduralManager TT2InterviewBOpen true>>\n<<endif>>\n\n<<if $Clue1Found is true and ($Clue1Owner1 is \"Cook\" or $Clue1Owner2 is \"Cook\")>>\n    [[What do you know about $Clue1?|Cook.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Cook\" or $Clue2Owner2 is \"Cook\")>>\n    [[What do you know about $Clue2?|Cook.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Cook\" or $Clue3Owner2 is \"Cook\")>>\n    [[What do you know about $Clue3?|Cook.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Cook\" or $Clue4Owner2 is \"Cook\")>>\n    [[What do you know about this $Clue4?|Cook.Question4]]\n<<endif>>\n\n\n//    <<if $Clue1Found is true and ($Clue1Owner1 != \"Cook\" or $Clue1Owner2 != \"Cook\")>> \n//[[Cook.Redirect]]\n//<<endif>>\n    //<<if $Clue2Found is true and ($Clue2Owner1 != \"Cook\" or $Clue2Owner2 != \"Cook\")>> \n//[[Cook.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"Cook\" or $Clue3Owner2 != \"Cook\")>> \n//[[Cook.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Cook\" or $Clue4Owner2 != \"Cook\")>> \n//[[Cook.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Cook.Bye]]",
 		"position": {
-			"x": 820,
-			"y": -1139
+			"x": 548,
+			"y": -1144
 		},
 		"colorID": 0
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "Cook\n<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation\n",
 		"position": {
-			"x": 815,
-			"y": 752
+			"x": 543,
+			"y": 747
 		},
 		"colorID": 1
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue1Location.|Cook.Clue]]\n\n[[Are you sure?|Cook.Upset]]\n\n",
 		"position": {
-			"x": 341,
-			"y": 74
+			"x": 69,
+			"y": 69
 		},
 		"colorID": 0
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
 		"position": {
-			"x": -255,
-			"y": -116
+			"x": -527,
+			"y": -121
 		},
 		"colorID": 0
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n\n<< if visited (\"Cook.Loyalty\")>>\n[[Cook.Bye]]\n<<endif>>\n\n[[Cook.Loyalty]]\n//End of conversation\n",
 		"position": {
-			"x": 1567,
-			"y": 681
+			"x": 1295,
+			"y": 676
 		},
 		"colorID": 1
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Cook\n<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Cook.Bye]]\n",
 		"position": {
-			"x": -214,
-			"y": 712
+			"x": -486,
+			"y": 707
 		},
 		"colorID": 0
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue2Location.|Cook.Clue2]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 768,
-			"y": 101
+			"x": 496,
+			"y": 96
 		},
 		"colorID": 0
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "Cook<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue3Location.|Cook.Clue3]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 1146,
-			"y": 116
+			"x": 874,
+			"y": 111
 		},
 		"colorID": 0
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Cook.Bye]]\n\n[[I found it in $Clue4Location.|Cook.Clue4]]\n\n[[Are you sure?|Cook.Upset]]",
 		"position": {
-			"x": 1649,
-			"y": 131
+			"x": 1377,
+			"y": 126
 		},
 		"colorID": 0
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "<<set $CookLoyalty to $CookLoyalty - 1>>",
 		"position": {
-			"x": 1266,
-			"y": 1303
+			"x": 994,
+			"y": 1298
 		},
 		"colorID": 0
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "[[I found this.|Cook.RedirectClue]]\n\n[[Nevermind.|Cook.Bye]]",
 		"position": {
-			"x": 2233,
-			"y": -677
+			"x": 1961,
+			"y": -682
 		},
 		"colorID": 0
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue1owner1 and $Clue1Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 2590,
-			"y": -696
+			"x": 2318,
+			"y": -701
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "[[I found this.|Cook.RedirectClue2]]\n\n[[Nevermind.|Cook.Bye]]",
 		"position": {
-			"x": 2229,
-			"y": -402
+			"x": 1957,
+			"y": -407
 		},
 		"colorID": 0
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "[[I found this.|Cook.RedirectClue3]]\n\n[[Nevermind.|Cook.Bye]]",
 		"position": {
-			"x": 2219,
-			"y": -98
+			"x": 1947,
+			"y": -103
 		},
 		"colorID": 0
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "[[I found this.|Cook.RedirectClue4]]\n\n[[Nevermind.|Cook.Bye]]",
 		"position": {
-			"x": 2214,
-			"y": 182
+			"x": 1942,
+			"y": 177
 		},
 		"colorID": 0
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue2owner1 and $Clue2Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 2629,
-			"y": -399
+			"x": 2357,
+			"y": -404
 		},
 		"colorID": 0
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue3owner1 and $Clue3Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 2634,
-			"y": -81
+			"x": 2362,
+			"y": -86
 		},
 		"colorID": 0
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nI'm busy right now, go bother $Clue4owner1 and $Clue4Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 2634,
-			"y": 196
+			"x": 2362,
+			"y": 191
 		},
 		"colorID": 0
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
 		"position": {
-			"x": -232,
-			"y": -392
+			"x": -504,
+			"y": -397
 		},
 		"colorID": 0
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
 		"position": {
-			"x": -219,
-			"y": -681
+			"x": -491,
+			"y": -686
 		},
 		"colorID": 0
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Cook>>\n<<Portrait|Cook_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Cook.Key]]\n\n[[Just gonna ask questions?|Cook.Upset]]",
 		"position": {
-			"x": -218,
-			"y": -1011
+			"x": -490,
+			"y": -1016
 		},
 		"colorID": 0
 	}

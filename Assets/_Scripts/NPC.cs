@@ -36,7 +36,7 @@ public class NPC : MonoBehaviour
 		
 	}
 
-	[YarnCommand("setLoyalty")]
+	[YarnCommand("SetLoyalty")]
 	public void SetLoyalty (string amount)
 	{
 		switch (amount)

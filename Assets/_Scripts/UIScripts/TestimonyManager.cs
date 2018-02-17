@@ -9,7 +9,7 @@ public class TestimonyManager : MonoBehaviour
 {
 
 	public VariableStorageBehaviour variableStorage;
-	[SerializeField] List<VerbalClueEntry> entries = new List<VerbalClueEntry>();
+	[SerializeField] List<TestimonyEntry> entries = new List<TestimonyEntry>();
 	CrewManager crewManager;
 	void Start()
 	{
@@ -24,7 +24,7 @@ public class TestimonyManager : MonoBehaviour
 	{
 		Debug.Log("Adding testimony!");
 		GameObject newEntryGo = Instantiate<GameObject>(entryPrefab, entryPrefab.transform.position, Quaternion.identity);
-		VerbalClueEntry entry = newEntryGo.GetComponent<VerbalClueEntry>();
+		TestimonyEntry entry = newEntryGo.GetComponent<TestimonyEntry>();
 
 		// The text may contain a variable, so make sure that the right value is shown instead 
 		// of the variable name
@@ -48,9 +48,12 @@ public class TestimonyManager : MonoBehaviour
 		entryButton.onClick.AddListener( () => 
 		{
 			if (crewManager.EntryNormal(newEntryGo))
-				crewManager.expandNews(newEntryGo);
+				//crewManager.expandNews(newEntryGo);
+				crewManager.ExpandTestimony(entry);
+				
 			else 
-				crewManager.shrinkNews(newEntryGo);
+				//crewManager.shrinkNews(newEntryGo);
+				crewManager.ShrinkTestimony(entry);
 
 		});
 

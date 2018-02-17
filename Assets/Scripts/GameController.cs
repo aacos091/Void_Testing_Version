@@ -124,6 +124,7 @@ public class GameController : MonoBehaviour
     //Needs all elements set in Inspector
     public NavMeshAgent[] crewNavMeshAgents;
     public float[] crewNavMeshAgentSpeeds;
+    public float[] crewNavMeshAgentAngularSpeeds;
 
     void Awake()
     {
@@ -158,9 +159,11 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < crewNavMeshAgents.Length; i++)
         {
             crewNavMeshAgentSpeeds[i] = crewNavMeshAgents[i].speed;
+            crewNavMeshAgentAngularSpeeds[i] = crewNavMeshAgents[i].angularSpeed;
             crewNavMeshAgents[i].speed = 0;
+            crewNavMeshAgents[i].angularSpeed = 0;
         }
-        
+
         return gamePaused;
     }
 
@@ -173,6 +176,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < crewNavMeshAgents.Length; i++)
         {
             crewNavMeshAgents[i].speed = crewNavMeshAgentSpeeds[i];
+            crewNavMeshAgents[i].angularSpeed = crewNavMeshAgentAngularSpeeds[i];
         }
         
         return !gamePaused;

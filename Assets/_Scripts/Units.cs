@@ -158,12 +158,12 @@ public class Units : MonoBehaviour
 			{
 				//Get game object
 				GameObject rayCastedGO = hit.collider.gameObject;
-
-				//Select object
-				this.SelectedObject = rayCastedGO;
-                rayCastedGO.GetComponent<AnimationController>().StartTalking();
-			}
-		} 
+                
+                //Select object
+                this.SelectedObject = rayCastedGO;
+                DialogueUnitManager.S.SetDialogueUnit(rayCastedGO);
+            }
+        } 
 		else 
 		{
 

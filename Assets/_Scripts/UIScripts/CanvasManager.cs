@@ -69,12 +69,13 @@ public class CanvasManager : MonoBehaviour
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
         if (dialogueCanvas != null)
         {
+            //THIS HERE IS WHAT CLOSES THE DIALOGUE UI WHEN DIALOGUE FINISHES RUNNING
             if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning)
             {
                 if (mainCam == null)
                     mainCam = Camera.main.gameObject;
                 lastCamPos = mainCam.transform.position;
-
+                DialogueUnitManager.S.StopTalking();
 
                 disableCanvas(dialogueCanvas);
                 loadCanvas(HUDCanvas);
@@ -143,8 +144,6 @@ public class CanvasManager : MonoBehaviour
 				}
 
 			}
-
-
         }
 
         //		if (GameController.S.activeDrawer != null)

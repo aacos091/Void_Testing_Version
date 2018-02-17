@@ -9,8 +9,7 @@ public class AnimationController : MonoBehaviour {
     private GameObject unitObj;
     private Rigidbody rb;
     private NavMeshAgent navMeshAgent;
-    [SerializeField]
-    Animator animator;
+    public Animator animator;
 
 	// Use this for initialization
 	void Start () {
@@ -36,13 +35,6 @@ public class AnimationController : MonoBehaviour {
         }
         */
     }
-    public void StartTalking()
-    {
-        animator.SetBool("Talking", true);
-    }
-    public void StopTalking()
-    {
-        animator.SetBool("Talking", true);
-    }
+
 
 }

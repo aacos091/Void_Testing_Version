@@ -1,0 +1,64 @@
+{
+	//Holds the possible owners for each clue based on the Location and Method of the murder
+	
+	"Clues":
+	{
+        // First Search Based on the Location of the Murder
+		"Engine Room":
+		{
+            // Now search for all the Methods that can occur inside EngineRoom
+
+            "Violence":
+            {
+                "Squarebar": ["Pilot", "Engineer"],
+                "Garrote": ["Medic", "Pilot"],
+                "Bullet Casting": ["Pilot", "1stMate"],
+                "Wrench": ["Engineer", "Pilot"],
+                "Scalpel": ["Medic", "1stMate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Hardlight Knife": ["Medic", "Engineer"],
+                "Broken Glass": ["1stMate", "Medic"],
+                "Mallet": ["Engineer", "1stMate"]
+            },
+            "Environmental Hazard":
+            {
+                "Radiation Suit": ["1stMate", "Medic"], // This clue only has 1 potential owner in this situation?
+                "EVA Suit": ["Pilot", "Engineer", "Medic"],
+                "Degausser": ["1stMate", "Pilot"],
+                "Engine Piece": ["Pilot", "Engineer", "Medic"],
+                "Thruster Calibrator": ["Pilot", "1stMate"],
+                "Diagnostics Tool": ["Medic", "Engineer"],
+                "Polarizer": ["1stMate", "Medic"],
+                "Tampered Alarm": ["1stMate", "Pilot", "Engineer"],
+                "Plasma Cutter": ["Medic", "Pilot"]
+            }
+		},
+		// This gets chosen if the murder location is the Galley
+		"Galley":
+		{
+            "Violence":
+            {
+                "Squarebar": ["Pilot", "Engineer"],
+                "Garrote": ["Medic", "Pilot"],
+                "Bullet Casting": ["Pilot", "1stMate"],
+                "Wrench": ["Engineer", "Pilot"],
+                "Scalpel": ["Medic", "1stMate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Hardlight Knife": [ "Medic", "Engineer"],
+                "Broken Glass": ["1stMate", "Medic"],
+                "Mallet": ["Engineer", "1stMate"]
+            },
+
+            "Poison/Venom":
+            {
+                "Pill Bottle": ["1stMate", "Engineer"],
+                "Pill": ["1stMate", "Engineer"],
+                "Syringe": ["Medic", "Pilot"],
+                "Suspicious Root": ["1stMate", "Medic", "Engineer"],
+                "Vermin Poison": ["Pilot", "1stMate"],
+                "Paraphenelia": ["Engineer", "Medic", "Pilot"],
+                "Half-filled Glass": ["Pilot", "Engineer"]
+            }
+		}
+	}
+}

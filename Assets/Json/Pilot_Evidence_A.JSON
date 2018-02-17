@@ -2,71 +2,211 @@
 	{
 		"title": "Pilot",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nHello, Captain.\n<</Textbox>>\n\n[[Keep up the good work.|Pilot.Alright]]\n\n[[Have you seen this $CLUE before?|Pilot.Clue]]",
+		"body": "<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_happy>>\nWhat's up?\n\n<<Speak Audio PAs>>\n\n<</Textbox>>\n\n    <<if $Clue1Found is true and ($Clue1Owner1 is \"Pilot\" or $Clue1Owner2 is \"Pilot\")>>\n        [[What do you know about $Clue1?|Pilot.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Pilot\" or $Clue2Owner2 is \"Pilot\")>>\n    [[What do you know about $Clue2?|Pilot.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Pilot\" or $Clue3Owner2 is \"Pilot\")>>\n    [[What do you know about $Clue3?|Pilot.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Pilot\" or $Clue4Owner2 is \"Pilot\")>>\n    [[What do you know about this clue?|Pilot.Question4]]\n<<endif>>\n\n\n    //<<if $Clue1Found is true and ($Clue1Owner1 != \"Pilot\" or $Clue1Owner2 != \"Pilot\")>> \n//[[Pilot.Redirect]]\n//<<endif>>\n  //  <<if $Clue2Found is true and ($Clue2Owner1 != \"Pilot\" or $Clue2Owner2 != \"Pilot\")>> \n//[[Pilot.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"Pilot\" or $Clue3Owner2 != \"Pilot\")>> \n//[[Pilot.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Pilot\" or $Clue4Owner2 != \"Pilot\")>> \n//[[Pilot.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Pilot.Bye]]",
 		"position": {
-			"x": 299,
+			"x": 714,
+			"y": -1429
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Bye",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation\n",
+		"position": {
+			"x": 815,
+			"y": 752
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.Question",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Pilot.Bye]]\n\n[[I found it in $Clue1Location.|Pilot.Clue]]\n\n[[Are you sure?|Pilot.Upset]]\n\n",
+		"position": {
+			"x": 341,
+			"y": 74
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Clue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Pilot.Key]]\n\n[[Just gonna ask questions?|Pilot.Upset]]",
+		"position": {
+			"x": -255,
+			"y": -116
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Upset",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n\n<< if visited (\"Pilot.Loyalty\")>>\n[[Pilot.Bye]]\n<<endif>>\n\n[[Pilot.Loyalty]]\n//End of conversation\n",
+		"position": {
+			"x": 1567,
+			"y": 681
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.Key",
+		"tags": "",
+		"body": "\n<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Pilot.Bye]]\n",
+		"position": {
+			"x": -191,
+			"y": 712
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Question2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Pilot.Bye]]\n\n[[I found it in $Clue2Location.|Pilot.Clue2]]\n\n[[Are you sure?|Pilot.Upset]]",
+		"position": {
+			"x": 768,
+			"y": 101
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Question3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Pilot.Bye]]\n\n[[I found it in $Clue3Location.|Pilot.Clue3]]\n\n[[Are you sure?|Pilot.Upset]]",
+		"position": {
+			"x": 1146,
+			"y": 116
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Question4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Pilot.Bye]]\n\n[[I found it in $Clue4Location.|Pilot.Clue4]]\n\n[[Are you sure?|Pilot.Upset]]",
+		"position": {
+			"x": 1649,
+			"y": 131
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Loyalty",
+		"tags": "",
+		"body": "<<set $PilotLoyalty to $PilotLoyalty - 1>>",
+		"position": {
+			"x": 1266,
+			"y": 1303
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Redirect",
+		"tags": "",
+		"body": "[[I found this.|Pilot.RedirectClue]]\n\n[[Nevermind.|Pilot.Bye]]",
+		"position": {
+			"x": 2233,
+			"y": -677
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.RedirectClue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nI'm busy right now, go bother $Clue1owner1 and $Clue1Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2590,
+			"y": -696
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Redirect2",
+		"tags": "",
+		"body": "[[I found this.|Pilot.RedirectClue2]]\n\n[[Nevermind.|Pilot.Bye]]",
+		"position": {
+			"x": 2229,
+			"y": -402
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Redirect3",
+		"tags": "",
+		"body": "[[I found this.|Pilot.RedirectClue3]]\n\n[[Nevermind.|Pilot.Bye]]",
+		"position": {
+			"x": 2219,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.Redirect4",
+		"tags": "",
+		"body": "[[I found this.|Pilot.RedirectClue4]]\n\n[[Nevermind.|Pilot.Bye]]",
+		"position": {
+			"x": 2214,
+			"y": 182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.RedirectClue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Pilot_Neutral>>\nI'm busy right now, go bother $Clue2owner1 and $Clue2Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2629,
+			"y": -399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.RedirectClue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nI'm busy right now, go bother $Clue3owner1 and $Clue3Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
 			"y": -81
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Pilot.Alright",
+		"title": "Pilot.RedirectClue4",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nKeep up the good work.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nAlright.\n<</Textbox>>\n\n//End conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nI'm busy right now, go bother $Clue4owner1 and $Clue4Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_Neutral>>\nWhatever.\n<</Textbox>>",
 		"position": {
-			"x": 21,
-			"y": 166
-		},
-		"colorID": 1
-	},
-	{
-		"title": "Pilot.Clue",
-		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nHave you seen this $CLUE before?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nThat's mine! Where did you get that?\n<</Textbox>>\n\n[[I found it at $CRIMESCENE.|Pilot.Reply]]\n\n[[Why are you so loud?|Pilot.Retort]]",
-		"position": {
-			"x": 512,
-			"y": 173
+			"x": 2634,
+			"y": 196
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Pilot.Reply",
+		"title": "Pilot.Clue2",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $CRIMESCENE. Any idea why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\n$CRIMESCENE? Why was it there? I usually keep it in $LOCATION. Were you moving my stuff?\n<</Textbox>>\n\n[[Someone else did.|Pilot.KeyDialogue]]\n\n[[Why would I?|Pilot.Retort1]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Pilot.Key]]\n\n[[Just gonna ask questions?|Pilot.Upset]]",
 		"position": {
-			"x": 354,
-			"y": 426
+			"x": -232,
+			"y": -392
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Pilot.Retort",
+		"title": "Pilot.Clue3",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhy are you so loud?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_mad>>\nBecause I'm the only one doing anything on this ship!\n<</Textbox>>\n\n<<set $Pilotloyalty to $Pilotloyalty - 1>>\n\n//End conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Pilot.Key]]\n\n[[Just gonna ask questions?|Pilot.Upset]]",
 		"position": {
-			"x": 694,
-			"y": 424
+			"x": -219,
+			"y": -681
 		},
-		"colorID": 1
+		"colorID": 0
 	},
 	{
-		"title": "Pilot.KeyDialogue",
+		"title": "Pilot.Clue4",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nNo, but someone was. I need to find them before anything else happens.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nBe sure to put that back when you're done with it.\n<</Textbox>>\n\n//Unlock Clue Key Dialogue\n\n<<Textbox>>\n<<Name|Captain>>\nThanks. Keep up the good work.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nAlright.\n<</Textbox>>",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Pilot.Key]]\n\n[[Just gonna ask questions?|Pilot.Upset]]",
 		"position": {
-			"x": 97,
-			"y": 726
+			"x": -218,
+			"y": -1011
 		},
-		"colorID": 1
-	},
-	{
-		"title": "Pilot.Retort1",
-		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nWhy would I move your stuff?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_mad>>\nBecause I'm the only one doing anything on this ship!\n<</Textbox>>\n\n<<set $Pilotloyalty to $Pilotloyalty - 1>>\n\n//End conversation",
-		"position": {
-			"x": 497,
-			"y": 747
-		},
-		"colorID": 1
+		"colorID": 0
 	}
 ]

@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Pilot.Redirect",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nHow you doin', Captain?\n<</Textbox>>\n\n[[Keep up the good work.|Pilot.EndConv]]\n\n[[Can you tell me about $CLUE.|Pilot.ReplyD]]",
+		"position": {
+			"x": 204,
+			"y": -175
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Pilot.EndConv",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nKeep up the good work.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Piolt_neutral>>\nYou got it.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": -99,
+			"y": 241
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Pilot.ReplyD",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nSaira, I found this $CLUE. Can you tell me anything about it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nThat's $CREWMATE's, I've seen them around with it.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nThanks, Saira.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Pilot>>\n<<Portrait|Pilot_neutral>>\nSee you around.\n<</Textbox>>",
+		"position": {
+			"x": 445,
+			"y": 228
+		},
+		"colorID": 1
+	}
+]

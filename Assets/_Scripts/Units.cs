@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using cakeslice;
 
 public class Units : MonoBehaviour 
 {
@@ -21,10 +22,6 @@ public class Units : MonoBehaviour
 
 	//Random variables
 	public int ran;
-
-	//Materials for highlighting
-	public Material SimpleMat;
-	public Material HighlightedMat;
 
 	//Selected GameObject (Unit only)
 	private GameObject mSelectedObject;
@@ -57,6 +54,8 @@ public class Units : MonoBehaviour
 
 	public GameObject chatManager;
 
+	public cakeslice.Outline[] outlineRef;
+
 	public enum States
 	{
 		movingToDestination,
@@ -70,16 +69,20 @@ public class Units : MonoBehaviour
 	{
 		S = this;
 		UnitStartedSpeaking = new UnityEvent();
-		
+
 	}
 	void Start () 
 	{
-		
+		outlineRef = this.GetComponentsInChildren<cakeslice.Outline> ();
+
+		foreach (cakeslice.Outline outl in outlineRef){
+			outl.GetComponent<cakeslice.Outline> ().enabled = false;
+		}
+
 		isAtElevator = false;
 		checkFloor ();
 		unitNameText.GetComponent<Text> ().enabled = false;
 		agent = GetComponent<NavMeshAgent> ();
-
 	}
 
 	void Update () 
@@ -96,46 +99,51 @@ public class Units : MonoBehaviour
 
 		checkFloor ();
 
-		//Process object selection
-		if (Input.GetMouseButtonUp (0)) 
-			SelectObjectByMousePos ();
-		
+        if (!GameController.S.gamePaused)
+        {
+            //Process object selection
+            if (Input.GetMouseButtonUp(0))
+                SelectObjectByMousePos();
+        }
 
-		switch (currentState) 
-		{
-		case States.movingToElevator:
-			{
-				if (!isAtElevator) 
-					walkToNearestElevator ();
-				
-				if (isAtElevator) 
-				{
-					teleportToClosestElevatorToWaypoint ();
-					agent.SetDestination (waypoints [ran].transform.position);
-					currentState = States.movingToDestination;
-				}
-			}
-			break;
+        switch (currentState)
+        {
+            case States.movingToElevator:
+                {
+                    if (!isAtElevator)
+                        walkToNearestElevator();
 
-		case States.movingToDestination:
-			{
-				if(!agent.hasPath && agent.remainingDistance <=0)
-					GotoNextPoint ();
-				
-			}
-			break;
-		}
+                    if (isAtElevator)
+                    {
+                        teleportToClosestElevatorToWaypoint();
+                        agent.SetDestination(waypoints[ran].transform.position);
+                        currentState = States.movingToDestination;
+                    }
+                }
+                break;
+
+            case States.movingToDestination:
+                {
+                    if (!agent.hasPath && agent.remainingDistance <= 0)
+                        GotoNextPoint();
+
+                }
+                break;
+        }
+
 	}
 
 	//This checks the floor that the Unit is on. 
 	public void checkFloor()
 	{
-		if (gameObject.transform.position.y < -5)
+		if (gameObject.transform.position.y <= -4.5)
 			floor = 1;
-		if (gameObject.transform.position.y > -5 && gameObject.transform.position.y < 10)
+		if (gameObject.transform.position.y >= -4.5 && gameObject.transform.position.y < -3)
 			floor = 2;
-		if (gameObject.transform.position.y > 10 && gameObject.transform.position.y < 25)
+		if (gameObject.transform.position.y > -3 && gameObject.transform.position.y < -0.635)
 			floor = 3;
+		if (gameObject.transform.position.y > -0.635)
+			floor = 4;
 	}
 
 	private void SelectObjectByMousePos()
@@ -163,6 +171,9 @@ public class Units : MonoBehaviour
 
 			//dialouge = false;
 
+			if (mSelectedObject != null) {
+				mSelectedObject.GetComponentInChildren<cakeslice.Outline> ().enabled = false;
+			}
 			this.SelectedObject = null;
 			unitNameText.GetComponent<Text> ().enabled = false;
 		}
@@ -186,7 +197,8 @@ public class Units : MonoBehaviour
 
 			//Set material to non-selected object
 			if (goOld != null) {
-				goOld.GetComponent<Renderer>().material = SimpleMat;
+                //goOld.GetComponent<Renderer>().material = SimpleMat;
+				goOld.GetComponentInChildren<cakeslice.Outline>().enabled = false;
 			}
 
 			//Set material to selected object
@@ -202,30 +214,36 @@ public class Units : MonoBehaviour
 				chatManager.GetComponent<Chat>().unitName = unitNameText.text.ToString();
 
 				//Set highlight material
-				mSelectedObject.GetComponent<Renderer> ().material = HighlightedMat;
+				mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled = true;
 
-				if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
+				//if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)
+				if (this.gameObject.name == "Cook" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
+                    {
 
 					CameraController.cook = true;
 
 				}
 
-				if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
+                //if (gameObject.name == "Medic" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+				if (gameObject.name == "Medic" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
+                {
 
-					CameraController.medic = true;
-
-				}
-
-				if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
-				{
-
-					CameraController.captain = true;
+                    CameraController.medic = true;
 
 				}
 
-				if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat) 
+                //TODO: RETAG "Captain" to "First Mate"!!!!!!!!!!
+
+                //if (gameObject.name == "Captain" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)                 
+				if (gameObject.name == "Captain" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
+                {
+
+                    CameraController.captain = true;
+
+				}
+                //if (gameObject.name == "Engineer" && gameObject.GetComponent<Renderer>().sharedMaterial == HighlightedMat)
+
+				if (gameObject.name == "Engineer" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true) 
 				{
 
 					CameraController.engineer = true;
@@ -276,7 +294,7 @@ public class Units : MonoBehaviour
 	void GotoNextPoint ()
 	{
 
-		int chance = Random.Range (0, 1000);
+		int chance = Random.Range (0, 10000);
 
 		int near = Random.Range (0, 100);
 
@@ -285,10 +303,11 @@ public class Units : MonoBehaviour
 
 			Vector3 nearest = (findClosestWaypointToUnit().transform.position);
 
-			agent.SetDestination (nearest);
-
+			if (findClosestWaypointToUnit().GetComponent<Waypoint> ().isCollidingWithUnit != true) {
+				agent.SetDestination (nearest);
+			}
+	
 			currentState = States.movingToDestination;
-
 		}
 
 		if (chance == 1) 
@@ -307,8 +326,10 @@ public class Units : MonoBehaviour
 			//Set agent to walk towards that nav point
 
 			if (floor == waypoint.floor) {
-				agent.SetDestination (waypoints [ran].position);
-				Debug.Log ("Going to " + waypoints [ran].name);
+
+				if (waypoints [ran].GetComponent<Waypoint> ().isCollidingWithUnit != true) {
+					agent.SetDestination (waypoints [ran].position);
+				}
 			}
 
 			//If the waypoint is not on the same floor as the unit:

@@ -93,7 +93,7 @@ MonoBehaviour:
   rectTransform: {fileID: 0}
   buttonPrefab: {fileID: 1647089602766948, guid: dd8a68acb5edc304da2b05c9aeb3c3fa,
     type: 2}
-  spaceBuffer: {x: 5, y: 5}
+  spaceBuffer: {x: 20, y: 20}
 --- !u!222 &222125138929688556
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -115,6 +115,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53, y: -68}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 259, y: 16}
+  m_SizeDelta: {x: 612, y: 534}
   m_Pivot: {x: 0.5, y: 0.5}

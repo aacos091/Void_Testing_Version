@@ -1,0 +1,72 @@
+[
+	{
+		"title": "Medic",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Medic>>\nSir, how is everything?\n<</Textbox>>\n\n[[That's all.|Medic.EndConv]]\n\n[[Do you know what this is?|Medic.Clue]]",
+		"position": {
+			"x": 405,
+			"y": 184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.EndConv",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nYes, Sir.\n<</Textbox>>\n\n//End conversation",
+		"position": {
+			"x": 151,
+			"y": 415
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Medic.Clue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know what this $CLUE is?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nThat is strange, did I misplace it?\n<</Textbox>>\n\n[[You misplaced this?|Medic.Reply]]\n\n[[You're getting sloppy, Cerys.|Medic.Retort]]",
+		"position": {
+			"x": 645,
+			"y": 412
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Retort",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nYou're getting sloppy, Cerys.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nI am too busy cleaning up everyone's mistakes to put up with your insecurities!\n<</Textbox>>\n\n<<set $Medicloyalty to $Medicloyalty - 1>>\n\n//End conversation",
+		"position": {
+			"x": 896,
+			"y": 675
+		},
+		"colorID": 1
+	},
+	{
+		"title": "Medic.Reply",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nYou misplaced this?\n<</Textbox>>\n\n<<Textbox>>\n<<name|Medic>>\nYes, it should have been in $LOCATION. Were you stealing my possessions secretly?\n<</Textbox>>\n\n[[I found it.|Medic.KeyDialogue]]\n[[You need to organize yourself.|Medic.Retort1]]",
+		"position": {
+			"x": 427,
+			"y": 674
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.KeyDialogue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nOf course not. I just found it in $CRIMESCENE.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nOh... My apologies, Captain. Someone must have moved it around.\n<</Textbox>>\n\n//Unlock Clue Key Dialogue\n\n[[That's all.|Medic.EndConv]]",
+		"position": {
+			"x": 159,
+			"y": 949
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Retort1",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nOf course not! You just need to organize yourself better.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nI am too busy cleaning up everyone's mistakes to put up with your insecurities!\n<</Textbox>>\n\n<<set $Medicloyalty to $Medicloyalty - 1>>\n\n//End conversation",
+		"position": {
+			"x": 622,
+			"y": 958
+		},
+		"colorID": 1
+	}
+]

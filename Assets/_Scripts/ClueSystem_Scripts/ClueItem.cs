@@ -12,11 +12,11 @@ public struct ClueInfo
     public int rating;
     public string clueName;
     public string description;
+    public string clueOwner1;
+    public string clueOwner2;
     public bool isClue;
     public bool addedToYarn;
-    //public string associatedCrew1;
-    //public string associatedCrew2;
-    //public string associatedCrew3;
+     public string location;
 
     // Constructor that passes a ClueItem object by reference
     public ClueInfo(ref ClueItem item)
@@ -25,11 +25,16 @@ public struct ClueInfo
         clueName = item.ItemName;
         rating = item.Rating;
         description = item.Description;
+        clueOwner1 = item.ClueOwner1;
+        clueOwner2 = item.ClueOwner2;
+        location = item.Location;
+        addedToYarn = false;
+        // Set if the Item is considered a clue if the ClueItem GameObject is tagged as "Clue" in Unity
         if (item.CompareTag("Clue"))
             isClue = true;
         else
             isClue = false;
-        addedToYarn = false;
+        
     }
 
     // Copy Constructor for ClueInfo
@@ -39,6 +44,9 @@ public struct ClueInfo
         rating = clue.rating;
         clueName = clue.clueName;
         description = clue.description;
+        clueOwner1 = clue.clueOwner1;
+        clueOwner2 = clue.clueOwner2;
+        location = clue.location;
         isClue = clue.isClue;
         addedToYarn = clue.addedToYarn;
     }
@@ -49,6 +57,9 @@ public struct ClueInfo
         rating = clue.rating;
         clueName = clue.clueName;
         description = clue.description;
+        clueOwner1 = clue.clueOwner1;
+        clueOwner2 = clue.clueOwner2;
+        location = clue.location;
         isClue = clue.isClue;
         addedToYarn = b_Yarn;
     }
@@ -75,13 +86,20 @@ public class ClueItem : MonoBehaviour {
 	[SerializeField]
 	public bool 						isInspectable = false;
     [SerializeField]
-    public float                        cloneScale = .75f;
+    public float                        cloneScale = .075f;
     [SerializeField]
     public Vector3                      cloneRot = new Vector3(0,0,0);
     [SerializeField]
 	public float 						rotateSpeed = 25f;
     [SerializeField]
     public bool                         isCollected;
+    [SerializeField]
+    private string                      clueOwner1;
+    [SerializeField]
+    private string                      clueOwner2;
+    
+    [SerializeField]
+    private string                      location;
 
 
     /*
@@ -114,6 +132,12 @@ public class ClueItem : MonoBehaviour {
 		set { description = value; }
 	}
 
+    public string Location
+    {
+        get { return location; }
+        set { location = value; }
+    }
+
 	public int 							XMLIndex
 	{
 		get { return (xmlIndex); }
@@ -138,6 +162,18 @@ public class ClueItem : MonoBehaviour {
 		get { return rotateSpeed; }
 		set { rotateSpeed = value; }
 	}
+
+    public string ClueOwner1
+    {
+        get { return clueOwner1; }
+        set { clueOwner1 = value; }
+    }
+
+    public string ClueOwner2
+    {
+        get { return clueOwner2; }
+        set { clueOwner2 = value; }
+    }
 
   
 	public override string ToString ()

@@ -73,16 +73,49 @@ public class ClueManager : MonoBehaviour
             if (_clueInfoOfCollected[i].isClue && !_clueInfoOfCollected[i].addedToYarn)
             {
                 // Set the Clue Name in Yarn
-                string yarnClueVariableName = "Clue" + yarnIndex.ToString();
+                string yarnClueVariableName = "$Clue" + yarnIndex.ToString();
                 string yarnClueFoundVariableName = yarnClueVariableName + "Found";
+                // Add the Clue#Owner1 and Clue#Owner2 variables
+                string yarnClueOwner1VariableName = yarnClueVariableName + "Owner1";
+                string yarnClueOwner2VariableName = yarnClueVariableName + "Owner2";
+                string yarnClueLocationVariableName = yarnClueVariableName + "Location";
                 foreach (ExampleVariableStorage.DefaultVariable c in yarnVarRef.defaultVariables)
                 {
+                    //TODO make this a switch statement
+                    Yarn.Value yarnVal;
+
                     // Checks for the yarn variable name (Clue#) and sets the appropriate value
                     if (c.name == yarnClueVariableName)
                         c.value = _clueInfoOfCollected[i].clueName;
+                    
+                        
                     // Checks for the yarn variable name related to Clue#Found and sets it to the appropriate value
                     if (c.name == yarnClueFoundVariableName)
                         c.value = "true";
+
+                        
+                    // Checks if the yarn variable name related to Clue#Owner1 and sets it to the appropriate value
+                    if (c.name == yarnClueOwner1VariableName)
+                        //c.value = "Cook";
+                        c.value = _clueInfoOfCollected[i].clueOwner1;
+                    
+                   
+                    // Checks for the yarn variable name related to Clue#Owner2 and sets it to the appropriate value
+                    if (c.name == yarnClueOwner2VariableName)
+                        c.value = _clueInfoOfCollected[i].clueOwner2;
+                    
+                        
+                    // Checks for the yarn variable name related to Clue#Location and sets it to the appropriate value
+                    if (c.name == yarnClueLocationVariableName)
+                        c.value = _clueInfoOfCollected[i].location;
+
+                    if (c.value == "true")
+                        yarnVarRef.SetValue(c.name, new Yarn.Value(true));
+                    else 
+                        yarnVarRef.SetValue(c.name, new Yarn.Value(c.value));
+                        
+                    
+                    
                 }
                // Yarn.Value yarnClueValue = new Yarn.Value(_clueInfoOfCollected[i].clueName);
                // yarnClueValue.variableName = yarnClueVariableName;
@@ -96,7 +129,7 @@ public class ClueManager : MonoBehaviour
 
                 yarnIndex++;
                 _clueInfoOfCollected[i] = new ClueInfo(_clueInfoOfCollected[i], true); // FUCK THIS LINE!!!!!!
-
+                
             }
         }
     }

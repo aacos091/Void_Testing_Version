@@ -2,71 +2,211 @@
 	{
 		"title": "Medic",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Medic>>\nSir, how is everything?\n<</Textbox>>\n\n[[That's all.|Medic.EndConv]]\n\n[[Do you know what this is?|Medic.Clue]]",
+		"body": "<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_happy>>\nWhat's up?\n\n<<Speak Audio MAnkyat>>\n\n<</Textbox>>\n\n    <<if $Clue1Found is true and ($Clue1Owner1 is \"Medic\" or $Clue1Owner2 is \"Medic\")>>\n        [[What do you know about $Clue1?|Medic.Question]]\n<<endif>>\n<<if $Clue2Found is true and ($Clue2Owner1 is \"Medic\" or $Clue2Owner2 is \"Medic\")>>\n    [[What do you know about $Clue2?|Medic.Question2]]\n<<endif>>\n<<if $Clue3Found is true and ($Clue3Owner1 is \"Medic\" or $Clue3Owner2 is \"Medic\")>>\n    [[What do you know about $Clue3?|Medic.Question3]]\n<<endif>>\n<<if $Clue4Found is true and ($Clue4Owner1 is \"Medic\" or $Clue4Owner2 is \"Medic\")>>\n    [[What do you know about this clue?|Medic.Question4]]\n<<endif>>\n\n\n    //<<if $Clue1Found is true and ($Clue1Owner1 != \"Medic\" or $Clue1Owner2 != \"Medic\")>> \n//[[Medic.Redirect]]\n//<<endif>>\n  //  <<if $Clue2Found is true and ($Clue2Owner1 != \"Medic\" or $Clue2Owner2 != \"Medic\")>> \n//[[Medic.Redirect2]]\n//<<endif>>\n  //  <<if $Clue3Found is true and ($Clue3Owner1 != \"Medic\" or $Clue3Owner2 != \"Medic\")>> \n//[[Medic.Redirect3]]\n//<<endif>>\n  //  <<if $Clue4Found is true and ($Clue4Owner1 != \"Medic\" or $Clue4Owner2 != \"Medic\")>> \n//[[Medic.Redirect4]]\n//<<endif>>\n\n//[[That's all.|Medic.Bye]]",
 		"position": {
-			"x": 405,
-			"y": 184
+			"x": 714,
+			"y": -1429
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Medic.EndConv",
+		"title": "Medic.Bye",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nThat's all.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nYes, Sir.\n<</Textbox>>\n\n//End conversation",
+		"body": "Medic\n<<Textbox>>\n<<Name|Captain>>\nI'll see you around.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nWhatever.\n<</Textbox>>\n\n//End of conversation\n",
 		"position": {
-			"x": 151,
-			"y": 415
+			"x": 815,
+			"y": 752
 		},
 		"colorID": 1
+	},
+	{
+		"title": "Medic.Question",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue1?\n\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Medic.Bye]]\n\n[[I found it in $Clue1Location.|Medic.Clue]]\n\n[[Are you sure?|Medic.Upset]]\n\n",
+		"position": {
+			"x": 341,
+			"y": 74
+		},
+		"colorID": 0
 	},
 	{
 		"title": "Medic.Clue",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know what this $CLUE is?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nThat is strange, did I misplace it?\n<</Textbox>>\n\n[[You misplaced this?|Medic.Reply]]\n\n[[You're getting sloppy, Cerys.|Medic.Retort]]",
+		"body": "Medic<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue1Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Medic.Key]]\n\n[[Just gonna ask questions?|Medic.Upset]]",
 		"position": {
-			"x": 645,
-			"y": 412
+			"x": -255,
+			"y": -116
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Medic.Retort",
+		"title": "Medic.Upset",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nYou're getting sloppy, Cerys.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nI am too busy cleaning up everyone's mistakes to put up with your insecurities!\n<</Textbox>>\n\n<<set $Medicloyalty to $Medicloyalty - 1>>\n\n//End conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nAre you sure?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_mad>>\nAre you the one who fixes this damn ship?\n<</Textbox>>\n\n<< if visited (\"Medic.Loyalty\")>>\n[[Medic.Bye]]\n<<endif>>\n\n[[Medic.Loyalty]]\n//End of conversation\n",
 		"position": {
-			"x": 896,
-			"y": 675
+			"x": 1567,
+			"y": 681
 		},
 		"colorID": 1
 	},
 	{
-		"title": "Medic.Reply",
+		"title": "Medic.Key",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nYou misplaced this?\n<</Textbox>>\n\n<<Textbox>>\n<<name|Medic>>\nYes, it should have been in $LOCATION. Were you stealing my possessions secretly?\n<</Textbox>>\n\n[[I found it.|Medic.KeyDialogue]]\n[[You need to organize yourself.|Medic.Retort1]]",
+		"body": "\n<<Textbox>>\n<<Name|Captain>>\nAny thoughts why someone would take it?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nNo clue, dude.\n<</Textbox>>\n\n//Clue Key Dialogue\n\n[[Medic.Bye]]\n",
 		"position": {
-			"x": 427,
-			"y": 674
+			"x": -191,
+			"y": 712
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Medic.KeyDialogue",
+		"title": "Medic.Question2",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nOf course not. I just found it in $CRIMESCENE.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nOh... My apologies, Captain. Someone must have moved it around.\n<</Textbox>>\n\n//Unlock Clue Key Dialogue\n\n[[That's all.|Medic.EndConv]]",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue2?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Medic.Bye]]\n\n[[I found it in $Clue2Location.|Medic.Clue2]]\n\n[[Are you sure?|Medic.Upset]]",
 		"position": {
-			"x": 159,
-			"y": 949
+			"x": 768,
+			"y": 101
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Medic.Retort1",
+		"title": "Medic.Question3",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\nOf course not! You just need to organize yourself better.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\nI am too busy cleaning up everyone's mistakes to put up with your insecurities!\n<</Textbox>>\n\n<<set $Medicloyalty to $Medicloyalty - 1>>\n\n//End conversation",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue3?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Medic.Bye]]\n\n[[I found it in $Clue3Location.|Medic.Clue3]]\n\n[[Are you sure?|Medic.Upset]]",
 		"position": {
-			"x": 622,
-			"y": 958
+			"x": 1146,
+			"y": 116
 		},
-		"colorID": 1
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Question4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nDo you know anything about $Clue4?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nOh that? That's mine\n<</Textbox>>\n\n\n[[I'll see you around.|Medic.Bye]]\n\n[[I found it in $Clue4Location.|Medic.Clue4]]\n\n[[Are you sure?|Medic.Upset]]",
+		"position": {
+			"x": 1649,
+			"y": 131
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Loyalty",
+		"tags": "",
+		"body": "<<set $MedicLoyalty to $MedicLoyalty - 1>>",
+		"position": {
+			"x": 1266,
+			"y": 1303
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Redirect",
+		"tags": "",
+		"body": "[[I found this.|Medic.RedirectClue]]\n\n[[Nevermind.|Medic.Bye]]",
+		"position": {
+			"x": 2233,
+			"y": -677
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.RedirectClue",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue1. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nI'm busy right now, go bother $Clue1owner1 and $Clue1Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2590,
+			"y": -696
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Redirect2",
+		"tags": "",
+		"body": "[[I found this.|Medic.RedirectClue2]]\n\n[[Nevermind.|Medic.Bye]]",
+		"position": {
+			"x": 2229,
+			"y": -402
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Redirect3",
+		"tags": "",
+		"body": "[[I found this.|Medic.RedirectClue3]]\n\n[[Nevermind.|Medic.Bye]]",
+		"position": {
+			"x": 2219,
+			"y": -98
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Redirect4",
+		"tags": "",
+		"body": "[[I found this.|Medic.RedirectClue4]]\n\n[[Nevermind.|Medic.Bye]]",
+		"position": {
+			"x": 2214,
+			"y": 182
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.RedirectClue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue2. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nI'm busy right now, go bother $Clue2owner1 and $Clue2Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2629,
+			"y": -399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.RedirectClue3",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue3. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nI'm busy right now, go bother $Clue3owner1 and $Clue3Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.RedirectClue4",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found this $Clue4. Can you tell me anything about it?\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nI'm busy right now, go bother $Clue4owner1 and $Clue4Owner2 with that.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\nSure.\n<</Text>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_Neutral>>\nWhatever.\n<</Textbox>>",
+		"position": {
+			"x": 2634,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Clue2",
+		"tags": "",
+		"body": "<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue2Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Medic.Key]]\n\n[[Just gonna ask questions?|Medic.Upset]]",
+		"position": {
+			"x": -232,
+			"y": -392
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Clue3",
+		"tags": "",
+		"body": "Medic<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue3Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Medic.Key]]\n\n[[Just gonna ask questions?|Medic.Upset]]",
+		"position": {
+			"x": -219,
+			"y": -681
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Medic.Clue4",
+		"tags": "",
+		"body": "Medic<<Textbox>>\n<<Name|Captain>>\nI found it in $Clue4Location. Any ideas why?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Medic>>\n<<Portrait|Medic_neutral>>\nWhy would it be in there?\n<</Textbox>>\n\n[[Why would someone would take it?|Medic.Key]]\n\n[[Just gonna ask questions?|Medic.Upset]]",
+		"position": {
+			"x": -218,
+			"y": -1011
+		},
+		"colorID": 0
 	}
 ]

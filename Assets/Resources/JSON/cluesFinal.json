@@ -1,33 +1,58 @@
 {
-	// Clues are based on the Location and on the Culprit. 
+	// Clues are based on the Method, Location and on the Culprit. 
 	
 	"Clues":
 	{
-		"Engine Room":
+		"Environmental Hazard":
 		{
-			"First Mate":
+			"Engine Room":
 			{
-				"Strong": ["Radiation Suit", "Polarizer"],
-				"Weak": ["Tampered Alarm", "Degausser"]
-			},
-			"Pilot":
-			{
-				"Strong": ["EVA Suit", "Engine Piece"],
-				"Weak": ["Thruster Calibrator", "Tampered Alarm"]
+				// Can we add the Violence Clues in here because they can occur in "Any" Location
+				"First Mate":
+				{
+					"Strong": ["Radiation Suit", "Polarizer"],
+					"Weak": ["Tampered Alarm", "Degausser"]
+				},
+
+				"Pilot":
+				{
+					"Strong": ["EVA Suit", "Engine Piece"],
+					"Weak": ["Thruster Calibrator", "Tampered Alarm"]
+				}
 			}
 		},
 		
-		"Galley":
+		"Poison/Venom":
+		{
+			"Galley":
+			{
+				"First Mate":
+				{
+					"Strong": ["Pill Bottle", "Pill"],
+					"Weak": ["Suspicious Root", "Half-filled Glass"]
+				},
+
+				"Pilot":
+				{
+					"Strong": ["Vermin Poison", "Half-filled Glass"],
+					"Weak": ["Half-filled Glass", "Suspicious Root"]
+				}
+			}
+		},
+
+		"Violence":
 		{
 			"First Mate":
 			{
-				"Strong": ["Pill Bottle", "Pill"],
-				"Weak": ["Suspicious Root", "Half-filled Glass"]
+				// This leads to 4 possible clues. Right now we are limiting to 2
+				"Strong": ["Bullet Casting", "Scissors"],
+				"Weak": ["Scalpel", "Mallet"]
 			},
+
 			"Pilot":
 			{
-				"Strong": ["Vermin Poison", "Polarizer"],
-				"Weak": ["Half-filled Glass", "Suspicious Root"]
+				"Strong": ["Garrote", "Bullet Casting"],
+				"Weak": ["Squarebar", "Wrench"]
 			}
 		}
 	}

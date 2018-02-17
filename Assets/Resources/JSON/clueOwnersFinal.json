@@ -1,0 +1,18 @@
+{
+// IDK
+
+    "Clues":
+    {
+        // First array will hold locations
+        "Engine Room":
+        {
+            // Second Array will hold Methods
+            "Environmental Hazard":
+            {
+                // Third array will hold the Clues and their related Members
+                "Radiation Suit": ["1stMate", "Engineer"],
+                "EVA Suit": []
+            }
+        }    
+    }
+}

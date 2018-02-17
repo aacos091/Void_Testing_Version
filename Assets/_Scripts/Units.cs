@@ -294,7 +294,7 @@ public class Units : MonoBehaviour
 	void GotoNextPoint ()
 	{
 
-		int chance = Random.Range (0, 10000);
+		int chance = Random.Range (0, 100);
 
 		int near = Random.Range (0, 100);
 

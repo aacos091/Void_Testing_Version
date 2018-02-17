@@ -182,7 +182,7 @@ ModelImporter:
       name: FirstMate_Idle
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 369
+      lastFrame: 250
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

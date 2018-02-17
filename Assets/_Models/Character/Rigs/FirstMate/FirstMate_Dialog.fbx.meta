@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ffc4684fb7df6a541a200f691e6ac1e9
-timeCreated: 1518886573
+guid: 62b503d72d6984e47bc0c68ae8bfc36d
+timeCreated: 1518888505
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -153,7 +153,7 @@ ModelImporter:
     400142: bn_spine02
     400144: //RootNode
     400146: skeleton01
-    7400000: Take 001
+    7400000: FirstMate_Dialog
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -179,10 +179,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: FirstMate_Dialog
       takeName: Take 001
-      firstFrame: -1
-      lastFrame: 96
+      firstFrame: 1
+      lastFrame: 636
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

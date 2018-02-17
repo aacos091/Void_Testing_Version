@@ -156,15 +156,13 @@ public class Units : MonoBehaviour
 		{
 			if (hit.collider.tag == "Unit") 
 			{
-
 				//Get game object
 				GameObject rayCastedGO = hit.collider.gameObject;
 
 				//Select object
 				this.SelectedObject = rayCastedGO;
-
+                rayCastedGO.GetComponent<AnimationController>().StartTalking();
 			}
-
 		} 
 		else 
 		{
@@ -218,7 +216,7 @@ public class Units : MonoBehaviour
 
 				//if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)
 				if (this.gameObject.name == "Cook" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
-                    {
+                {
 
 					CameraController.cook = true;
 

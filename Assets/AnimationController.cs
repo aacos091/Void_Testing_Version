@@ -18,15 +18,14 @@ public class AnimationController : MonoBehaviour {
             animator = GetComponent<Animator>();
         rb = unitObj.GetComponent<Rigidbody>();
         navMeshAgent = unitObj.GetComponent<NavMeshAgent>();
-	}
+        animator.SetBool("Talking", false);
+    }
 
     // Update is called once per frame
     void Update()
     {
         animator.SetFloat("Speed", navMeshAgent.velocity.magnitude);
-        print(navMeshAgent.velocity.magnitude);
-        
-
+        animator.SetFloat("VertSpeed", Mathf.Abs(navMeshAgent.velocity.y));
         /*
         if (navMeshAgent.speed == 0)
             animator.SetBool("IsMoving", false);
@@ -37,4 +36,13 @@ public class AnimationController : MonoBehaviour {
         }
         */
     }
+    public void StartTalking()
+    {
+        animator.SetBool("Talking", true);
+    }
+    public void StopTalking()
+    {
+        animator.SetBool("Talking", true);
+    }
+
 }

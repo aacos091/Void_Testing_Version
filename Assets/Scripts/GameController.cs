@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
@@ -83,7 +84,6 @@ public class UIController
                 logCanvas.gameObject.SetActive(false);
         else
             captainsLogCanvases[menusToHide].SetActive(false);
-
     }
 
     /// <summary>
@@ -105,8 +105,6 @@ public class UIController
 
         Debug.Log("Added new clue to log! Clue name: " + clueName);
     }
-
-
 }
 
 public class GameController : MonoBehaviour
@@ -122,6 +120,10 @@ public class GameController : MonoBehaviour
 
     public bool gamePaused { get; private set; }
     public float timeScale = 1f;
+
+    //Needs all elements set in Inspector
+    public NavMeshAgent[] crewNavMeshAgents;
+    public float[] crewNavMeshAgentSpeeds;
 
     void Awake()
     {
@@ -144,7 +146,6 @@ public class GameController : MonoBehaviour
 		 * is inside the drawer before closing the drawer and allowing further 
 		 * action from the player.
 		 */
-
     }
 
     public bool RequestGamePause()
@@ -153,6 +154,13 @@ public class GameController : MonoBehaviour
         //Pauses based on timescale should pause all NPC movement without touching their scripts, ut it also breaks dialogue...
         //Time.timeScale = 0;
         //Time.fixedDeltaTime = 0;
+        
+        for (int i = 0; i < crewNavMeshAgents.Length; i++)
+        {
+            crewNavMeshAgentSpeeds[i] = crewNavMeshAgents[i].speed;
+            crewNavMeshAgents[i].speed = 0;
+        }
+        
         return gamePaused;
     }
 
@@ -161,6 +169,12 @@ public class GameController : MonoBehaviour
         gamePaused = false;
         //Time.timeScale = 1;
         //Time.fixedDeltaTime = 1;
+        
+        for (int i = 0; i < crewNavMeshAgents.Length; i++)
+        {
+            crewNavMeshAgents[i].speed = crewNavMeshAgentSpeeds[i];
+        }
+        
         return !gamePaused;
     }
 

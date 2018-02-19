@@ -373,6 +373,7 @@ public class ProceduralEngine : MonoBehaviour {
 
 	// }
 
+	// Yarn function to change each CrewMention variables.
 	 [YarnCommand ("ChangeMention")]
 	 public void ChangeMention (string title, string newValue)
 	 {
@@ -384,6 +385,20 @@ public class ProceduralEngine : MonoBehaviour {
 			 {
 				 c.value = newValue;
 			 } 	
+		 }
+	 }
+
+	 // Yarn function to change InterviewB tracking variables
+	 [YarnCommand ("UnlockInterviewB")]
+	 public void UnlockInterviewB (string varToFind, string newValue)
+	 {
+		 string valueToCompare = "$" + varToFind;
+		 foreach (ExampleVariableStorage.DefaultVariable c in yarnVarRef.defaultVariables)
+		 {
+			 if (c.name == valueToCompare)
+			 {
+				 c.value = newValue;
+			 }
 		 }
 	 }
 	void InitializeYarnVariables ()
@@ -408,6 +423,11 @@ public class ProceduralEngine : MonoBehaviour {
 		ExampleVariableStorage.DefaultVariable firstMateMentionTDV = new ExampleVariableStorage.DefaultVariable();
 		ExampleVariableStorage.DefaultVariable medicMentionTDV = new ExampleVariableStorage.DefaultVariable();
 		ExampleVariableStorage.DefaultVariable pilotMentionTDV = new ExampleVariableStorage.DefaultVariable();
+		// Create the InterviewB mention variables
+		ExampleVariableStorage.DefaultVariable tt1InterviewBOpenTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable tt2InterviewBOpenTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable misleadingInterviewBOpenTDV = new ExampleVariableStorage.DefaultVariable();
+		ExampleVariableStorage.DefaultVariable culpritInterviewBOpenTDV = new ExampleVariableStorage.DefaultVariable();
 
         // Assign the types for the variables
         crimeSceneTDV.type = stringType;
@@ -423,6 +443,11 @@ public class ProceduralEngine : MonoBehaviour {
 		firstMateMentionTDV.type = stringType;
 		medicMentionTDV.type = stringType;
 		pilotMentionTDV.type = stringType;
+		// Assign the InterviewB mention types
+		tt1InterviewBOpenTDV.type = stringType;
+		tt2InterviewBOpenTDV.type = stringType;
+		misleadingInterviewBOpenTDV.type = stringType;
+		culpritInterviewBOpenTDV.type = stringType;
 
         // Assign the names for these variables, this is the names that will be used to access them in Yarn
         crimeSceneTDV.name = "$CRIMESCENE";
@@ -438,6 +463,11 @@ public class ProceduralEngine : MonoBehaviour {
 		firstMateMentionTDV.name = "$FirstMateMention";
 		medicMentionTDV.name = "$MedicMention";
 		pilotMentionTDV.name = "$PilotMention";
+		// Assign the names for the InterviewB variables
+		tt1InterviewBOpenTDV.name = "$TT1InterviewBOpen";
+		tt2InterviewBOpenTDV.name = "$TT2InterviewBOpen";
+		misleadingInterviewBOpenTDV.name = "$MisleadingInterviewBOpen";
+		culpritInterviewBOpenTDV.name = "$CulpritInterviewBOpen";
 
         // Assign the values that will be held in these yarn Variables
         crimeSceneTDV.value = MurderLocation;
@@ -448,11 +478,16 @@ public class ProceduralEngine : MonoBehaviour {
 		truthTeller1TDV.value = TruthTeller1;
 		truthTeller2TDV.value = TruthTeller2;
 		misleadingCrewTDV.value = MisleadingCrewMember;
-		cookMentionTDV.value = "no";
-		engineerMentionTDV.value = "no";
-		firstMateMentionTDV.value = "no";
-		medicMentionTDV.value = "no";
-		pilotMentionTDV.value = "no";
+		cookMentionTDV.value = "false";
+		engineerMentionTDV.value = "false";
+		firstMateMentionTDV.value = "false";
+		medicMentionTDV.value = "false";
+		pilotMentionTDV.value = "false";
+		// Assign the values that will be held in InterviewB variables
+		tt1InterviewBOpenTDV.value = "false";
+		tt2InterviewBOpenTDV.value = "false";
+		misleadingInterviewBOpenTDV.value = "false";
+		culpritInterviewBOpenTDV.value = "false";
 
 
         // Add each of these created Yarn Variables to our List that will hold them all
@@ -469,6 +504,11 @@ public class ProceduralEngine : MonoBehaviour {
 		varStorage.defaultVariables.Add(firstMateMentionTDV);
 		varStorage.defaultVariables.Add(medicMentionTDV);
 		varStorage.defaultVariables.Add(pilotMentionTDV);
+		// Adding the InterviewBOpen variables
+		varStorage.defaultVariables.Add(tt1InterviewBOpenTDV);
+		varStorage.defaultVariables.Add(tt2InterviewBOpenTDV);
+		varStorage.defaultVariables.Add(misleadingInterviewBOpenTDV);
+		varStorage.defaultVariables.Add(culpritInterviewBOpenTDV);
 
 
         // Now Actually Set the values
@@ -485,6 +525,11 @@ public class ProceduralEngine : MonoBehaviour {
 		varStorage.SetValue (firstMateMentionTDV.name, new Yarn.Value("no"));
 		varStorage.SetValue (medicMentionTDV.name, new Yarn.Value("no"));
 		varStorage.SetValue (pilotMentionTDV.name, new Yarn.Value("no"));
+		// Setting the values for InterviewB variables
+		varStorage.SetValue (tt1InterviewBOpenTDV.name, new Yarn.Value("false"));
+		varStorage.SetValue (tt2InterviewBOpenTDV.name, new Yarn.Value("false"));
+		varStorage.SetValue (misleadingInterviewBOpenTDV.name, new Yarn.Value("false"));
+		varStorage.SetValue (culpritInterviewBOpenTDV.name, new Yarn.Value("false"));
 
         // Go through as many cycles as we need to, in order to ensure that we create the proper yarn variables for each clue in the playthrough ("amountOfVoidClues")
         for (int i = 0; i < AMOUNT_OF_CLUES_PER_PLAYTHROUGH; i++)

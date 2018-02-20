@@ -130,15 +130,15 @@ public class GameController : MonoBehaviour
     {
         S = this;
         gamePaused = false;
+
+        dialogueRunner = DialogueRunner.S;
         //uiController = new UIController();
         //uiController.Initialize(this);
+
+        crewNavMeshAgentSpeeds = new float[crewNavMeshAgents.Length];
+        crewNavMeshAgentAngularSpeeds = new float[crewNavMeshAgents.Length];
     }
 
-    // Use this for initialization
-    void Start()
-    {
-        dialogueRunner = DialogueRunner.S;
-    }
 
     void SetupDrawers()
     {
@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour
         //Pauses based on timescale should pause all NPC movement without touching their scripts, ut it also breaks dialogue...
         //Time.timeScale = 0;
         //Time.fixedDeltaTime = 0;
-        
+
         for (int i = 0; i < crewNavMeshAgents.Length; i++)
         {
             crewNavMeshAgentSpeeds[i] = crewNavMeshAgents[i].speed;

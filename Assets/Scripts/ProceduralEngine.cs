@@ -387,6 +387,7 @@ public class ProceduralEngine : MonoBehaviour
             if (c.name == mentionString)
             {
                 c.value = newValue;
+                yarnVarRef.SetValue(c.name, new Yarn.Value("true"));
             }
         }
     }
@@ -401,6 +402,7 @@ public class ProceduralEngine : MonoBehaviour
             if (c.name == valueToCompare)
             {
                 c.value = newValue;
+                yarnVarRef.SetValue(c.name, new Yarn.Value(newValue));
             }
         }
     }
@@ -578,11 +580,11 @@ public class ProceduralEngine : MonoBehaviour
         varStorage.SetValue(truthTeller1TDV.name, new Yarn.Value(TruthTeller1));
         varStorage.SetValue(truthTeller2TDV.name, new Yarn.Value(TruthTeller2));
         varStorage.SetValue(misleadingCrewTDV.name, new Yarn.Value(MisleadingCrewMember));
-        varStorage.SetValue(cookMentionTDV.name, new Yarn.Value("no"));
-        varStorage.SetValue(engineerMentionTDV.name, new Yarn.Value("no"));
-        varStorage.SetValue(firstMateMentionTDV.name, new Yarn.Value("no"));
-        varStorage.SetValue(medicMentionTDV.name, new Yarn.Value("no"));
-        varStorage.SetValue(pilotMentionTDV.name, new Yarn.Value("no"));
+        varStorage.SetValue(cookMentionTDV.name, new Yarn.Value("false"));
+        varStorage.SetValue(engineerMentionTDV.name, new Yarn.Value("false"));
+        varStorage.SetValue(firstMateMentionTDV.name, new Yarn.Value("false"));
+        varStorage.SetValue(medicMentionTDV.name, new Yarn.Value("false"));
+        varStorage.SetValue(pilotMentionTDV.name, new Yarn.Value("false"));
         // Setting the values for InterviewB variables
         varStorage.SetValue(tt1InterviewBOpenTDV.name, new Yarn.Value("false"));
         varStorage.SetValue(tt2InterviewBOpenTDV.name, new Yarn.Value("false"));

@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e8296389a926a4cad25d0993a26485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueNode: 1stMate
+  _dialogueNode: 1stMate.Start
   _loyalty: 0
 --- !u!114 &61838616
 MonoBehaviour:
@@ -3416,6 +3416,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168706574}
   m_Mesh: {fileID: 4300000, guid: b536081247f811c42bf0d438c6e22902, type: 3}
+--- !u!84 &169264855
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1517
+  m_Height: 749
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &170707549
 GameObject:
   m_ObjectHideFlags: 0
@@ -9475,30 +9499,6 @@ Transform:
   m_Father: {fileID: 554726330}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &483284350
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 2560
-  m_Height: 1440
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &492866065
 GameObject:
   m_ObjectHideFlags: 0
@@ -15806,7 +15806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.25, y: 104.16852}
+  m_AnchoredPosition: {x: -0.25, y: 130.76605}
   m_SizeDelta: {x: 2513.5, y: 1198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &728685359
@@ -19993,7 +19993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e8296389a926a4cad25d0993a26485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueNode: Pilot
+  _dialogueNode: Pilot.Start
   _loyalty: 0
 --- !u!114 &914878817
 MonoBehaviour:
@@ -21448,6 +21448,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 975316047}
+--- !u!84 &980886581
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1517
+  m_Height: 749
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &981760021
 GameObject:
   m_ObjectHideFlags: 0
@@ -23369,7 +23393,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1501147730}
+  m_TargetTexture: {fileID: 169264855}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -24722,7 +24746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e8296389a926a4cad25d0993a26485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueNode: Cook
+  _dialogueNode: Cook.Start
   _loyalty: 0
 --- !u!114 &1130896854
 MonoBehaviour:
@@ -25196,7 +25220,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1232440343}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6499737
+  m_Size: 0.41882297
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -29780,11 +29804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   sourceText:
-  - {fileID: 4900000, guid: 9c152c5810173b64280d6c9a537da78a, type: 3}
-  - {fileID: 4900000, guid: 4fcaad93d70d18e4fa28d8f319078b17, type: 3}
-  - {fileID: 4900000, guid: 1e4bc20d9b3ab29428eacb53b17c8526, type: 3}
-  - {fileID: 4900000, guid: 74f41978d7ef3b943bd09e47957c660b, type: 3}
-  - {fileID: 4900000, guid: bb8a5ee7aa51d9243af54113eb2c9ebb, type: 3}
+  - {fileID: 4900000, guid: 4ce9298dc98cfb14580fab981cfe59b1, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -32722,30 +32742,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 697115bcf7a673d459841a7d8cc96618, type: 3}
   m_PrefabInternal: {fileID: 1512141806}
---- !u!84 &1501147730
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 2560
-  m_Height: 1440
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!4 &1504560867 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 1fb84168339be104fa5aab034e79053e, type: 3}
@@ -34627,8 +34623,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1534458386}
   outlineCamera: {fileID: 1048117444}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1501147730}
-  extraRenderTexture: {fileID: 483284350}
+  renderTexture: {fileID: 169264855}
+  extraRenderTexture: {fileID: 980886581}
 --- !u!114 &1534458389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35689,7 +35685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e8296389a926a4cad25d0993a26485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueNode: Engineer
+  _dialogueNode: Engineer.Start
   _loyalty: 0
 --- !u!114 &1593467138
 MonoBehaviour:
@@ -43671,7 +43667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e8296389a926a4cad25d0993a26485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueNode: Medic
+  _dialogueNode: Medic.Start
   _loyalty: 0
 --- !u!114 &1979448319
 MonoBehaviour:

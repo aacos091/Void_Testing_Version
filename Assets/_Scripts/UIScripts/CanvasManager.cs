@@ -45,8 +45,11 @@ public class CanvasManager : MonoBehaviour
     private GameObject dialogueRunnerObj;
     DialogueRunner dialogueRunner;
 
+    public bool dialogueCanvasNeeded;
+
     void Awake()
     {
+        dialogueCanvasNeeded = false;
 
         S = this;
         if (uiParent == null)
@@ -72,7 +75,7 @@ public class CanvasManager : MonoBehaviour
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
         if (dialogueCanvas != null)
         {
-            if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning)
+            if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning && !dialogueCanvasNeeded)
             {
                 if (mainCam == null)
                     mainCam = Camera.main.gameObject;

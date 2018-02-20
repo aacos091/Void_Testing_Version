@@ -301,6 +301,7 @@ namespace TeaspoonTools.TextboxSystem
 		{
             if (textSettings.autoFontSize)
                 textSettings.SetAutoFontSize();
+				
             ApplyTextSettings();
             StartedShowingText.Invoke ();
 			this.textToDisplay = textToDisplay;

@@ -34,6 +34,8 @@ public class DialogueUnitManager : MonoBehaviour {
         currentAnimator.SetBool("Talking", false);
         if (currentCoroutine != null)
             StopCoroutine(currentCoroutine);
+        StartCoroutine(TurnBackFromCamera());
+
     }
 
     public IEnumerator TurnToCamera()
@@ -59,23 +61,79 @@ public class DialogueUnitManager : MonoBehaviour {
         */
         bool rotated = false;
 
-        if (currentDialogueUnit.transform.rotation.y < 0)
+        if (currentDialogueUnit.transform.localRotation.y < 0 && currentDialogueUnit.transform.localRotation.y > -360)
         {
-            while (currentDialogueUnit.transform.rotation.y > -180)
+            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, -180, 0);
+           // yield return new WaitForSeconds(turnInterval);
+
+           
+            while (currentDialogueUnit.transform.localRotation.y > -180)
             {
-                currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, -2);
+                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, -2);
+                currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, -180, 0), 2);
                 yield return new WaitForSeconds(turnInterval);
+ 
             }
+ 
             rotated = true;
             StopCoroutine(currentCoroutine);
         }
         else if (!rotated)
         {
-            while (currentDialogueUnit.transform.rotation.y < 180)
+            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //yield return new WaitForSeconds(turnInterval);
+
+            
+            while (currentDialogueUnit.transform.localRotation.y < 180)
             {
-                currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, 2);
-                yield return new WaitForSeconds(turnInterval);
+                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, 2);
+                currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, 180 ,0), 2);
             }
+            yield return new WaitForSeconds(turnInterval);
+            
+            
+            rotated = true;
+            StopCoroutine(currentCoroutine);
+        }
+    }
+
+    public IEnumerator TurnBackFromCamera()
+    {
+       
+        bool rotated = false;
+
+        if (currentDialogueUnit.transform.localRotation.y < 0 && currentDialogueUnit.transform.localRotation.y > -360)
+        {
+            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, -180, 0);
+            // yield return new WaitForSeconds(turnInterval);
+
+
+            while (currentDialogueUnit.transform.localRotation.y > -180)
+            {
+                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, -2);
+                currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, -180, 0), 2);
+                yield return new WaitForSeconds(turnInterval);
+
+            }
+
+            rotated = true;
+            StopCoroutine(currentCoroutine);
+        }
+        else if (!rotated)
+        {
+            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //yield return new WaitForSeconds(turnInterval);
+
+
+            while (currentDialogueUnit.transform.localRotation.y < 180)
+            {
+                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, 2);
+                currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, 180, 0), 2);
+            }
+            yield return new WaitForSeconds(turnInterval);
+
+
+            rotated = true;
             StopCoroutine(currentCoroutine);
         }
     }

@@ -67,8 +67,9 @@ public class CanvasManager : MonoBehaviour
 		//DESTROY IF MORE THAN ONE COPY EXISTS
 		if (FindObjectsOfType(GetType()).Length > 1)
 		{
-			Destroy(gameObject);
+			Destroy(uiParent);
 		}
+
     }
 
     // Update is called once per frame

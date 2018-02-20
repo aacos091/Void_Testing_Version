@@ -9,6 +9,7 @@ using Yarn;
 using Yarn.Unity;
 
 public class ProceduralEngine : MonoBehaviour {
+	public static ProceduralEngine S;		// Singleton Instance of ProceduralEngine
 
 	// TODO Rethink the names of these. Will they be placed inside of a class that holds the data for this playthroughs mystery?
 	private CrewMember		_culprit; // Change to crewmember type

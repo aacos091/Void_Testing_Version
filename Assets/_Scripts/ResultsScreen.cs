@@ -10,21 +10,22 @@ public class ResultsScreen : MonoBehaviour {
 	public GameObject ClueManagerGO;
 	public GameObject LevelManagerGO;
 	public GameObject AccusationManagerGO;
+	public GameObject resultsScreenParentGO;
 	public GameObject UIGO;
+	public GameObject juryCanvas;
+	public GameObject HUD_Canvas;
+	public GameObject proceduralManagerGO;
+	public GameObject juryButton;
 
 	void Awake() {
-		// Populate the Singleton with the following if and else if statements
-		if (S == null)
-		{
-			S = this;
-		}
-		else if (S != null)
-		{
-			Destroy(this);
-		}
+		
 		//Make sure that the GameObject this is attached to is not deleted on load
-
 		DontDestroyOnLoad(gameObject);
+
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(resultsScreenParentGO);
+		}
 
 		defaultScene = gameObject.scene;
 
@@ -45,16 +46,22 @@ public class ResultsScreen : MonoBehaviour {
 	}
 
 	public void ResetButton() {
+
+		/*
 		SceneManager.MoveGameObjectToScene (ClueManagerGO, defaultScene);
 		SceneManager.MoveGameObjectToScene (LevelManagerGO, defaultScene);
 		SceneManager.MoveGameObjectToScene (AccusationManagerGO, defaultScene);
 		SceneManager.MoveGameObjectToScene (UIGO, defaultScene);
 		SceneManager.MoveGameObjectToScene (gameObject, defaultScene);
+		*/
 
 		SceneManager.LoadScene ("Final_Ship (TestimonyStuff)");
 	}
 
 	void OnLevelWasLoaded(){
 		this.gameObject.SetActive (false);
+		juryCanvas.SetActive (false);
+		HUD_Canvas.SetActive (true);
+		juryButton.SetActive (false);
 	}
 }

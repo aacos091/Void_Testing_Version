@@ -40,36 +40,13 @@ public class DialogueUnitManager : MonoBehaviour {
 
     public IEnumerator TurnToCamera()
     {
-        /*
-        {
-            bool rotated = false;
-            float rotAmt = 2;
-
-            if (currentDialogueUnit.transform.rotation.y < 0)
-            {
-                rotAmt *= -1;
-            }
-
-            for (float i = currentDialogueUnit.transform.rotation.y; Mathf.Abs(i) < 180; i += rotAmt)
-            {
-                currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, i);
-                yield return new WaitForSeconds(turnInterval);
-            }
-            rotated = true;
-            StopCoroutine(currentCoroutine);
-        }
-        */
         bool rotated = false;
 
         if (currentDialogueUnit.transform.localRotation.y < 0 && currentDialogueUnit.transform.localRotation.y > -360)
         {
-            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, -180, 0);
-           // yield return new WaitForSeconds(turnInterval);
-
-           
+         
             while (currentDialogueUnit.transform.localRotation.y > -180)
             {
-                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, -2);
                 currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, -180, 0), 2);
                 yield return new WaitForSeconds(turnInterval);
  
@@ -80,13 +57,9 @@ public class DialogueUnitManager : MonoBehaviour {
         }
         else if (!rotated)
         {
-            //currentDialogueUnit.transform.rotation = Quaternion.Euler(0, 180, 0);
-            //yield return new WaitForSeconds(turnInterval);
-
             
             while (currentDialogueUnit.transform.localRotation.y < 180)
             {
-                //currentDialogueUnit.transform.RotateAround(currentDialogueUnit.transform.position, Vector3.up, 2);
                 currentDialogueUnit.transform.rotation = Quaternion.RotateTowards(currentDialogueUnit.transform.rotation, Quaternion.Euler(0, 180 ,0), 2);
             }
             yield return new WaitForSeconds(turnInterval);

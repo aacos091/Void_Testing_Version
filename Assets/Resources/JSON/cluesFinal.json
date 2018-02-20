@@ -10,14 +10,14 @@
 				// Can we add the Violence Clues in here because they can occur in "Any" Location
 				"First Mate":
 				{
-					"Strong": ["Radiation Suit", "Polarizer"],
-					"Weak": ["Tampered Alarm", "Degausser"]
+					"Strong": ["Radiation Suit", "Degausser"],
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Strange Residue", "Bloodstain"]
 				},
 
 				"Pilot":
 				{
 					"Strong": ["EVA Suit", "Engine Piece"],
-					"Weak": ["Thruster Calibrator", "Tampered Alarm"]
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating Email"]
 				}
 			}
 		},
@@ -28,18 +28,19 @@
 			{
 				"First Mate":
 				{
-					"Strong": ["Pill Bottle", "Pill"],
-					"Weak": ["Suspicious Root", "Half-filled Glass"]
+					"Strong": ["Pill Bottle", "Pill"],	// Double check the name of "Pill" clue. Is it Pill or Pills?
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Strange Residue", "Bloodstain"]
 				},
 
 				"Pilot":
 				{
-					"Strong": ["Vermin Poison", "Half-filled Glass"],
-					"Weak": ["Half-filled Glass", "Suspicious Root"]
+					"Strong": ["Pill", "Pill Bottle"],
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating Email"]
 				}
 			}
 		},
-
+		// We got rid of Violence. Double check with Dan
+		/*
 		"Violence":
 		{
 			"First Mate":
@@ -55,5 +56,6 @@
 				"Weak": ["Squarebar", "Wrench"]
 			}
 		}
+		*/
 	}
 }

@@ -37,6 +37,10 @@ public class ProceduralEngine : MonoBehaviour
     //Each strong and weak category should have the same number for this value to work
     [SerializeField]
     private int CLUES_ARRAY_COUNT = 2;
+    [SerializeField]
+    private int STRONG_CLUES_ARRAY_COUNT = 1;
+    [SerializeField]
+    private int WEAK_CLUES_ARRAY_COUNT = 4;
     // May have to change this list from string to ClueInfo
     private List<string> _cluesList;
     private int AMOUNT_OF_CLUES;
@@ -214,6 +218,10 @@ public class ProceduralEngine : MonoBehaviour
     // TODO should this return a list of type ClueInfo? Each can have a boolean stating if it's a key clue, misleading clue or minor clue.
     public void ChooseClues()
     {
+        bool b_OnStrongClue = false;
+        bool b_OnWeakClue = false;
+        int cluesArrayCount = 0;
+
         _cluesList = new List<string>();
         List<int> indexesChosen = new List<int>();      // Holds the indexes that we have already used. That way we don't select the same clue twice
 
@@ -235,17 +243,26 @@ public class ProceduralEngine : MonoBehaviour
             {
                 clueRating = STRONG_CLUE_RATING;
                 clueValidity = STRONG_CLUE_TAG;
+                b_OnStrongClue = true;
+                b_OnWeakClue = false;
             }
             else
             {
+                b_OnWeakClue = true;
+                b_OnStrongClue = false;
                 clueRating = WEAK_CLUE_RATING;
                 clueValidity = WEAK_CLUE_TAG;
             }
-
+            // TODO Double check this logic with importing actual clue models.
             // Pick a valid index at Random as long as it has not been chosen before
             do
             {
-                randomIndex = Random.Range(0, CLUES_ARRAY_COUNT);
+                if (b_OnStrongClue)
+                    cluesArrayCount = STRONG_CLUES_ARRAY_COUNT;
+                else if (b_OnWeakClue)
+                    cluesArrayCount = WEAK_CLUES_ARRAY_COUNT;
+
+                randomIndex = Random.Range(0, cluesArrayCount);
             } while (indexesChosen.Contains(randomIndex));
 
             // Add value in randomIndex to indexesChosen to ensure that we do not choose this value again

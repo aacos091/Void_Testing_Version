@@ -49,6 +49,11 @@ public class ClueManager : MonoBehaviour
         //Make sure that the GameObject this is attached to is not deleted on load
         DontDestroyOnLoad(gameObject);
 
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
+
     }
 
     // Use this for initialization

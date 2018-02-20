@@ -29,6 +29,8 @@ public class AccusationManager : MonoBehaviour {
 
     public GameObject[] crewDialogue;
 
+	public GameObject resultsScreen;
+
 
     void Awake()
     {
@@ -42,6 +44,13 @@ public class AccusationManager : MonoBehaviour {
         }
 
         DontDestroyOnLoad(gameObject);
+
+		//DESTROY IF MORE THAN ONE COPY EXISTS
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
+
         //For now, needs to be inactive so that it can find things OnEnable
         gameObject.SetActive(false);
     }
@@ -57,6 +66,7 @@ public class AccusationManager : MonoBehaviour {
 		endText.gameObject.SetActive (false);
 		replay.gameObject.SetActive (false);
         */
+
         crew = GameObject.FindGameObjectsWithTag("Crew");
     }
 
@@ -269,6 +279,8 @@ public class AccusationManager : MonoBehaviour {
 			endText.gameObject.SetActive (true);
 
 		}
+
+		resultsScreen.GetComponent<ResultsScreen>().DisplayResultsScreen ();
 
 	}
 

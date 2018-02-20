@@ -63,6 +63,12 @@ public class CanvasManager : MonoBehaviour
         //accusationCanvases = new List<GameObject>();
         //Make sure that the GameObject the UI is attached to is not deleted on load
         DontDestroyOnLoad(uiParent);
+
+		//DESTROY IF MORE THAN ONE COPY EXISTS
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
     }
 
     // Update is called once per frame

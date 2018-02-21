@@ -49,6 +49,7 @@ public class ClueManager : MonoBehaviour
         //Make sure that the GameObject this is attached to is not deleted on load
         DontDestroyOnLoad(gameObject);
 
+		//DESTROY IF MORE THAN ONE COPY EXISTS
 		if (FindObjectsOfType(GetType()).Length > 1)
 		{
 			Destroy(gameObject);

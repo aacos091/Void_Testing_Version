@@ -26,9 +26,6 @@ public class ResultsScreen : MonoBehaviour {
 		{
 			Destroy(resultsScreenParentGO);
 		}
-
-		defaultScene = gameObject.scene;
-
 	}
 
 	// Use this for initialization
@@ -38,7 +35,12 @@ public class ResultsScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		defaultScene = gameObject.scene;
+
+		if (defaultScene.name == "Final_Ship (TestimonyStuff)") {
+			this.gameObject.SetActive (false);
+		}
 	}
 
 	public void DisplayResultsScreen() {
@@ -47,21 +49,23 @@ public class ResultsScreen : MonoBehaviour {
 
 	public void ResetButton() {
 
-		/*
-		SceneManager.MoveGameObjectToScene (ClueManagerGO, defaultScene);
-		SceneManager.MoveGameObjectToScene (LevelManagerGO, defaultScene);
-		SceneManager.MoveGameObjectToScene (AccusationManagerGO, defaultScene);
-		SceneManager.MoveGameObjectToScene (UIGO, defaultScene);
-		SceneManager.MoveGameObjectToScene (gameObject, defaultScene);
-		*/
+		Destroy (ClueManagerGO);
+		Destroy (LevelManagerGO);
+		Destroy (AccusationManagerGO);
+		Destroy (UIGO);
+		Destroy (resultsScreenParentGO);
 
 		SceneManager.LoadScene ("Final_Ship (TestimonyStuff)");
 	}
 
 	void OnLevelWasLoaded(){
-		this.gameObject.SetActive (false);
-		juryCanvas.SetActive (false);
-		HUD_Canvas.SetActive (true);
-		juryButton.SetActive (false);
+		//this.gameObject.SetActive (false);
+
+		if (defaultScene.name != "Final_Ship (TestimonyStuff)") {
+			juryCanvas.SetActive (false);
+			HUD_Canvas.SetActive (true);
+			juryButton.SetActive (false);
+			AccusationManagerGO.SetActive (false);
+		}
 	}
 }

@@ -20,6 +20,14 @@
 		"Mallet": ["Rubber Mallet used by the Engineer."],
 		"Garrote": ["A garrote, used to choke people. Why is this onboard?"],
 		"Squarebar": ["Exactly what the name says. A bar that is square."],
-		"Wrench": ["Adjustable monkey wrench used for all sorts of repairs."]
+		"Wrench": ["Adjustable monkey wrench used for all sorts of repairs."],
+		"Matching Boot": ["A boot with a unique sole pattern."],
+		"Bootprint": ["An imprint of what looks like the sole of a shoe."],
+		"Mismatched Boot": ["A standard issue Federation boot."],
+		"Silocone Grease": ["Grease made of silicone. An exciting and informative description, I know."],
+		"Jar of Dielectric Grease": ["A grease that is used for lubricating electrical components."],
+		"Strange Residue": ["A peculiar residual substance."],
+		"Incriminating E-mail": ["An email with some damning information."],
+		"Bloodstain": ["A faded stain that appears to be blood. Someone clearly tried to clean this up."]
 	}
 }

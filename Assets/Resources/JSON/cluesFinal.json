@@ -17,7 +17,7 @@
 				"Pilot":
 				{
 					"Strong": ["EVA Suit", "Engine Piece"],
-					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating Email"]
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating E-mail"]
 				}
 			}
 		},
@@ -28,17 +28,17 @@
 			{
 				"First Mate":
 				{
-					"Strong": ["Pill Bottle", "Pill"],	// Double check the name of "Pill" clue. Is it Pill or Pills?
+					"Strong": ["Pill Bottle", "Pill"],
 					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Strange Residue", "Bloodstain"]
 				},
 
 				"Pilot":
 				{
 					"Strong": ["Pill", "Pill Bottle"],
-					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating Email"]
+					"Weak": ["Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating E-mail"]
 				}
 			}
-		},
+		}
 		// We got rid of Violence. Double check with Dan
 		/*
 		"Violence":

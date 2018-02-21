@@ -3,8 +3,8 @@
 	
 	"Location":
 	{
-		"Engine Room":["Environmental Hazard"],
+		"Engine Room":["Environmental Hazard", "Test"],
 		
-		"Galley":["Poison/Venom"]
+		"Galley":["Poison/Venom", "Test"]
 	}
 }

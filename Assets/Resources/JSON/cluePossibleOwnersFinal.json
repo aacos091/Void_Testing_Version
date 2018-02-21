@@ -7,55 +7,72 @@
 		"Engine Room":
 		{
             // Now search for all the Methods that can occur inside EngineRoom
-
+            /*
             "Violence":
             {
                 "Squarebar": ["Pilot", "Engineer"],
                 "Garrote": ["Medic", "Pilot"],
-                "Bullet Casting": ["Pilot", "1stMate"],
+                "Bullet Casting": ["Pilot", "First Mate"],
                 "Wrench": ["Engineer", "Pilot"],
-                "Scalpel": ["Medic", "1stMate", "Engineer"],
-                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Scalpel": ["Medic", "First Mate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "First Mate"],
                 "Hardlight Knife": ["Medic", "Engineer"],
-                "Broken Glass": ["1stMate", "Medic"],
-                "Mallet": ["Engineer", "1stMate"]
-            },
+                "Broken Glass": ["First Mate", "Medic"],
+                "Mallet": ["Engineer", "First Mate"]
+            },*/
             "Environmental Hazard":
             {
-                "Radiation Suit": ["1stMate", "Medic"], // This clue only has 1 potential owner in this situation?
+                "Radiation Suit": ["First Mate", "Medic", "Engineer"], // This clue only has 1 potential owner in this situation?
                 "EVA Suit": ["Pilot", "Engineer", "Medic"],
-                "Degausser": ["1stMate", "Pilot"],
-                "Engine Piece": ["Pilot", "Engineer", "Medic"],
-                "Thruster Calibrator": ["Pilot", "1stMate"],
+                "Degausser": ["First Mate", "Engineer", "First Mate"],
+                "Engine Piece": ["Pilot", "Cook", "Medic"],
+                "Bootprint": ["Engineer", "First Mate", "Pilot"],
+                "Matching Boot": ["First Mate", "Medic", "Pilot"],
+                "Mismatched Boot": ["First Mate", "Medic", "Pilot"],
+                "Silicone Grease": ["Cook", "Engineer", "Medic"],
+                "Jar of Dielectric Grease": ["Cook", "Engineer", "Pilot"],
+                "Strange Residue": ["Cook", "First Mate", "Medic"],
+                "Incriminating E-mail": ["Cook", "Engineer", "Pilot"],
+                "Bloodstain": ["Cook", "First Mate", "Medic"],
+                "Thruster Calibrator": ["Pilot", "First Mate"],
                 "Diagnostics Tool": ["Medic", "Engineer"],
-                "Polarizer": ["1stMate", "Medic"],
-                "Tampered Alarm": ["1stMate", "Pilot", "Engineer"],
+                "Polarizer": ["First Mate", "Medic"],
+                "Tampered Alarm": ["First Mate", "Pilot", "Engineer"],
                 "Plasma Cutter": ["Medic", "Pilot"]
             }
 		},
 		// This gets chosen if the murder location is the Galley
 		"Galley":
 		{
+            /*
             "Violence":
             {
                 "Squarebar": ["Pilot", "Engineer"],
                 "Garrote": ["Medic", "Pilot"],
-                "Bullet Casting": ["Pilot", "1stMate"],
+                "Bullet Casting": ["Pilot", "First Mate"],
                 "Wrench": ["Engineer", "Pilot"],
-                "Scalpel": ["Medic", "1stMate", "Engineer"],
-                "Scissors": ["Pilot", "Engineer", "1stMate"],
+                "Scalpel": ["Medic", "First Mate", "Engineer"],
+                "Scissors": ["Pilot", "Engineer", "First Mate"],
                 "Hardlight Knife": [ "Medic", "Engineer"],
-                "Broken Glass": ["1stMate", "Medic"],
-                "Mallet": ["Engineer", "1stMate"]
-            },
+                "Broken Glass": ["First Mate", "Medic"],
+                "Mallet": ["Engineer", "First Mate"]
+            },*/
 
             "Poison/Venom":
             {
-                "Pill Bottle": ["1stMate", "Engineer"],
-                "Pill": ["1stMate", "Engineer"],
+                "Pill Bottle": ["Cook", "First Mate", "Pilot"],
+                "Pill": ["Engineer", "First Mate", "Pilot"],
+                "Bootprint": ["Engineer", "First Mate", "Pilot"],
+                "Matching Boot": ["First Mate", "Medic", "Pilot"],
+                "Mismatched Boot": ["First Mate", "Medic", "Pilot"],
+                "Silicone Grease": ["Cook", "Engineer", "Medic"],
+                "Jar of Dielectric Grease": ["Cook", "Engineer", "Pilot"],
+                "Strange Residue": ["Cook", "First Mate", "Medic"],
+                "Incriminating E-mail": ["Cook", "Engineer", "Pilot"],
+                "Bloodstain": ["Cook", "First Mate", "Medic"],
                 "Syringe": ["Medic", "Pilot"],
-                "Suspicious Root": ["1stMate", "Medic", "Engineer"],
-                "Vermin Poison": ["Pilot", "1stMate"],
+                "Suspicious Root": ["First Mate", "Medic", "Engineer"],
+                "Vermin Poison": ["Pilot", "First Mate"],
                 "Paraphenelia": ["Engineer", "Medic", "Pilot"],
                 "Half-filled Glass": ["Pilot", "Engineer"]
             }

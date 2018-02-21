@@ -29,9 +29,9 @@ public class ProceduralEngine : MonoBehaviour
 
     // TODO These values will change depending on the amount of clues each Culprit can have depending on the Murder location
     // TODO Change AMOUNT_OF_CLUES to represent Strong(1) and Weak(4
-    private const int AMOUNT_OF_CLUES_PER_PLAYTHROUGH = 4;
-    private const int AMOUNT_OF_STRONG_CLUES_PER_PLAYTHROUGH = 2;
-    private const int AMOUNT_OF_WEAK_CLUES_PER_PLAYTHROUGH = 2;
+    private const int AMOUNT_OF_CLUES_PER_PLAYTHROUGH = 5;
+    private const int AMOUNT_OF_STRONG_CLUES_PER_PLAYTHROUGH = 1;
+    private const int AMOUNT_OF_WEAK_CLUES_PER_PLAYTHROUGH = 4;
 
     // This int represents the amount of clues present in each array of clues in the JSON files. 
     //Each strong and weak category should have the same number for this value to work
@@ -58,6 +58,7 @@ public class ProceduralEngine : MonoBehaviour
     [Header("Drop all the SpawnPoints in here")]
     public List<Transform> spawnPoints;
 
+    [Header("Place Ship Transform and Dialogue GameObjects into their respective field below")]
     public Transform shipTransform;
     public GameObject dialogueSystem;
 
@@ -207,7 +208,7 @@ public class ProceduralEngine : MonoBehaviour
         // Pick a random number between 0 an 1 because right now each room only has two possible methods
         int index = ChooseID(0, 1);
         // TODO Review this. Is this a modular approach to picking methods based off of the location room chosen?
-        string method = methodData["Location"][_murderLocation][index].ToString();
+        string method = methodData["Location"][_murderLocation][0].ToString();
 
         // Clear the JsonData Object
         methodData.Clear();
@@ -290,6 +291,18 @@ public class ProceduralEngine : MonoBehaviour
 
     void SpawnClues(string cName, int rating)
     {
+        // There are 3 possible entries right now for each clue owner.
+        int NUMBER_OF_OWNERS = 3;
+        // Select the index we will use to select the first possible clue owner of this clue
+        int firstClueOwnerIndex = Random.Range (0, NUMBER_OF_OWNERS);
+        int secondClueOwnerIndex;
+        // Choose the second index to use for selecting the second clue Owner of this clue
+        do 
+        {
+            secondClueOwnerIndex = Random.Range (0, NUMBER_OF_OWNERS);
+        } while (secondClueOwnerIndex == firstClueOwnerIndex);
+
+
         // Create the JSON object to hold the clues Descriptions
         JsonData descriptionData = JsonMapper.ToObject(clueDescriptionsFinal.text);
         JsonData clueOwnerData = JsonMapper.ToObject(cluePossibleOwnersFinal.text);
@@ -301,8 +314,8 @@ public class ProceduralEngine : MonoBehaviour
         tGO.GetComponent<ClueItem>().Rating = rating;
         tGO.GetComponent<ClueItem>().ItemName = cName;
         tGO.GetComponent<ClueItem>().Description = descriptionData["Clues"][cName][0].ToString();
-        tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][0].ToString();
-        tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][1].ToString();
+        tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][firstClueOwnerIndex].ToString();
+        tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][secondClueOwnerIndex].ToString();
         tGO.GetComponent<ClueItem>().Location = spawnPoints[spawnIndex].GetComponent<SpawnPoint>().Location;
         // Position this clue to it's correct Position
         PositionClue(tGO);

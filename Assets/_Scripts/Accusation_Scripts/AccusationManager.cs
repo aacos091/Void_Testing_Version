@@ -280,24 +280,29 @@ public class AccusationManager : MonoBehaviour {
 
 	void RaycastForCrew() {
 		if (Input.GetMouseButtonDown (0)) {
-			Debug.Log ("Selecting crew");
-            
-
+            // Create variables to store mouse position, raycast hit info and actual Ray info.
 			Vector3 mousePosition;
 			RaycastHit hit;
 			Ray ray;
+            
+            // Set mousePosition to equal the x and y coordinates of where the user clicked the mouse
             mousePosition = Input.mousePosition;
+            // Manually set the mousePosition's transform z-position;
             mousePosition.z = Camera.main.transform.position.z + maxRaycastLength;
            
+           // Transform the pixel coordinates of mousePosition to world coordinates
             Vector3 mouseWorldCoordinates = Camera.main.ScreenToWorldPoint (mousePosition);
+
+            // Calculate the direction vector that the ray we cast from the camera will face
             Vector3 rayDirection = mouseWorldCoordinates - Camera.main.transform.position; 
-			//Update ray
+
+			//Create a new Ray variable that starts at the camera's position and faces towards the direction we calculated in 'rayDirection'
             ray = new Ray(Camera.main.transform.position, rayDirection);
 
-			//The raycast works but in scene view it points towards canvas
+			// Visualization of the Raycast to make it easier to Debug
 			Debug.DrawRay (Camera.main.transform.position,rayDirection, Color.green, 1.0f);
-              //Debug.DrawRay (ray.origin, ray.direction * 1000.0f, Color.green);
 
+            // Shoot the Raycast based on the information we stored in 'ray' variable, and only check objects set in the 'crewLayer'
 			if (Physics.Raycast (ray, out hit, maxRaycastLength, crewLayer)) {   // Added a layer for only checking against crew members for efficiency
 				if (hit.collider.tag == "Crew" && selectedCrew == "") 
 				{
@@ -318,6 +323,7 @@ public class AccusationManager : MonoBehaviour {
 					//Saves selected crew for dialogue purposes
 					selectedCrew = crewObject.name;
 				}
+                // Crew Members were tagged as Unit so I placed this here to make sure that they were actually being hit by the RayCast.
                 else if (hit.collider.tag == "Unit")
                 {
                     Debug.LogWarning ("Hit a crew member");

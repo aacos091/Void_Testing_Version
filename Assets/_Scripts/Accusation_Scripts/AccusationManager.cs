@@ -21,6 +21,9 @@ public class AccusationManager : MonoBehaviour {
     private float counter = 0;
     private float tempCounter = 0;
     private float maxIndex = 20;
+    [SerializeField]
+    private float maxRaycastLength = 100.0f;
+    private LayerMask   crewLayer = 1 << 11;
     public GameObject[] crew;
     public float juryVote = 0;
 
@@ -278,19 +281,24 @@ public class AccusationManager : MonoBehaviour {
 	void RaycastForCrew() {
 		if (Input.GetMouseButtonDown (0)) {
 			Debug.Log ("Selecting crew");
+            
 
 			Vector3 mousePosition;
 			RaycastHit hit;
 			Ray ray;
-
+            mousePosition = Input.mousePosition;
+            mousePosition.z = Camera.main.transform.position.z + maxRaycastLength;
+           
+            Vector3 mouseWorldCoordinates = Camera.main.ScreenToWorldPoint (mousePosition);
+            Vector3 rayDirection = mouseWorldCoordinates - Camera.main.transform.position; 
 			//Update ray
-			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			mousePosition = Input.mousePosition;
+            ray = new Ray(Camera.main.transform.position, rayDirection);
 
 			//The raycast works but in scene view it points towards canvas
-			Debug.DrawRay (transform.position, mousePosition, Color.green);
+			Debug.DrawRay (Camera.main.transform.position,rayDirection, Color.green, 1.0f);
+              //Debug.DrawRay (ray.origin, ray.direction * 1000.0f, Color.green);
 
-			if (Physics.Raycast (ray, out hit, 100.0f)) {
+			if (Physics.Raycast (ray, out hit, maxRaycastLength, crewLayer)) {   // Added a layer for only checking against crew members for efficiency
 				if (hit.collider.tag == "Crew" && selectedCrew == "") 
 				{
 
@@ -310,6 +318,10 @@ public class AccusationManager : MonoBehaviour {
 					//Saves selected crew for dialogue purposes
 					selectedCrew = crewObject.name;
 				}
+                else if (hit.collider.tag == "Unit")
+                {
+                    Debug.LogWarning ("Hit a crew member");
+                }
 			}
 		}
 	}

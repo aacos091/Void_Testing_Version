@@ -5,27 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: b35bfc2d05d21df4d98d37fa07c9272c
-  - enabled: 0
-    path: 
-    guid: 438c7bc1332b4db44be66e5146f72e16
-  - enabled: 0
-    path: 
-    guid: 7cc55edb5b386cd4d8d995a1dce9aeb3
-  - enabled: 0
-    path: 
-    guid: e84ca7c39ef045842afa6b4374d41fb4
-  - enabled: 0
-    path: 
-    guid: 39d35fc5bfc617446881da231b35776e
   - enabled: 1
-    path: Assets/_Scenes/Final_Ship.unity
-    guid: 37e7fe2efebf66545ab4a7ee9b8b9b5f
+    path: Assets/_Scenes/Final_Ship (ResetButton).unity
+    guid: 413a6a2c6d6cae24cae6919f79df1b21
   - enabled: 1
     path: Assets/_Scenes/Jury_Scene.unity
-    guid: a66cb513a9aefa348bd3bb4a2fc2f797
-  - enabled: 1
-    path: Assets/_Scenes/Jury_Scene_Old.unity
     guid: 637586c22e7a64f47a2cde93968ab0df
+  - enabled: 1
+    path: Assets/_Scenes/Jury_Scene_Test.unity
+    guid: a66cb513a9aefa348bd3bb4a2fc2f797

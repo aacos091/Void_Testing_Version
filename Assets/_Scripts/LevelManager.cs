@@ -15,6 +15,12 @@ public class LevelManager : MonoBehaviour {
     void Awake ()
 	{
 		DontDestroyOnLoad (this);
+
+		//DESTROY IF MORE THAN ONE COPY EXISTS
+		if (FindObjectsOfType(GetType()).Length > 1)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	void Start ()

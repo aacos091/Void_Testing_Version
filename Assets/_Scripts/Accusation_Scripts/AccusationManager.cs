@@ -29,6 +29,7 @@ public class AccusationManager : MonoBehaviour {
 
     public GameObject[] crewDialogue;
 
+	public GameObject resultsScreen;
 
     void Awake()
     {
@@ -269,6 +270,8 @@ public class AccusationManager : MonoBehaviour {
 			endText.gameObject.SetActive (true);
 
 		}
+
+		resultsScreen.GetComponent<ResultsScreen>().DisplayResultsScreen ();
 
 	}
 

@@ -42,6 +42,7 @@ public class ContentHeightFitter : MonoBehaviour
 
 	void UpdateHeight()
 	{
+		float prevHeight = rectTransform.rect.height;
 		float height = 0;
 		Vector2 newSize = rectTransform.sizeDelta;
 
@@ -54,7 +55,18 @@ public class ContentHeightFitter : MonoBehaviour
 			Debug.Log("Updated height!");
 			newSize.y = Mathf.Clamp(height, minHeight, 9999f);
 			rectTransform.sizeDelta = newSize;
+
+			// Move this up or down to keep it in place
+			float heightDiff = Mathf.Abs(height - prevHeight);
+
+			if (height > prevHeight)
+				rectTransform.localPosition += new Vector3(0, heightDiff, 0);
+			
+			else 
+				rectTransform.localPosition -= new Vector3(0, heightDiff, 0);
 		}
+
+		
 	}
 	
 }

@@ -56,6 +56,9 @@ public class CanvasManager : MonoBehaviour
         //dialogueRunner = DialogueRunner.S;
         dialogueRunner = dialogueRunnerObj.GetComponent<DialogueRunner>();
 
+        print("br");
+
+
         //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects
         //accusationCanvases = new List<GameObject>();
         //Make sure that the GameObject the UI is attached to is not deleted on load
@@ -74,12 +77,14 @@ public class CanvasManager : MonoBehaviour
                 if (mainCam == null)
                     mainCam = Camera.main.gameObject;
                 lastCamPos = mainCam.transform.position;
-                DialogueUnitManager.S.StopTalking();
+
 
                 disableCanvas(dialogueCanvas);
                 loadCanvas(HUDCanvas);
 
             }
+            else if (dialogueRunner.isDialogueRunning)
+                dialogueCanvas.SetActive(true);
         }
     }
 

@@ -162,10 +162,11 @@ public class Units : MonoBehaviour
 
 				//Select object
 				this.SelectedObject = rayCastedGO;
+                DialogueUnitManager.S.SetDialogueUnit(rayCastedGO);
 
-			}
+            }
 
-		} 
+        } 
 		else 
 		{
 
@@ -294,7 +295,7 @@ public class Units : MonoBehaviour
 	void GotoNextPoint ()
 	{
 
-		int chance = Random.Range (0, 10000);
+		int chance = Random.Range (0, 1000);
 
 		int near = Random.Range (0, 100);
 

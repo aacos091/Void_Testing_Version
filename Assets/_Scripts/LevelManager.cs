@@ -30,8 +30,10 @@ public class LevelManager : MonoBehaviour {
 
 	public void ChangeToScene (string sceneName) {
         //TODO: This is a temp command to destroy any Inspection clones that are still up
-        if (CanvasClueObject.S.cloneClue != null)
-            Destroy(CanvasClueObject.S.cloneClue);
+		if (CanvasClueObject.S != null) {
+			if (CanvasClueObject.S.cloneClue != null)
+				Destroy (CanvasClueObject.S.cloneClue);
+		}
 		SceneManager.LoadScene(sceneName);
         if (sceneName == "Jury_Scene")
         {

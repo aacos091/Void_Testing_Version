@@ -24,6 +24,7 @@ public class ScrollbarSizer : MonoBehaviour
 	[SerializeField] ScrollbarType type = ScrollbarType.vertical;
 	[SerializeField] RectTransform viewport;
 	[SerializeField] RectTransform content;
+	Scrollbar scrollbar;
 	public bool isVisible { get; protected set; }
 
 	[Header("For debugging")]
@@ -70,8 +71,9 @@ public class ScrollbarSizer : MonoBehaviour
 	// Methods
 	void Awake()
 	{
-		isVisible = true;
-		cGroup = GetComponent<CanvasGroup>();
+		isVisible = 		true;
+		cGroup = 			GetComponent<CanvasGroup>();
+		scrollbar = 		GetComponent<Scrollbar>();
 	}
 	
 	// Update is called once per frame
@@ -100,9 +102,5 @@ public class ScrollbarSizer : MonoBehaviour
 		isVisible = true;
 	}
 
-	void UpdateSize()
-	{
-		
-	}
 	
 }

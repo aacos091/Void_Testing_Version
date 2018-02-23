@@ -27,10 +27,16 @@ public class ContentHeightFitter : MonoBehaviour
 	void Start () 
 	{
 		Vector2 newSize = rectTransform.sizeDelta;
+
+		float sizeDiff;
 		if (newSize.y < minHeight)
 		{
+			sizeDiff = Mathf.Abs(newSize.y - minHeight);
 			newSize.y = minHeight;
 			rectTransform.sizeDelta = newSize;
+
+			// Move this down so it stays in place
+			rectTransform.localPosition -= new Vector3(0, sizeDiff / 2, 0);
 		}
 	}
 	
@@ -60,10 +66,10 @@ public class ContentHeightFitter : MonoBehaviour
 			float heightDiff = Mathf.Abs(height - prevHeight);
 
 			if (height > prevHeight)
-				rectTransform.localPosition += new Vector3(0, heightDiff, 0);
+				rectTransform.localPosition -= new Vector3(0, heightDiff / 2, 0);
 			
 			else 
-				rectTransform.localPosition -= new Vector3(0, heightDiff, 0);
+				rectTransform.localPosition += new Vector3(0, heightDiff / 2, 0);
 		}
 
 		

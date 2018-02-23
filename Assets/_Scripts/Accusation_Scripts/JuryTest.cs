@@ -31,12 +31,12 @@ public class JuryTest : MonoBehaviour {
 	/*void OnMouseDown() {
 		Judgement ();
 	}*/
-
+/*
 	void OnMouseOver ()
 	{
 		//print ("Over " + this.gameObject.name);
 		Vector3 targetLightPosition = startingPos;
 		targetLightPosition.x = this.transform.position.x;
 		spotLight.transform.position = targetLightPosition;
-	}
+	}*/
 }

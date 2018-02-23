@@ -44,7 +44,6 @@ public class TestimonyManager : MonoBehaviour
 		// Make it expand when clicked, go back to normal when clicked while expanded
 		Button entryButton = newEntryGo.GetComponent<Button>();
 		crewManager.buttonsManaged[newEntryGo] = ButtonState.normal;
-
 		entryButton.onClick.AddListener( () => 
 		{
 			if (crewManager.EntryNormal(newEntryGo))

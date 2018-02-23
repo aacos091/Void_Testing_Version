@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: a92dd63fdcb1f3b43b0666205e478ce2
+timeCreated: 1510759031
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tablet_concept_placeholder_0
+    21300002: Tablet_concept_placeholder_1
+    21300004: Tablet_concept_placeholder_2
+    21300006: Tablet_concept_placeholder_3
+    21300008: Tablet_concept_placeholder_4
+    21300010: Tablet_concept_placeholder_5
+    21300012: Tablet_concept_placeholder_6
+    21300014: Tablet_concept_placeholder_7
+    21300016: Tablet_concept_placeholder_8
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 2
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 289, y: 91, z: 363, w: 165}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 981.3334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 981.3334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_2
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 981.3334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491.33334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_4
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 491.33334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_5
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 491.33334
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333435
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1.3333435
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tablet_concept_placeholder_8
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1.3333435
+        width: 700.6667
+        height: 490.66666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -1051, y: -736}
+      - {x: -1051, y: 736}
+      - {x: 1051, y: 736}
+      - {x: 1051, y: -736}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

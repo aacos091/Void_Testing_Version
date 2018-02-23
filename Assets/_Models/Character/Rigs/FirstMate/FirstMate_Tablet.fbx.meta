@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: 388e4fe4b9691624c88431a397105ca3
+timeCreated: 1519150293
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: anim_gobal01
+    100002: be_head01
+    100004: be_L_index01
+    100006: be_L_middle01
+    100008: be_L_pinky01
+    100010: be_L_ring01
+    100012: be_L_thumb01
+    100014: be_L_toe01
+    100016: be_pelvis01
+    100018: be_R_index01
+    100020: be_R_middle01
+    100022: be_R_pinky01
+    100024: be_R_ring01
+    100026: be_R_thumb01
+    100028: be_R_toe01
+    100030: bn_chest01
+    100032: bn_head01
+    100034: bn_L__clavicle01
+    100036: bn_L_ankle01
+    100038: bn_L_foot01
+    100040: bn_L_forearm01
+    100042: bn_L_forearm02
+    100044: bn_L_hand01
+    100046: bn_L_index01
+    100048: bn_L_index02
+    100050: bn_L_index03
+    100052: bn_L_leg01
+    100054: bn_L_middle01
+    100056: bn_L_middle02
+    100058: bn_L_middle03
+    100060: bn_L_pinky01
+    100062: bn_L_pinky02
+    100064: bn_L_pinky03
+    100066: bn_L_ring01
+    100068: bn_L_ring02
+    100070: bn_L_ring03
+    100072: bn_L_shoulder01
+    100074: bn_L_thigh01
+    100076: bn_L_thumb01
+    100078: bn_L_thumb02
+    100080: bn_L_thumb03
+    100082: bn_L_wrist01
+    100084: bn_neck01
+    100086: bn_pelvis01
+    100088: bn_R__clavicle01
+    100090: bn_R_ankle01
+    100092: bn_R_foot01
+    100094: bn_R_forearm01
+    100096: bn_R_forearm02
+    100098: bn_R_hand01
+    100100: bn_R_index01
+    100102: bn_R_index02
+    100104: bn_R_index03
+    100106: bn_R_leg01
+    100108: bn_R_middle01
+    100110: bn_R_middle02
+    100112: bn_R_middle03
+    100114: bn_R_pinky01
+    100116: bn_R_pinky02
+    100118: bn_R_pinky03
+    100120: bn_R_ring01
+    100122: bn_R_ring02
+    100124: bn_R_ring03
+    100126: bn_R_shoulder01
+    100128: bn_R_thigh01
+    100130: bn_R_thumb01
+    100132: bn_R_thumb02
+    100134: bn_R_thumb03
+    100136: bn_R_wrist01
+    100138: bn_root01
+    100140: bn_spine01
+    100142: bn_spine02
+    100144: //RootNode
+    100146: skeleton01
+    400000: anim_gobal01
+    400002: be_head01
+    400004: be_L_index01
+    400006: be_L_middle01
+    400008: be_L_pinky01
+    400010: be_L_ring01
+    400012: be_L_thumb01
+    400014: be_L_toe01
+    400016: be_pelvis01
+    400018: be_R_index01
+    400020: be_R_middle01
+    400022: be_R_pinky01
+    400024: be_R_ring01
+    400026: be_R_thumb01
+    400028: be_R_toe01
+    400030: bn_chest01
+    400032: bn_head01
+    400034: bn_L__clavicle01
+    400036: bn_L_ankle01
+    400038: bn_L_foot01
+    400040: bn_L_forearm01
+    400042: bn_L_forearm02
+    400044: bn_L_hand01
+    400046: bn_L_index01
+    400048: bn_L_index02
+    400050: bn_L_index03
+    400052: bn_L_leg01
+    400054: bn_L_middle01
+    400056: bn_L_middle02
+    400058: bn_L_middle03
+    400060: bn_L_pinky01
+    400062: bn_L_pinky02
+    400064: bn_L_pinky03
+    400066: bn_L_ring01
+    400068: bn_L_ring02
+    400070: bn_L_ring03
+    400072: bn_L_shoulder01
+    400074: bn_L_thigh01
+    400076: bn_L_thumb01
+    400078: bn_L_thumb02
+    400080: bn_L_thumb03
+    400082: bn_L_wrist01
+    400084: bn_neck01
+    400086: bn_pelvis01
+    400088: bn_R__clavicle01
+    400090: bn_R_ankle01
+    400092: bn_R_foot01
+    400094: bn_R_forearm01
+    400096: bn_R_forearm02
+    400098: bn_R_hand01
+    400100: bn_R_index01
+    400102: bn_R_index02
+    400104: bn_R_index03
+    400106: bn_R_leg01
+    400108: bn_R_middle01
+    400110: bn_R_middle02
+    400112: bn_R_middle03
+    400114: bn_R_pinky01
+    400116: bn_R_pinky02
+    400118: bn_R_pinky03
+    400120: bn_R_ring01
+    400122: bn_R_ring02
+    400124: bn_R_ring03
+    400126: bn_R_shoulder01
+    400128: bn_R_thigh01
+    400130: bn_R_thumb01
+    400132: bn_R_thumb02
+    400134: bn_R_thumb03
+    400136: bn_R_wrist01
+    400138: bn_root01
+    400140: bn_spine01
+    400142: bn_spine02
+    400144: //RootNode
+    400146: skeleton01
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'bn_L_foot01' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'bn_R_foot01' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'bn_L_hand01'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'bn_R_hand01'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

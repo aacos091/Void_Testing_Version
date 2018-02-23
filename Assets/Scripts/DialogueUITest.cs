@@ -110,11 +110,13 @@ public class DialogueUITest : DialogueUIBehaviour
 		string imageName;
 
         // The following can't be handled with a switch statement, so...
-        bool textboxCommand = command.text.ToLower().Contains("textbox");
-        bool nameCommand = command.text.ToLower().Contains("name|");
-        bool portraitCommand = command.text.ToLower().Contains("portrait|");
+		string commandText = 		command.text.ToLower();
+        bool textboxCommand = 		commandText.Contains("textbox");
+        bool nameCommand = 			commandText.Contains("name|");
+        bool portraitCommand = 		commandText.Contains("portrait|");
+		bool nameTagCommand = 		commandText.Contains("nametag|");
 
-        if (command.text.ToLower ().Contains ("name|")) 
+        if (nameCommand) 
 		{
 			// for reading in nametags
 			if (textboxController.nameTag != null)
@@ -123,7 +125,7 @@ public class DialogueUITest : DialogueUIBehaviour
 				throw new System.InvalidOperationException (this.name + ": Tried to set nametag text for a textbox with no name tag!");
 		}
 
-		else if (command.text.ToLower ().Contains ("portrait|")) 
+		else if (portraitCommand) 
 		{
 			// for choosing which portrait to show
 			imageName = command.text.Remove(0, "portrait|".Length);
@@ -133,6 +135,28 @@ public class DialogueUITest : DialogueUIBehaviour
 			else
 				throw new System.InvalidOperationException (this.name + ": Tried to set a portrait for a textbox with no portrait!");
 
+		}
+		else if (nameTagCommand)
+		{
+			float xPos = 0;
+
+			TextboxNametag nameTag = textboxController.nameTag;
+
+			if (commandText.Contains("rightedge"))
+			{
+				xPos = textboxController.box.rectTransform.RightEdgeX();
+				xPos -= nameTag.rectTransform.rect.width / 2;
+			}
+			
+			else if (commandText.Contains("leftedge"))
+			{
+				xPos = textboxController.box.rectTransform.LeftEdgeX();
+				xPos += nameTag.rectTransform.rect.width / 2;
+			}
+
+			Vector3 newPos = nameTag.rectTransform.position;
+			newPos.x = xPos;
+			nameTag.rectTransform.position = newPos;
 		}
 
         bool someUnaccountedCommand = !textboxCommand && !nameCommand && !portraitCommand;

@@ -83,6 +83,8 @@ public class CanvasManager : MonoBehaviour
                 loadCanvas(HUDCanvas);
 
             }
+            else if (dialogueRunner.isDialogueRunning)
+                dialogueCanvas.SetActive(true);
         }
     }
 

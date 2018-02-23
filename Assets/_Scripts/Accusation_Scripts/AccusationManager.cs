@@ -29,6 +29,7 @@ public class AccusationManager : MonoBehaviour {
 
     public GameObject[] crewDialogue;
 
+	public GameObject resultsScreen;
 
     void Awake()
     {
@@ -58,6 +59,14 @@ public class AccusationManager : MonoBehaviour {
 		replay.gameObject.SetActive (false);
         */
         crew = GameObject.FindGameObjectsWithTag("Crew");
+
+	    for (int z = 0; z < crew.Length; z++)
+	    {
+		    
+		    crew[z].GetComponentInChildren<cakeslice.Outline>().enabled = false;
+		    
+	    }
+	    
     }
 
     private void OnEnable()
@@ -113,6 +122,14 @@ public class AccusationManager : MonoBehaviour {
     */
     public void resetSelected() {
         selectedCrew = ""; //Resets which crew was selected
+	    
+	    for (int z = 0; z < crew.Length; z++)
+	    {
+		    
+		    crew[z].GetComponentInChildren<cakeslice.Outline>().enabled = false;
+		    
+	    }
+	    
     }
 
     //For Buttons to use: Clear ClueManager's _cluesToPresent so that the player can select a new set of Clues for accusation
@@ -215,7 +232,12 @@ public class AccusationManager : MonoBehaviour {
 
                 if (tempCounter >= 16)
                 { //basing this on a 20 sided die like DnD
-                    rend.material.color = Color.green; //COLOR CHANGE
+
+	                crewMember.GetComponentInChildren<cakeslice.Outline>().enabled = true;
+
+	                crewMember.GetComponentInChildren<cakeslice.Outline>().color = 1;
+	                
+                    //rend.material.color = Color.green; //COLOR CHANGE
                                                        //Voting convinced
                     crewMember.GetComponentInChildren<Vote_Text>().VoteConvinced();
 
@@ -223,7 +245,12 @@ public class AccusationManager : MonoBehaviour {
                 }
                 else
                 {
-                    rend.material.color = Color.red; //COLOR CHANGE
+	                
+	                crewMember.GetComponentInChildren<cakeslice.Outline>().enabled = true;
+
+	                crewMember.GetComponentInChildren<cakeslice.Outline>().color = 2;
+	                
+                    //rend.material.color = Color.red; //COLOR CHANGE
                                                      //Voting unconvinced
                     crewMember.GetComponentInChildren<Vote_Text>().VoteUnconvinced();
 
@@ -249,7 +276,7 @@ public class AccusationManager : MonoBehaviour {
 		
 		if (juryVote >= 1) 
 		{
-
+			
 			AudioSource success = GameObject.Find ("Success").GetComponent<AudioSource> ();
 
 			success.Play ();
@@ -270,10 +297,12 @@ public class AccusationManager : MonoBehaviour {
 
 		}
 
+		resultsScreen.GetComponent<ResultsScreen>().DisplayResultsScreen ();
+
 	}
 
 	void RaycastForCrew() {
-		if (Input.GetMouseButtonDown (0)) {
+		/*if (Input.GetMouseButtonDown (0)) {
 			Debug.Log ("Selecting crew");
 
 			Vector3 mousePosition;
@@ -285,12 +314,37 @@ public class AccusationManager : MonoBehaviour {
 			mousePosition = Input.mousePosition;
 
 			//The raycast works but in scene view it points towards canvas
-			Debug.DrawRay (transform.position, mousePosition, Color.green);
+			Debug.DrawRay (transform.position, mousePosition, Color.green);*/
+		
+		if (Input.GetMouseButtonDown (0)) {
+			// Create variables to store mouse position, raycast hit info and actual Ray info.
+			Vector3 mousePosition;
+			RaycastHit hit;
+			Ray ray;
+            
+			// Set mousePosition to equal the x and y coordinates of where the user clicked the mouse
+			mousePosition = Input.mousePosition;
+			
+			// Manually set the mousePosition's transform z-position;
+			mousePosition.z = Camera.main.transform.position.z + 100.0f;
+           
+			// Transform the pixel coordinates of mousePosition to world coordinates
+			Vector3 mouseWorldCoordinates = Camera.main.ScreenToWorldPoint (mousePosition);
+
+			// Calculate the direction vector that the ray we cast from the camera will face
+			Vector3 rayDirection = mouseWorldCoordinates - Camera.main.transform.position; 
+
+			//Create a new Ray variable that starts at the camera's position and faces towards the direction we calculated in 'rayDirection'
+			ray = new Ray(Camera.main.transform.position, rayDirection);
+
+			// Visualization of the Raycast to make it easier to Debug
+			Debug.DrawRay (Camera.main.transform.position,rayDirection, Color.green, 1.0f);
 
 			if (Physics.Raycast (ray, out hit, 100.0f)) {
 				if (hit.collider.tag == "Crew" && selectedCrew == "") 
 				{
 
+					
 					AudioSource select = GameObject.Find ("Select").GetComponent<AudioSource> ();
 
 					select.Play ();
@@ -300,6 +354,9 @@ public class AccusationManager : MonoBehaviour {
                     CanvasManager.S.juryDialogueCanvas.SetActive(true);
 
 					crewObject = hit.collider.gameObject;
+
+					crewObject.GetComponentInChildren<cakeslice.Outline>().enabled = true;
+					
 					//Activate Sprites
 					crewObject.GetComponent<Crew>().Sprite.SetActive (true);
 					//Activate TextBox

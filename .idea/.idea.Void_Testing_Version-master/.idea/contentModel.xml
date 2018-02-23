@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Alpha7\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Void_Testing_Version-master.-1254723463.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alpha7\Documents\Unity Stuff\Void_Testing_Version-master" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_Scripts" t="Include">
+          <e p="Accusation_Scripts" t="Include">
+            <e p="AccusationManager.cs" t="Include" />
+            <e p="ClueEntryButton.cs" t="Include" />
+            <e p="Crew.cs" t="Include" />
+            <e p="JuryTest.cs" t="Include" />
+            <e p="OnAwake.cs" t="Include" />
+            <e p="Vote_Text.cs" t="Include" />
+          </e>
+          <e p="AnimationController.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="Chat.cs" t="Include" />
+          <e p="ClueSystem_Scripts" t="Include">
+            <e p="CanvasClueObject.cs" t="Include" />
+            <e p="ClueItem.cs" t="Include" />
+            <e p="ClueItemInspector.cs" t="Include" />
+            <e p="ClueManager.cs" t="Include" />
+            <e p="Rotater.cs" t="Include" />
+          </e>
+          <e p="Controls_Mobile.cs" t="Include" />
+          <e p="Controls_PC.cs" t="Include" />
+          <e p="Deprecated, Test" t="Include">
+            <e p="LoadScript.cs" t="Include" />
+            <e p="MultiButton.cs" t="Include" />
+            <e p="Test.cs" t="Include" />
+          </e>
+          <e p="DialogueSystem.cs" t="Include" />
+          <e p="DialogueUnitManager.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="NPC.cs" t="Include" />
+          <e p="playSound.cs" t="Include" />
+          <e p="ResultsScreen.cs" t="Include" />
+          <e p="TalkButton.cs" t="Include" />
+          <e p="UIScripts" t="Include">
+            <e p="Button_AddClueToAccuse.cs" t="Include" />
+            <e p="Button_ClueList.cs" t="Include" />
+            <e p="CanvasManager.cs" t="Include" />
+            <e p="ContentHeightFitter.cs" t="Include" />
+            <e p="CrewManager.cs" t="Include" />
+            <e p="FadingTextBox.cs" t="Include" />
+            <e p="ScrollbarSizer.cs" t="Include" />
+            <e p="TestimonyEntry.cs" t="Include" />
+            <e p="TestimonyManager.cs" t="Include" />
+            <e p="UI_ButtonManager.cs" t="Include" />
+          </e>
+          <e p="Units.cs" t="Include" />
+          <e p="Waypoint.cs" t="Include" />
+        </e>
+        <e p="DrawersAndTextboxStuff" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ClueDatabase.cs" t="Include" />
+          </e>
+        </e>
+        <e p="MyScripts" t="Include">
+          <e p="PanelControl.cs" t="Include" />
+        </e>
+        <e p="OutlineEffect" t="Include">
+          <e p="LinkedSet.cs" t="Include" />
+          <e p="Outline.cs" t="Include" />
+          <e p="OutlineEffect.cs" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="OutlineBufferShader.shader" t="Include" />
+            <e p="OutlineShader.shader" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="RoomOutline.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Anim_Test.cs" t="Include" />
+          <e p="CrewMember.cs" t="Include" />
+          <e p="DialogueUITest.cs" t="Include" />
+          <e p="DisplayTogglableUI.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="NewsArticle.cs" t="Include" />
+          <e p="NewsManager.cs" t="Include" />
+          <e p="ProceduralEngine.cs" t="Include" />
+          <e p="SpawnPoint.cs" t="Include" />
+          <e p="StringExtensions.cs" t="Include" />
+          <e p="TestLerp.cs" t="Include" />
+          <e p="VerbalClueEntry.cs" t="Include" />
+          <e p="VerbalClueManager.cs" t="Include" />
+          <e p="YarnUtils.cs" t="Include" />
+        </e>
+        <e p="TespyTextboxSystem" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="AnchorTester.cs" t="Include" />
+            <e p="Extensions" t="Include">
+              <e p="FloatExtensions.cs" t="Include" />
+              <e p="ListExtensions.cs" t="Include" />
+              <e p="ScreenSpaceHelper.cs" t="Include" />
+              <e p="StringExtensions.cs" t="Include" />
+              <e p="VectorExtensions.cs" t="Include" />
+            </e>
+            <e p="FrameRateDisplayer.cs" t="Include" />
+            <e p="Quit.cs" t="Include" />
+            <e p="TeaspoonTools" t="Include">
+              <e p="TextboxSystem" t="Include">
+                <e p="TSTTextbox.cs" t="Include" />
+                <e p="TSTTextboxBox.cs" t="Include" />
+                <e p="TSTTextboxComponent.cs" t="Include" />
+                <e p="TSTTextboxController.cs" t="Include" />
+                <e p="TSTTextboxNametag.cs" t="Include" />
+                <e p="TSTTextboxPortrait.cs" t="Include" />
+                <e p="TSTTextboxPrefabs.cs" t="Include" />
+                <e p="TSTTextboxTester.cs" t="Include" />
+                <e p="TSTTextboxText.cs" t="Include" />
+                <e p="TSTTextSpeed.cs" t="Include" />
+                <e p="Utils" t="Include">
+                  <e p="TSTAutoFontScaler.cs" t="Include" />
+                  <e p="TSTTextAdjustmentHelper.cs" t="Include" />
+                  <e p="TSTTextboxAnchor.cs" t="Include" />
+                  <e p="TSTTextDisplayer.cs" t="Include" />
+                  <e p="TSTTextSettings.cs" t="Include" />
+                  <e p="TSTTextSpeedSettings.cs" t="Include" />
+                  <e p="TSTTextWrapper.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Utils" t="Include">
+                <e p="Extensions" t="Include">
+                  <e p="TSTIColorExtensions.cs" t="Include" />
+                  <e p="TSTIContainerExtensions.cs" t="Include" />
+                  <e p="TSTImageExtensions.cs" t="Include" />
+                  <e p="TSTRectTransformExtensions.cs" t="Include" />
+                  <e p="TSTTextAnchorExtensions.cs" t="Include" />
+                  <e p="TSTTextboxAnchorExtensions.cs" t="Include" />
+                  <e p="TSTTextExtensions.cs" t="Include" />
+                  <e p="TSTTransformExtensions.cs" t="Include" />
+                </e>
+                <e p="TSTIHasRectTransform.cs" t="Include" />
+                <e p="TSTRefVal.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="UI Aseets" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="Jupiter" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Materials" t="Include">
+            <e p="UI-Default-No-Alpha.shader" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="ActiveStateToggler.cs" t="Include" />
+            <e p="ApplicationManager.cs" t="Include" />
+            <e p="ChangeColor.cs" t="Include" />
+            <e p="DragMe.cs" t="Include" />
+            <e p="DragPanel.cs" t="Include" />
+            <e p="DropMe.cs" t="Include" />
+            <e p="PanelManager.cs" t="Include" />
+            <e p="ResizePanel.cs" t="Include" />
+            <e p="ScrollDetailTexture.cs" t="Include" />
+            <e p="ShowSliderValue.cs" t="Include" />
+            <e p="TiltWindow.cs" t="Include" />
+          </e>
+          <e p="TextMesh Pro" t="Include">
+            <e p="Examples &amp; Extras" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="Anton OFL.txt" t="Include" />
+                <e p="Bangers - OFL.txt" t="Include" />
+                <e p="LiberationSans - OFL.txt" t="Include" />
+                <e p="NotoSans - License.txt" t="Include" />
+                <e p="Oswald Bold - OFL.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Benchmark01.cs" t="Include" />
+                <e p="Benchmark01_UGUI.cs" t="Include" />
+                <e p="Benchmark02.cs" t="Include" />
+                <e p="Benchmark03.cs" t="Include" />
+                <e p="Benchmark04.cs" t="Include" />
+                <e p="CameraController.cs" t="Include" />
+                <e p="ChatController.cs" t="Include" />
+                <e p="EnvMapAnimator.cs" t="Include" />
+                <e p="ObjectSpin.cs" t="Include" />
+                <e p="ShaderPropAnimator.cs" t="Include" />
+                <e p="SimpleScript.cs" t="Include" />
+                <e p="SkewTextExample.cs" t="Include" />
+                <e p="TeleType.cs" t="Include" />
+                <e p="TextConsoleSimulator.cs" t="Include" />
+                <e p="TextMeshProFloatingText.cs" t="Include" />
+                <e p="TextMeshSpawner.cs" t="Include" />
+                <e p="TMP_DigitValidator.cs" t="Include" />
+                <e p="TMP_ExampleScript_01.cs" t="Include" />
+                <e p="TMP_FrameRateCounter.cs" t="Include" />
+                <e p="TMP_TextEventCheck.cs" t="Include" />
+                <e p="TMP_TextEventHandler.cs" t="Include" />
+                <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+                <e p="TMP_TextSelector_A.cs" t="Include" />
+                <e p="TMP_TextSelector_B.cs" t="Include" />
+                <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+                <e p="TMPro_InstructionOverlay.cs" t="Include" />
+                <e p="VertexColorCycler.cs" t="Include" />
+                <e p="VertexJitter.cs" t="Include" />
+                <e p="VertexShakeA.cs" t="Include" />
+                <e p="VertexShakeB.cs" t="Include" />
+                <e p="VertexZoom.cs" t="Include" />
+                <e p="WarpTextExample.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Textures and Sprites" t="Include">
+            <e p="SF UI" t="Include">
+              <e p="Background" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="YarnSpinner" t="Include">
+          <e p="Code" t="Include">
+            <e p="Analyser.cs" t="Include" />
+            <e p="AntlrCompiler.cs" t="Include" />
+            <e p="Compiler.cs" t="Include" />
+            <e p="CustomYarnFunctions.cs" t="Include" />
+            <e p="Dialogue.cs" t="Include" />
+            <e p="DialogueRunner.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="YarnSpinnerEditorWindow.cs" t="Include" />
+              <e p="YarnSpinnerTests.cs" t="Include" />
+            </e>
+            <e p="ErrorListener.cs" t="Include" />
+            <e p="Lexer.cs" t="Include" />
+            <e p="Library.cs" t="Include" />
+            <e p="Loader.cs" t="Include" />
+            <e p="OptionSetController.cs" t="Include" />
+            <e p="Parser.cs" t="Include" />
+            <e p="Program.cs" t="Include" />
+            <e p="Value.cs" t="Include" />
+            <e p="VirtualMachine.cs" t="Include" />
+            <e p="YarnSpinnerLexer.cs" t="Include" />
+            <e p="YarnSpinnerParser.cs" t="Include" />
+            <e p="YarnSpinnerParserBaseListener.cs" t="Include" />
+            <e p="YarnSpinnerParserBaseVisitor.cs" t="Include" />
+            <e p="YarnSpinnerParserListener.cs" t="Include" />
+            <e p="YarnSpinnerParserVisitor.cs" t="Include" />
+          </e>
+          <e p="Examples" t="Include">
+            <e p="DemoAssets" t="Include">
+              <e p="SimpleExampleScript.yarn.txt" t="Include" />
+              <e p="Space" t="Include">
+                <e p="Sally.yarn.txt" t="Include" />
+                <e p="Ship.yarn.txt" t="Include" />
+              </e>
+            </e>
+            <e p="DemoScripts" t="Include">
+              <e p="CameraFollow.cs" t="Include" />
+              <e p="ExampleDialogueUI.cs" t="Include" />
+              <e p="ExampleVariableStorage.cs" t="Include" />
+              <e p="MobileOnly.cs" t="Include" />
+              <e p="NPC.cs" t="Include" />
+              <e p="PlayerCharacter.cs" t="Include" />
+              <e p="SpriteSwitcher.cs" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="Void_Testing_Version-master.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

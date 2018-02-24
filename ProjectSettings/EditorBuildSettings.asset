@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Jury_Scene.unity
     guid: 637586c22e7a64f47a2cde93968ab0df
+  - enabled: 1
+    path: Assets/_Scenes/Jury_Scene_Test.unity
+    guid: 00000000000000000000000000000000

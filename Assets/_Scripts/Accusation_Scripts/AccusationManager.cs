@@ -13,7 +13,7 @@ public class AccusationManager : MonoBehaviour {
     public int cluesLeftToChoose = 3;
     public string selectedCrew;
     public Text endText;
-    public Button replay;
+    //public Button replay;
     public GameObject crewObject; //Testing
 
     public bool ____________________;
@@ -298,6 +298,7 @@ public class AccusationManager : MonoBehaviour {
 		}
 
 		resultsScreen.GetComponent<ResultsScreen>().DisplayResultsScreen ();
+		Debug.Log ("This was done!");
 
 	}
 

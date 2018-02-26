@@ -38,7 +38,7 @@ public class ResultsScreen : MonoBehaviour {
 
 		defaultScene = gameObject.scene;
 
-		if (defaultScene.name == "Final_Ship (ResetButton)") {
+		if (defaultScene.name == "Final_Ship (MovementChanges)") {
 			this.gameObject.SetActive (false);
 		}
 	}
@@ -55,17 +55,19 @@ public class ResultsScreen : MonoBehaviour {
 		Destroy (UIGO);
 		Destroy (resultsScreenParentGO);
 
-		SceneManager.LoadScene ("Final_Ship (ResetButton)");
+		SceneManager.LoadScene ("Final_Ship (MovementChanges)");
 	}
 
 	void OnLevelWasLoaded(){
 		//this.gameObject.SetActive (false);
 
-		if (defaultScene.name != "Final_Ship (ResetButton)") {
+		/*
+		if (defaultScene.name != "Final_Ship (MovementChanges)") {
 			juryCanvas.SetActive (false);
 			HUD_Canvas.SetActive (true);
 			juryButton.SetActive (false);
 			AccusationManagerGO.SetActive (false);
 		}
+		*/
 	}
 }

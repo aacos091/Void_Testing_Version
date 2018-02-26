@@ -74,7 +74,8 @@ public class ClueHolder : MonoBehaviour
 			tbController.ApplyTextSettings(dialogueUI.textSettings);
 
 			// Make sure the textbox shows up
-			dialogueUI.needsDialogueCanvas.Add(this.gameObject); 
+			//**COMMENTING THIS OUT BECAUSE IT IS THROWING ERRORS
+			//dialogueUI.needsDialogueCanvas.Add(this.gameObject); 
 			
 			tbController.rectTransform.SetParent(dialogueCanvas.transform, false);
 			
@@ -132,7 +133,8 @@ public class ClueHolder : MonoBehaviour
 
 	void DoneNeedingDialogueCanvas()
 	{
-		dialogueUI.needsDialogueCanvas.Remove(this.gameObject);
+		//**COMMENTING THIS OUT BECAUSE IT IS THROWING ERRORS
+		//dialogueUI.needsDialogueCanvas.Remove(this.gameObject);
 	}
 
 	void PrepareForTextboxEnd()
@@ -141,7 +143,9 @@ public class ClueHolder : MonoBehaviour
 		tbController.DoneDisplayingText.AddListener( () => Destroy(tbController.gameObject) );
 		tbController.DoneDisplayingText.AddListener(DoneNeedingDialogueCanvas);
 		tbController.DoneDisplayingText.AddListener( () => textboxIsThere = false);
-		tbController.DoneDisplayingText.AddListener( () => CameraController.S.SetPanning(false) );
+
+		//**COMMENTING THIS OUT BECAUSE IT IS THROWING ERRORS.
+		//tbController.DoneDisplayingText.AddListener( () => CameraController.S.SetPanning(false) );
 
 		if (clue != null)
 			tbController.DoneDisplayingText.AddListener(ShowClueInInspectionWindow);
@@ -149,7 +153,9 @@ public class ClueHolder : MonoBehaviour
 
 	void ShowClueInInspectionWindow()
 	{
-		ClueItemInspector.S.ShowClueInUI(clue.gameObject);
+
+		//**COMMENTING THIS OUT BECAUSE IT IS THROWING ERRORS.
+		//ClueItemInspector.S.ShowClueInUI(clue.gameObject);
 	}
 	
 }

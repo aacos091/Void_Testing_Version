@@ -181,30 +181,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203535}
   m_Mesh: {fileID: 4300000, guid: 485f180a97aed864797e9f5f96a82427, type: 3}
---- !u!84 &908700
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 2560
-  m_Height: 1440
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &3398884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,20 +2091,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   S: {fileID: 0}
   waypoints:
-  - {fileID: 1829663983}
-  - {fileID: 1463630135}
-  - {fileID: 1466336521}
-  - {fileID: 1993440997}
-  - {fileID: 1757042274}
-  - {fileID: 343049520}
-  - {fileID: 1665682390}
-  - {fileID: 611799123}
-  - {fileID: 844750262}
-  - {fileID: 1488322317}
-  - {fileID: 2068289519}
-  - {fileID: 878992272}
-  elevatorInsideOne: {fileID: 1203375049}
-  elevatorInsideTwo: {fileID: 693305884}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ran: 0
   unitNameText: {fileID: 474503952}
   floor: 0
@@ -2143,6 +2117,7 @@ MonoBehaviour:
   engineer: 0
   chatManager: {fileID: 1080476208}
   outlineRef: []
+  waypointsLength: 0
   currentState: 0
 --- !u!136 &61838617
 CapsuleCollider:
@@ -17919,6 +17894,26 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 794367180}
     m_Modifications:
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.size
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4815374604620144, guid: ce4371d0f2f1abc41a20926b86ed3a33, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -17980,62 +17975,62 @@ Prefab:
         type: 2}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1829663983}
+      objectReference: {fileID: 982965049}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1463630135}
+      objectReference: {fileID: 61357908}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1466336521}
+      objectReference: {fileID: 1647536354}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1993440997}
+      objectReference: {fileID: 742042018}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1757042274}
+      objectReference: {fileID: 2027437051}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[5]
       value: 
-      objectReference: {fileID: 343049520}
+      objectReference: {fileID: 1622157649}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[6]
       value: 
-      objectReference: {fileID: 1665682390}
+      objectReference: {fileID: 593339204}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 611799123}
+      objectReference: {fileID: 531198969}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[8]
       value: 
-      objectReference: {fileID: 844750262}
+      objectReference: {fileID: 721841858}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[9]
       value: 
-      objectReference: {fileID: 1488322317}
+      objectReference: {fileID: 564936782}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 2068289519}
+      objectReference: {fileID: 743576387}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[11]
       value: 
-      objectReference: {fileID: 878992272}
+      objectReference: {fileID: 973194072}
     - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: elevatorInsideOne
@@ -18065,62 +18060,62 @@ Prefab:
         type: 2}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1829663983}
+      objectReference: {fileID: 982965049}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1463630135}
+      objectReference: {fileID: 61357908}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1466336521}
+      objectReference: {fileID: 1647536354}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1993440997}
+      objectReference: {fileID: 742042018}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1757042274}
+      objectReference: {fileID: 2027437051}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[5]
       value: 
-      objectReference: {fileID: 343049520}
+      objectReference: {fileID: 1622157649}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[6]
       value: 
-      objectReference: {fileID: 1665682390}
+      objectReference: {fileID: 593339204}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 611799123}
+      objectReference: {fileID: 531198969}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[8]
       value: 
-      objectReference: {fileID: 844750262}
+      objectReference: {fileID: 721841858}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[9]
       value: 
-      objectReference: {fileID: 1488322317}
+      objectReference: {fileID: 564936782}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 2068289519}
+      objectReference: {fileID: 743576387}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[11]
       value: 
-      objectReference: {fileID: 878992272}
+      objectReference: {fileID: 973194072}
     - target: {fileID: 114283979473517742, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: elevatorInsideOne
@@ -18150,62 +18145,62 @@ Prefab:
         type: 2}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1829663983}
+      objectReference: {fileID: 982965049}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1463630135}
+      objectReference: {fileID: 61357908}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1466336521}
+      objectReference: {fileID: 1647536354}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1993440997}
+      objectReference: {fileID: 742042018}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1757042274}
+      objectReference: {fileID: 2027437051}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[5]
       value: 
-      objectReference: {fileID: 343049520}
+      objectReference: {fileID: 1622157649}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[6]
       value: 
-      objectReference: {fileID: 1665682390}
+      objectReference: {fileID: 593339204}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 611799123}
+      objectReference: {fileID: 531198969}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[8]
       value: 
-      objectReference: {fileID: 844750262}
+      objectReference: {fileID: 721841858}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[9]
       value: 
-      objectReference: {fileID: 1488322317}
+      objectReference: {fileID: 564936782}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 2068289519}
+      objectReference: {fileID: 743576387}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[11]
       value: 
-      objectReference: {fileID: 878992272}
+      objectReference: {fileID: 973194072}
     - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: elevatorInsideOne
@@ -18235,62 +18230,62 @@ Prefab:
         type: 2}
       propertyPath: waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1829663983}
+      objectReference: {fileID: 982965049}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1463630135}
+      objectReference: {fileID: 61357908}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1466336521}
+      objectReference: {fileID: 1647536354}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1993440997}
+      objectReference: {fileID: 742042018}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1757042274}
+      objectReference: {fileID: 2027437051}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[5]
       value: 
-      objectReference: {fileID: 343049520}
+      objectReference: {fileID: 1622157649}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[6]
       value: 
-      objectReference: {fileID: 1665682390}
+      objectReference: {fileID: 593339204}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[7]
       value: 
-      objectReference: {fileID: 611799123}
+      objectReference: {fileID: 531198969}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[8]
       value: 
-      objectReference: {fileID: 844750262}
+      objectReference: {fileID: 721841858}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[9]
       value: 
-      objectReference: {fileID: 1488322317}
+      objectReference: {fileID: 564936782}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[10]
       value: 
-      objectReference: {fileID: 2068289519}
+      objectReference: {fileID: 743576387}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: waypoints.Array.data[11]
       value: 
-      objectReference: {fileID: 878992272}
+      objectReference: {fileID: 973194072}
     - target: {fileID: 114058560473069382, guid: ce4371d0f2f1abc41a20926b86ed3a33,
         type: 2}
       propertyPath: elevatorInsideOne
@@ -18363,6 +18358,126 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[12]
+      value: 
+      objectReference: {fileID: 982965049}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[13]
+      value: 
+      objectReference: {fileID: 61357908}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[14]
+      value: 
+      objectReference: {fileID: 1647536354}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[15]
+      value: 
+      objectReference: {fileID: 742042018}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[16]
+      value: 
+      objectReference: {fileID: 2027437051}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[17]
+      value: 
+      objectReference: {fileID: 1622157649}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[18]
+      value: 
+      objectReference: {fileID: 593339204}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[19]
+      value: 
+      objectReference: {fileID: 531198969}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[20]
+      value: 
+      objectReference: {fileID: 721841858}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[21]
+      value: 
+      objectReference: {fileID: 564936782}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[22]
+      value: 
+      objectReference: {fileID: 743576387}
+    - target: {fileID: 114363143982301846, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[23]
+      value: 
+      objectReference: {fileID: 973194072}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[12]
+      value: 
+      objectReference: {fileID: 982965049}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[13]
+      value: 
+      objectReference: {fileID: 61357908}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[14]
+      value: 
+      objectReference: {fileID: 1647536354}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[15]
+      value: 
+      objectReference: {fileID: 742042018}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[16]
+      value: 
+      objectReference: {fileID: 2027437051}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[17]
+      value: 
+      objectReference: {fileID: 1622157649}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[18]
+      value: 
+      objectReference: {fileID: 593339204}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[19]
+      value: 
+      objectReference: {fileID: 531198969}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[20]
+      value: 
+      objectReference: {fileID: 721841858}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[21]
+      value: 
+      objectReference: {fileID: 564936782}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[22]
+      value: 
+      objectReference: {fileID: 743576387}
+    - target: {fileID: 114776627290113568, guid: ce4371d0f2f1abc41a20926b86ed3a33,
+        type: 2}
+      propertyPath: waypoints.Array.data[23]
+      value: 
+      objectReference: {fileID: 973194072}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce4371d0f2f1abc41a20926b86ed3a33, type: 2}
   m_IsPrefabParent: 0
@@ -20987,6 +21102,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7de23b0d047901c4b8070cc6a605d42f, type: 3}
   m_IsPrefabParent: 0
+--- !u!84 &769498715
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1532
+  m_Height: 809
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &771102960
 Prefab:
   m_ObjectHideFlags: 0
@@ -23998,20 +24137,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   S: {fileID: 0}
   waypoints:
-  - {fileID: 1829663983}
-  - {fileID: 1463630135}
-  - {fileID: 1466336521}
-  - {fileID: 1993440997}
-  - {fileID: 1757042274}
-  - {fileID: 343049520}
-  - {fileID: 1665682390}
-  - {fileID: 611799123}
-  - {fileID: 844750262}
-  - {fileID: 1488322317}
-  - {fileID: 2068289519}
-  - {fileID: 878992272}
-  elevatorInsideOne: {fileID: 1203375049}
-  elevatorInsideTwo: {fileID: 693305884}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ran: 0
   unitNameText: {fileID: 474503952}
   floor: 0
@@ -24026,6 +24163,7 @@ MonoBehaviour:
   engineer: 0
   chatManager: {fileID: 1080476208}
   outlineRef: []
+  waypointsLength: 0
   currentState: 0
 --- !u!195 &914878818
 NavMeshAgent:
@@ -27713,7 +27851,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 908700}
+  m_TargetTexture: {fileID: 769498715}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -30474,8 +30612,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   S: {fileID: 0}
   waypoints: []
-  elevatorInsideOne: {fileID: 0}
-  elevatorInsideTwo: {fileID: 0}
   ran: 0
   unitNameText: {fileID: 474503952}
   floor: 0
@@ -30490,6 +30626,7 @@ MonoBehaviour:
   engineer: 0
   chatManager: {fileID: 1080476208}
   outlineRef: []
+  waypointsLength: 0
   currentState: 0
 --- !u!195 &1130896855
 NavMeshAgent:
@@ -31778,7 +31915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: -500}
+  m_AnchoredPosition: {x: -150, y: -499.99997}
   m_SizeDelta: {x: 400, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183013760
@@ -41286,8 +41423,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1534458386}
   outlineCamera: {fileID: 1048117444}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 908700}
-  extraRenderTexture: {fileID: 2147170457}
+  renderTexture: {fileID: 769498715}
+  extraRenderTexture: {fileID: 1737783779}
 --- !u!114 &1534458389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42360,20 +42497,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   S: {fileID: 0}
   waypoints:
-  - {fileID: 1829663983}
-  - {fileID: 1463630135}
-  - {fileID: 1466336521}
-  - {fileID: 1993440997}
-  - {fileID: 1757042274}
-  - {fileID: 343049520}
-  - {fileID: 1665682390}
-  - {fileID: 611799123}
-  - {fileID: 844750262}
-  - {fileID: 1488322317}
-  - {fileID: 2068289519}
-  - {fileID: 878992272}
-  elevatorInsideOne: {fileID: 1203375049}
-  elevatorInsideTwo: {fileID: 693305884}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ran: 0
   unitNameText: {fileID: 474503952}
   floor: 0
@@ -42388,6 +42523,7 @@ MonoBehaviour:
   engineer: 0
   chatManager: {fileID: 1080476208}
   outlineRef: []
+  waypointsLength: 0
   currentState: 0
 --- !u!195 &1593467139
 NavMeshAgent:
@@ -46207,6 +46343,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c274663a8359f364ab8b152c6d1c463e, type: 3}
   m_IsPrefabParent: 0
+--- !u!84 &1737783779
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1532
+  m_Height: 809
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1001 &1739889464
 Prefab:
   m_ObjectHideFlags: 0
@@ -50032,7 +50192,6 @@ MonoBehaviour:
   cluesLeftToChoose: 3
   selectedCrew: 
   endText: {fileID: 2082035810}
-  replay: {fileID: 59149528}
   crewObject: {fileID: 0}
   ____________________: 0
   crew: []
@@ -52618,20 +52777,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   S: {fileID: 0}
   waypoints:
-  - {fileID: 1829663983}
-  - {fileID: 1463630135}
-  - {fileID: 1466336521}
-  - {fileID: 1993440997}
-  - {fileID: 1757042274}
-  - {fileID: 343049520}
-  - {fileID: 1665682390}
-  - {fileID: 611799123}
-  - {fileID: 844750262}
-  - {fileID: 1488322317}
-  - {fileID: 2068289519}
-  - {fileID: 878992272}
-  elevatorInsideOne: {fileID: 1203375049}
-  elevatorInsideTwo: {fileID: 693305884}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ran: 0
   unitNameText: {fileID: 474503952}
   floor: 0
@@ -52646,6 +52803,7 @@ MonoBehaviour:
   engineer: 0
   chatManager: {fileID: 1080476208}
   outlineRef: []
+  waypointsLength: 0
   currentState: 0
 --- !u!195 &1979448320
 NavMeshAgent:
@@ -56064,27 +56222,3 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146993392}
---- !u!84 &2147170457
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 2560
-  m_Height: 1440
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1

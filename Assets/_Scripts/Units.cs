@@ -353,7 +353,7 @@ public class Units : MonoBehaviour
 	void GoToNextPoint(GameObject w){
 		//Set agent to walk towards that nav point
 
-		if (floor == w.GetComponent<Waypoint>().floor) {
+		if (this.floor == w.GetComponent<Waypoint>().floor) {
 			agent.SetDestination (w.gameObject.transform.position);
 			Debug.Log("I'm walking to " + w.gameObject.name);
 		}

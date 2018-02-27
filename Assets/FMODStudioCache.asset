@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114264372875792550}
-  - {fileID: 114651624714389788}
+  - {fileID: 114585152482255782}
   EditorEvents: []
-  MasterBankRef: {fileID: 114651624714389788}
+  MasterBankRef: {fileID: 114585152482255782}
   StringsBankRef: {fileID: 114264372875792550}
-  stringsBankWriteTime: 636553315488674928
+  stringsBankWriteTime: 636553315744945650
   cacheVersion: 2
 --- !u!114 &114240054605496424
 MonoBehaviour:
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Void\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636553315488674928
+  lastModified: 636553315744945650
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -108,6 +108,25 @@ MonoBehaviour:
   Path: C:\Users\alexa.deluzuriaga001\Documents\GitHub\Void_Testing_Version\Assets\FMOD\Void\Build\Desktop\Master
     Bank.bank
   lastModified: 636552670743080896
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  Exists: 1
+--- !u!114 &114585152482255782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\William.Tang001\Documents\GitHub\Void_Testing_Version\Assets\FMOD\Void\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636553315744805359
   LoadResult: 0
   FileSizes:
   - Name: Desktop

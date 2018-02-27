@@ -351,16 +351,20 @@ public class Units : MonoBehaviour
 	}
 
 	void GoToNextPoint(GameObject w){
-		//Set agent to walk towards that nav point
-
-		if (this.floor == w.GetComponent<Waypoint>().floor) {
-			agent.SetDestination (w.gameObject.transform.position);
-			Debug.Log("I'm walking to " + w.gameObject.name);
-		}
-		//If the waypoint is not on the same floor as the unit:
-		else if (floor != w.GetComponent<Waypoint>().floor) {
-			currentState = States.movingToElevator;
-		}
+        if (w != null)
+        {
+            //Set agent to walk towards that nav point
+            if (this.floor == w.GetComponent<Waypoint>().floor)
+            {
+                agent.SetDestination(w.gameObject.transform.position);
+                Debug.Log("I'm walking to " + w.gameObject.name);
+            }
+            //If the waypoint is not on the same floor as the unit:
+            else if (floor != w.GetComponent<Waypoint>().floor)
+            {
+                currentState = States.movingToElevator;
+            }
+        }
 	}
 
 	void walkToNearestElevator(){

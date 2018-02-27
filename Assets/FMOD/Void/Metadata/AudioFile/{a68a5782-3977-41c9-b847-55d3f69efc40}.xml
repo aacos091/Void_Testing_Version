@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{a68a5782-3977-41c9-b847-55d3f69efc40}">
+        <property name="assetPath">
+            <value>Void Loop final layer123.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>54.857165532879819</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8b4de691-8a7a-496d-9c25-61a38b5b6b90}</destination>
+        </relationship>
+    </object>
+</objects>

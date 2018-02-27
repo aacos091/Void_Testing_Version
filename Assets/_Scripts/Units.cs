@@ -34,7 +34,7 @@ public class Units : MonoBehaviour
 	[SerializeField]
 	GameObject closestElevatorToWaypoint;
 
-	public GameObject waypoint = null;
+	public GameObject waypoint;
 
 	public bool isAtElevator;
 
@@ -72,6 +72,7 @@ public class Units : MonoBehaviour
 	{
 		S = this;
 		UnitStartedSpeaking = new UnityEvent();
+		waypoint = null;
 		waypoints = GameObject.FindGameObjectsWithTag ("Waypoint");
 		waypointsLength = (waypoints.Length - 1);
 

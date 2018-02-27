@@ -124,7 +124,7 @@ public class DialogueUITest : DialogueUIBehaviour
         bool textboxCommand = 		commandText.Contains("textbox");
         bool nameCommand = 			commandText.Contains("name|");
         bool portraitCommand = 		commandText.Contains("portrait|");
-		bool nameTagCommand = 		commandText.Contains("nametag|");
+		bool nameTagCommand = 		commandText.Contains("nametagmove|");
 
         if (nameCommand) 
 			ChangeNameTag(commandText);
@@ -287,22 +287,56 @@ public class DialogueUITest : DialogueUIBehaviour
 		float xPos = 0;
 
 		TextboxNametag nameTag = textboxController.nameTag;
+		RectTransform tbRect = textboxController.rectTransform;
+		RectTransform nameRect = nameTag.rectTransform;
 
-		if (commandText.Contains("rightedge"))
+		Debug.Log("Command text when moving name tag: " + commandText);
+
+		bool moveToLeft = commandText.Contains("leftedge");
+		bool moveToRight = commandText.Contains("rightedge");
+
+		float tbEdge = 0;
+
+		if (moveToRight)
 		{
-			xPos = textboxController.box.rectTransform.RightEdgeX();
-			xPos -= nameTag.rectTransform.rect.width / 2;
+			Debug.Log("Moving nametag to the right edge!");
+			tbEdge = tbRect.TransformPoint(new Vector3(textboxController.rectTransform.rect.xMax, 0, 0)).x;
 		}
 		
-		else if (commandText.Contains("leftedge"))
+		else if (moveToLeft)
 		{
-			xPos = textboxController.box.rectTransform.LeftEdgeX();
-			xPos += nameTag.rectTransform.rect.width / 2;
+			Debug.Log("Moving nametag to the left edge!");
+			tbEdge = tbRect.TransformPoint(new Vector3(textboxController.rectTransform.rect.xMin, 0, 0)).x;
 		}
 
+		xPos = tbEdge;
 		Vector3 newPos = nameTag.rectTransform.position;
 		newPos.x = xPos;
 		nameTag.rectTransform.position = newPos;
+
+		Canvas.ForceUpdateCanvases();
+
+		float nameTagEdge;
+
+		// Now move the nametag do it isn't out of bounds
+		
+		if (moveToLeft)
+		{
+			nameTagEdge = nameRect.TransformPoint(new Vector3(nameRect.rect.xMin, 0, 0)).x;
+			xPos += Mathf.Abs(nameTagEdge - tbEdge);
+		}
+		
+		else if (moveToRight)
+		{
+			nameTagEdge = nameRect.TransformPoint(new Vector3(nameRect.rect.xMax, 0, 0)).x;
+			xPos -= Mathf.Abs(nameTagEdge - tbEdge);
+		}
+
+		newPos.x = xPos;
+		nameTag.rectTransform.position = newPos;
+		
+
+		
 	}
 
 	void ChangeNameTag(string commandText)

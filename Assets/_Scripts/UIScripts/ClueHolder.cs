@@ -5,13 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TeaspoonTools.TextboxSystem;
 using TeaspoonTools.Utils;
+using Yarn.Unity;
 
 public class ClueHolder : MonoBehaviour 
 {
-	public ClueItem clue = null;
-	public GameObject textboxPrefab;
-	public DialogueUITest dialogueUI;
-	public Canvas dialogueCanvas;
+	[SerializeField] string nodeToRun = 	"InspectObject";
+	public ClueItem clue = 					null;
+	[SerializeField] GameObject textboxPrefab;
+	[SerializeField] DialogueUITest dialogueUI;
+	[SerializeField] DialogueRunner dialogueRunner;
+	[SerializeField] Canvas dialogueCanvas;
 	bool clicked = false;
 	string textToDisplay
 	{
@@ -33,15 +36,20 @@ public class ClueHolder : MonoBehaviour
 		get 
 		{ 	return 	CameraController.S.IsZoomed &&
 					!GameController.S.gamePaused && 
-				 	!textboxIsThere; 
+				 	!dialogueRunner.isDialogueRunning;
 		}
 	}
 
 	void Awake()
 	{
+		// Make sure this has the components it needs
+
 		if (dialogueUI == null)
 			throw new System.NullReferenceException(this.name + " needs a ref to the dialogue UI.");
-		
+
+		if (dialogueRunner == null)
+			throw new System.NullReferenceException(this.name + " needs a ref to the dialogue runner.");
+
 		if (textboxPrefab == null)
 			throw new System.NullReferenceException(this.name + " needs a textbox prefab.");
 
@@ -64,6 +72,12 @@ public class ClueHolder : MonoBehaviour
 	{
 		if (respondToInput)
 		{
+			// Run the node, let the HiddenClueInspector handle the rest
+			HiddenClueInspector.S.clueToInspect = clue;
+			dialogueRunner.StartDialogue(nodeToRun);
+
+
+			/*
 			// Create and initialize the textbox
 			Debug.Log(this.name + " displaying textbox.");
 			GameController.S.RequestGamePause();
@@ -89,6 +103,8 @@ public class ClueHolder : MonoBehaviour
 			// right before it's time for it to display the text
 
 			StartCoroutine(DisplayTextDelayed(Time.deltaTime * 2));
+
+			*/
 		}
 
 	}
@@ -104,11 +120,9 @@ public class ClueHolder : MonoBehaviour
 
 	void OnMouseExit()
 	{
-		if (respondToInput)
-		{
-			clicked = false;
-			Debug.Log("Mouse exited " + this.name);
-		}
+		clicked = false;
+		Debug.Log("Mouse exited " + this.name);
+		
 	}
 
 	void HidePortrait()
@@ -142,6 +156,7 @@ public class ClueHolder : MonoBehaviour
 		tbController.DoneDisplayingText.AddListener(DoneNeedingDialogueCanvas);
 		tbController.DoneDisplayingText.AddListener( () => textboxIsThere = false);
 		tbController.DoneDisplayingText.AddListener( () => CameraController.S.SetPanning(false) );
+		HiddenClueInspector.S.clueToInspect = clue;
 
 		if (clue != null)
 			tbController.DoneDisplayingText.AddListener(ShowClueInInspectionWindow);

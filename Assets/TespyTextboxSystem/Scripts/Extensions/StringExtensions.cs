@@ -8,7 +8,20 @@ using System.Text;
 
 namespace TeaspoonTools.Utils 
 {
-    public static class StringExtensions {
+    public static class StringExtensions 
+    {
+        public static string Capitalized(this string str)
+        {
+            if (str == null)
+                throw new System.NullReferenceException("Cannot capitalize a null string.");
+
+            string newStr = Char.ToUpper(str[0]) + "";
+            if (str.Length > 0)
+                newStr = string.Concat(newStr, str.Substring(1));
+
+            return newStr;
+            
+        }
 
         public static bool hasLettersOrDigits(this string str)
         {

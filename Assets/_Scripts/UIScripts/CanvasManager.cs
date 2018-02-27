@@ -72,7 +72,10 @@ public class CanvasManager : MonoBehaviour
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
         if (dialogueCanvas != null)
         {
-            if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning)
+            bool needDialogueCanvas =   dialogueRunner.isDialogueRunning || 
+                                        DialogueUITest.S.needsDialogueCanvas.Count > 0;
+
+            if (dialogueCanvas.activeSelf && !needDialogueCanvas)
             {
                 if (mainCam == null)
                     mainCam = Camera.main.gameObject;
@@ -83,8 +86,12 @@ public class CanvasManager : MonoBehaviour
                 loadCanvas(HUDCanvas);
 
             }
-            else if (dialogueRunner.isDialogueRunning)
+            else if (needDialogueCanvas)
+            {
+                // For when dialogue is running through the runner, or some other module needs 
+                // to display a textbox.
                 dialogueCanvas.SetActive(true);
+            }
         }
     }
 
@@ -121,6 +128,7 @@ public class CanvasManager : MonoBehaviour
         {
             if (GameController.S.gamePaused)
                 GameController.S.RequestGameResume();
+                
             //Alex Code
             Camera.main.GetComponent<CameraController>().enabled = true;
             Camera.main.GetComponent<Controls_Mobile>().enabled = true;

@@ -1,0 +1,32 @@
+[
+	{
+		"title": "InspectObject",
+		"tags": "",
+		"body": "<<Textbox>>\n<<name|System>>\n<<HidePortrait>>\nWould you like to inspect this object?\n<</Textbox>>\n\n[[Yes|InspectYes]]\n[[No|InspectNo]]",
+		"position": {
+			"x": 242,
+			"y": 205
+		},
+		"colorID": 0
+	},
+	{
+		"title": "InspectYes",
+		"tags": "",
+		"body": "<<InspectObject HiddenClueInspector>>",
+		"position": {
+			"x": 673,
+			"y": 64
+		},
+		"colorID": 0
+	},
+	{
+		"title": "InspectNo",
+		"tags": "",
+		"body": "",
+		"position": {
+			"x": 680,
+			"y": 374
+		},
+		"colorID": 0
+	}
+]

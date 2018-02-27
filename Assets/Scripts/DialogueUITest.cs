@@ -12,6 +12,7 @@ using TeaspoonTools.Utils;
 
 public class DialogueUITest : DialogueUIBehaviour 
 {
+	public static DialogueUITest S;
 
 	[HideInInspector]
 	public UnityEvent StartedDialogue 		= 		new UnityEvent();
@@ -43,8 +44,15 @@ public class DialogueUITest : DialogueUIBehaviour
 	/// the user selected
 	private Yarn.OptionChooser SetSelectedOption;
 
+	public List<GameObject> needsDialogueCanvas = new List<GameObject>();
+
 	void Awake()
 	{
+		if (S == null)
+			S = this;
+		else 
+			Destroy(this.gameObject);
+
 		dialogueRunner = 		FindObjectOfType<DialogueRunner> ();
 
 		StartedDialogue = 		new UnityEvent ();
@@ -65,6 +73,7 @@ public class DialogueUITest : DialogueUIBehaviour
 		EndedDialogue.Invoke ();
 		if (textbox != null)
 			Destroy(textbox);
+
 		return base.DialogueComplete ();
 	}
 
@@ -105,9 +114,10 @@ public class DialogueUITest : DialogueUIBehaviour
 			GetTextDisplayed ();
 			break;
 
+		case "HidePortrait":
+			HidePortrait();
+			break;
 		}
-
-		string imageName;
 
         // The following can't be handled with a switch statement, so...
 		string commandText = 		command.text.ToLower();
@@ -117,48 +127,14 @@ public class DialogueUITest : DialogueUIBehaviour
 		bool nameTagCommand = 		commandText.Contains("nametag|");
 
         if (nameCommand) 
-		{
-			// for reading in nametags
-			if (textboxController.nameTag != null)
-				nameTagText = command.text.Remove (0, "name|".Length);
-			else
-				throw new System.InvalidOperationException (this.name + ": Tried to set nametag text for a textbox with no name tag!");
-		}
-
+			ChangeNameTag(commandText);
+		
 		else if (portraitCommand) 
-		{
-			// for choosing which portrait to show
-			imageName = command.text.Remove(0, "portrait|".Length);
+			ChangePortrait(commandText);
 
-			if (textboxController.portrait != null)
-				portrait = Resources.Load<Sprite> ("Graphics/Portraits/" + imageName);
-			else
-				throw new System.InvalidOperationException (this.name + ": Tried to set a portrait for a textbox with no portrait!");
-
-		}
 		else if (nameTagCommand)
-		{
-			float xPos = 0;
-
-			TextboxNametag nameTag = textboxController.nameTag;
-
-			if (commandText.Contains("rightedge"))
-			{
-				xPos = textboxController.box.rectTransform.RightEdgeX();
-				xPos -= nameTag.rectTransform.rect.width / 2;
-			}
-			
-			else if (commandText.Contains("leftedge"))
-			{
-				xPos = textboxController.box.rectTransform.LeftEdgeX();
-				xPos += nameTag.rectTransform.rect.width / 2;
-			}
-
-			Vector3 newPos = nameTag.rectTransform.position;
-			newPos.x = xPos;
-			nameTag.rectTransform.position = newPos;
-		}
-
+			MoveNameTag(commandText);
+		
         bool someUnaccountedCommand = !textboxCommand && !nameCommand && !portraitCommand;
 
         if (someUnaccountedCommand)
@@ -262,6 +238,8 @@ public class DialogueUITest : DialogueUIBehaviour
 			textboxController.DoneDisplayingText.AddListener (ResumeDialogueRunning);
 			EndedDialogue.AddListener (textboxController.Close);
 			textbox.transform.SetParent (dialogueCanvas.transform, false);
+
+			
 			textboxController.PlaceOnScreen (new Vector2 (0.5f, 0.0f));
 			if (textSettings.font != null)
 				textboxController.font = textSettings.font;
@@ -273,6 +251,72 @@ public class DialogueUITest : DialogueUIBehaviour
 			CanvasGroup cGroup = textbox.AddComponent<CanvasGroup>();
 			cGroup.alpha = 0;
 			cGroup.blocksRaycasts = false;
+		}
+	}
+
+	void HidePortrait()
+	{
+		TextboxPortrait portrait = textboxController.portrait;
+		if (portrait != null)
+			portrait.SetOpacity(0);
+	}
+
+	void ShowPortrait()
+	{
+		TextboxPortrait portrait = textboxController.portrait;
+		if (portrait != null)
+			portrait.SetOpacity(100);
+	}
+
+	void ChangePortrait(string commandText)
+	{
+		// for choosing which portrait to show
+		string imageName = commandText.Remove(0, "portrait|".Length);
+
+		if (textboxController.portrait != null)
+			portrait = Resources.Load<Sprite> ("Graphics/Portraits/" + imageName);
+		else
+			throw new System.InvalidOperationException (this.name + ": Tried to set a portrait for a textbox with no portrait!");
+
+		// Make sure the portrait is visible
+		ShowPortrait();
+	}
+
+	void MoveNameTag(string commandText)
+	{
+		float xPos = 0;
+
+		TextboxNametag nameTag = textboxController.nameTag;
+
+		if (commandText.Contains("rightedge"))
+		{
+			xPos = textboxController.box.rectTransform.RightEdgeX();
+			xPos -= nameTag.rectTransform.rect.width / 2;
+		}
+		
+		else if (commandText.Contains("leftedge"))
+		{
+			xPos = textboxController.box.rectTransform.LeftEdgeX();
+			xPos += nameTag.rectTransform.rect.width / 2;
+		}
+
+		Vector3 newPos = nameTag.rectTransform.position;
+		newPos.x = xPos;
+		nameTag.rectTransform.position = newPos;
+	}
+
+	void ChangeNameTag(string commandText)
+	{
+		if (textboxController != null)
+		{
+			TextboxNametag nameTag = textboxController.nameTag;
+
+			if (nameTag == null)
+				throw new System.NullReferenceException("Can't change nametag when there is none.");
+
+			string newName = commandText.Remove(0, "name|".Length);
+			nameTagText = newName.Capitalized();
+			
 		}
 	}
 

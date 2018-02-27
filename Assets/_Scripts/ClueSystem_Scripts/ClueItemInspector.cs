@@ -104,7 +104,11 @@ public class ClueItemInspector : MonoBehaviour
             Ray pos = mainCam.ScreenPointToRay(Input.mousePosition);
             print("Position: " + pos);
             RaycastHit objectHit;
-            Debug.DrawRay(pos.origin, pos.direction * rayCastDistance, Color.red, 5f);
+            Debug.DrawRay(  pos.origin, 
+                            pos.direction * rayCastDistance, 
+                            Color.red, 
+                            5f);
+
             //TODO Put clue's on a specific layer and have the Raycast search only that layer. That way our raycasting is more efficient.
             if (Physics.Raycast(pos.origin, pos.direction, out objectHit, rayCastDistance))
             {
@@ -127,6 +131,22 @@ public class ClueItemInspector : MonoBehaviour
             }
         }
     }
+
+    public void ShowClueInUI(GameObject clue)
+    {
+        // This simplifies getting clues shown in the UI without raycasting involved
+
+        CanvasManager.S.loadCanvas(clueUIWindow);
+
+        // 01-23-18 Disable HUD
+
+        // Set clueItem to the object that we just hit with the Raycast
+        // cache the ClueItem script for a performance boost.
+        SetCurrentClue(clue);
+        // If the object we hit is tagged as a Clue or Prop, then bring it up for inspection
+        HandleClueViewing(ref currentClue);
+    }
+
     //Should change back to ref if it makes sense
     public void SetCurrentClue(GameObject objectHit)
     {
@@ -137,8 +157,8 @@ public class ClueItemInspector : MonoBehaviour
             currentClue = objectHit.GetComponent<ClueItem>();
             print("current clue:" + currentClue.ItemName);
 
-            itemNameDisplay.text = currentClue.ItemName;
-            itemDescripDisplay.text = currentClue.Description;
+            itemNameDisplay.text =          currentClue.ItemName;
+            itemDescripDisplay.text =       currentClue.Description;
 
 			//Alex code  - Set current clue position to cam position
 			Vector3 desiredViewingLocation = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -1f);
@@ -225,7 +245,7 @@ public class ClueItemInspector : MonoBehaviour
         print(currentClue.ToString()); // overrode its ToString method. 
 
         if (cloneClueItem != false)
-        cloneClueItem.isInspectable = true;
+            cloneClueItem.isInspectable = true;
 
         // Set up position to set up the light for inspecting the clueItem
         Vector3 clueLightLocation = new Vector3 (0,0,0);

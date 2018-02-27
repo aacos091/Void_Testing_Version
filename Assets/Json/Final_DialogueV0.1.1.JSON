@@ -1362,7 +1362,7 @@
 	{
 		"title": "1stMate.Location",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of the cargo bay. Is that true?\n<</Textbox>>\n\n<<set $randompath to either(\"true\",\"false\")>>\n\n\n    <<if $randompath == \"true\">>\n[[1stMate.LocationTrue]]\n    <<elseif $randompath == \"false\">>\n[[1stMate.LocationFalse]]\n<<endif>>",
+		"body": "<<Textbox>>\n<<Name|Attlebrox>>\n<<NameTagMove|leftEdge>>\n<<Portrait|1stMate_Happy>>\nSalutations, Captain.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of the cargo bay. Is that true?\n<</Textbox>>\n\n<<set $randompath to either(\"true\",\"false\")>>\n\n\n    <<if $randompath == \"true\">>\n[[1stMate.LocationTrue]]\n    <<elseif $randompath == \"false\">>\n[[1stMate.LocationFalse]]\n<<endif>>",
 		"position": {
 			"x": 7668,
 			"y": -4828
@@ -1395,7 +1395,7 @@
 		"body": "<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nAnyone on board able to verify that?\n<</Textbox>>\n\n<<if $FirstMateIntAlocked == \"false\">>\n<<if \"FirstMate\" == $MisleadingCrew>>\n    [[1stMate.Misleading]]\n<<elseif \"FirstMate\" == $TruthTeller1>>\n    [[1stMate.Truth]]\n<<elseif \"FirstMate\" == $TruthTeller2>>\n    [[1stMate.Truth]]\n<<elseif \"FirstMate\" == $SUPSECT>>\n    [[1stMate.False]]\n<<endif>>\n<<endif>>",
 		"position": {
 			"x": 5920,
-			"y": -4063
+			"y": -4064
 		},
 		"colorID": 6
 	},
@@ -1682,7 +1682,7 @@
 	{
 		"title": "Cook.IntAloyalty",
 		"tags": "",
-		"body": "<<Textbox>>\n<<name|Captain>>\n<<NameTagMove|rightEdge>>\nSeen anthing suspicious?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Jorji>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Cook_neutral>>\nMore suspicious than that meat we picked up at the last station?\n<</Textbox>>\n\n[[I agree about that meat.|Cook.IntAloyalty1]]\n\n[[Now isn't the time.|Cook.IntAloyalAlt]]",
+		"body": "<<Textbox>>\n<<Name|Jorji>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Cook_Happy>>\nEy Boss.\n<</Textbox>>\n\n<<Textbox>>\n<<name|Captain>>\n<<NameTagMove|rightEdge>>\nSeen anthing suspicious?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Jorji>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Cook_neutral>>\nMore suspicious than that meat we picked up at the last station?\n<</Textbox>>\n\n[[I agree about that meat.|Cook.IntAloyalty1]]\n\n[[Now isn't the time.|Cook.IntAloyalAlt]]",
 		"position": {
 			"x": 13310,
 			"y": -5163
@@ -2012,7 +2012,7 @@
 	{
 		"title": "Engineer.InterviewA",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Suzume>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Engineer_happy>>\nWhat's good?\n<</Textbox>>\n\n<<if $EngineerIntAlocked == \"false\">>\n[[Where were you when $VICTIM was killed?|Engineer.IntAanswer]]\n\n[[Seen anything suspicious?|Engineer.IntAloyalty]]\n\n[[That's all.|Engineer.IntAend]]\n<<endif>>\n\n//<<if $EngineerMention == \"true\">>\n//[[During the murder you were somewhere else?|Engineer.Location]]\n//<<endif>>",
+		"body": "\n<<Textbox>>\n<<Name|Suzume>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Engineer_happy>>\nWhat's good?\n<</Textbox>>\n\n<<if $EngineerIntAlocked == \"false\">>\n[[Where were you when $VICTIM was killed?|Engineer.IntAanswer]]\n\n[[Seen anything suspicious?|Engineer.IntAloyalty]]\n\n[[That's all.|Engineer.IntAend]]\n<<endif>>\n\n//<<if $EngineerMention == \"true\">>\n//[[During the murder you were somewhere else?|Engineer.Location]]\n//<<endif>>",
 		"position": {
 			"x": 18655,
 			"y": -5778
@@ -2042,7 +2042,7 @@
 	{
 		"title": "Engineer.Location",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead cargo bay, is that true?\n<</Textbox>>\n\n<<set $randompath2 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath2 == \"true\">>\n[[Engineer.LocationTrue]]\n    <<elseif $randompath2 == \"false\">>\n[[Engineer.LocationFalse]]\n<<endif>>",
+		"body": "<<Textbox>>\n<<Name|Suzume>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Engineer_happy>>\nWhat's good?\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead cargo bay, is that true?\n<</Textbox>>\n\n<<set $randompath2 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath2 == \"true\">>\n[[Engineer.LocationTrue]]\n    <<elseif $randompath2 == \"false\">>\n[[Engineer.LocationFalse]]\n<<endif>>",
 		"position": {
 			"x": 19374,
 			"y": -5734
@@ -2402,7 +2402,7 @@
 	{
 		"title": "Medic.Location",
 		"tags": "",
-		"body": "<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of the Medbay, is that true?\n<</Textbox>>\n\n<<set $randompath3 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath3 == \"true\">>\n[[Medic.LocationTrue]]\n    <<elseif $randompath3 == \"false\">>\n[[Medic.LocationFalse]]\n<<endif>>",
+		"body": "<<Textbox>>\n<<Name|Cerys>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Medic_happy>>\nGreetings Captain.\n<</Textbox>>\n\n<<Textbox>>\n<<Name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of the Medbay, is that true?\n<</Textbox>>\n\n<<set $randompath3 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath3 == \"true\">>\n[[Medic.LocationTrue]]\n    <<elseif $randompath3 == \"false\">>\n[[Medic.LocationFalse]]\n<<endif>>",
 		"position": {
 			"x": 23881,
 			"y": -5337
@@ -2802,7 +2802,7 @@
 	{
 		"title": "Pilot.Location",
 		"tags": "",
-		"body": "<<Textbox>>\n<<name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of at the pilot seat. Is that true?\n<</Text>>\n\n<<set $randompath4 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath4 == \"true\">>\n[[Pilot.LocationTrue]]\n    <<elseif $randompath4 == \"false\">>\n[[Pilot.LocationFalse]]\n<<endif>>",
+		"body": "<<Textbox>>\n<<Name|Saira>>\n<<NameTagMove|leftEdge>>\n<<Portrait|Pilot_Happy>>\nHey Captain.\n<</Textbox>>\n\n<<Textbox>>\n<<name|Captain>>\n<<NameTagMove|rightEdge>>\nI've been told you were somewhere else during the murder instead of at the pilot seat. Is that true?\n<</Text>>\n\n<<set $randompath4 to either(\"true\",\"false\")>>\n\n\n    <<if $randompath4 == \"true\">>\n[[Pilot.LocationTrue]]\n    <<elseif $randompath4 == \"false\">>\n[[Pilot.LocationFalse]]\n<<endif>>",
 		"position": {
 			"x": 27242,
 			"y": -5715

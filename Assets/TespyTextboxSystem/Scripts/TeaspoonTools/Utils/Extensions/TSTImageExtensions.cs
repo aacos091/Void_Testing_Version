@@ -13,11 +13,11 @@ namespace TeaspoonTools.Utils
         /// <summary>
         /// Changes the opacity of the image to the percentage you pass it.
         /// </summary>
-        /// <param name="img"></param>
-        /// <param name="opacity"></param>
         public static void SetOpacity(this Image img, float opacity)
         {
-            img.color.SetOpacity(opacity);
+            Color newCol = img.color;
+            newCol.a = opacity / 100f;
+            img.color = newCol;
         }
     }
 }

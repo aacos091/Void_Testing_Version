@@ -28,6 +28,8 @@ namespace FMODUnity
 
         private bool hasTriggered = false;
         private bool isQuitting = false;
+        
+        
 
         void Start() 
         {

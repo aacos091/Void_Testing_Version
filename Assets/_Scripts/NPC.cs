@@ -29,12 +29,6 @@ public class NPC : MonoBehaviour
 	{
 		dialogueSystem = DialogueSystem.S;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
 
 	[YarnCommand("SetLoyalty")]
 	public void SetLoyalty (string amount)

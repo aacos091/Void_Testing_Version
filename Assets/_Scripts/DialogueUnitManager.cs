@@ -8,6 +8,8 @@ public class DialogueUnitManager : MonoBehaviour {
 
     public GameObject currentDialogueUnit;
     private Animator currentAnimator;
+    private AnimationController currentAnimController;
+
 
     public float turnInterval = .02f;
     public Coroutine currentCoroutine;
@@ -20,18 +22,20 @@ public class DialogueUnitManager : MonoBehaviour {
     public void SetDialogueUnit(GameObject unitGO)
     {
         currentDialogueUnit = unitGO;
-        currentAnimator = currentDialogueUnit.GetComponent<AnimationController>().animator;
+        currentAnimController = currentDialogueUnit.GetComponent<AnimationController>();
+        currentAnimator = currentAnimController.animator;
     }
 
     public void StartTalking()
     {
         StartCoroutine(TurnToCamera());
+        currentAnimController.FreezeNavMesh();
         currentAnimator.SetBool("Talking", true);
-
     }
 
     public void StopTalking()
     {
+        currentAnimController.UnFreezeNavMesh();
         currentAnimator.SetBool("Talking", false);
         if (currentCoroutine != null)
             StopCoroutine(currentCoroutine);

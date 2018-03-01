@@ -68,7 +68,8 @@ public class CanvasManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //TODO: TEMP!!! CURRENTLY THE ONLY CALLED WAY TO CALL THINGS ON DIALOGUE FINISHING ITS RUN! MOVE THIS AND/OR MAKE MORE GENERIC!
+        //TEMP: RESETS UNITS WHEN DONE TALKING!
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
         if (dialogueCanvas != null)
         {
@@ -81,6 +82,8 @@ public class CanvasManager : MonoBehaviour
 
                 disableCanvas(dialogueCanvas);
                 loadCanvas(HUDCanvas);
+
+                DialogueUnitManager.S.StopTalking();
 
             }
             else if (dialogueRunner.isDialogueRunning)

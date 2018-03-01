@@ -11,6 +11,9 @@ public class AnimationController : MonoBehaviour {
     private NavMeshAgent navMeshAgent;
     public Animator animator;
 
+    float defaultNavMeshSpeed;
+    float defaultNavMeshAngularSpeed;
+
 	// Use this for initialization
 	void Start () {
         if (animator == null)
@@ -18,6 +21,9 @@ public class AnimationController : MonoBehaviour {
         rb = unitObj.GetComponent<Rigidbody>();
         navMeshAgent = unitObj.GetComponent<NavMeshAgent>();
         animator.SetBool("Talking", false);
+
+        defaultNavMeshSpeed = navMeshAgent.speed;
+        defaultNavMeshAngularSpeed = navMeshAgent.angularSpeed;
     }
 
     // Update is called once per frame
@@ -36,5 +42,16 @@ public class AnimationController : MonoBehaviour {
         */
     }
 
+    public void FreezeNavMesh()
+    {
+        navMeshAgent.speed = 0;
+        navMeshAgent.angularSpeed = 0;
+    }
+    
+    public void UnFreezeNavMesh()
+    {
+        navMeshAgent.speed = defaultNavMeshSpeed;
+        navMeshAgent.angularSpeed = defaultNavMeshAngularSpeed;
+    }
 
 }

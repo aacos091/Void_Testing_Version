@@ -1,45 +1,37 @@
 {
-	// Clues are based on the Method, Location and on the Culprit. 
-	
-	"Clues":
-	{
-		"Environmental Hazard":
-		{
-			"Engine Room":
-			{
-				// Can we add the Violence Clues in here because they can occur in "Any" Location
-				"First Mate":
-				{
-					"Strong": ["Radiation Suit", "Polarizer"],
-					"Weak": ["Tampered Alarm", "Degausser"]
-				},
+	// Clues are based on the Method, Location and on the Culprit.
 
-				"Pilot":
-				{
-					"Strong": ["EVA Suit", "Engine Piece"],
-					"Weak": ["Thruster Calibrator", "Tampered Alarm"]
-				}
-			}
-		},
-		
-		"Poison/Venom":
-		{
-			"Galley":
-			{
-				"First Mate":
-				{
-					"Strong": ["Pill Bottle", "Pill"],
-					"Weak": ["Suspicious Root", "Half-filled Glass"]
-				},
+  "Clues": {
+    "Environmental Hazard": {
+      "Engine Room": {
+        // Can we add the Violence Clues in here because they can occur in "Any" Location
+        "First Mate": {
+          "Strong": [ "Radiation Suit", "Degausser" ],
+          "Weak": [ "Bootprint", "Matching Boot", "Mismatched Boot", "Strange Residue", "Bloodstain" ]
+        },
 
-				"Pilot":
-				{
-					"Strong": ["Vermin Poison", "Half-filled Glass"],
-					"Weak": ["Half-filled Glass", "Suspicious Root"]
-				}
-			}
-		},
+        "Pilot": {
+          "Strong": [ "EVA Suit", "Engine Piece" ],
+          "Weak": [ "Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating E-mail" ]
+        }
+      }
+    },
 
+    "Poison/Venom": {
+      "Galley": {
+        "First Mate": {
+          "Strong": [ "Pill Bottle", "Pill" ],
+          "Weak": [ "Bootprint", "Matching Boot", "Mismatched Boot", "Strange Residue", "Bloodstain" ]
+        },
+
+        "Pilot": {
+          "Strong": [ "Pill", "Pill Bottle" ],
+          "Weak": [ "Bootprint", "Matching Boot", "Mismatched Boot", "Jar of Dielectric Grease", "Incriminating E-mail" ]
+        }
+      }
+    }
+    // We got rid of Violence. Double check with Dan
+    /*
 		"Violence":
 		{
 			"First Mate":
@@ -55,5 +47,6 @@
 				"Weak": ["Squarebar", "Wrench"]
 			}
 		}
-	}
+		*/
+  }
 }

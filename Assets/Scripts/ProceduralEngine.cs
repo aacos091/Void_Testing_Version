@@ -29,14 +29,18 @@ public class ProceduralEngine : MonoBehaviour
 
     // TODO These values will change depending on the amount of clues each Culprit can have depending on the Murder location
     // TODO Change AMOUNT_OF_CLUES to represent Strong(1) and Weak(4
-    private const int AMOUNT_OF_CLUES_PER_PLAYTHROUGH = 4;
-    private const int AMOUNT_OF_STRONG_CLUES_PER_PLAYTHROUGH = 2;
-    private const int AMOUNT_OF_WEAK_CLUES_PER_PLAYTHROUGH = 2;
+    private const int AMOUNT_OF_CLUES_PER_PLAYTHROUGH = 5;
+    private const int AMOUNT_OF_STRONG_CLUES_PER_PLAYTHROUGH = 1;
+    private const int AMOUNT_OF_WEAK_CLUES_PER_PLAYTHROUGH = 4;
 
     // This int represents the amount of clues present in each array of clues in the JSON files. 
     //Each strong and weak category should have the same number for this value to work
     [SerializeField]
     private int CLUES_ARRAY_COUNT = 2;
+    [SerializeField]
+    private int STRONG_CLUES_ARRAY_COUNT = 1;
+    [SerializeField]
+    private int WEAK_CLUES_ARRAY_COUNT = 4;
     // May have to change this list from string to ClueInfo
     private List<string> _cluesList;
     private int AMOUNT_OF_CLUES;
@@ -54,6 +58,7 @@ public class ProceduralEngine : MonoBehaviour
     [Header("Drop all the SpawnPoints in here")]
     public List<Transform> spawnPoints;
 
+    [Header("Place Ship Transform and Dialogue GameObjects into their respective field below")]
     public Transform shipTransform;
     public GameObject dialogueSystem;
 
@@ -203,7 +208,7 @@ public class ProceduralEngine : MonoBehaviour
         // Pick a random number between 0 an 1 because right now each room only has two possible methods
         int index = ChooseID(0, 1);
         // TODO Review this. Is this a modular approach to picking methods based off of the location room chosen?
-        string method = methodData["Location"][_murderLocation][index].ToString();
+        string method = methodData["Location"][_murderLocation][0].ToString();
 
         // Clear the JsonData Object
         methodData.Clear();
@@ -214,6 +219,10 @@ public class ProceduralEngine : MonoBehaviour
     // TODO should this return a list of type ClueInfo? Each can have a boolean stating if it's a key clue, misleading clue or minor clue.
     public void ChooseClues()
     {
+        bool b_OnStrongClue = false;
+        bool b_OnWeakClue = false;
+        int cluesArrayCount = 0;
+
         _cluesList = new List<string>();
         List<int> indexesChosen = new List<int>();      // Holds the indexes that we have already used. That way we don't select the same clue twice
 
@@ -235,17 +244,26 @@ public class ProceduralEngine : MonoBehaviour
             {
                 clueRating = STRONG_CLUE_RATING;
                 clueValidity = STRONG_CLUE_TAG;
+                b_OnStrongClue = true;
+                b_OnWeakClue = false;
             }
             else
             {
+                b_OnWeakClue = true;
+                b_OnStrongClue = false;
                 clueRating = WEAK_CLUE_RATING;
                 clueValidity = WEAK_CLUE_TAG;
             }
-
+            // TODO Double check this logic with importing actual clue models.
             // Pick a valid index at Random as long as it has not been chosen before
             do
             {
-                randomIndex = Random.Range(0, CLUES_ARRAY_COUNT);
+                if (b_OnStrongClue)
+                    cluesArrayCount = STRONG_CLUES_ARRAY_COUNT;
+                else if (b_OnWeakClue)
+                    cluesArrayCount = WEAK_CLUES_ARRAY_COUNT;
+
+                randomIndex = Random.Range(0, cluesArrayCount);
             } while (indexesChosen.Contains(randomIndex));
 
             // Add value in randomIndex to indexesChosen to ensure that we do not choose this value again
@@ -273,6 +291,18 @@ public class ProceduralEngine : MonoBehaviour
 
     void SpawnClues(string cName, int rating)
     {
+        // There are 3 possible entries right now for each clue owner.
+        int NUMBER_OF_OWNERS = 3;
+        // Select the index we will use to select the first possible clue owner of this clue
+        int firstClueOwnerIndex = Random.Range(0, NUMBER_OF_OWNERS);
+        int secondClueOwnerIndex;
+        // Choose the second index to use for selecting the second clue Owner of this clue
+        do
+        {
+            secondClueOwnerIndex = Random.Range(0, NUMBER_OF_OWNERS);
+        } while (secondClueOwnerIndex == firstClueOwnerIndex);
+
+
         // Create the JSON object to hold the clues Descriptions
         JsonData descriptionData = JsonMapper.ToObject(clueDescriptionsFinal.text);
         JsonData clueOwnerData = JsonMapper.ToObject(cluePossibleOwnersFinal.text);
@@ -284,8 +314,8 @@ public class ProceduralEngine : MonoBehaviour
         tGO.GetComponent<ClueItem>().Rating = rating;
         tGO.GetComponent<ClueItem>().ItemName = cName;
         tGO.GetComponent<ClueItem>().Description = descriptionData["Clues"][cName][0].ToString();
-        tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][0].ToString();
-        tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][1].ToString();
+        tGO.GetComponent<ClueItem>().ClueOwner1 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][firstClueOwnerIndex].ToString();
+        tGO.GetComponent<ClueItem>().ClueOwner2 = clueOwnerData["Clues"][MurderLocation][MurderMethod][cName][secondClueOwnerIndex].ToString();
         tGO.GetComponent<ClueItem>().Location = spawnPoints[spawnIndex].GetComponent<SpawnPoint>().Location;
         // Position this clue to it's correct Position
         PositionClue(tGO);
@@ -387,7 +417,6 @@ public class ProceduralEngine : MonoBehaviour
             if (c.name == mentionString)
             {
                 c.value = newValue;
-                yarnVarRef.SetValue(c.name, new Yarn.Value("true"));
             }
         }
     }
@@ -402,7 +431,6 @@ public class ProceduralEngine : MonoBehaviour
             if (c.name == valueToCompare)
             {
                 c.value = newValue;
-                yarnVarRef.SetValue(c.name, new Yarn.Value(newValue));
             }
         }
     }
@@ -580,11 +608,11 @@ public class ProceduralEngine : MonoBehaviour
         varStorage.SetValue(truthTeller1TDV.name, new Yarn.Value(TruthTeller1));
         varStorage.SetValue(truthTeller2TDV.name, new Yarn.Value(TruthTeller2));
         varStorage.SetValue(misleadingCrewTDV.name, new Yarn.Value(MisleadingCrewMember));
-        varStorage.SetValue(cookMentionTDV.name, new Yarn.Value("false"));
-        varStorage.SetValue(engineerMentionTDV.name, new Yarn.Value("false"));
-        varStorage.SetValue(firstMateMentionTDV.name, new Yarn.Value("false"));
-        varStorage.SetValue(medicMentionTDV.name, new Yarn.Value("false"));
-        varStorage.SetValue(pilotMentionTDV.name, new Yarn.Value("false"));
+        varStorage.SetValue(cookMentionTDV.name, new Yarn.Value("no"));
+        varStorage.SetValue(engineerMentionTDV.name, new Yarn.Value("no"));
+        varStorage.SetValue(firstMateMentionTDV.name, new Yarn.Value("no"));
+        varStorage.SetValue(medicMentionTDV.name, new Yarn.Value("no"));
+        varStorage.SetValue(pilotMentionTDV.name, new Yarn.Value("no"));
         // Setting the values for InterviewB variables
         varStorage.SetValue(tt1InterviewBOpenTDV.name, new Yarn.Value("false"));
         varStorage.SetValue(tt2InterviewBOpenTDV.name, new Yarn.Value("false"));

@@ -1,10 +1,9 @@
 {
-	// Method is based on the location where the murder took place
-	
-	"Location":
-	{
-		"Engine Room":["Environmental Hazard", "Violence"],
-		
-		"Galley":["Poison/Venom", "Violence"]
-	}
+  // Method is based on the location where the murder took place
+
+  "Location": {
+    "Engine Room": [ "Environmental Hazard", "Test" ],
+
+    "Galley": [ "Poison/Venom", "Test" ]
+  }
 }

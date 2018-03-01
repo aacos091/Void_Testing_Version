@@ -2,15 +2,15 @@
 	// Descriptions for each of the clues
 	"Clues":
 	{
-		"Radiation Suit": ["Radiation Suit used to repair the ship."],
+		"Radiation Suit": ["A suit insulated against a broad spectrum of radiation."],
 		"Polarizer": ["Does whatever a Polarizer does."],
 		"Tampered Alarm": ["An alarm that seems to have been disabled and discarded"],
-		"Degausser": ["I have no idea what this is. I'm not even in the mood to google it."],
-		"EVA Suit": ["A cool looking suit. Even a murderer can look good in this."],
-		"Engine Piece": ["A piece of the engine. Seems important."],
+		"Degausser": ["A tool used to demagnetize cargo containers as they are loaded into the ship."],
+		"EVA Suit": ["A suit used for repairs in outer space. Protects it's wearer from the cold vacuum."],
+		"Engine Piece": ["A large, unknown piece of metal from the engine. Shaking it rattles some components inside."],
 		"Thruster Calibrator": ["Piece of equipment used to Calibrate the Thrusters."],
-		"Pill Bottle": ["A bottle full of happy pills."],
-		"Pill": ["A happy pill that helps us deal with the solitude of floating through space."],
+		"Pill Bottle": ["A prescription pill bottle. The name is scratched out."],
+		"Pill": ["An unknown pill. What could it do?"],
 		"Suspicious Root": ["Mandrake root that just looks suspicious. You can sense its malintentions."],
 		"Half-filled Glass": ["A half-filled glass. Or half-full if you're feeling optimistic."],
 		"Vermin Poison": ["Poison used to kill small vermin. Extremely lethal to humans"],
@@ -19,7 +19,15 @@
 		"Scalpel": ["A state of the art scalpel used by the Medic."],
 		"Mallet": ["Rubber Mallet used by the Engineer."],
 		"Garrote": ["A garrote, used to choke people. Why is this onboard?"],
-		"Squarebar": ["Exactly what the name says. A bar that is square."],
-		"Wrench": ["Adjustable monkey wrench used for all sorts of repairs."]
+    "Squarebar": [ "Exactly what the name says. A bar that is square." ],
+		"Wrench": ["Adjustable monkey wrench used for all sorts of repairs."],
+		"Matching Boot": ["A boot that matches bootprints found around the scene of the crime"],
+		"Bootprint": ["A sooty bootprint"],
+		"Mismatched Boot": ["A boot that doesn't seem to have a partner."],
+		"Silocone Grease": ["Waterproof greake used for preserving rubber parts."],
+		"Jar of Dielectric Grease": ["A container full of electrically insulating grease."],
+		"Strange Residue": ["An unknown foreign residue."],
+		"Incriminating E-mail": ["A suspicious message talking about an illegal delivery of supplies."],
+		"Bloodstain": ["A patch of dried blood, owner unknown."]
 	}
 }

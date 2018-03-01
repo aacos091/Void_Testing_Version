@@ -287,7 +287,7 @@ public class playSound : MonoBehaviour
 
 				break;
 			
-			case "FFarewill":
+			case "FFarewell":
 				
 				FFarewill.Play();
 

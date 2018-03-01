@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using FMOD.Studio;
+using FMODUnity;
 
 public class ClueManager : MonoBehaviour
 {
@@ -28,14 +30,33 @@ public class ClueManager : MonoBehaviour
     ExampleVariableStorage yarnVarRef;
     int yarnIndex = 1;
 
+    private int clueCount = 0;
+    
+    public FMOD.Studio.EventInstance music;
+
+    public FMOD.Studio.ParameterInstance Clues;
+    
+    public FMOD.Studio.ParameterInstance Loyalty;
+    
     //[SerializeField]
     //private bool touchControlled;
 
     void Awake()
     {
 
-        yarnVarRef = yarnVarRefObj.GetComponent<ExampleVariableStorage>();
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
 
+        music.start();
+
+        music.setVolume(-10);
+        
+        music.getParameter("Clue", out Clues);
+
+        music.getParameter("Loyalty", out Loyalty);
+
+        Loyalty.setValue(10);
+        
+        yarnVarRef = yarnVarRefObj.GetComponent<ExampleVariableStorage>();
 
         // Populate the Singleton with the followint if and else if statements
         if (S == null)
@@ -139,10 +160,11 @@ public class ClueManager : MonoBehaviour
     {
         //AddClue(ref ClueDatabase.S.GetClueInfo("clueName"));
     }
-
+    
     //Adds ClueItem and its ClueInfo passed from ClueItemInspector's raycasted ClueItem
     public void AddClue(ref ClueItem hitClue)
     {
+        
         //Check if this ClueItem has already been found
         if (!hitClue.isCollected)
         {
@@ -186,14 +208,32 @@ public class ClueManager : MonoBehaviour
             //Gives the player a notification that the clue was added
 
             if (UI_ButtonManager.S.addedClueNotification.transform.parent.gameObject.activeSelf)
+            {
+
+                clueCount++;
+                
                 UI_ButtonManager.S.addedClueNotif(true);
+                
+                Clues.setValue(clueCount);
+                
+                Debug.Log("Set the value!");
+
+            }
         }
         else if (UI_ButtonManager.S.addedClueNotification.transform.parent.gameObject.activeSelf)
+        {
+
             UI_ButtonManager.S.addedClueNotif(false);
+
+            Loyalty.setValue(0);
+            
+        }
+        
     }
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.P))
         {
             foreach (ClueItem c in _cluesCollected)

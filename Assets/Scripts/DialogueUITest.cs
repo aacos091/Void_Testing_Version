@@ -43,7 +43,9 @@ public class DialogueUITest : DialogueUIBehaviour
 	/// the user selected
 	private Yarn.OptionChooser SetSelectedOption;
 
-	void Awake()
+    public List<GameObject> needsDialogueCanvas = new List<GameObject>();
+
+    void Awake()
 	{
 		dialogueRunner = 		FindObjectOfType<DialogueRunner> ();
 

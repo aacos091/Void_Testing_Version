@@ -13,9 +13,7 @@ public class Units : MonoBehaviour
 	public UnityEvent UnitStartedSpeaking { get; protected set; }
 
 	//Array of waypoints
-	public Transform[] waypoints;
-	public Transform elevatorInsideOne;
-	public Transform elevatorInsideTwo;
+	public GameObject[] waypoints;
 
 	//The 'agent' aka the Unit moving
 	private NavMeshAgent agent;
@@ -36,7 +34,7 @@ public class Units : MonoBehaviour
 	[SerializeField]
 	GameObject closestElevatorToWaypoint;
 
-	public Waypoint waypoint = null;
+	public GameObject waypoint;
 
 	public bool isAtElevator;
 
@@ -56,21 +54,30 @@ public class Units : MonoBehaviour
 
 	public cakeslice.Outline[] outlineRef;
 
+	public Coroutine currentCoroutine;
+
+	public int waypointsLength;
+
 	public enum States
 	{
+		idle,
 		movingToDestination,
 		movingToElevator
 	}
 
 	[SerializeField]
-	States currentState = States.movingToDestination;
+	States currentState;
 
 	void Awake()
 	{
 		S = this;
 		UnitStartedSpeaking = new UnityEvent();
+		waypoint = null;
+		waypoints = GameObject.FindGameObjectsWithTag ("Waypoint");
+		waypointsLength = (waypoints.Length - 1);
 
 	}
+
 	void Start () 
 	{
 		outlineRef = this.GetComponentsInChildren<cakeslice.Outline> ();
@@ -87,7 +94,14 @@ public class Units : MonoBehaviour
 
 	void Update () 
 	{
+		
 
+		checkFloor ();
+
+		DetermineNextPoint ();
+
+		DetermineIfIdleOrMoving ();
+			
 		if (dialogue == true) 
 		{
 			talk.SetActive (true);
@@ -96,8 +110,6 @@ public class Units : MonoBehaviour
 		{
 			talk.SetActive (false);
 		}
-
-		checkFloor ();
 
         if (!GameController.S.gamePaused)
         {
@@ -108,6 +120,12 @@ public class Units : MonoBehaviour
 
         switch (currentState)
         {
+			case States.idle:
+				{
+				currentCoroutine = StartCoroutine (StayIdle());
+				}
+				break;
+
             case States.movingToElevator:
                 {
                     if (!isAtElevator)
@@ -116,7 +134,7 @@ public class Units : MonoBehaviour
                     if (isAtElevator)
                     {
                         teleportToClosestElevatorToWaypoint();
-                        agent.SetDestination(waypoints[ran].transform.position);
+                        agent.SetDestination(waypoints[ran].gameObject.transform.position);
                         currentState = States.movingToDestination;
                     }
                 }
@@ -125,7 +143,7 @@ public class Units : MonoBehaviour
             case States.movingToDestination:
                 {
                     if (!agent.hasPath && agent.remainingDistance <= 0)
-                        GotoNextPoint();
+					GoToNextPoint(waypoint);
 
                 }
                 break;
@@ -219,7 +237,7 @@ public class Units : MonoBehaviour
 
 				//if (this.gameObject.name == "Cook" && gameObject.GetComponent<Renderer> ().sharedMaterial == HighlightedMat)
 				if (this.gameObject.name == "Cook" && mSelectedObject.GetComponentInChildren<cakeslice.Outline>().enabled == true)
-                    {
+                {
 
 					CameraController.cook = true;
 
@@ -291,55 +309,62 @@ public class Units : MonoBehaviour
 		}
 	}
 
+	void DetermineIfIdleOrMoving(){
+		int chance = Random.Range (0, 9);
 
-	void GotoNextPoint ()
+		if (chance == 1) {
+			currentState = States.movingToDestination;
+		} else
+			currentState = States.idle;
+	}
+	void DetermineNextPoint ()
 	{
 
-		int chance = Random.Range (0, 1000);
+		int chance = Random.Range (0, 999);
 
-		int near = Random.Range (0, 100);
+		int near = Random.Range (0, 99);
 
-		if (near == 1) 
+		if (near == 1 && chance != 1) 
 		{
 
 			Vector3 nearest = (findClosestWaypointToUnit().transform.position);
 
-			if (findClosestWaypointToUnit().GetComponent<Waypoint> ().isCollidingWithUnit != true) {
-				agent.SetDestination (nearest);
-			}
-	
+			//agent.SetDestination (nearest);
+			
 			currentState = States.movingToDestination;
 		}
 
-		if (chance == 1) 
+		if (chance == 1 && near != 1) 
 		{
 
 			//Roll a random number to determine which nav point to move to
-			ran = Random.Range (0, 7);
+			ran = Random.Range (0, waypointsLength);
 
 			//Set waypoint to reference to waypoint chosen
-			waypoint = waypoints [ran].GetComponent<Waypoint> ();
+			waypoint = waypoints [ran].gameObject;
 
 			//Find the closest elevator to that waypoint
 			closestElevatorToWaypoint = findClosestElevatorToWaypoint ();
-			Debug.Log (closestElevatorToWaypoint.name);
 
-			//Set agent to walk towards that nav point
-
-			if (floor == waypoint.floor) {
-
-				if (waypoints [ran].GetComponent<Waypoint> ().isCollidingWithUnit != true) {
-					agent.SetDestination (waypoints [ran].position);
-				}
-			}
-
-			//If the waypoint is not on the same floor as the unit:
-			else if (floor != waypoint.floor) {
-				currentState = States.movingToElevator;
-			}
-
+			currentState = States.movingToElevator;
 		}
+	}
 
+	void GoToNextPoint(GameObject w){
+        if (w != null)
+        {
+            //Set agent to walk towards that nav point
+            if (this.floor == w.GetComponent<Waypoint>().floor)
+            {
+                agent.SetDestination(w.gameObject.transform.position);
+                Debug.Log("I'm walking to " + w.gameObject.name);
+            }
+            //If the waypoint is not on the same floor as the unit:
+            else if (floor != w.GetComponent<Waypoint>().floor)
+            {
+                currentState = States.movingToElevator;
+            }
+        }
 	}
 
 	void walkToNearestElevator(){
@@ -428,5 +453,7 @@ public class Units : MonoBehaviour
 
 	}
 
-
+	IEnumerator StayIdle() {
+		yield return new WaitForSeconds (5.0f);
+	}
 }

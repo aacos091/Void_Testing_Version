@@ -127,6 +127,23 @@ public class ClueItemInspector : MonoBehaviour
             }
         }
     }
+
+    public void ShowClueInUI(GameObject clue)
+    {
+        // This simplifies getting clues shown in the UI without raycasting involved
+
+        CanvasManager.S.loadCanvas(clueUIWindow);
+
+        // 01-23-18 Disable HUD
+
+        // Set clueItem to the object that we just hit with the Raycast
+        // cache the ClueItem script for a performance boost.
+        SetCurrentClue(clue);
+        // If the object we hit is tagged as a Clue or Prop, then bring it up for inspection
+        HandleClueViewing(ref currentClue);
+    }
+
+
     //Should change back to ref if it makes sense
     public void SetCurrentClue(GameObject objectHit)
     {

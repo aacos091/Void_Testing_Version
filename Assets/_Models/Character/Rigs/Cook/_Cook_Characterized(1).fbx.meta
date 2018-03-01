@@ -1,0 +1,694 @@
+fileFormatVersion: 2
+guid: 0fa138acb6d6b0d4ea63b85e9b026870
+timeCreated: 1519765218
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: be_head01
+    100004: be_L_back_leg_01
+    100006: be_L_back_leg_02
+    100008: be_L_forearm01
+    100010: be_L_front_leg_01
+    100012: be_L_front_leg_02
+    100014: be_L_index01
+    100016: be_L_middle01
+    100018: be_L_pinky01
+    100020: be_L_ring01
+    100022: be_L_thumb01
+    100024: be_pelvis01
+    100026: be_R_back_leg_01
+    100028: be_R_back_leg_02
+    100030: be_R_forearm01
+    100032: be_R_front_leg_01
+    100034: be_R_front_leg_02
+    100036: be_R_index01
+    100038: be_R_middle01
+    100040: be_R_pinky01
+    100042: be_R_ring01
+    100044: be_R_thumb01
+    100046: bn_chest01
+    100048: bn_head01
+    100050: bn_L__clavicle01
+    100052: bn_L_back_leg_01
+    100054: bn_L_back_leg_02
+    100056: bn_L_back_leg_03
+    100058: bn_L_forearm01
+    100060: bn_L_front_leg_01
+    100062: bn_L_front_leg_02
+    100064: bn_L_front_leg_03
+    100066: bn_L_hand01
+    100068: bn_L_index01
+    100070: bn_L_index02
+    100072: bn_L_index03
+    100074: bn_L_middle01
+    100076: bn_L_middle02
+    100078: bn_L_middle03
+    100080: bn_L_pinky01
+    100082: bn_L_pinky02
+    100084: bn_L_pinky03
+    100086: bn_L_ring01
+    100088: bn_L_ring02
+    100090: bn_L_ring03
+    100092: bn_L_shoulder01
+    100094: bn_L_thumb01
+    100096: bn_L_thumb02
+    100098: bn_L_thumb03
+    100100: bn_L_wrist01
+    100102: bn_neck01
+    100104: bn_pelvis01
+    100106: bn_R__clavicle01
+    100108: bn_R_back_leg_01
+    100110: bn_R_back_leg_02
+    100112: bn_R_back_leg_03
+    100114: bn_R_forearm01
+    100116: bn_R_front_leg_01
+    100118: bn_R_front_leg_02
+    100120: bn_R_front_leg_03
+    100122: bn_R_hand01
+    100124: bn_R_index01
+    100126: bn_R_index02
+    100128: bn_R_index03
+    100130: bn_R_middle01
+    100132: bn_R_middle02
+    100134: bn_R_middle03
+    100136: bn_R_pinky01
+    100138: bn_R_pinky02
+    100140: bn_R_pinky03
+    100142: bn_R_ring01
+    100144: bn_R_ring02
+    100146: bn_R_ring03
+    100148: bn_R_shoulder01
+    100150: bn_R_thumb01
+    100152: bn_R_thumb02
+    100154: bn_R_thumb03
+    100156: bn_R_wrist01
+    100158: bn_root01
+    100160: bn_spine01
+    100162: bn_spine02
+    100164: Cook_GEO
+    100166: group1
+    100168: Group2
+    100170: Nick2_ROM 1:Nick2_ROM_C7
+    100172: Nick2_ROM 1:Nick2_ROM_CLAV
+    100174: Nick2_ROM 1:Nick2_ROM_Head
+    100176: Nick2_ROM 1:Nick2_ROM_HeadEnd
+    100178: Nick2_ROM 1:Nick2_ROM_Hips
+    100180: Nick2_ROM 1:Nick2_ROM_LANK
+    100182: Nick2_ROM 1:Nick2_ROM_LBHD
+    100184: Nick2_ROM 1:Nick2_ROM_LBSH
+    100186: Nick2_ROM 1:Nick2_ROM_LBWT
+    100188: Nick2_ROM 1:Nick2_ROM_LeftArm
+    100190: Nick2_ROM 1:Nick2_ROM_LeftFoot
+    100192: Nick2_ROM 1:Nick2_ROM_LeftForeArm
+    100194: Nick2_ROM 1:Nick2_ROM_LeftForeFoot
+    100196: Nick2_ROM 1:Nick2_ROM_LeftHand
+    100198: Nick2_ROM 1:Nick2_ROM_LeftHandEnd
+    100200: Nick2_ROM 1:Nick2_ROM_LeftLeg
+    100202: Nick2_ROM 1:Nick2_ROM_LeftShoulder
+    100204: Nick2_ROM 1:Nick2_ROM_LeftThumb
+    100206: Nick2_ROM 1:Nick2_ROM_LeftThumbEnd
+    100208: Nick2_ROM 1:Nick2_ROM_LeftToeBase
+    100210: Nick2_ROM 1:Nick2_ROM_LeftToeBaseEnd
+    100212: Nick2_ROM 1:Nick2_ROM_LeftUpLeg
+    100214: Nick2_ROM 1:Nick2_ROM_LELB
+    100216: Nick2_ROM 1:Nick2_ROM_LFHD
+    100218: Nick2_ROM 1:Nick2_ROM_LFRM
+    100220: Nick2_ROM 1:Nick2_ROM_LFSH
+    100222: Nick2_ROM 1:Nick2_ROM_LFWT
+    100224: Nick2_ROM 1:Nick2_ROM_LHEL
+    100226: Nick2_ROM 1:Nick2_ROM_LIEL
+    100228: Nick2_ROM 1:Nick2_ROM_LIHAND
+    100230: Nick2_ROM 1:Nick2_ROM_LIWR
+    100232: Nick2_ROM 1:Nick2_ROM_LKNE
+    100234: Nick2_ROM 1:Nick2_ROM_LKNI
+    100236: Nick2_ROM 1:Nick2_ROM_LMT1
+    100238: Nick2_ROM 1:Nick2_ROM_LMT5
+    100240: Nick2_ROM 1:Nick2_ROM_LOHAND
+    100242: Nick2_ROM 1:Nick2_ROM_LOWR
+    100244: Nick2_ROM 1:Nick2_ROM_LSHN
+    100246: Nick2_ROM 1:Nick2_ROM_LTHI
+    100248: Nick2_ROM 1:Nick2_ROM_LTOE
+    100250: Nick2_ROM 1:Nick2_ROM_LUPA
+    100252: Nick2_ROM 1:Nick2_ROM_MBWT
+    100254: Nick2_ROM 1:Nick2_ROM_MFWT
+    100256: Nick2_ROM 1:Nick2_ROM_Neck
+    100258: Nick2_ROM 1:Nick2_ROM_Neck1
+    100260: Nick2_ROM 1:Nick2_ROM_RANK
+    100262: Nick2_ROM 1:Nick2_ROM_RBHD
+    100264: Nick2_ROM 1:Nick2_ROM_RBSH
+    100266: Nick2_ROM 1:Nick2_ROM_RBWT
+    100268: Nick2_ROM 1:Nick2_ROM_RELB
+    100270: Nick2_ROM 1:Nick2_ROM_RFHD
+    100272: Nick2_ROM 1:Nick2_ROM_RFRM
+    100274: Nick2_ROM 1:Nick2_ROM_RFSH
+    100276: Nick2_ROM 1:Nick2_ROM_RFWT
+    100278: Nick2_ROM 1:Nick2_ROM_RHEL
+    100280: Nick2_ROM 1:Nick2_ROM_RIEL
+    100282: Nick2_ROM 1:Nick2_ROM_RightArm
+    100284: Nick2_ROM 1:Nick2_ROM_RightFoot
+    100286: Nick2_ROM 1:Nick2_ROM_RightForeArm
+    100288: Nick2_ROM 1:Nick2_ROM_RightForeFoot
+    100290: Nick2_ROM 1:Nick2_ROM_RightHand
+    100292: Nick2_ROM 1:Nick2_ROM_RightHandEnd
+    100294: Nick2_ROM 1:Nick2_ROM_RightLeg
+    100296: Nick2_ROM 1:Nick2_ROM_RightShoulder
+    100298: Nick2_ROM 1:Nick2_ROM_RightThumb
+    100300: Nick2_ROM 1:Nick2_ROM_RightThumbEnd
+    100302: Nick2_ROM 1:Nick2_ROM_RightToeBase
+    100304: Nick2_ROM 1:Nick2_ROM_RightToeBaseEnd
+    100306: Nick2_ROM 1:Nick2_ROM_RightUpLeg
+    100308: Nick2_ROM 1:Nick2_ROM_RIHAND
+    100310: Nick2_ROM 1:Nick2_ROM_RIWR
+    100312: Nick2_ROM 1:Nick2_ROM_RKNE
+    100314: Nick2_ROM 1:Nick2_ROM_RKNI
+    100316: Nick2_ROM 1:Nick2_ROM_RMT1
+    100318: Nick2_ROM 1:Nick2_ROM_RMT5
+    100320: Nick2_ROM 1:Nick2_ROM_ROHAND
+    100322: Nick2_ROM 1:Nick2_ROM_ROWR
+    100324: Nick2_ROM 1:Nick2_ROM_RSHN
+    100326: Nick2_ROM 1:Nick2_ROM_RTHI
+    100328: Nick2_ROM 1:Nick2_ROM_RTOE
+    100330: Nick2_ROM 1:Nick2_ROM_RUPA
+    100332: Nick2_ROM 1:Nick2_ROM_Spine
+    100334: Nick2_ROM 1:Nick2_ROM_Spine1
+    100336: Nick2_ROM 1:Nick2_ROM_Spine2
+    100338: Nick2_ROM 1:Nick2_ROM_Spine3
+    100340: Nick2_ROM 1:Nick2_ROM_STRN
+    100342: Nick2_ROM 1:Nick2_ROM_T10
+    100344: Nick2_ROM 1:RootNode
+    100346: Nick2_ROM:Nick2_ROM_C7
+    100348: Nick2_ROM:Nick2_ROM_CLAV
+    100350: Nick2_ROM:Nick2_ROM_Head
+    100352: Nick2_ROM:Nick2_ROM_HeadEnd
+    100354: Nick2_ROM:Nick2_ROM_Hips
+    100356: Nick2_ROM:Nick2_ROM_LANK
+    100358: Nick2_ROM:Nick2_ROM_LBHD
+    100360: Nick2_ROM:Nick2_ROM_LBSH
+    100362: Nick2_ROM:Nick2_ROM_LBWT
+    100364: Nick2_ROM:Nick2_ROM_LeftArm
+    100366: Nick2_ROM:Nick2_ROM_LeftFoot
+    100368: Nick2_ROM:Nick2_ROM_LeftForeArm
+    100370: Nick2_ROM:Nick2_ROM_LeftForeFoot
+    100372: Nick2_ROM:Nick2_ROM_LeftHand
+    100374: Nick2_ROM:Nick2_ROM_LeftHandEnd
+    100376: Nick2_ROM:Nick2_ROM_LeftLeg
+    100378: Nick2_ROM:Nick2_ROM_LeftShoulder
+    100380: Nick2_ROM:Nick2_ROM_LeftThumb
+    100382: Nick2_ROM:Nick2_ROM_LeftThumbEnd
+    100384: Nick2_ROM:Nick2_ROM_LeftToeBase
+    100386: Nick2_ROM:Nick2_ROM_LeftToeBaseEnd
+    100388: Nick2_ROM:Nick2_ROM_LeftUpLeg
+    100390: Nick2_ROM:Nick2_ROM_LELB
+    100392: Nick2_ROM:Nick2_ROM_LFHD
+    100394: Nick2_ROM:Nick2_ROM_LFRM
+    100396: Nick2_ROM:Nick2_ROM_LFSH
+    100398: Nick2_ROM:Nick2_ROM_LFWT
+    100400: Nick2_ROM:Nick2_ROM_LHEL
+    100402: Nick2_ROM:Nick2_ROM_LIEL
+    100404: Nick2_ROM:Nick2_ROM_LIHAND
+    100406: Nick2_ROM:Nick2_ROM_LIWR
+    100408: Nick2_ROM:Nick2_ROM_LKNE
+    100410: Nick2_ROM:Nick2_ROM_LKNI
+    100412: Nick2_ROM:Nick2_ROM_LMT1
+    100414: Nick2_ROM:Nick2_ROM_LMT5
+    100416: Nick2_ROM:Nick2_ROM_LOHAND
+    100418: Nick2_ROM:Nick2_ROM_LOWR
+    100420: Nick2_ROM:Nick2_ROM_LSHN
+    100422: Nick2_ROM:Nick2_ROM_LTHI
+    100424: Nick2_ROM:Nick2_ROM_LTOE
+    100426: Nick2_ROM:Nick2_ROM_LUPA
+    100428: Nick2_ROM:Nick2_ROM_MBWT
+    100430: Nick2_ROM:Nick2_ROM_MFWT
+    100432: Nick2_ROM:Nick2_ROM_Neck
+    100434: Nick2_ROM:Nick2_ROM_Neck1
+    100436: Nick2_ROM:Nick2_ROM_RANK
+    100438: Nick2_ROM:Nick2_ROM_RBHD
+    100440: Nick2_ROM:Nick2_ROM_RBSH
+    100442: Nick2_ROM:Nick2_ROM_RBWT
+    100444: Nick2_ROM:Nick2_ROM_RELB
+    100446: Nick2_ROM:Nick2_ROM_RFHD
+    100448: Nick2_ROM:Nick2_ROM_RFRM
+    100450: Nick2_ROM:Nick2_ROM_RFSH
+    100452: Nick2_ROM:Nick2_ROM_RFWT
+    100454: Nick2_ROM:Nick2_ROM_RHEL
+    100456: Nick2_ROM:Nick2_ROM_RIEL
+    100458: Nick2_ROM:Nick2_ROM_RightArm
+    100460: Nick2_ROM:Nick2_ROM_RightFoot
+    100462: Nick2_ROM:Nick2_ROM_RightForeArm
+    100464: Nick2_ROM:Nick2_ROM_RightForeFoot
+    100466: Nick2_ROM:Nick2_ROM_RightHand
+    100468: Nick2_ROM:Nick2_ROM_RightHandEnd
+    100470: Nick2_ROM:Nick2_ROM_RightLeg
+    100472: Nick2_ROM:Nick2_ROM_RightShoulder
+    100474: Nick2_ROM:Nick2_ROM_RightThumb
+    100476: Nick2_ROM:Nick2_ROM_RightThumbEnd
+    100478: Nick2_ROM:Nick2_ROM_RightToeBase
+    100480: Nick2_ROM:Nick2_ROM_RightToeBaseEnd
+    100482: Nick2_ROM:Nick2_ROM_RightUpLeg
+    100484: Nick2_ROM:Nick2_ROM_RIHAND
+    100486: Nick2_ROM:Nick2_ROM_RIWR
+    100488: Nick2_ROM:Nick2_ROM_RKNE
+    100490: Nick2_ROM:Nick2_ROM_RKNI
+    100492: Nick2_ROM:Nick2_ROM_RMT1
+    100494: Nick2_ROM:Nick2_ROM_RMT5
+    100496: Nick2_ROM:Nick2_ROM_ROHAND
+    100498: Nick2_ROM:Nick2_ROM_ROWR
+    100500: Nick2_ROM:Nick2_ROM_RSHN
+    100502: Nick2_ROM:Nick2_ROM_RTHI
+    100504: Nick2_ROM:Nick2_ROM_RTOE
+    100506: Nick2_ROM:Nick2_ROM_RUPA
+    100508: Nick2_ROM:Nick2_ROM_Spine
+    100510: Nick2_ROM:Nick2_ROM_Spine1
+    100512: Nick2_ROM:Nick2_ROM_Spine2
+    100514: Nick2_ROM:Nick2_ROM_Spine3
+    100516: Nick2_ROM:Nick2_ROM_STRN
+    100518: Nick2_ROM:Nick2_ROM_T10
+    100520: Nick2_ROM:RootNode
+    100522: nurbsCircle1
+    100524: pCube1
+    100526: pCube2
+    100528: polySurface23
+    100530: polySurface24
+    100532: polySurface25
+    100534: polySurface26
+    100536: polySurface27
+    100538: polySurface28
+    100540: polySurface29
+    100542: polySurface30
+    100544: polySurface31
+    100546: polySurface32
+    100548: polySurface33
+    100550: polySurface34
+    100552: polySurface35
+    100554: polySurface36
+    100556: polySurface37
+    100558: polySurface38
+    100560: polySurface39
+    100562: polySurface40
+    100564: polySurface41
+    100566: polySurface42
+    100568: pPipe1
+    100570: skeleton01
+    100572: Vicon 1:Optical
+    100574: Vicon:Optical
+    400000: //RootNode
+    400002: be_head01
+    400004: be_L_back_leg_01
+    400006: be_L_back_leg_02
+    400008: be_L_forearm01
+    400010: be_L_front_leg_01
+    400012: be_L_front_leg_02
+    400014: be_L_index01
+    400016: be_L_middle01
+    400018: be_L_pinky01
+    400020: be_L_ring01
+    400022: be_L_thumb01
+    400024: be_pelvis01
+    400026: be_R_back_leg_01
+    400028: be_R_back_leg_02
+    400030: be_R_forearm01
+    400032: be_R_front_leg_01
+    400034: be_R_front_leg_02
+    400036: be_R_index01
+    400038: be_R_middle01
+    400040: be_R_pinky01
+    400042: be_R_ring01
+    400044: be_R_thumb01
+    400046: bn_chest01
+    400048: bn_head01
+    400050: bn_L__clavicle01
+    400052: bn_L_back_leg_01
+    400054: bn_L_back_leg_02
+    400056: bn_L_back_leg_03
+    400058: bn_L_forearm01
+    400060: bn_L_front_leg_01
+    400062: bn_L_front_leg_02
+    400064: bn_L_front_leg_03
+    400066: bn_L_hand01
+    400068: bn_L_index01
+    400070: bn_L_index02
+    400072: bn_L_index03
+    400074: bn_L_middle01
+    400076: bn_L_middle02
+    400078: bn_L_middle03
+    400080: bn_L_pinky01
+    400082: bn_L_pinky02
+    400084: bn_L_pinky03
+    400086: bn_L_ring01
+    400088: bn_L_ring02
+    400090: bn_L_ring03
+    400092: bn_L_shoulder01
+    400094: bn_L_thumb01
+    400096: bn_L_thumb02
+    400098: bn_L_thumb03
+    400100: bn_L_wrist01
+    400102: bn_neck01
+    400104: bn_pelvis01
+    400106: bn_R__clavicle01
+    400108: bn_R_back_leg_01
+    400110: bn_R_back_leg_02
+    400112: bn_R_back_leg_03
+    400114: bn_R_forearm01
+    400116: bn_R_front_leg_01
+    400118: bn_R_front_leg_02
+    400120: bn_R_front_leg_03
+    400122: bn_R_hand01
+    400124: bn_R_index01
+    400126: bn_R_index02
+    400128: bn_R_index03
+    400130: bn_R_middle01
+    400132: bn_R_middle02
+    400134: bn_R_middle03
+    400136: bn_R_pinky01
+    400138: bn_R_pinky02
+    400140: bn_R_pinky03
+    400142: bn_R_ring01
+    400144: bn_R_ring02
+    400146: bn_R_ring03
+    400148: bn_R_shoulder01
+    400150: bn_R_thumb01
+    400152: bn_R_thumb02
+    400154: bn_R_thumb03
+    400156: bn_R_wrist01
+    400158: bn_root01
+    400160: bn_spine01
+    400162: bn_spine02
+    400164: Cook_GEO
+    400166: group1
+    400168: Group2
+    400170: Nick2_ROM 1:Nick2_ROM_C7
+    400172: Nick2_ROM 1:Nick2_ROM_CLAV
+    400174: Nick2_ROM 1:Nick2_ROM_Head
+    400176: Nick2_ROM 1:Nick2_ROM_HeadEnd
+    400178: Nick2_ROM 1:Nick2_ROM_Hips
+    400180: Nick2_ROM 1:Nick2_ROM_LANK
+    400182: Nick2_ROM 1:Nick2_ROM_LBHD
+    400184: Nick2_ROM 1:Nick2_ROM_LBSH
+    400186: Nick2_ROM 1:Nick2_ROM_LBWT
+    400188: Nick2_ROM 1:Nick2_ROM_LeftArm
+    400190: Nick2_ROM 1:Nick2_ROM_LeftFoot
+    400192: Nick2_ROM 1:Nick2_ROM_LeftForeArm
+    400194: Nick2_ROM 1:Nick2_ROM_LeftForeFoot
+    400196: Nick2_ROM 1:Nick2_ROM_LeftHand
+    400198: Nick2_ROM 1:Nick2_ROM_LeftHandEnd
+    400200: Nick2_ROM 1:Nick2_ROM_LeftLeg
+    400202: Nick2_ROM 1:Nick2_ROM_LeftShoulder
+    400204: Nick2_ROM 1:Nick2_ROM_LeftThumb
+    400206: Nick2_ROM 1:Nick2_ROM_LeftThumbEnd
+    400208: Nick2_ROM 1:Nick2_ROM_LeftToeBase
+    400210: Nick2_ROM 1:Nick2_ROM_LeftToeBaseEnd
+    400212: Nick2_ROM 1:Nick2_ROM_LeftUpLeg
+    400214: Nick2_ROM 1:Nick2_ROM_LELB
+    400216: Nick2_ROM 1:Nick2_ROM_LFHD
+    400218: Nick2_ROM 1:Nick2_ROM_LFRM
+    400220: Nick2_ROM 1:Nick2_ROM_LFSH
+    400222: Nick2_ROM 1:Nick2_ROM_LFWT
+    400224: Nick2_ROM 1:Nick2_ROM_LHEL
+    400226: Nick2_ROM 1:Nick2_ROM_LIEL
+    400228: Nick2_ROM 1:Nick2_ROM_LIHAND
+    400230: Nick2_ROM 1:Nick2_ROM_LIWR
+    400232: Nick2_ROM 1:Nick2_ROM_LKNE
+    400234: Nick2_ROM 1:Nick2_ROM_LKNI
+    400236: Nick2_ROM 1:Nick2_ROM_LMT1
+    400238: Nick2_ROM 1:Nick2_ROM_LMT5
+    400240: Nick2_ROM 1:Nick2_ROM_LOHAND
+    400242: Nick2_ROM 1:Nick2_ROM_LOWR
+    400244: Nick2_ROM 1:Nick2_ROM_LSHN
+    400246: Nick2_ROM 1:Nick2_ROM_LTHI
+    400248: Nick2_ROM 1:Nick2_ROM_LTOE
+    400250: Nick2_ROM 1:Nick2_ROM_LUPA
+    400252: Nick2_ROM 1:Nick2_ROM_MBWT
+    400254: Nick2_ROM 1:Nick2_ROM_MFWT
+    400256: Nick2_ROM 1:Nick2_ROM_Neck
+    400258: Nick2_ROM 1:Nick2_ROM_Neck1
+    400260: Nick2_ROM 1:Nick2_ROM_RANK
+    400262: Nick2_ROM 1:Nick2_ROM_RBHD
+    400264: Nick2_ROM 1:Nick2_ROM_RBSH
+    400266: Nick2_ROM 1:Nick2_ROM_RBWT
+    400268: Nick2_ROM 1:Nick2_ROM_RELB
+    400270: Nick2_ROM 1:Nick2_ROM_RFHD
+    400272: Nick2_ROM 1:Nick2_ROM_RFRM
+    400274: Nick2_ROM 1:Nick2_ROM_RFSH
+    400276: Nick2_ROM 1:Nick2_ROM_RFWT
+    400278: Nick2_ROM 1:Nick2_ROM_RHEL
+    400280: Nick2_ROM 1:Nick2_ROM_RIEL
+    400282: Nick2_ROM 1:Nick2_ROM_RightArm
+    400284: Nick2_ROM 1:Nick2_ROM_RightFoot
+    400286: Nick2_ROM 1:Nick2_ROM_RightForeArm
+    400288: Nick2_ROM 1:Nick2_ROM_RightForeFoot
+    400290: Nick2_ROM 1:Nick2_ROM_RightHand
+    400292: Nick2_ROM 1:Nick2_ROM_RightHandEnd
+    400294: Nick2_ROM 1:Nick2_ROM_RightLeg
+    400296: Nick2_ROM 1:Nick2_ROM_RightShoulder
+    400298: Nick2_ROM 1:Nick2_ROM_RightThumb
+    400300: Nick2_ROM 1:Nick2_ROM_RightThumbEnd
+    400302: Nick2_ROM 1:Nick2_ROM_RightToeBase
+    400304: Nick2_ROM 1:Nick2_ROM_RightToeBaseEnd
+    400306: Nick2_ROM 1:Nick2_ROM_RightUpLeg
+    400308: Nick2_ROM 1:Nick2_ROM_RIHAND
+    400310: Nick2_ROM 1:Nick2_ROM_RIWR
+    400312: Nick2_ROM 1:Nick2_ROM_RKNE
+    400314: Nick2_ROM 1:Nick2_ROM_RKNI
+    400316: Nick2_ROM 1:Nick2_ROM_RMT1
+    400318: Nick2_ROM 1:Nick2_ROM_RMT5
+    400320: Nick2_ROM 1:Nick2_ROM_ROHAND
+    400322: Nick2_ROM 1:Nick2_ROM_ROWR
+    400324: Nick2_ROM 1:Nick2_ROM_RSHN
+    400326: Nick2_ROM 1:Nick2_ROM_RTHI
+    400328: Nick2_ROM 1:Nick2_ROM_RTOE
+    400330: Nick2_ROM 1:Nick2_ROM_RUPA
+    400332: Nick2_ROM 1:Nick2_ROM_Spine
+    400334: Nick2_ROM 1:Nick2_ROM_Spine1
+    400336: Nick2_ROM 1:Nick2_ROM_Spine2
+    400338: Nick2_ROM 1:Nick2_ROM_Spine3
+    400340: Nick2_ROM 1:Nick2_ROM_STRN
+    400342: Nick2_ROM 1:Nick2_ROM_T10
+    400344: Nick2_ROM 1:RootNode
+    400346: Nick2_ROM:Nick2_ROM_C7
+    400348: Nick2_ROM:Nick2_ROM_CLAV
+    400350: Nick2_ROM:Nick2_ROM_Head
+    400352: Nick2_ROM:Nick2_ROM_HeadEnd
+    400354: Nick2_ROM:Nick2_ROM_Hips
+    400356: Nick2_ROM:Nick2_ROM_LANK
+    400358: Nick2_ROM:Nick2_ROM_LBHD
+    400360: Nick2_ROM:Nick2_ROM_LBSH
+    400362: Nick2_ROM:Nick2_ROM_LBWT
+    400364: Nick2_ROM:Nick2_ROM_LeftArm
+    400366: Nick2_ROM:Nick2_ROM_LeftFoot
+    400368: Nick2_ROM:Nick2_ROM_LeftForeArm
+    400370: Nick2_ROM:Nick2_ROM_LeftForeFoot
+    400372: Nick2_ROM:Nick2_ROM_LeftHand
+    400374: Nick2_ROM:Nick2_ROM_LeftHandEnd
+    400376: Nick2_ROM:Nick2_ROM_LeftLeg
+    400378: Nick2_ROM:Nick2_ROM_LeftShoulder
+    400380: Nick2_ROM:Nick2_ROM_LeftThumb
+    400382: Nick2_ROM:Nick2_ROM_LeftThumbEnd
+    400384: Nick2_ROM:Nick2_ROM_LeftToeBase
+    400386: Nick2_ROM:Nick2_ROM_LeftToeBaseEnd
+    400388: Nick2_ROM:Nick2_ROM_LeftUpLeg
+    400390: Nick2_ROM:Nick2_ROM_LELB
+    400392: Nick2_ROM:Nick2_ROM_LFHD
+    400394: Nick2_ROM:Nick2_ROM_LFRM
+    400396: Nick2_ROM:Nick2_ROM_LFSH
+    400398: Nick2_ROM:Nick2_ROM_LFWT
+    400400: Nick2_ROM:Nick2_ROM_LHEL
+    400402: Nick2_ROM:Nick2_ROM_LIEL
+    400404: Nick2_ROM:Nick2_ROM_LIHAND
+    400406: Nick2_ROM:Nick2_ROM_LIWR
+    400408: Nick2_ROM:Nick2_ROM_LKNE
+    400410: Nick2_ROM:Nick2_ROM_LKNI
+    400412: Nick2_ROM:Nick2_ROM_LMT1
+    400414: Nick2_ROM:Nick2_ROM_LMT5
+    400416: Nick2_ROM:Nick2_ROM_LOHAND
+    400418: Nick2_ROM:Nick2_ROM_LOWR
+    400420: Nick2_ROM:Nick2_ROM_LSHN
+    400422: Nick2_ROM:Nick2_ROM_LTHI
+    400424: Nick2_ROM:Nick2_ROM_LTOE
+    400426: Nick2_ROM:Nick2_ROM_LUPA
+    400428: Nick2_ROM:Nick2_ROM_MBWT
+    400430: Nick2_ROM:Nick2_ROM_MFWT
+    400432: Nick2_ROM:Nick2_ROM_Neck
+    400434: Nick2_ROM:Nick2_ROM_Neck1
+    400436: Nick2_ROM:Nick2_ROM_RANK
+    400438: Nick2_ROM:Nick2_ROM_RBHD
+    400440: Nick2_ROM:Nick2_ROM_RBSH
+    400442: Nick2_ROM:Nick2_ROM_RBWT
+    400444: Nick2_ROM:Nick2_ROM_RELB
+    400446: Nick2_ROM:Nick2_ROM_RFHD
+    400448: Nick2_ROM:Nick2_ROM_RFRM
+    400450: Nick2_ROM:Nick2_ROM_RFSH
+    400452: Nick2_ROM:Nick2_ROM_RFWT
+    400454: Nick2_ROM:Nick2_ROM_RHEL
+    400456: Nick2_ROM:Nick2_ROM_RIEL
+    400458: Nick2_ROM:Nick2_ROM_RightArm
+    400460: Nick2_ROM:Nick2_ROM_RightFoot
+    400462: Nick2_ROM:Nick2_ROM_RightForeArm
+    400464: Nick2_ROM:Nick2_ROM_RightForeFoot
+    400466: Nick2_ROM:Nick2_ROM_RightHand
+    400468: Nick2_ROM:Nick2_ROM_RightHandEnd
+    400470: Nick2_ROM:Nick2_ROM_RightLeg
+    400472: Nick2_ROM:Nick2_ROM_RightShoulder
+    400474: Nick2_ROM:Nick2_ROM_RightThumb
+    400476: Nick2_ROM:Nick2_ROM_RightThumbEnd
+    400478: Nick2_ROM:Nick2_ROM_RightToeBase
+    400480: Nick2_ROM:Nick2_ROM_RightToeBaseEnd
+    400482: Nick2_ROM:Nick2_ROM_RightUpLeg
+    400484: Nick2_ROM:Nick2_ROM_RIHAND
+    400486: Nick2_ROM:Nick2_ROM_RIWR
+    400488: Nick2_ROM:Nick2_ROM_RKNE
+    400490: Nick2_ROM:Nick2_ROM_RKNI
+    400492: Nick2_ROM:Nick2_ROM_RMT1
+    400494: Nick2_ROM:Nick2_ROM_RMT5
+    400496: Nick2_ROM:Nick2_ROM_ROHAND
+    400498: Nick2_ROM:Nick2_ROM_ROWR
+    400500: Nick2_ROM:Nick2_ROM_RSHN
+    400502: Nick2_ROM:Nick2_ROM_RTHI
+    400504: Nick2_ROM:Nick2_ROM_RTOE
+    400506: Nick2_ROM:Nick2_ROM_RUPA
+    400508: Nick2_ROM:Nick2_ROM_Spine
+    400510: Nick2_ROM:Nick2_ROM_Spine1
+    400512: Nick2_ROM:Nick2_ROM_Spine2
+    400514: Nick2_ROM:Nick2_ROM_Spine3
+    400516: Nick2_ROM:Nick2_ROM_STRN
+    400518: Nick2_ROM:Nick2_ROM_T10
+    400520: Nick2_ROM:RootNode
+    400522: nurbsCircle1
+    400524: pCube1
+    400526: pCube2
+    400528: polySurface23
+    400530: polySurface24
+    400532: polySurface25
+    400534: polySurface26
+    400536: polySurface27
+    400538: polySurface28
+    400540: polySurface29
+    400542: polySurface30
+    400544: polySurface31
+    400546: polySurface32
+    400548: polySurface33
+    400550: polySurface34
+    400552: polySurface35
+    400554: polySurface36
+    400556: polySurface37
+    400558: polySurface38
+    400560: polySurface39
+    400562: polySurface40
+    400564: polySurface41
+    400566: polySurface42
+    400568: pPipe1
+    400570: skeleton01
+    400572: Vicon 1:Optical
+    400574: Vicon:Optical
+    4300000: polySurface27
+    4300002: polySurface28
+    4300004: polySurface29
+    4300006: polySurface30
+    4300008: polySurface31
+    4300010: polySurface32
+    4300012: polySurface33
+    4300014: polySurface34
+    4300016: polySurface39
+    4300018: polySurface40
+    4300020: polySurface41
+    4300022: polySurface42
+    4300024: polySurface35
+    4300026: polySurface36
+    4300028: polySurface37
+    4300030: polySurface38
+    4300032: Group2
+    4300034: pCube2
+    4300036: pCube1
+    4300038: pPipe1
+    9500000: //RootNode
+    13700000: Group2
+    13700002: pCube1
+    13700004: pCube2
+    13700006: polySurface27
+    13700008: polySurface28
+    13700010: polySurface29
+    13700012: polySurface30
+    13700014: polySurface31
+    13700016: polySurface32
+    13700018: polySurface33
+    13700020: polySurface34
+    13700022: polySurface35
+    13700024: polySurface36
+    13700026: polySurface37
+    13700028: polySurface38
+    13700030: polySurface39
+    13700032: polySurface40
+    13700034: polySurface41
+    13700036: polySurface42
+    13700038: pPipe1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

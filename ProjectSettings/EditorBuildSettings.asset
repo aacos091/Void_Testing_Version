@@ -24,15 +24,15 @@ EditorBuildSettings:
     path: 
     guid: 37e7fe2efebf66545ab4a7ee9b8b9b5f
   - enabled: 1
-    path: Assets/_Scenes/Final_Ship (MovementChanges).unity
-    guid: 7ca20133adcf9824c882efcc0722fd26
-  - enabled: 1
     path: Assets/_Scenes/_Scene_0.unity
     guid: 0d27b0d84ad6ad54da7737e4819b5be9
   - enabled: 1
+    path: Assets/_Scenes/Final_Ship (MovementChanges).unity
+    guid: 7ca20133adcf9824c882efcc0722fd26
+  - enabled: 0
     path: Assets/_Scenes/Final_Ship (ResetButton).unity
     guid: 413a6a2c6d6cae24cae6919f79df1b21
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Jury_Scene.unity
     guid: 637586c22e7a64f47a2cde93968ab0df
   - enabled: 1

@@ -35,10 +35,13 @@ public class LevelManager : MonoBehaviour {
 				Destroy (CanvasClueObject.S.cloneClue);
 		}
 		SceneManager.LoadScene(sceneName);
-        if (sceneName == "Jury_Scene")
+        if (sceneName == "Jury_Scene_Test")
         {
-            Canvas_CaptainsLog.SetActive(true);
-            Canvas_CaptainsLog.SetActive(false);
+            if (Canvas_CaptainsLog != null)
+            {
+                Canvas_CaptainsLog.SetActive(true);
+                Canvas_CaptainsLog.SetActive(false);
+            }
 
         }
 
@@ -46,7 +49,7 @@ public class LevelManager : MonoBehaviour {
 
 	void ActivateUIElements (Scene previousScene, Scene newScene)
 	{
-		if (newScene.name == "Jury_Scene")
+		if (newScene.name == "Jury_Scene_Test")
 		{
 			print ("Scene Changed");
 			print ("I'm serious, it changed");

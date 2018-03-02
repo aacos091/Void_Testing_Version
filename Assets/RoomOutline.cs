@@ -30,11 +30,12 @@ public class RoomOutline : MonoBehaviour {
 
 	private void SelectObjectByMousePos()
 	{
-		
+		int layerMask = 1 << LayerMask.NameToLayer ("RoomGeometry");
+
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
 		RaycastHit hit;
-		if (Physics.Raycast (ray, out hit)) 
+		if (Physics.Raycast (ray, out hit, layerMask)) 
 		{
 			if (hit.collider.tag == "roomGeometry") 
 			{

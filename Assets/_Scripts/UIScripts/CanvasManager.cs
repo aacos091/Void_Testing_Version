@@ -56,7 +56,7 @@ public class CanvasManager : MonoBehaviour
         //dialogueRunner = DialogueRunner.S;
         dialogueRunner = dialogueRunnerObj.GetComponent<DialogueRunner>();
 
-        print("br");
+        //print("br");
 
 
         //TODO: Fix this from being super scripted and falsely hardcoded, need a solution to finding DontDestroyOnLoad objects

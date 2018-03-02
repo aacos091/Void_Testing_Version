@@ -357,7 +357,7 @@ public class Units : MonoBehaviour
             if (this.floor == w.GetComponent<Waypoint>().floor)
             {
                 agent.SetDestination(w.gameObject.transform.position);
-                Debug.Log("I'm walking to " + w.gameObject.name);
+                //Debug.Log("I'm walking to " + w.gameObject.name);
             }
             //If the waypoint is not on the same floor as the unit:
             else if (floor != w.GetComponent<Waypoint>().floor)

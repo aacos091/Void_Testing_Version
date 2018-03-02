@@ -57,17 +57,6 @@ public class ClueHolder : MonoBehaviour
         if (dialogueCanvas == null)
             throw new System.NullReferenceException(this.name + " needs a ref to the dialogue canvas.");
     }
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void OnMouseUp()
     {

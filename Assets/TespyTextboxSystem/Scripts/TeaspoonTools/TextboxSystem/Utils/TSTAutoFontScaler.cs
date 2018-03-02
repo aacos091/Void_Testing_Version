@@ -28,7 +28,7 @@ namespace TeaspoonTools.TextboxSystem.Utils
 			else
 				this.font = font;
 
-            Debug.Log("Scaling font size with font " + font.name);
+            //Debug.Log("Scaling font size with font " + font.name);
 
 			// set up a label prefab as a measuring stick
 			GameObject testLabel = 		CreateTestLabel();
@@ -96,8 +96,8 @@ namespace TeaspoonTools.TextboxSystem.Utils
 
 			}
 
-			Debug.Log ("Adjusted the font size to best fit the textbox with " + passes + " extra passes.");
-			Debug.Log("Using the simpler, better algorithm, the font size chosen for font " + font.name + " is: " + resultSize);
+		//	Debug.Log ("Adjusted the font size to best fit the textbox with " + passes + " extra passes.");
+		//	Debug.Log("Using the simpler, better algorithm, the font size chosen for font " + font.name + " is: " + resultSize);
 
 			// won't need this anymore!
 			MonoBehaviour.Destroy(labelText.gameObject);

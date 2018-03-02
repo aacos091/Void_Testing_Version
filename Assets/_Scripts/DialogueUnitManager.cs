@@ -6,6 +6,7 @@ public class DialogueUnitManager : MonoBehaviour {
     //Singleton of this class
     public static DialogueUnitManager S;
 
+    public bool unitIsTalking;
     public GameObject currentDialogueUnit;
     private Animator currentAnimator;
     private AnimationController currentAnimController;
@@ -28,6 +29,7 @@ public class DialogueUnitManager : MonoBehaviour {
 
     public void StartTalking()
     {
+        unitIsTalking = true;
         StartCoroutine(TurnToCamera());
         currentAnimController.FreezeNavMesh();
         currentAnimator.SetBool("Talking", true);
@@ -35,6 +37,7 @@ public class DialogueUnitManager : MonoBehaviour {
 
     public void StopTalking()
     {
+        unitIsTalking = false;
         currentAnimController.UnFreezeNavMesh();
         currentAnimator.SetBool("Talking", false);
         if (currentCoroutine != null)

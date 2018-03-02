@@ -83,7 +83,8 @@ public class CanvasManager : MonoBehaviour
                 disableCanvas(dialogueCanvas);
                 loadCanvas(HUDCanvas);
 
-                DialogueUnitManager.S.StopTalking();
+                if(DialogueUnitManager.S.unitIsTalking)
+                    DialogueUnitManager.S.StopTalking();
 
             }
             else if (dialogueRunner.isDialogueRunning)
@@ -179,6 +180,7 @@ public class CanvasManager : MonoBehaviour
 
     public void MoveCamAway()
     {
+        Debug.LogWarning("MovingCam!");
         if (mainCam == null)
             mainCam = Camera.main.gameObject;
         lastCamPos = mainCam.transform.position;

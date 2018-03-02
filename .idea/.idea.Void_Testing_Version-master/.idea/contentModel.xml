@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Alpha7\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Void_Testing_Version-master.-1254723463.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alpha7\Documents\Unity Stuff\Void_Testing_Version-master" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_Scripts" t="Include">
+          <e p="Accusation_Scripts" t="Include">
+            <e p="AccusationManager.cs" t="Include" />
+            <e p="ClueEntryButton.cs" t="Include" />
+            <e p="Crew.cs" t="Include" />
+            <e p="JuryTest.cs" t="Include" />
+            <e p="OnAwake.cs" t="Include" />
+            <e p="Vote_Text.cs" t="Include" />
+          </e>
+          <e p="AnimationController.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="Chat.cs" t="Include" />
+          <e p="ClueSystem_Scripts" t="Include">
+            <e p="CanvasClueObject.cs" t="Include" />
+            <e p="ClueItem.cs" t="Include" />
+            <e p="ClueItemInspector.cs" t="Include" />
+            <e p="ClueManager.cs" t="Include" />
+            <e p="Rotater.cs" t="Include" />
+          </e>
+          <e p="Controls_Mobile.cs" t="Include" />
+          <e p="Controls_PC.cs" t="Include" />
+          <e p="Deprecated, Test" t="Include">
+            <e p="LoadScript.cs" t="Include" />
+            <e p="MultiButton.cs" t="Include" />
+            <e p="Test.cs" t="Include" />
+          </e>
+          <e p="DialogueSystem.cs" t="Include" />
+          <e p="DialogueUnitManager.cs" t="Include" />
+          <e p="HiddenClueInspector.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
+          <e p="NPC.cs" t="Include" />
+          <e p="playSound.cs" t="Include" />
+          <e p="ResultsScreen.cs" t="Include" />
+          <e p="TalkButton.cs" t="Include" />
+          <e p="TEMP_FTUE_SceneLoader.cs" t="Include" />
+          <e p="UIScripts" t="Include">
+            <e p="Button_AddClueToAccuse.cs" t="Include" />
+            <e p="Button_ClueList.cs" t="Include" />
+            <e p="CanvasManager.cs" t="Include" />
+            <e p="ClueHolder.cs" t="Include" />
+            <e p="ContentHeightFitter.cs" t="Include" />
+            <e p="CrewManager.cs" t="Include" />
+            <e p="FadingTextBox.cs" t="Include" />
+            <e p="ScrollbarSizer.cs" t="Include" />
+            <e p="TestimonyEntry.cs" t="Include" />
+            <e p="TestimonyManager.cs" t="Include" />
+            <e p="UI_ButtonManager.cs" t="Include" />
+          </e>
+          <e p="Units.cs" t="Include" />
+          <e p="Waypoint.cs" t="Include" />
+        </e>
+        <e p="DrawersAndTextboxStuff" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ClueDatabase.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="FMODMigrationUtil.cs" t="Include" />
+        </e>
+        <e p="EngineRoom.cs" t="Include" />
+        <e p="FMOD" t="Include">
+          <e p="Void" t="Include">
+            <e p="Metadata" t="Include">
+              <e p="Asset" t="Include">
+                <e p="{8b4de691-8a7a-496d-9c25-61a38b5b6b90}.xml" t="Include" />
+                <e p="{fd8c6e75-8832-4bef-9088-0816f2d13a77}.xml" t="Include" />
+              </e>
+              <e p="AudioFile" t="Include">
+                <e p="{000dff43-066a-481b-8575-d1e1c756dc3d}.xml" t="Include" />
+                <e p="{064edaeb-cbff-4de6-9c41-9ff17d70b8d6}.xml" t="Include" />
+                <e p="{076517de-4336-4eb7-a4d5-ef5d53226f61}.xml" t="Include" />
+                <e p="{0ea2af96-4de3-498c-92c2-91777e16e4a8}.xml" t="Include" />
+                <e p="{12660a24-1a1c-4b4f-a31a-f0310234e5ce}.xml" t="Include" />
+                <e p="{1410a7fa-a55a-49ff-805b-055b3d02723e}.xml" t="Include" />
+                <e p="{1426e9db-91f0-4d3a-9c6e-b6bde0a30a29}.xml" t="Include" />
+                <e p="{1bf2b57a-b25d-438a-8ce6-891d27d63dad}.xml" t="Include" />
+                <e p="{25924aec-3cb0-44bc-9607-db65bdd97737}.xml" t="Include" />
+                <e p="{29a4e461-fbe5-4cee-9319-1a207266fd65}.xml" t="Include" />
+                <e p="{2abc475c-c2f3-48a4-a504-890b2c67ef87}.xml" t="Include" />
+                <e p="{2d787a73-5ab4-40e4-bea1-c54b606ae100}.xml" t="Include" />
+                <e p="{2eb5e2ed-5b6f-42c7-b87f-36a3049cc39d}.xml" t="Include" />
+                <e p="{31b256b5-414a-4149-8dde-5ae26d9b5085}.xml" t="Include" />
+                <e p="{34a25f72-6ec6-44e0-ae96-8a02d3ca3a96}.xml" t="Include" />
+                <e p="{482c3b85-a839-40c4-9a64-3a1f5acb93d5}.xml" t="Include" />
+                <e p="{4c59ca81-44a2-4ced-bd7e-44855b4f48e3}.xml" t="Include" />
+                <e p="{51cc7079-336e-46d5-b02e-10d9d8b6469b}.xml" t="Include" />
+                <e p="{52c739b1-c280-4b6d-aa9f-07623deb29b4}.xml" t="Include" />
+                <e p="{64f3503b-032b-4f65-997a-539d8cc0c193}.xml" t="Include" />
+                <e p="{6576b574-5024-4979-85ad-09f6bdbabf45}.xml" t="Include" />
+                <e p="{679d5cf8-722c-44f8-8d09-3509b9f4aa10}.xml" t="Include" />
+                <e p="{6c8ac113-565d-41d8-ac5f-49151b4ee9ae}.xml" t="Include" />
+                <e p="{6d2b92d6-c5be-4c13-96e9-48a7890a7819}.xml" t="Include" />
+                <e p="{72d61000-247f-4020-9de9-18308c24e1cb}.xml" t="Include" />
+                <e p="{7660cfd2-fcf9-4ea0-9adc-c1b1b367589a}.xml" t="Include" />
+                <e p="{7c3858d3-204f-4f39-b4d2-9603ec9988b0}.xml" t="Include" />
+                <e p="{7e6d220b-6eb5-4782-b53c-7a0e72109b57}.xml" t="Include" />
+                <e p="{92e7e4f8-ad40-45a9-a58e-94cf336257f1}.xml" t="Include" />
+                <e p="{994f25d2-6117-4e2d-9436-ddd8534bb82f}.xml" t="Include" />
+                <e p="{9dd58afe-6748-415e-a56e-180def9f51c7}.xml" t="Include" />
+                <e p="{a68a5782-3977-41c9-b847-55d3f69efc40}.xml" t="Include" />
+                <e p="{a6b4faad-de2c-4aaa-86d8-9b0338304d42}.xml" t="Include" />
+                <e p="{a89b0e1c-8214-41b6-a9f5-ee3499f9d883}.xml" t="Include" />
+                <e p="{aa173621-83f6-48ac-866d-553b99a42160}.xml" t="Include" />
+                <e p="{b2701bdb-ab0d-4afe-878b-76354937739d}.xml" t="Include" />
+                <e p="{b32706a0-a9ac-4fb1-b770-6f4279926e31}.xml" t="Include" />
+                <e p="{bda61d52-d0da-4d15-8d87-bc003f8b5a42}.xml" t="Include" />
+                <e p="{bdf26ac1-2010-4f12-a8fe-cdadfea8df18}.xml" t="Include" />
+                <e p="{c1125805-d031-42e7-bd8d-40fbba313c03}.xml" t="Include" />
+                <e p="{c17fccdf-aa60-4576-b555-60fb431bfb00}.xml" t="Include" />
+                <e p="{cab97f8d-fb46-40d0-ba79-efd0b4542035}.xml" t="Include" />
+                <e p="{cc2d56df-a490-4b41-b52c-cb8da3225dec}.xml" t="Include" />
+                <e p="{cec326a9-9a35-4692-9bd1-5dd1c97298d0}.xml" t="Include" />
+                <e p="{d975aead-047f-4174-a057-ec8dc2881846}.xml" t="Include" />
+                <e p="{da9aab94-66b8-4f05-a8a5-d1df97022f78}.xml" t="Include" />
+                <e p="{dc6f6dc0-8973-46a9-9734-7ac0482cdfab}.xml" t="Include" />
+                <e p="{dc86144a-a5d2-4884-8c6f-8bdc3f6cd25f}.xml" t="Include" />
+                <e p="{dd97d9de-31b1-4238-b31f-dc018c65efe7}.xml" t="Include" />
+                <e p="{e3458212-a32e-4547-80a0-7d8d8c3cbf3d}.xml" t="Include" />
+                <e p="{e49c51fb-8d75-4ea9-a4d8-07e58334a169}.xml" t="Include" />
+                <e p="{e654d727-a56c-4210-9fac-b10765e6f7a1}.xml" t="Include" />
+                <e p="{e725ef0a-2157-4a30-adf9-2a53177ed128}.xml" t="Include" />
+                <e p="{ecbddc04-3b0d-4d53-b1ac-8a71d16f1c05}.xml" t="Include" />
+                <e p="{ef368c8e-9368-4c77-a95a-f2b02d40e04f}.xml" t="Include" />
+                <e p="{f4cf7401-d875-4062-a4eb-31aa15f1b632}.xml" t="Include" />
+                <e p="{f7c7280e-69c9-49cf-8e61-0d5a9df70066}.xml" t="Include" />
+              </e>
+              <e p="Bank" t="Include">
+                <e p="{4b5b21d0-893b-46d5-b3bf-a734e9d53fb7}.xml" t="Include" />
+                <e p="{55cab3b1-2e29-46f0-b9c1-66fa04fba35f}.xml" t="Include" />
+              </e>
+              <e p="BankFolder" t="Include">
+                <e p="{96f62089-f570-4d0a-8769-73748ca0f624}.xml" t="Include" />
+                <e p="{f89f3ebe-5f7e-4337-890f-6bc5d764a111}.xml" t="Include" />
+              </e>
+              <e p="EffectPresetFolder" t="Include">
+                <e p="{96d21ce9-6753-4318-bd92-51ccdabf30e7}.xml" t="Include" />
+                <e p="{e1df2f53-4c72-4bcc-a7cd-bc6dde662032}.xml" t="Include" />
+              </e>
+              <e p="EncodingSetting" t="Include">
+                <e p="{2b265dfd-9b9b-4bd8-aa57-d77731f8e945}.xml" t="Include" />
+                <e p="{3fb3a8a7-8f14-4cf0-8353-ffc7634d1890}.xml" t="Include" />
+              </e>
+              <e p="Event" t="Include">
+                <e p="{31e64183-1956-4f3f-940e-1dff0e12dd01}.xml" t="Include" />
+                <e p="{64a488bd-7d0a-40f8-b670-513098bf3404}.xml" t="Include" />
+                <e p="{810a646c-10b4-4e53-ac00-bce60dfb9bf2}.xml" t="Include" />
+                <e p="{87369dcd-ef53-4019-b8d8-b34d7647b131}.xml" t="Include" />
+                <e p="{900b6d51-192b-426c-a693-943d15dd29c5}.xml" t="Include" />
+                <e p="{b8a5f104-1c20-433f-906a-f49ca029e1f6}.xml" t="Include" />
+                <e p="{f59c6559-1916-4bb9-9c68-b900aee0dd21}.xml" t="Include" />
+                <e p="{f76ae27d-d6c1-4962-b36b-bf9b0a0ee538}.xml" t="Include" />
+              </e>
+              <e p="EventFolder" t="Include">
+                <e p="{6c3b0b51-99d3-4d04-8f62-41ff2c6d26bf}.xml" t="Include" />
+                <e p="{80e5871d-9c34-4741-9e83-697d30c317f3}.xml" t="Include" />
+                <e p="{8645d812-cd01-40f6-8c9d-935dd2df17f4}.xml" t="Include" />
+                <e p="{df7e79f8-9c2b-4331-b439-4072a2dddebd}.xml" t="Include" />
+              </e>
+              <e p="Master.xml" t="Include" />
+              <e p="Mixer.xml" t="Include" />
+              <e p="ParameterPreset" t="Include">
+                <e p="{48472ae3-c03f-4df8-8998-6c8bcdf76f80}.xml" t="Include" />
+                <e p="{7e0bac92-27e8-4339-b0f9-9e416ff8ef4d}.xml" t="Include" />
+                <e p="{ddbe7ecb-11b0-45c8-85fd-ac2e6fbb4b4c}.xml" t="Include" />
+              </e>
+              <e p="ParameterPresetFolder" t="Include">
+                <e p="{9802193d-e119-4639-89a9-e17dafc4d398}.xml" t="Include" />
+                <e p="{d162d92e-dacc-4a5e-96f8-c3f04602246c}.xml" t="Include" />
+              </e>
+              <e p="Platform" t="Include">
+                <e p="{10d33c76-4d33-44a4-9125-f26cc309c00f}.xml" t="Include" />
+                <e p="{2cf1f3ef-1d66-4caf-878f-1f0d9002bebc}.xml" t="Include" />
+              </e>
+              <e p="Return" t="Include">
+                <e p="{7ddb7c06-313e-4ed6-91f8-6a4cec3b88a2}.xml" t="Include" />
+                <e p="{fecf26a3-5034-4f0a-a94b-ac4799526edd}.xml" t="Include" />
+              </e>
+              <e p="SnapshotGroup" t="Include">
+                <e p="{3a702e00-51a9-472e-801d-a11694f634e5}.xml" t="Include" />
+                <e p="{6aa7e324-9e00-424b-b921-694abb045f73}.xml" t="Include" />
+              </e>
+              <e p="Tags.xml" t="Include" />
+              <e p="Workspace.xml" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="GoogleVR" t="Include">
+          <e p="Editor" t="Include">
+            <e p="FmodGvrAudioRoomEditor.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Audio" t="Include">
+              <e p="FmodGvrAudio.cs" t="Include" />
+              <e p="FmodGvrAudioRoom.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="music_Collider.cs" t="Include" />
+        <e p="MyScripts" t="Include">
+          <e p="PanelControl.cs" t="Include" />
+        </e>
+        <e p="OutlineEffect" t="Include">
+          <e p="LinkedSet.cs" t="Include" />
+          <e p="Outline.cs" t="Include" />
+          <e p="OutlineEffect.cs" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="OutlineBufferShader.shader" t="Include" />
+            <e p="OutlineShader.shader" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="FMOD" t="Include">
+              <e p="BankRefDrawer.cs" t="Include" />
+              <e p="CreateEventPopup.cs" t="Include" />
+              <e p="EditorBankRef.cs" t="Include" />
+              <e p="EditorEventRef.cs" t="Include" />
+              <e p="EditorParamRef.cs" t="Include" />
+              <e p="EditorUtils.cs" t="Include" />
+              <e p="EventBrowser.cs" t="Include" />
+              <e p="EventCache.cs" t="Include" />
+              <e p="EventManager.cs" t="Include" />
+              <e p="EventRefDrawer.cs" t="Include" />
+              <e p="FindAndReplace.cs" t="Include" />
+              <e p="LogViewer.cs" t="Include" />
+              <e p="MigrationUtil.cs" t="Include" />
+              <e p="ParamRefDrawer.cs" t="Include" />
+              <e p="SettingsEditor.cs" t="Include" />
+              <e p="StudioBankLoaderEditor.cs" t="Include" />
+              <e p="StudioEventEmitterEditor.cs" t="Include" />
+              <e p="StudioEventEmitterGizmoDrawer.cs" t="Include" />
+              <e p="StudioListenerEditor.cs" t="Include" />
+              <e p="StudioParameterTriggerEditor.cs" t="Include" />
+            </e>
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+          <e p="FMOD" t="Include">
+            <e p="BankRefAttribute.cs" t="Include" />
+            <e p="EventRefAttribute.cs" t="Include" />
+            <e p="FMOD_Listener.cs" t="Include" />
+            <e p="FMOD_StudioEventEmitter.cs" t="Include" />
+            <e p="FMODAsset.cs" t="Include" />
+            <e p="OneshotList.cs" t="Include" />
+            <e p="ParamRef.cs" t="Include" />
+            <e p="RuntimeManager.cs" t="Include" />
+            <e p="RuntimeUtils.cs" t="Include" />
+            <e p="Settings.cs" t="Include" />
+            <e p="StudioBankLoader.cs" t="Include" />
+            <e p="StudioEventEmitter.cs" t="Include" />
+            <e p="StudioListener.cs" t="Include" />
+            <e p="StudioParameterTrigger.cs" t="Include" />
+            <e p="Wrapper" t="Include">
+              <e p="fmod.cs" t="Include" />
+              <e p="fmod_dsp.cs" t="Include" />
+              <e p="fmod_errors.cs" t="Include" />
+              <e p="fmod_studio.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ResonanceAudio" t="Include">
+          <e p="Editor" t="Include">
+            <e p="FmodResonanceAudioRoomEditor.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="FmodResonanceAudio.cs" t="Include" />
+            <e p="FmodResonanceAudioRoom.cs" t="Include" />
+          </e>
+        </e>
+        <e p="RoomOutline.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Anim_Test.cs" t="Include" />
+          <e p="CrewMember.cs" t="Include" />
+          <e p="DialogueUITest.cs" t="Include" />
+          <e p="DisplayTogglableUI.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="NewsArticle.cs" t="Include" />
+          <e p="NewsManager.cs" t="Include" />
+          <e p="ProceduralEngine.cs" t="Include" />
+          <e p="SpawnPoint.cs" t="Include" />
+          <e p="StringExtensions.cs" t="Include" />
+          <e p="TestLerp.cs" t="Include" />
+          <e p="VerbalClueEntry.cs" t="Include" />
+          <e p="VerbalClueManager.cs" t="Include" />
+          <e p="YarnUtils.cs" t="Include" />
+        </e>
+        <e p="TespyTextboxSystem" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="AnchorTester.cs" t="Include" />
+            <e p="Extensions" t="Include">
+              <e p="FloatExtensions.cs" t="Include" />
+              <e p="ListExtensions.cs" t="Include" />
+              <e p="ScreenSpaceHelper.cs" t="Include" />
+              <e p="StringExtensions.cs" t="Include" />
+              <e p="VectorExtensions.cs" t="Include" />
+            </e>
+            <e p="FrameRateDisplayer.cs" t="Include" />
+            <e p="Quit.cs" t="Include" />
+            <e p="TeaspoonTools" t="Include">
+              <e p="TextboxSystem" t="Include">
+                <e p="TSTTextbox.cs" t="Include" />
+                <e p="TSTTextboxBox.cs" t="Include" />
+                <e p="TSTTextboxComponent.cs" t="Include" />
+                <e p="TSTTextboxController.cs" t="Include" />
+                <e p="TSTTextboxNametag.cs" t="Include" />
+                <e p="TSTTextboxPortrait.cs" t="Include" />
+                <e p="TSTTextboxPrefabs.cs" t="Include" />
+                <e p="TSTTextboxTester.cs" t="Include" />
+                <e p="TSTTextboxText.cs" t="Include" />
+                <e p="TSTTextSpeed.cs" t="Include" />
+                <e p="Utils" t="Include">
+                  <e p="TSTAutoFontScaler.cs" t="Include" />
+                  <e p="TSTTextAdjustmentHelper.cs" t="Include" />
+                  <e p="TSTTextboxAnchor.cs" t="Include" />
+                  <e p="TSTTextDisplayer.cs" t="Include" />
+                  <e p="TSTTextSettings.cs" t="Include" />
+                  <e p="TSTTextSpeedSettings.cs" t="Include" />
+                  <e p="TSTTextWrapper.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Utils" t="Include">
+                <e p="Extensions" t="Include">
+                  <e p="TSTIColorExtensions.cs" t="Include" />
+                  <e p="TSTIContainerExtensions.cs" t="Include" />
+                  <e p="TSTImageExtensions.cs" t="Include" />
+                  <e p="TSTRectTransformExtensions.cs" t="Include" />
+                  <e p="TSTTextAnchorExtensions.cs" t="Include" />
+                  <e p="TSTTextboxAnchorExtensions.cs" t="Include" />
+                  <e p="TSTTextExtensions.cs" t="Include" />
+                  <e p="TSTTransformExtensions.cs" t="Include" />
+                </e>
+                <e p="TSTIHasRectTransform.cs" t="Include" />
+                <e p="TSTRefVal.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="UI Aseets" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="Jupiter" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Materials" t="Include">
+            <e p="UI-Default-No-Alpha.shader" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="ActiveStateToggler.cs" t="Include" />
+            <e p="ApplicationManager.cs" t="Include" />
+            <e p="ChangeColor.cs" t="Include" />
+            <e p="DragMe.cs" t="Include" />
+            <e p="DragPanel.cs" t="Include" />
+            <e p="DropMe.cs" t="Include" />
+            <e p="PanelManager.cs" t="Include" />
+            <e p="ResizePanel.cs" t="Include" />
+            <e p="ScrollDetailTexture.cs" t="Include" />
+            <e p="ShowSliderValue.cs" t="Include" />
+            <e p="TiltWindow.cs" t="Include" />
+          </e>
+          <e p="TextMesh Pro" t="Include">
+            <e p="Examples &amp; Extras" t="Include">
+              <e p="Fonts" t="Include">
+                <e p="Anton OFL.txt" t="Include" />
+                <e p="Bangers - OFL.txt" t="Include" />
+                <e p="LiberationSans - OFL.txt" t="Include" />
+                <e p="NotoSans - License.txt" t="Include" />
+                <e p="Oswald Bold - OFL.txt" t="Include" />
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Benchmark01.cs" t="Include" />
+                <e p="Benchmark01_UGUI.cs" t="Include" />
+                <e p="Benchmark02.cs" t="Include" />
+                <e p="Benchmark03.cs" t="Include" />
+                <e p="Benchmark04.cs" t="Include" />
+                <e p="CameraController.cs" t="Include" />
+                <e p="ChatController.cs" t="Include" />
+                <e p="EnvMapAnimator.cs" t="Include" />
+                <e p="ObjectSpin.cs" t="Include" />
+                <e p="ShaderPropAnimator.cs" t="Include" />
+                <e p="SimpleScript.cs" t="Include" />
+                <e p="SkewTextExample.cs" t="Include" />
+                <e p="TeleType.cs" t="Include" />
+                <e p="TextConsoleSimulator.cs" t="Include" />
+                <e p="TextMeshProFloatingText.cs" t="Include" />
+                <e p="TextMeshSpawner.cs" t="Include" />
+                <e p="TMP_DigitValidator.cs" t="Include" />
+                <e p="TMP_ExampleScript_01.cs" t="Include" />
+                <e p="TMP_FrameRateCounter.cs" t="Include" />
+                <e p="TMP_TextEventCheck.cs" t="Include" />
+                <e p="TMP_TextEventHandler.cs" t="Include" />
+                <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+                <e p="TMP_TextSelector_A.cs" t="Include" />
+                <e p="TMP_TextSelector_B.cs" t="Include" />
+                <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+                <e p="TMPro_InstructionOverlay.cs" t="Include" />
+                <e p="VertexColorCycler.cs" t="Include" />
+                <e p="VertexJitter.cs" t="Include" />
+                <e p="VertexShakeA.cs" t="Include" />
+                <e p="VertexShakeB.cs" t="Include" />
+                <e p="VertexZoom.cs" t="Include" />
+                <e p="WarpTextExample.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Textures and Sprites" t="Include">
+            <e p="SF UI" t="Include">
+              <e p="Background" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="YarnSpinner" t="Include">
+          <e p="Code" t="Include">
+            <e p="Analyser.cs" t="Include" />
+            <e p="AntlrCompiler.cs" t="Include" />
+            <e p="Compiler.cs" t="Include" />
+            <e p="CustomYarnFunctions.cs" t="Include" />
+            <e p="Dialogue.cs" t="Include" />
+            <e p="DialogueRunner.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="YarnSpinnerEditorWindow.cs" t="Include" />
+              <e p="YarnSpinnerTests.cs" t="Include" />
+            </e>
+            <e p="ErrorListener.cs" t="Include" />
+            <e p="Lexer.cs" t="Include" />
+            <e p="Library.cs" t="Include" />
+            <e p="Loader.cs" t="Include" />
+            <e p="OptionSetController.cs" t="Include" />
+            <e p="Parser.cs" t="Include" />
+            <e p="Program.cs" t="Include" />
+            <e p="Value.cs" t="Include" />
+            <e p="VirtualMachine.cs" t="Include" />
+            <e p="YarnSpinnerLexer.cs" t="Include" />
+            <e p="YarnSpinnerParser.cs" t="Include" />
+            <e p="YarnSpinnerParserBaseListener.cs" t="Include" />
+            <e p="YarnSpinnerParserBaseVisitor.cs" t="Include" />
+            <e p="YarnSpinnerParserListener.cs" t="Include" />
+            <e p="YarnSpinnerParserVisitor.cs" t="Include" />
+          </e>
+          <e p="Examples" t="Include">
+            <e p="DemoAssets" t="Include">
+              <e p="SimpleExampleScript.yarn.txt" t="Include" />
+              <e p="Space" t="Include">
+                <e p="Sally.yarn.txt" t="Include" />
+                <e p="Ship.yarn.txt" t="Include" />
+              </e>
+            </e>
+            <e p="DemoScripts" t="Include">
+              <e p="CameraFollow.cs" t="Include" />
+              <e p="ExampleDialogueUI.cs" t="Include" />
+              <e p="ExampleVariableStorage.cs" t="Include" />
+              <e p="MobileOnly.cs" t="Include" />
+              <e p="NPC.cs" t="Include" />
+              <e p="PlayerCharacter.cs" t="Include" />
+              <e p="SpriteSwitcher.cs" t="Include" />
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="Void_Testing_Version-master.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

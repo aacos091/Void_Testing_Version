@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6d2b92d6-c5be-4c13-96e9-48a7890a7819}">
+        <property name="assetPath">
+            <value>Medical Bay Beeps.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>5.2333333333333334</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8b4de691-8a7a-496d-9c25-61a38b5b6b90}</destination>
+        </relationship>
+    </object>
+</objects>

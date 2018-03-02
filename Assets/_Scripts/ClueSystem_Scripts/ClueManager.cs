@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,18 +38,20 @@ public class ClueManager : MonoBehaviour
     public FMOD.Studio.ParameterInstance Clues;
     
     public FMOD.Studio.ParameterInstance Loyalty;
+
+    private Scene scene;
+
+    public String scene_Name;
     
     //[SerializeField]
     //private bool touchControlled;
 
     void Awake()
     {
-
+        
         music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
 
         music.start();
-
-        music.setVolume(-10);
         
         music.getParameter("Clue", out Clues);
 
@@ -246,6 +249,14 @@ public class ClueManager : MonoBehaviour
                 print("Info: " + c.clueName);
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Jury_Scene_Test")
+        {
+            
+            music.setVolume(-10);
+            
+        }
+        
     }
 
 }

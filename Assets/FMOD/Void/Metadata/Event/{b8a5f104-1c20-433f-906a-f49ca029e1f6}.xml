@@ -60,7 +60,11 @@
             <destination>{fb46f6b2-b104-41f1-b0f6-22ce04277f11}</destination>
         </relationship>
     </object>
-    <object class="EventAutomatableProperties" id="{9fb4c032-1327-4c69-a1b9-bf50c0807d0b}"/>
+    <object class="EventAutomatableProperties" id="{9fb4c032-1327-4c69-a1b9-bf50c0807d0b}">
+        <property name="maxVoices">
+            <value>1</value>
+        </property>
+    </object>
     <object class="MarkerTrack" id="{095d8882-7326-4f0e-8900-6518c7fa7872}"/>
     <object class="GroupTrack" id="{aeca1e5b-29d8-46a3-8137-cc4bb91fa943}">
         <relationship name="modules">
@@ -236,10 +240,13 @@
             <value>5.5</value>
         </property>
         <property name="start">
-            <value>10.332000000000001</value>
+            <value>17</value>
         </property>
         <property name="length">
-            <value>14.890666666666668</value>
+            <value>8.2226666666666688</value>
+        </property>
+        <property name="timelockedOffset">
+            <value>6.6679999999999993</value>
         </property>
         <property name="volume">
             <value>1</value>

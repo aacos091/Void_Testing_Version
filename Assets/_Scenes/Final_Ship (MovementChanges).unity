@@ -3245,8 +3245,6 @@ GameObject:
   - component: {fileID: 128355024}
   - component: {fileID: 128355023}
   - component: {fileID: 128355022}
-  - component: {fileID: 128355027}
-  - component: {fileID: 128355026}
   m_Layer: 10
   m_Name: default
   m_TagString: roomGeometry
@@ -3338,40 +3336,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128355020}
   m_Mesh: {fileID: 4300000, guid: 7010f2b1f68766e4dbe9aefda8a39aa3, type: 3}
---- !u!114 &128355026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128355020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  CollisionTag: MainCamera
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
---- !u!65 &128355027
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128355020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1800, y: 66.4089, z: 140.3}
-  m_Center: {x: 4.3923693, y: 6.423481, z: 291.53}
 --- !u!1 &136031143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,8 +3895,8 @@ GameObject:
   - component: {fileID: 159372333}
   - component: {fileID: 159372332}
   m_Layer: 2
-  m_Name: Footsteps
-  m_TagString: Untagged
+  m_Name: Footsteps_M
+  m_TagString: SFXPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3971,7 +3935,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 6.13, z: 2.56}
+  m_Size: {x: 1000, y: 6.13, z: 9.58}
   m_Center: {x: 0, y: 2.94, z: 0}
 --- !u!114 &159372334
 MonoBehaviour:
@@ -3985,8 +3949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Footsteps/Footsteps
-  PlayEvent: 3
-  StopEvent: 4
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: MainCamera
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4225,6 +4189,30 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 179986174}
+--- !u!84 &186441894
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 2560
+  m_Height: 1440
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &188790996
 GameObject:
   m_ObjectHideFlags: 0
@@ -10475,8 +10463,8 @@ GameObject:
   - component: {fileID: 322847434}
   - component: {fileID: 322847433}
   m_Layer: 2
-  m_Name: Footsteps
-  m_TagString: Untagged
+  m_Name: Footsteps_F
+  m_TagString: SFXPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10515,7 +10503,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 6.13, z: 2.56}
+  m_Size: {x: 1000, y: 6.13, z: 9.58}
   m_Center: {x: 0, y: 2.94, z: 0}
 --- !u!114 &322847435
 MonoBehaviour:
@@ -10529,8 +10517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Footsteps/Footsteps
-  PlayEvent: 3
-  StopEvent: 4
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: MainCamera
   AllowFadeout: 1
   TriggerOnce: 0
@@ -21613,8 +21601,8 @@ GameObject:
   - component: {fileID: 686460250}
   - component: {fileID: 686460252}
   m_Layer: 2
-  m_Name: Footsteps
-  m_TagString: Untagged
+  m_Name: Footsteps_E
+  m_TagString: SFXPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21642,7 +21630,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 6.13, z: 2.56}
+  m_Size: {x: 1000, y: 6.13, z: 9.58}
   m_Center: {x: 0, y: 2.94, z: 0}
 --- !u!114 &686460251
 MonoBehaviour:
@@ -21656,8 +21644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Footsteps/Footsteps
-  PlayEvent: 3
-  StopEvent: 4
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: MainCamera
   AllowFadeout: 1
   TriggerOnce: 0
@@ -25266,6 +25254,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &794401923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 794401924}
+  - component: {fileID: 794401926}
+  - component: {fileID: 794401925}
+  m_Layer: 0
+  m_Name: FMOD_Bridge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &794401924
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794401923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 102.7, z: 213.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1475057759}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &794401925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794401923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1142.46, y: 55.98, z: 219.67}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &794401926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 794401923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambiance/Bridge
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: MainCamera
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &799759862
 GameObject:
   m_ObjectHideFlags: 0
@@ -26449,6 +26501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueEntry: {fileID: 0}
   yarnVarRefObj: {fileID: 1350394363}
+  scene_Name: 
 --- !u!1 &856538415
 GameObject:
   m_ObjectHideFlags: 0
@@ -29162,8 +29215,6 @@ GameObject:
   - component: {fileID: 973734021}
   - component: {fileID: 973734020}
   - component: {fileID: 973734019}
-  - component: {fileID: 973734024}
-  - component: {fileID: 973734023}
   m_Layer: 10
   m_Name: default
   m_TagString: roomGeometry
@@ -29255,40 +29306,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 973734017}
   m_Mesh: {fileID: 4300000, guid: c8d8a80ba49b11a43a69e899356df675, type: 3}
---- !u!114 &973734023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973734017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  CollisionTag: MainCamera
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
---- !u!65 &973734024
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973734017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1800, y: 83.21251, z: 171.35889}
-  m_Center: {x: -2.0247293, y: 88.85012, z: -141.25342}
 --- !u!1 &976272979
 GameObject:
   m_ObjectHideFlags: 0
@@ -31731,7 +31748,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 1453093466}
+  m_TargetTexture: {fileID: 1328786461}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -35528,8 +35545,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1153819432}
-  m_Layer: 0
-  m_Name: GameObject (1)
+  - component: {fileID: 1153819434}
+  - component: {fileID: 1153819433}
+  m_Layer: 2
+  m_Name: FMOD_Med
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35542,12 +35561,46 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1153819431}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -49.330486, y: 162.8025, z: 255.75851}
+  m_LocalPosition: {x: 0, y: 74, z: -163}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 92489398}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153819433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153819431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambiance/Medical Bay
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: MainCamera
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!65 &1153819434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153819431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.93, y: 5.07, z: 103.37}
+  m_Center: {x: 1.13, y: 0.67, z: 0}
 --- !u!1 &1155805898
 GameObject:
   m_ObjectHideFlags: 0
@@ -40566,6 +40619,70 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305052715}
+--- !u!1 &1305298946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1305298947}
+  - component: {fileID: 1305298949}
+  - component: {fileID: 1305298948}
+  m_Layer: 2
+  m_Name: FMOD_Kitchen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305298947
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305298946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 290.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1908777984}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305298948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305298946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Ambiance/Kitchen
+  PlayEvent: 3
+  StopEvent: 4
+  CollisionTag: MainCamera
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!65 &1305298949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305298946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1864.4, y: 71.14, z: 144.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1317078397
 GameObject:
   m_ObjectHideFlags: 0
@@ -40847,6 +40964,30 @@ Transform:
   m_Father: {fileID: 1645476150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1328786461
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 2560
+  m_Height: 1440
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapMode: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1329131378
 GameObject:
   m_ObjectHideFlags: 0
@@ -44266,30 +44407,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1441052071}
---- !u!84 &1453093466
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1453893682
 GameObject:
   m_ObjectHideFlags: 0
@@ -44497,8 +44614,6 @@ GameObject:
   - component: {fileID: 1469094256}
   - component: {fileID: 1469094255}
   - component: {fileID: 1469094254}
-  - component: {fileID: 1469094259}
-  - component: {fileID: 1469094258}
   m_Layer: 10
   m_Name: default
   m_TagString: roomGeometry
@@ -44590,40 +44705,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469094252}
   m_Mesh: {fileID: 4300000, guid: 697115bcf7a673d459841a7d8cc96618, type: 3}
---- !u!114 &1469094258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469094252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  CollisionTag: MainCamera
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
---- !u!65 &1469094259
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469094252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1800, y: 98.3, z: 230.9}
-  m_Center: {x: -24.153563, y: 87.97052, z: 213.67424}
 --- !u!1 &1474003001
 GameObject:
   m_ObjectHideFlags: 0
@@ -44721,6 +44802,7 @@ Transform:
   - {fileID: 648649316}
   - {fileID: 253311575}
   - {fileID: 1158968374}
+  - {fileID: 794401924}
   m_Father: {fileID: 794367180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47184,8 +47266,8 @@ MonoBehaviour:
   sourceCamera: {fileID: 1534458386}
   outlineCamera: {fileID: 1048117444}
   outlineShaderMaterial: {fileID: 0}
-  renderTexture: {fileID: 1453093466}
-  extraRenderTexture: {fileID: 1873069001}
+  renderTexture: {fileID: 1328786461}
+  extraRenderTexture: {fileID: 186441894}
 --- !u!114 &1534458389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55124,8 +55206,8 @@ GameObject:
   - component: {fileID: 1835668357}
   - component: {fileID: 1835668356}
   m_Layer: 2
-  m_Name: Footsteps
-  m_TagString: Untagged
+  m_Name: Footsteps_P
+  m_TagString: SFXPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55164,7 +55246,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1000, y: 6.13, z: 2.56}
+  m_Size: {x: 1000, y: 6.13, z: 9.58}
   m_Center: {x: 0, y: 2.94, z: 0}
 --- !u!114 &1835668358
 MonoBehaviour:
@@ -55178,8 +55260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: event:/Footsteps/Footsteps
-  PlayEvent: 3
-  StopEvent: 4
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: MainCamera
   AllowFadeout: 1
   TriggerOnce: 0
@@ -56316,30 +56398,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 7b4e43d5a4cf9e840a8000d13a76c48a, type: 3}
   m_PrefabInternal: {fileID: 1866363524}
---- !u!84 &1873069001
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1875334944
 GameObject:
   m_ObjectHideFlags: 0
@@ -57412,6 +57470,7 @@ Transform:
   - {fileID: 1932761392}
   - {fileID: 941194293}
   - {fileID: 1592103550}
+  - {fileID: 1305298947}
   m_Father: {fileID: 794367180}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{f4cf7401-d875-4062-a4eb-31aa15f1b632}">
+        <property name="assetPath">
+            <value>Cooking-Sizzling.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>27.904</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8b4de691-8a7a-496d-9c25-61a38b5b6b90}</destination>
+        </relationship>
+    </object>
+</objects>

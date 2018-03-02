@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{7e0bac92-27e8-4339-b0f9-9e416ff8ef4d}">
+        <property name="name">
+            <value>Cook in Kitchen</value>
+        </property>
+        <relationship name="folder">
+            <destination>{9802193d-e119-4639-89a9-e17dafc4d398}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{9e153ae8-0243-4cca-9139-205196121361}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{9e153ae8-0243-4cca-9139-205196121361}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

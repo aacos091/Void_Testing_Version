@@ -17,6 +17,7 @@ public class HiddenClueInspector : MonoBehaviour
     [SerializeField] DialogueUITest dialogueUI;
     [SerializeField] Canvas dialogueCanvas;
 
+    public bool viewingHiddenClue;
 
     [SerializeField] TextboxController textboxPrefab;
 
@@ -61,6 +62,8 @@ public class HiddenClueInspector : MonoBehaviour
     [YarnCommand("InspectObject")]
     public void InspectObject()
     {
+        viewingHiddenClue = true;
+
         HandleDisplayingTextbox();
         // ^ This will pop up a message about whether there's a clue in the object. 
         // And if there is, the clue will be shown in the inspection window.

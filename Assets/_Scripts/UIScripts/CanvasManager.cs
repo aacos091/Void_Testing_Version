@@ -85,7 +85,8 @@ public class CanvasManager : MonoBehaviour
 
 
                 disableCanvas(dialogueCanvas);
-                loadCanvas(HUDCanvas);
+                if (!HiddenClueInspector.S.viewingHiddenClue)
+                    loadCanvas(HUDCanvas);
 
                 if (DialogueUnitManager.S.unitIsTalking)
                     DialogueUnitManager.S.StopTalking();
@@ -130,6 +131,10 @@ public class CanvasManager : MonoBehaviour
 		currentCanvas.SetActive(!activated);
         */
 
+        //Make sure viewingHiddenClue is reset as soon as player exits a ClueViewer call specifically made from HiddenClueInspector
+        if (currentCanvas!= dialogueCanvas)
+            HiddenClueInspector.S.viewingHiddenClue = false;
+
         currentCanvas.SetActive(false);
 
     }
@@ -163,19 +168,20 @@ public class CanvasManager : MonoBehaviour
         {
             if (!GameController.S.gamePaused)
                 GameController.S.RequestGamePause();
-
+            /*
 			if (GameObject.Find("First_Mate")) 
 			{
-
 				return;
-
 			} else 
+            */
 			{
 
 				Camera.main.GetComponent<CameraController> ().enabled = false;
 				Camera.main.GetComponent<Controls_Mobile> ().enabled = false;
 				Camera.main.GetComponent<Controls_PC> ().enabled = false;
-				if (targetCanvas != dialogueCanvas) {
+
+                if (targetCanvas != dialogueCanvas) 
+                {
 					MoveCamAway ();
 				}
 
@@ -208,7 +214,6 @@ public class CanvasManager : MonoBehaviour
 
     public void MoveCamAway()
     {
-        Debug.LogWarning("MovingCam!");
         if (mainCam == null)
             mainCam = Camera.main.gameObject;
         lastCamPos = mainCam.transform.position;
@@ -217,6 +222,8 @@ public class CanvasManager : MonoBehaviour
     }
     public void MoveCamBack()
     {
+        Debug.LogWarning("Moving Cam Back.");
+
         if (mainCam == null)
             mainCam = Camera.main.gameObject;
         mainCam.transform.position = lastCamPos;

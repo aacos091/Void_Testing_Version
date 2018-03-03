@@ -62,6 +62,7 @@ public class ClueHolder : MonoBehaviour
     {
         if (respondToInput)
         {
+
             // Run the node, let the HiddenClueInspector handle the rest
             HiddenClueInspector.S.clueToInspect = clue;
             dialogueRunner.StartDialogue(nodeToRun);

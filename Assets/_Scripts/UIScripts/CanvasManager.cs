@@ -71,6 +71,33 @@ public class CanvasManager : MonoBehaviour
         //TODO: TEMP!!! CURRENTLY THE ONLY CALLED WAY TO CALL THINGS ON DIALOGUE FINISHING ITS RUN! MOVE THIS AND/OR MAKE MORE GENERIC!
         //TEMP: RESETS UNITS WHEN DONE TALKING!
         //TODO: Sorta TEMP: reopens HUD when dialogue is done
+
+        if (dialogueCanvas != null)
+        {
+            bool needDialogueCanvas = dialogueRunner.isDialogueRunning ||
+                                        DialogueUITest.S.needsDialogueCanvas.Count > 0;
+
+            if (dialogueCanvas.activeSelf && !needDialogueCanvas)
+            {
+                if (mainCam == null)
+                    mainCam = Camera.main.gameObject;
+                lastCamPos = mainCam.transform.position;
+
+
+                disableCanvas(dialogueCanvas);
+                loadCanvas(HUDCanvas);
+
+                if (DialogueUnitManager.S.unitIsTalking)
+                    DialogueUnitManager.S.StopTalking();
+            }
+            else if (needDialogueCanvas)
+            {
+                // For when dialogue is running through the runner, or some other module needs 
+                // to display a textbox.
+                dialogueCanvas.SetActive(true);
+            }
+        }
+        /*
         if (dialogueCanvas != null)
         {
             if (dialogueCanvas.activeSelf && !dialogueRunner.isDialogueRunning)
@@ -90,6 +117,7 @@ public class CanvasManager : MonoBehaviour
             else if (dialogueRunner.isDialogueRunning)
                 dialogueCanvas.SetActive(true);
         }
+        */
     }
 
     // This function sets the activated bool variable to true if

@@ -12,8 +12,9 @@ using TeaspoonTools.Utils;
 
 public class DialogueUITest : DialogueUIBehaviour 
 {
+    public static DialogueUITest S;
 
-	[HideInInspector]
+    [HideInInspector]
 	public UnityEvent StartedDialogue 		= 		new UnityEvent();
 	[HideInInspector]
 	public UnityEvent EndedDialogue 		= 		new UnityEvent();
@@ -47,7 +48,12 @@ public class DialogueUITest : DialogueUIBehaviour
 
     void Awake()
 	{
-		dialogueRunner = 		FindObjectOfType<DialogueRunner> ();
+        if (S == null)
+            S = this;
+        else
+            Destroy(this.gameObject);
+
+        dialogueRunner = 		FindObjectOfType<DialogueRunner> ();
 
 		StartedDialogue = 		new UnityEvent ();
 		EndedDialogue = 		new UnityEvent ();

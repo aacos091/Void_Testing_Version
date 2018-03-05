@@ -101,6 +101,23 @@ public class ClueItem : MonoBehaviour {
     [SerializeField]
     private string                      location;
 
+    private float                       timeToDelete;
+    private float                       lifeTime = 0.15f;
+    private float                       startTime;
+
+    void Start ()
+    {
+        startTime = Time.time;
+        timeToDelete = startTime + lifeTime;
+    }
+
+    void Update ()
+    {
+        // Destroy the rigidbody after enough time has passed
+        // The rigidbody ensures that the object falls to the ground.
+        if (Time.time > timeToDelete)
+            Destroy (gameObject.GetComponent<Rigidbody>());
+    }
 
     /*
 	 * Properties to access those clue details.

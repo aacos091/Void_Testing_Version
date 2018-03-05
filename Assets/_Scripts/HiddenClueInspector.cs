@@ -128,6 +128,8 @@ public class HiddenClueInspector : MonoBehaviour
 
         if (clueToInspect != null)
             tbController.DoneDisplayingText.AddListener(ShowClueInInspectionWindow);
+        else
+            viewingHiddenClue = false;
     }
 
     void ShowClueInInspectionWindow()

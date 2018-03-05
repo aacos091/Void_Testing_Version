@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114570093992826300}
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   EditorEvents:
   - {fileID: 114471955591749034}
   - {fileID: 114731878153883126}
@@ -23,9 +23,9 @@ MonoBehaviour:
   - {fileID: 114942547741122636}
   - {fileID: 114751432076630478}
   - {fileID: 114607968764287836}
-  MasterBankRef: {fileID: 114240303593398272}
+  MasterBankRef: {fileID: 114979570952137284}
   StringsBankRef: {fileID: 114570093992826300}
-  stringsBankWriteTime: 636557877357972499
+  stringsBankWriteTime: 636558505634916028
   cacheVersion: 2
 --- !u!114 &114023726564993814
 MonoBehaviour:
@@ -236,7 +236,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Ship Sounds
   guid: 7de26af7c1d66249b36bbf9b0a0ee538
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Engine Room
   guid: 04f1a5b8201c3f43906af49ca029e1f6
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -418,6 +418,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 57687
 --- !u!114 &114502072995656478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loyalty
+  Min: 0
+  Max: 10
+  Default: 0
+--- !u!114 &114531394748899494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -446,13 +461,13 @@ MonoBehaviour:
   Path: event:/Music
   guid: 8341e63156193f4f940e1dff0e12dd01
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114466217146535162}
-  - {fileID: 114738623184121694}
+  - {fileID: 114531394748899494}
+  - {fileID: 114734629182763060}
   MinDistance: 0
   MaxDistance: 0
   Length: 91428
@@ -536,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Void\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636557877357972499
+  lastModified: 636558505634916028
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -609,7 +624,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Bridge
   guid: cd9d368753ef1940b8d8b34d7647b131
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -680,7 +695,7 @@ MonoBehaviour:
   Path: event:/Footsteps/Jorgi Footstep
   guid: 6c640a81b410534eac00bce60dfb9bf2
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -702,7 +717,7 @@ MonoBehaviour:
   Path: event:/Footsteps/Footsteps
   guid: 59659cf51619b94b9c68b900aee0dd21
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -710,6 +725,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 700
+--- !u!114 &114734629182763060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Clue
+  Min: 0
+  Max: 5
+  Default: 0
 --- !u!114 &114738623184121694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +799,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Medical Bay
   guid: 516d0b902b196c42a693943d15dd29c5
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -919,7 +949,7 @@ MonoBehaviour:
   Path: event:/Ambiance/Kitchen
   guid: bd88a4640a7df840b670513098bf3404
   Banks:
-  - {fileID: 114240303593398272}
+  - {fileID: 114979570952137284}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -976,6 +1006,25 @@ MonoBehaviour:
   Min: 0
   Max: 5
   Default: 0
+--- !u!114 &114979570952137284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\rmill\Desktop\gitRepos\Void_Testing_Version\Assets\FMOD\Void\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636558505634906021
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2091072
+  Exists: 1
 --- !u!114 &114999381307487094
 MonoBehaviour:
   m_ObjectHideFlags: 0

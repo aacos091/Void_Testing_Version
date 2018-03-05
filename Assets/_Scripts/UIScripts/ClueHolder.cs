@@ -155,6 +155,7 @@ public class ClueHolder : MonoBehaviour
 
     void ShowClueInInspectionWindow()
     {
+        clue.transform.localScale *= 5.0f;
         ClueItemInspector.S.ShowClueInUI(clue.gameObject);
     }
 

@@ -308,6 +308,7 @@ public class ProceduralEngine : MonoBehaviour
         JsonData clueOwnerData = JsonMapper.ToObject(cluePossibleOwnersFinal.text);
 
         int spawnIndex = Random.Range(0, spawnPoints.Count);
+       
         GameObject tGO = Instantiate(Resources.Load(cName, typeof(GameObject)) as GameObject, spawnPoints[spawnIndex].position, Quaternion.identity);
         tGO.name = cName;
         tGO.AddComponent<ClueItem>();
@@ -323,6 +324,14 @@ public class ProceduralEngine : MonoBehaviour
         // Make the clue a child of the Ship Object
         tGO.transform.SetParent(shipTransform);
 
+         // Check if the spawnPoint chosen has a ClueHolder script
+        if (IsClueHolderObject(spawnPoints[spawnIndex]))
+        {
+            // Assign the ClueHolder clue field to match this specific clue Item
+            spawnPoints[spawnIndex].parent.GetComponent<ClueHolder>().clue = tGO.GetComponent<ClueItem>();
+
+        }
+
         // Remove the spawnPoint used from the List of usable spawnPoints
         spawnPoints.RemoveAt(spawnIndex);
 
@@ -330,6 +339,20 @@ public class ProceduralEngine : MonoBehaviour
         descriptionData.Clear();
         clueOwnerData.Clear();
 
+    }
+
+    bool IsClueHolderObject (Transform spawnLoc)
+    {
+        ClueHolder parentClueHolder = spawnLoc.GetComponentInParent<ClueHolder>();
+        //Transform parent = spawnLoc.parent;
+        if (parentClueHolder)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 
 
